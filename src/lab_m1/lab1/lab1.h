@@ -28,6 +28,15 @@ namespace m1
         void OnWindowResize(int width, int height) override;
 
         // TODO(student): Class variables go here
+        float redPart = 0;
+        float bluePart = 0;
+        float greenPart = 0;
+        glm::vec3 myObjPos = glm::vec3(0, 0, 0);
+        int myMeshIndex;
+        bool isJumping = false;
+        float targetValue = 0;
+        float jumpingDistance = 1;
+        float startingPos = 0;
 
     };
 }   // namespace m1
