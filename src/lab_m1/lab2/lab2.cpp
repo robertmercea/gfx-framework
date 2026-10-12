@@ -84,7 +84,29 @@ void Lab2::Init()
     // would you do it? After all, a tetrahedron has only 4 vertices
     // by definition!
     {
+        vector<VertexFormat> vertices
+        {
+            VertexFormat(glm::vec3(0, 1.5f,  -0.5f), glm::vec3(1, 1, 0), glm::vec3(0.2, 0.8, 0.6)),
+            VertexFormat(glm::vec3(-1, 0,  0), glm::vec3(1, 1, 0), glm::vec3(0.2, 0.8, 0.6)),
+            VertexFormat(glm::vec3(1, 0,  0), glm::vec3(1, 1, 0), glm::vec3(0.2, 0.8, 0.6)),
+            VertexFormat(glm::vec3(0, 0,  -1), glm::vec3(1, 1, 0), glm::vec3(0.2, 0.8, 0.6)),
 
+        };
+
+        vector<unsigned int> indices =
+        {
+            0,1,2,
+            0,1,3,
+            0,2,3,
+            1,2,3
+        };
+
+
+        meshes["tetrahedron"] = new Mesh("generated tetrahedron 1");
+        meshes["tetrahedron"]->InitFromData(vertices, indices);
+
+        // Actually create the mesh from the data
+        CreateMesh("tetrahedron", vertices, indices);
     }
 
     // TODO(student): Create a square using two triangles with
@@ -188,7 +210,7 @@ void Lab2::Update(float deltaTimeSeconds)
     RenderMesh(meshes["cube_B"], shaders["VertexColor"], glm::vec3(0, 1.0f,1.5f), glm::vec3(0.25f));
 
     // TODO(student): Draw the tetrahedron
-    RenderMesh(meshes["tetrahedron"], shaders["VertexColor"], glm::vec3(0, 1.0f,1.5f), glm::vec3(0.25f));
+    RenderMesh(meshes["tetrahedron"], shaders["VertexColor"], glm::vec3(0.5f, 0.5f,0.5f), glm::vec3(0.25f));
 
     // TODO(student): Draw the square
 
