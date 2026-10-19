@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "core/engine.h"
+#include "core/gpu/vertex_format.h"
 #include "utils/gl_utils.h"
 
 using namespace std;
@@ -96,7 +97,7 @@ void Lab2::Init()
         vector<unsigned int> indices =
         {
             0,1,2,
-            0,1,3,
+            0,3,1,
             0,2,3,
             1,2,3
         };
@@ -111,6 +112,59 @@ void Lab2::Init()
 
     // TODO(student): Create a square using two triangles with
     // opposing vertex orientations.
+    {
+        vector<VertexFormat> vertices
+        {
+            VertexFormat(glm::vec3(1, 4,  0), glm::vec3(0, 1, 0), glm::vec3(0.2, 0.8, 0.6)),
+            VertexFormat(glm::vec3(4, 4,  0), glm::vec3(0, 1, 0), glm::vec3(0.2, 0.8, 0.6)),
+            VertexFormat(glm::vec3(4, 1,  0), glm::vec3(0, 1, 0), glm::vec3(0.2, 0.8, 0.6)),
+            VertexFormat(glm::vec3(1, 1,  0), glm::vec3(0, 1, 0), glm::vec3(0.2, 0.8, 0.6)),
+
+        };
+
+        vector<unsigned int> indices =
+        {
+            0,1,2,
+            0,3,2,
+        };
+
+
+        meshes["square"] = new Mesh("generated square 1");
+        meshes["square"]->InitFromData(vertices, indices);
+
+        // Actually create the mesh from the data
+        CreateMesh("square", vertices, indices);
+    }
+
+    // circle
+    {
+        const int NUM_VERTICES = 32;
+        const float RADIUS = 1.0f;
+        const glm::vec3 CIRCLE_COLOR = glm::vec3(1, 0, 1);
+        const glm::vec3 CIRCLE_NORMAL = glm::vec3(0, 0, 1);
+        vector<VertexFormat> vertices;
+        vector<unsigned int> indices;
+        double deltaTheta = 2 * M_PI / NUM_VERTICES;
+
+        // origin
+        vertices.push_back(VertexFormat(glm::vec3(0, 0, 0), CIRCLE_COLOR, CIRCLE_NORMAL));
+
+        for (int i = 0; i < NUM_VERTICES; i++) {
+            double theta = i * deltaTheta;
+            vertices.push_back(VertexFormat( glm::vec3(RADIUS * cos(theta), RADIUS * sin(theta), 0), CIRCLE_COLOR, CIRCLE_NORMAL));
+        }
+
+        // actual circle
+        for (int i = 1; i <= NUM_VERTICES; i++) {
+            indices.push_back(0);
+            indices.push_back(i);
+            indices.push_back((i % NUM_VERTICES) + 1);
+        }
+
+        meshes["circle"] = new Mesh("generated circle 1");
+        meshes["circle"]->InitFromData(vertices, indices);
+        CreateMesh("circle", vertices, indices);
+    }
 
 }
 
@@ -195,6 +249,8 @@ void Lab2::Update(float deltaTimeSeconds)
     glLineWidth(3);
     glPointSize(5);
     glPolygonMode(GL_FRONT_AND_BACK, polygonMode);
+    glEnable(GL_CULL_FACE);
+    glCullFace(cullFace);
 
     // TODO(student): Enable face culling
 
@@ -213,9 +269,13 @@ void Lab2::Update(float deltaTimeSeconds)
     RenderMesh(meshes["tetrahedron"], shaders["VertexColor"], glm::vec3(0.5f, 0.5f,0.5f), glm::vec3(0.25f));
 
     // TODO(student): Draw the square
+    RenderMesh(meshes["square"], shaders["VertexColor"], glm::vec3(1.5f, 0.5f,0.5f), glm::vec3(0.25f));
 
     // TODO(student): Disable face culling
+    RenderMesh(meshes["circle"], shaders["VertexColor"], glm::vec3(3.5f, 0.5f,0.5f), glm::vec3(0.25f));
 
+
+    glDisable(GL_CULL_FACE);
 }
 
 
@@ -257,6 +317,15 @@ void Lab2::OnKeyPress(int key, int mods)
             break;
         }
     }
+
+    if (key == GLFW_KEY_T) {
+        if (cullFace == GL_BACK) {
+          cullFace = GL_FRONT;
+        } else {
+          cullFace = GL_BACK;
+        }
+    }
+
 }
 
 
