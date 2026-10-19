@@ -43,6 +43,8 @@ void Lab3::Init()
     // then in the `cx` and `cy` class variables (see the header). Use
     // `corner` and `squareSide`. These two class variables will be used
     // in the `Update()` function. Think about it, why do you need them?
+    cx = corner.x + squareSide / 2.0f;
+    cy = corner.y + squareSide / 2.0f;
 
     // Initialize tx and ty (the translation steps)
     translateX = 0;
@@ -86,7 +88,8 @@ void Lab3::Update(float deltaTimeSeconds)
     // add them over there!
 
     modelMatrix = glm::mat3(1);
-    modelMatrix *= transform2D::Translate(150, 250);
+    modelMatrix *= transform2D::Translate(150, 200 * sin(translateY) + 100);
+    translateY += 1 * deltaTimeSeconds;
     // TODO(student): Create animations by multiplying the current
     // transform matrix with the matrices you just implemented.
     // Remember, the last matrix in the chain will take effect first!
@@ -95,6 +98,10 @@ void Lab3::Update(float deltaTimeSeconds)
 
     modelMatrix = glm::mat3(1);
     modelMatrix *= transform2D::Translate(400, 250);
+    modelMatrix *= transform2D::Translate(cx, cy);
+    modelMatrix *= transform2D::Rotate(angularStep);
+    modelMatrix *= transform2D::Translate(-cx, -cy);
+    angularStep += 2 * deltaTimeSeconds;
     // TODO(student): Create animations by multiplying the current
     // transform matrix with the matrices you just implemented
     // Remember, the last matrix in the chain will take effect first!
@@ -103,6 +110,11 @@ void Lab3::Update(float deltaTimeSeconds)
 
     modelMatrix = glm::mat3(1);
     modelMatrix *= transform2D::Translate(650, 250);
+    modelMatrix *= transform2D::Translate(cx, cy);
+    modelMatrix *= transform2D::Scale(0.5 * sin(scaleX) + 2, 0.5 * sin(scaleY) + 2);
+    modelMatrix *= transform2D::Translate(-cx, -cy);
+    scaleX += 5 * deltaTimeSeconds;
+    scaleY += 5 * deltaTimeSeconds;
     // TODO(student): Create animations by multiplying the current
     // transform matrix with the matrices you just implemented
     // Remember, the last matrix in the chain will take effect first!

@@ -1,8 +1,10 @@
 #include "lab_m1/lab3/lab3_vis2D.h"
 
+#include <algorithm>
 #include <vector>
 #include <iostream>
 
+#include "GLFW/glfw3.h"
 #include "lab_m1/lab3/transform2D.h"
 #include "lab_m1/lab3/object2D.h"
 
@@ -167,9 +169,39 @@ void Lab3_Vis2D::DrawScene(glm::mat3 visMatrix)
 void Lab3_Vis2D::OnInputUpdate(float deltaTime, int mods)
 {
     // TODO(student): Move the logic window with W, A, S, D (up, left, down, right)
+    const float DISPLACEMENT = 0.5f * deltaTime;
+    const float SCALE_FACTOR = 1.2f * deltaTime;
+
+    if (window->KeyHold(GLFW_KEY_W)) {
+      logicSpace.y += DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_S)) {
+      logicSpace.y -= DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_A)) {
+      logicSpace.x -= DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_D)) {
+      logicSpace.x += DISPLACEMENT;
+    }
 
     // TODO(student): Zoom in and zoom out logic window with Z and X
+    if (window->KeyHold(GLFW_KEY_Z)) {
+      logicSpace.x -= DISPLACEMENT / 2;
+      logicSpace.y -= DISPLACEMENT / 2;
+      logicSpace.height += DISPLACEMENT;
+      logicSpace.width += DISPLACEMENT;
+    }
 
+    if (window->KeyHold(GLFW_KEY_X)) {
+      logicSpace.x += DISPLACEMENT / 2;
+      logicSpace.y += DISPLACEMENT / 2;
+      logicSpace.height -= DISPLACEMENT;
+      logicSpace.width -= DISPLACEMENT;
+    }
 }
 
 
