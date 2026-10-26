@@ -40,6 +40,8 @@ namespace m1
 
         void RenderScene();
      protected:
+        glm::vec3 sunCoords, earthCoords, moonCoords;
+        float earthRotation, moonRotation;
         glm::mat4 modelMatrix;
         float translateX, translateY, translateZ;
         float scaleX, scaleY, scaleZ;

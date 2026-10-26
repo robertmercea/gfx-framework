@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "GLFW/glfw3.h"
+#include "glm/ext/vector_float3.hpp"
 #include "lab_m1/lab4/transform3D.h"
 
 using namespace std;
@@ -53,6 +54,14 @@ void Lab4::Init()
     // Sets the resolution of the small viewport
     glm::ivec2 resolution = window->GetResolution();
     miniViewportArea = ViewportArea(50, 50, resolution.x / 5.f, resolution.y / 5.f);
+
+    // NOTE: bonus
+    sunCoords = glm::vec3(0, 0, 0);
+    earthCoords = glm::vec3(0, 5, 0);
+    moonCoords = glm::vec3(0, 7, 0);
+
+    earthRotation = 0.f;
+    moonRotation = 0.f;
 }
 
 void Lab4::FrameStart()
@@ -60,6 +69,10 @@ void Lab4::FrameStart()
     // Clears the color buffer (using the previously set color) and depth buffer
     glClearColor(0, 0, 0, 1);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+glm::vec3 changedCoords(glm::vec3 coord) {
+  return glm::vec3(4 * sin(coord.x), 4 * sin(coord.y), 4 * sin(coord.z));
 }
 
 void Lab4::RenderScene() {
@@ -79,6 +92,38 @@ void Lab4::RenderScene() {
     modelMatrix *= transform3D::RotateOY(angularStepOY);
     modelMatrix *= transform3D::RotateOZ(angularStepOZ);
     RenderMesh(meshes["box"], shaders["VertexNormal"], modelMatrix);
+
+    const glm::vec3 sunRenderCoords = changedCoords(sunCoords);
+    modelMatrix = glm::mat4(1);
+    modelMatrix *= transform3D::Translate(sunRenderCoords.x, sunRenderCoords.y, sunRenderCoords.z);
+    RenderMesh(meshes["box"], shaders["Simple"], modelMatrix);
+
+    // const glm::vec3 earthRenderCoords = changedCoords(earthCoords);
+    modelMatrix = glm::mat4(1);
+    modelMatrix *= transform3D::Translate(sunRenderCoords.x, sunRenderCoords.y, sunRenderCoords.z);
+    modelMatrix *= transform3D::RotateOZ(earthRotation);
+    modelMatrix *= transform3D::Translate(-sunRenderCoords.x, -sunRenderCoords.y, -sunRenderCoords.z);
+    modelMatrix *= transform3D::Translate(sunRenderCoords.x, sunRenderCoords.y + 5, sunRenderCoords.z);
+    RenderMesh(meshes["box"], shaders["Simple"], modelMatrix);
+
+    // const glm::vec3 moonRenderCoords = changedCoords(moonCoords);
+    modelMatrix = glm::mat4(1);
+    // compute earth coords
+    modelMatrix *= transform3D::Translate(sunRenderCoords.x, sunRenderCoords.y, sunRenderCoords.z);
+    modelMatrix *= transform3D::RotateOZ(earthRotation);
+    modelMatrix *= transform3D::Translate(-sunRenderCoords.x, -sunRenderCoords.y, -sunRenderCoords.z);
+    modelMatrix *= transform3D::Translate(sunRenderCoords.x, sunRenderCoords.y + 5, sunRenderCoords.z);
+    glm::mat4 earthMatrix = modelMatrix;
+
+    // now compute moon coords
+    modelMatrix = glm::mat4(1);
+    modelMatrix *= earthMatrix;
+    modelMatrix *= transform3D::RotateOZ(moonRotation);
+    modelMatrix *= glm::inverse(earthMatrix);
+    modelMatrix *= transform3D::Translate(0, 3, 0);
+    modelMatrix *= earthMatrix;
+    modelMatrix *= transform3D::Scale(0.5f, 0.5f, 0.5f);
+    RenderMesh(meshes["box"], shaders["Simple"], modelMatrix);
 }
 
 void Lab4::Update(float deltaTimeSeconds)
@@ -100,6 +145,10 @@ void Lab4::Update(float deltaTimeSeconds)
     // TODO(student): render the scene again, in the new viewport
     DrawCoordinateSystem();
     RenderScene();
+
+    sunCoords.x += 0.5f * deltaTimeSeconds;
+    moonRotation += 0.35f * deltaTimeSeconds;
+    earthRotation += 0.15f * deltaTimeSeconds;
 }
 
 void Lab4::FrameEnd()
