@@ -99,6 +99,7 @@ void Lab4::Update(float deltaTimeSeconds)
 
     // TODO(student): render the scene again, in the new viewport
     DrawCoordinateSystem();
+    RenderScene();
 }
 
 void Lab4::FrameEnd()
@@ -116,6 +117,7 @@ void Lab4::OnInputUpdate(float deltaTime, int mods)
 {
     const float DISPLACEMENT = deltaTime * 3;
     // TODO(student): Add transformation logic
+    // NOTE: movement
     if (window->KeyHold(GLFW_KEY_W)) {
       translateX += DISPLACEMENT;
     }
@@ -151,11 +153,41 @@ void Lab4::OnInputUpdate(float deltaTime, int mods)
       scaleY -= DISPLACEMENT;
       scaleZ -= DISPLACEMENT;
     }
+
+
+    // NOTE: rotations
+    if (window->KeyHold(GLFW_KEY_3)) {
+      angularStepOX += DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_4)) {
+      angularStepOX -= DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_5)) {
+      angularStepOY += DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_6)) {
+      angularStepOY -= DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_7)) {
+      angularStepOZ += DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_8)) {
+      angularStepOZ -= DISPLACEMENT;
+    }
+
+
 }
 
 
 void Lab4::OnKeyPress(int key, int mods)
 {
+    const int DISPLACEMENT = 3;
+    const int VIEWPORT_SCALING_FACTOR = 2;
     // Add key press event
     if (key == GLFW_KEY_SPACE)
     {
@@ -174,6 +206,32 @@ void Lab4::OnKeyPress(int key, int mods)
     }
     
     // TODO(student): Add viewport movement and scaling logic
+    // NOTE: viewport
+    if (key == GLFW_KEY_I) {
+      miniViewportArea.y += DISPLACEMENT;
+    }
+
+    if (key == GLFW_KEY_K) {
+      miniViewportArea.y -= DISPLACEMENT;
+    }
+
+    if (key == GLFW_KEY_J) {
+      miniViewportArea.x -= DISPLACEMENT;
+    }
+
+    if (key == GLFW_KEY_L) {
+      miniViewportArea.x += DISPLACEMENT;
+    }
+
+    if (key == GLFW_KEY_U) {
+      miniViewportArea.width *= VIEWPORT_SCALING_FACTOR;
+      miniViewportArea.height *= VIEWPORT_SCALING_FACTOR;
+    }
+
+    if (key == GLFW_KEY_O) {
+      miniViewportArea.width /= VIEWPORT_SCALING_FACTOR;
+      miniViewportArea.height /= VIEWPORT_SCALING_FACTOR;
+    }
 }
 
 
