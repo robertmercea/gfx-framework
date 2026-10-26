@@ -3,6 +3,7 @@
 
 #include "core/engine.h"
 #include "components/simple_scene.h"
+#include "lab_m1/lab4/lab4.h"
 
 #if defined(WITH_LAB_M1)
 #   include "lab_m1/lab_list.h"
@@ -44,7 +45,8 @@ int main(int argc, char **argv)
     (void)Engine::Init(wp);
 
     // Create a new 3D world and start running it
-    World *world = new gfxc::SimpleScene();
+    // World *world = new gfxc::SimpleScene();
+    World *world = new m1::Lab4();
 
     world->Init();
     world->Run();

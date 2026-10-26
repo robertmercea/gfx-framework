@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 
+#include "GLFW/glfw3.h"
 #include "lab_m1/lab4/transform3D.h"
 
 using namespace std;
@@ -113,8 +114,43 @@ void Lab4::FrameEnd()
 
 void Lab4::OnInputUpdate(float deltaTime, int mods)
 {
+    const float DISPLACEMENT = deltaTime * 3;
     // TODO(student): Add transformation logic
+    if (window->KeyHold(GLFW_KEY_W)) {
+      translateX += DISPLACEMENT;
+    }
 
+    if (window->KeyHold(GLFW_KEY_S)) {
+      translateX -= DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_A)) {
+      translateZ += DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_D)) {
+      translateZ -= DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_R)) {
+      translateY += DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_F)) {
+      translateY -= DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_1)) {
+      scaleX += DISPLACEMENT;
+      scaleY += DISPLACEMENT;
+      scaleZ += DISPLACEMENT;
+    }
+
+    if (window->KeyHold(GLFW_KEY_2)) {
+      scaleX -= DISPLACEMENT;
+      scaleY -= DISPLACEMENT;
+      scaleZ -= DISPLACEMENT;
+    }
 }
 
 
