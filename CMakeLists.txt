@@ -6,6 +6,9 @@ if (NOT GFXF_ROOT_DIR)
     set(GFXF_ROOT_DIR ${CMAKE_CURRENT_LIST_DIR})
 endif()
 
+# Create compile_commands.json
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 
 # Set the name of the project
 set(target_name GFXFramework)
@@ -204,6 +207,8 @@ endif()
 
 # Set target properties
 target_include_directories(${target_name} PRIVATE ${GFXF_INCLUDE_DIRS_PRIVATE})
+# Include lab_m1 because i cant be bothered to include everything bro
+target_include_directories(${target_name} PRIVATE ${GFXF_ROOT_DIR}/src/lab_m1)
 
 
 # For Visual Studio, set the working directory and the startup project

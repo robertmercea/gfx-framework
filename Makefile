@@ -753,6 +753,198 @@ src/lab_m1/lab9/lab9.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/lab9/lab9.cpp.s
 .PHONY : src/lab_m1/lab9/lab9.cpp.s
 
+src/lab_m1/tema1/entities/battle_cards/battle_cards.o: src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.o
+.PHONY : src/lab_m1/tema1/entities/battle_cards/battle_cards.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.o
+.PHONY : src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.o
+
+src/lab_m1/tema1/entities/battle_cards/battle_cards.i: src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.i
+.PHONY : src/lab_m1/tema1/entities/battle_cards/battle_cards.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.i
+.PHONY : src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.i
+
+src/lab_m1/tema1/entities/battle_cards/battle_cards.s: src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.s
+.PHONY : src/lab_m1/tema1/entities/battle_cards/battle_cards.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.s
+.PHONY : src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.s
+
+src/lab_m1/tema1/entities/card/card.o: src/lab_m1/tema1/entities/card/card.cpp.o
+.PHONY : src/lab_m1/tema1/entities/card/card.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/card/card.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card.cpp.o
+.PHONY : src/lab_m1/tema1/entities/card/card.cpp.o
+
+src/lab_m1/tema1/entities/card/card.i: src/lab_m1/tema1/entities/card/card.cpp.i
+.PHONY : src/lab_m1/tema1/entities/card/card.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/card/card.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card.cpp.i
+.PHONY : src/lab_m1/tema1/entities/card/card.cpp.i
+
+src/lab_m1/tema1/entities/card/card.s: src/lab_m1/tema1/entities/card/card.cpp.s
+.PHONY : src/lab_m1/tema1/entities/card/card.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/card/card.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card.cpp.s
+.PHONY : src/lab_m1/tema1/entities/card/card.cpp.s
+
+src/lab_m1/tema1/entities/card_collection/card_collection.o: src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o
+.PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o
+.PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o
+
+src/lab_m1/tema1/entities/card_collection/card_collection.i: src/lab_m1/tema1/entities/card_collection/card_collection.cpp.i
+.PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/card_collection/card_collection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.i
+.PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.cpp.i
+
+src/lab_m1/tema1/entities/card_collection/card_collection.s: src/lab_m1/tema1/entities/card_collection/card_collection.cpp.s
+.PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/card_collection/card_collection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.s
+.PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.cpp.s
+
+src/lab_m1/tema1/entities/card_view/card_view.o: src/lab_m1/tema1/entities/card_view/card_view.cpp.o
+.PHONY : src/lab_m1/tema1/entities/card_view/card_view.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/card_view/card_view.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o
+.PHONY : src/lab_m1/tema1/entities/card_view/card_view.cpp.o
+
+src/lab_m1/tema1/entities/card_view/card_view.i: src/lab_m1/tema1/entities/card_view/card_view.cpp.i
+.PHONY : src/lab_m1/tema1/entities/card_view/card_view.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/card_view/card_view.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.i
+.PHONY : src/lab_m1/tema1/entities/card_view/card_view.cpp.i
+
+src/lab_m1/tema1/entities/card_view/card_view.s: src/lab_m1/tema1/entities/card_view/card_view.cpp.s
+.PHONY : src/lab_m1/tema1/entities/card_view/card_view.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/card_view/card_view.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.s
+.PHONY : src/lab_m1/tema1/entities/card_view/card_view.cpp.s
+
+src/lab_m1/tema1/entities/effect/effect.o: src/lab_m1/tema1/entities/effect/effect.cpp.o
+.PHONY : src/lab_m1/tema1/entities/effect/effect.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/effect/effect.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o
+.PHONY : src/lab_m1/tema1/entities/effect/effect.cpp.o
+
+src/lab_m1/tema1/entities/effect/effect.i: src/lab_m1/tema1/entities/effect/effect.cpp.i
+.PHONY : src/lab_m1/tema1/entities/effect/effect.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/effect/effect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.i
+.PHONY : src/lab_m1/tema1/entities/effect/effect.cpp.i
+
+src/lab_m1/tema1/entities/effect/effect.s: src/lab_m1/tema1/entities/effect/effect.cpp.s
+.PHONY : src/lab_m1/tema1/entities/effect/effect.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/effect/effect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.s
+.PHONY : src/lab_m1/tema1/entities/effect/effect.cpp.s
+
+src/lab_m1/tema1/entities/game/game.o: src/lab_m1/tema1/entities/game/game.cpp.o
+.PHONY : src/lab_m1/tema1/entities/game/game.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/game/game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o
+.PHONY : src/lab_m1/tema1/entities/game/game.cpp.o
+
+src/lab_m1/tema1/entities/game/game.i: src/lab_m1/tema1/entities/game/game.cpp.i
+.PHONY : src/lab_m1/tema1/entities/game/game.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/game/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.i
+.PHONY : src/lab_m1/tema1/entities/game/game.cpp.i
+
+src/lab_m1/tema1/entities/game/game.s: src/lab_m1/tema1/entities/game/game.cpp.s
+.PHONY : src/lab_m1/tema1/entities/game/game.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/game/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.s
+.PHONY : src/lab_m1/tema1/entities/game/game.cpp.s
+
+src/lab_m1/tema1/entities/hero/hero.o: src/lab_m1/tema1/entities/hero/hero.cpp.o
+.PHONY : src/lab_m1/tema1/entities/hero/hero.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/hero/hero.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o
+.PHONY : src/lab_m1/tema1/entities/hero/hero.cpp.o
+
+src/lab_m1/tema1/entities/hero/hero.i: src/lab_m1/tema1/entities/hero/hero.cpp.i
+.PHONY : src/lab_m1/tema1/entities/hero/hero.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/hero/hero.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.i
+.PHONY : src/lab_m1/tema1/entities/hero/hero.cpp.i
+
+src/lab_m1/tema1/entities/hero/hero.s: src/lab_m1/tema1/entities/hero/hero.cpp.s
+.PHONY : src/lab_m1/tema1/entities/hero/hero.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/hero/hero.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.s
+.PHONY : src/lab_m1/tema1/entities/hero/hero.cpp.s
+
+src/lab_m1/tema1/entities/player/player.o: src/lab_m1/tema1/entities/player/player.cpp.o
+.PHONY : src/lab_m1/tema1/entities/player/player.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/player/player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o
+.PHONY : src/lab_m1/tema1/entities/player/player.cpp.o
+
+src/lab_m1/tema1/entities/player/player.i: src/lab_m1/tema1/entities/player/player.cpp.i
+.PHONY : src/lab_m1/tema1/entities/player/player.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/player/player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.i
+.PHONY : src/lab_m1/tema1/entities/player/player.cpp.i
+
+src/lab_m1/tema1/entities/player/player.s: src/lab_m1/tema1/entities/player/player.cpp.s
+.PHONY : src/lab_m1/tema1/entities/player/player.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/player/player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.s
+.PHONY : src/lab_m1/tema1/entities/player/player.cpp.s
+
 src/lab_m1/tema1/tema1.o: src/lab_m1/tema1/tema1.cpp.o
 .PHONY : src/lab_m1/tema1/tema1.o
 
@@ -936,6 +1128,30 @@ help:
 	@echo "... src/lab_m1/lab9/lab9.o"
 	@echo "... src/lab_m1/lab9/lab9.i"
 	@echo "... src/lab_m1/lab9/lab9.s"
+	@echo "... src/lab_m1/tema1/entities/battle_cards/battle_cards.o"
+	@echo "... src/lab_m1/tema1/entities/battle_cards/battle_cards.i"
+	@echo "... src/lab_m1/tema1/entities/battle_cards/battle_cards.s"
+	@echo "... src/lab_m1/tema1/entities/card/card.o"
+	@echo "... src/lab_m1/tema1/entities/card/card.i"
+	@echo "... src/lab_m1/tema1/entities/card/card.s"
+	@echo "... src/lab_m1/tema1/entities/card_collection/card_collection.o"
+	@echo "... src/lab_m1/tema1/entities/card_collection/card_collection.i"
+	@echo "... src/lab_m1/tema1/entities/card_collection/card_collection.s"
+	@echo "... src/lab_m1/tema1/entities/card_view/card_view.o"
+	@echo "... src/lab_m1/tema1/entities/card_view/card_view.i"
+	@echo "... src/lab_m1/tema1/entities/card_view/card_view.s"
+	@echo "... src/lab_m1/tema1/entities/effect/effect.o"
+	@echo "... src/lab_m1/tema1/entities/effect/effect.i"
+	@echo "... src/lab_m1/tema1/entities/effect/effect.s"
+	@echo "... src/lab_m1/tema1/entities/game/game.o"
+	@echo "... src/lab_m1/tema1/entities/game/game.i"
+	@echo "... src/lab_m1/tema1/entities/game/game.s"
+	@echo "... src/lab_m1/tema1/entities/hero/hero.o"
+	@echo "... src/lab_m1/tema1/entities/hero/hero.i"
+	@echo "... src/lab_m1/tema1/entities/hero/hero.s"
+	@echo "... src/lab_m1/tema1/entities/player/player.o"
+	@echo "... src/lab_m1/tema1/entities/player/player.i"
+	@echo "... src/lab_m1/tema1/entities/player/player.s"
 	@echo "... src/lab_m1/tema1/tema1.o"
 	@echo "... src/lab_m1/tema1/tema1.i"
 	@echo "... src/lab_m1/tema1/tema1.s"
