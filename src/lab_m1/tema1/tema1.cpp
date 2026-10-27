@@ -34,32 +34,6 @@ void Tema1::Init()
     GetCameraInput()->SetActive(false);
 
     glm::vec3 corner = glm::vec3(0, 0, 0);
-    float squareSide = 100;
-
-    // TODO(student): Compute coordinates of a square's center, and store
-    // then in the `cx` and `cy` class variables (see the header). Use
-    // `corner` and `squareSide`. These two class variables will be used
-    // in the `Update()` function. Think about it, why do you need them?
-
-    // Initialize tx and ty (the translation steps)
-    translateX = 0;
-    translateY = 0;
-
-    // Initialize sx and sy (the scale factors)
-    scaleX = 1;
-    scaleY = 1;
-
-    // Initialize angularStep
-    angularStep = 0;
-
-    Mesh* square1 = object2D::CreateSquare("square1", corner, squareSide, glm::vec3(1, 0, 0), true);
-    AddMeshToList(square1);
-
-    Mesh* square2 = object2D::CreateSquare("square2", corner, squareSide, glm::vec3(0, 1, 0));
-    AddMeshToList(square2);
-
-    Mesh* square3 = object2D::CreateSquare("square3", corner, squareSide, glm::vec3(0, 0, 1));
-    AddMeshToList(square3);
 }
 
 
@@ -77,34 +51,6 @@ void Tema1::FrameStart()
 
 void Tema1::Update(float deltaTimeSeconds)
 {
-    // TODO(student): Update steps for translation, rotation and scale,
-    // in order to create animations. Use the class variables in the
-    // class header, and if you need more of them to complete the task,
-    // add them over there!
-
-    modelMatrix = glm::mat3(1);
-    modelMatrix *= transform2D::Translate(150, 250);
-    // TODO(student): Create animations by multiplying the current
-    // transform matrix with the matrices you just implemented.
-    // Remember, the last matrix in the chain will take effect first!
-
-    RenderMesh2D(meshes["square1"], shaders["VertexColor"], modelMatrix);
-
-    modelMatrix = glm::mat3(1);
-    modelMatrix *= transform2D::Translate(400, 250);
-    // TODO(student): Create animations by multiplying the current
-    // transform matrix with the matrices you just implemented
-    // Remember, the last matrix in the chain will take effect first!
-
-    RenderMesh2D(meshes["square2"], shaders["VertexColor"], modelMatrix);
-
-    modelMatrix = glm::mat3(1);
-    modelMatrix *= transform2D::Translate(650, 250);
-    // TODO(student): Create animations by multiplying the current
-    // transform matrix with the matrices you just implemented
-    // Remember, the last matrix in the chain will take effect first!
-
-    RenderMesh2D(meshes["square3"], shaders["VertexColor"], modelMatrix);
 }
 
 
