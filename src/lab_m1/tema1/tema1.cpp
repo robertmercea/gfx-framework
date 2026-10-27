@@ -1,4 +1,7 @@
-#include "tema1.h"
+#include "lab_m1/tema1/tema1.h"
+
+#include <vector>
+#include <iostream>
 
 using namespace std;
 using namespace m1;
@@ -20,34 +23,93 @@ Tema1::~Tema1()
 }
 
 
-// TODO: load meshes here
 void Tema1::Init()
 {
-    // Load a mesh from file into GPU memory. We only need to do it once,
-    // no matter how many times we want to draw this mesh.
-    {
-        Mesh* mesh = new Mesh("box");
-        mesh->LoadMesh(PATH_JOIN(window->props.selfDir, RESOURCE_PATH::MODELS, "primitives"), "box.obj");
-        meshes[mesh->GetMeshID()] = mesh;
-    }
+    glm::ivec2 resolution = window->GetResolution();
+    auto camera = GetSceneCamera();
+    camera->SetOrthographic(0, (float)resolution.x, 0, (float)resolution.y, 0.01f, 400);
+    camera->SetPosition(glm::vec3(0, 0, 50));
+    camera->SetRotation(glm::vec3(0, 0, 0));
+    camera->Update();
+    GetCameraInput()->SetActive(false);
 
+    glm::vec3 corner = glm::vec3(0, 0, 0);
+    float squareSide = 100;
+
+    // TODO(student): Compute coordinates of a square's center, and store
+    // then in the `cx` and `cy` class variables (see the header). Use
+    // `corner` and `squareSide`. These two class variables will be used
+    // in the `Update()` function. Think about it, why do you need them?
+
+    // Initialize tx and ty (the translation steps)
+    translateX = 0;
+    translateY = 0;
+
+    // Initialize sx and sy (the scale factors)
+    scaleX = 1;
+    scaleY = 1;
+
+    // Initialize angularStep
+    angularStep = 0;
+
+    Mesh* square1 = object2D::CreateSquare("square1", corner, squareSide, glm::vec3(1, 0, 0), true);
+    AddMeshToList(square1);
+
+    Mesh* square2 = object2D::CreateSquare("square2", corner, squareSide, glm::vec3(0, 1, 0));
+    AddMeshToList(square2);
+
+    Mesh* square3 = object2D::CreateSquare("square3", corner, squareSide, glm::vec3(0, 0, 1));
+    AddMeshToList(square3);
 }
 
 
 void Tema1::FrameStart()
 {
+    // Clears the color buffer (using the previously set color) and depth buffer
+    glClearColor(0, 0, 0, 1);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    glm::ivec2 resolution = window->GetResolution();
+    // Sets the screen area where to draw
+    glViewport(0, 0, resolution.x, resolution.y);
 }
 
 
-// WARNING: figure out what to add here
 void Tema1::Update(float deltaTimeSeconds)
 {
+    // TODO(student): Update steps for translation, rotation and scale,
+    // in order to create animations. Use the class variables in the
+    // class header, and if you need more of them to complete the task,
+    // add them over there!
+
+    modelMatrix = glm::mat3(1);
+    modelMatrix *= transform2D::Translate(150, 250);
+    // TODO(student): Create animations by multiplying the current
+    // transform matrix with the matrices you just implemented.
+    // Remember, the last matrix in the chain will take effect first!
+
+    RenderMesh2D(meshes["square1"], shaders["VertexColor"], modelMatrix);
+
+    modelMatrix = glm::mat3(1);
+    modelMatrix *= transform2D::Translate(400, 250);
+    // TODO(student): Create animations by multiplying the current
+    // transform matrix with the matrices you just implemented
+    // Remember, the last matrix in the chain will take effect first!
+
+    RenderMesh2D(meshes["square2"], shaders["VertexColor"], modelMatrix);
+
+    modelMatrix = glm::mat3(1);
+    modelMatrix *= transform2D::Translate(650, 250);
+    // TODO(student): Create animations by multiplying the current
+    // transform matrix with the matrices you just implemented
+    // Remember, the last matrix in the chain will take effect first!
+
+    RenderMesh2D(meshes["square3"], shaders["VertexColor"], modelMatrix);
 }
 
 
 void Tema1::FrameEnd()
 {
-    DrawCoordinateSystem();
 }
 
 
@@ -57,23 +119,14 @@ void Tema1::FrameEnd()
  */
 
 
-// TODO: add continuous key-hold event handlers here
 void Tema1::OnInputUpdate(float deltaTime, int mods)
 {
-    // Treat continuous update based on input
-
 }
 
 
-// TODO: add discrete key-press event handlers here
 void Tema1::OnKeyPress(int key, int mods)
 {
     // Add key press event
-    if (key == GLFW_KEY_F) {
-        // TODO(student): Change the values of the color components.
-
-    }
-
 }
 
 
@@ -103,11 +156,9 @@ void Tema1::OnMouseBtnRelease(int mouseX, int mouseY, int button, int mods)
 
 void Tema1::OnMouseScroll(int mouseX, int mouseY, int offsetX, int offsetY)
 {
-    // Treat mouse scroll event
 }
 
 
 void Tema1::OnWindowResize(int width, int height)
 {
-    // Treat window resize event
 }
