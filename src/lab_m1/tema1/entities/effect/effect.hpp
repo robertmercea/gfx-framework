@@ -10,7 +10,9 @@ namespace entities {
 
 class Effect {
 public:
-  void use(const CardPtr card, const BattleCardsPtr battleCards);
+  void onDestroy(const CardPtr card, const BattleCardsPtr battleCards);
+  void onPlay(const CardPtr card, const BattleCardsPtr battleCards);
+  void render();
 };
 
 } // namespace entities

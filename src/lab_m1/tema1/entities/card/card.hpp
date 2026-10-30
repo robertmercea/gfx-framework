@@ -19,10 +19,6 @@ private:
   int manaCost;
   int attack;
   int defense; // TODO: check if needed
-
-  // animation-related
-  float scaleX, scaleY;
-  float posX, posY;
 };
 
 } // namespace entities

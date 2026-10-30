@@ -11,8 +11,9 @@ using BattleCardsPtr = std::shared_ptr<BattleCards>;
 
 class BattleCards {
 public:
-  void play(const CardPtr card);
-  void use(const CardPtr card);
+  // TODO: add onCardDestroy() handler
+  void addCard(const CardPtr card);
+  void useCard(const CardPtr card);
 
 private:
   CardCollection player1Cards;
