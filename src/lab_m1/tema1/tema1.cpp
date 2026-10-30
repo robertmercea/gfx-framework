@@ -1,4 +1,6 @@
-#include "lab_m1/tema1/tema1.h"
+#include "lab_m1/tema1/tema1.hpp"
+#include "tema1/ui/shape/shape.hpp"
+#include "tema1/ui/transform/transform.hpp"
 
 #include <vector>
 #include <iostream>
