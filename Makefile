@@ -969,6 +969,54 @@ src/lab_m1/tema1/tema1.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.s
 .PHONY : src/lab_m1/tema1/tema1.cpp.s
 
+src/lab_m1/tema1/ui/card/card.o: src/lab_m1/tema1/ui/card/card.cpp.o
+.PHONY : src/lab_m1/tema1/ui/card/card.o
+
+# target to build an object file
+src/lab_m1/tema1/ui/card/card.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o
+.PHONY : src/lab_m1/tema1/ui/card/card.cpp.o
+
+src/lab_m1/tema1/ui/card/card.i: src/lab_m1/tema1/ui/card/card.cpp.i
+.PHONY : src/lab_m1/tema1/ui/card/card.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/ui/card/card.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.i
+.PHONY : src/lab_m1/tema1/ui/card/card.cpp.i
+
+src/lab_m1/tema1/ui/card/card.s: src/lab_m1/tema1/ui/card/card.cpp.s
+.PHONY : src/lab_m1/tema1/ui/card/card.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/ui/card/card.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.s
+.PHONY : src/lab_m1/tema1/ui/card/card.cpp.s
+
+src/lab_m1/tema1/ui/shape/shape.o: src/lab_m1/tema1/ui/shape/shape.cpp.o
+.PHONY : src/lab_m1/tema1/ui/shape/shape.o
+
+# target to build an object file
+src/lab_m1/tema1/ui/shape/shape.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o
+.PHONY : src/lab_m1/tema1/ui/shape/shape.cpp.o
+
+src/lab_m1/tema1/ui/shape/shape.i: src/lab_m1/tema1/ui/shape/shape.cpp.i
+.PHONY : src/lab_m1/tema1/ui/shape/shape.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/ui/shape/shape.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.i
+.PHONY : src/lab_m1/tema1/ui/shape/shape.cpp.i
+
+src/lab_m1/tema1/ui/shape/shape.s: src/lab_m1/tema1/ui/shape/shape.cpp.s
+.PHONY : src/lab_m1/tema1/ui/shape/shape.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/ui/shape/shape.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.s
+.PHONY : src/lab_m1/tema1/ui/shape/shape.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -1155,6 +1203,12 @@ help:
 	@echo "... src/lab_m1/tema1/tema1.o"
 	@echo "... src/lab_m1/tema1/tema1.i"
 	@echo "... src/lab_m1/tema1/tema1.s"
+	@echo "... src/lab_m1/tema1/ui/card/card.o"
+	@echo "... src/lab_m1/tema1/ui/card/card.i"
+	@echo "... src/lab_m1/tema1/ui/card/card.s"
+	@echo "... src/lab_m1/tema1/ui/shape/shape.o"
+	@echo "... src/lab_m1/tema1/ui/shape/shape.i"
+	@echo "... src/lab_m1/tema1/ui/shape/shape.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

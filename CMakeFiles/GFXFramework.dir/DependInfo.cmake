@@ -43,6 +43,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/hero/hero.cpp" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o.d"
   "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/player/player.cpp" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o.d"
   "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/tema1.cpp" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o.d"
+  "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/card/card.cpp" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o.d"
+  "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/shape/shape.cpp" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o.d"
   "/home/robert/ACS/EGC/gfx-framework/src/main.cpp" "CMakeFiles/GFXFramework.dir/src/main.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/main.cpp.o.d"
   "/home/robert/ACS/EGC/gfx-framework/src/utils/gl_utils.cpp" "CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o.d"
   "/home/robert/ACS/EGC/gfx-framework/src/utils/text_utils.cpp" "CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.o.d"
