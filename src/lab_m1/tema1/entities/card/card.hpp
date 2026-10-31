@@ -1,24 +1,19 @@
 #pragma once
 
 // WARNING: including card_fwd.hpp might be useful in the future
-#include "tema1/entities/effect/effect_fwd.hpp"
+#include "tema1/entities/card/card_data/card_data.hpp"
+#include "tema1/ui/card/card.hpp"
 
 namespace tema1 {
 namespace entities {
 
 class Card {
 public:
-  void onMouseEnter();
-  void onMouseLeave();
-  void render();
-
-  EffectPtr effect;
+  // TODO: card stuff
 
 private:
-  // game-related
-  int manaCost;
-  int attack;
-  int defense; // TODO: check if needed
+  CardData cardData;
+  ui::Card cardUI;
 };
 
 } // namespace entities

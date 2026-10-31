@@ -1,9 +1,9 @@
 #include "lab_m1/tema1/tema1.hpp"
-#include "tema1/ui/shape/shape.hpp"
-#include "tema1/ui/transform/transform.hpp"
+#include "tema1/sprites/card/card_back/card_back.hpp"
+#include "tema1/sprites/properties/sprite/sprite.hpp"
+#include "tema1/ui/card/card.hpp"
 
 #include <vector>
-#include <iostream>
 
 using namespace std;
 using namespace m1;
@@ -25,8 +25,11 @@ Tema1::~Tema1()
 }
 
 
+tema1::ui::Card *card;
 void Tema1::Init()
 {
+    using namespace tema1;
+
     glm::ivec2 resolution = window->GetResolution();
     auto camera = GetSceneCamera();
     camera->SetOrthographic(0, (float)resolution.x, 0, (float)resolution.y, 0.01f, 400);
@@ -36,23 +39,41 @@ void Tema1::Init()
     GetCameraInput()->SetActive(false);
 
     glm::vec3 corner = glm::vec3(0, 0, 0);
+
+    sprites::CardBack cardBackSprite = sprites::CardBack();
+    auto cardBack = make_shared<sprites::CardBack>(cardBackSprite);
+    auto cardFront = cardBack;
+
+    card = new ui::Card(ui::Card::CardType::KNIGHT, cardFront, cardBack);
+    
+    card->setPosition(glm::vec2(resolution.x / 2.0f, resolution.y / 2.0f));
+    card->showFront();
+    card->shake(50000);
 }
 
 
 void Tema1::FrameStart()
 {
-    // Clears the color buffer (using the previously set color) and depth buffer
     glClearColor(0, 0, 0, 1);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glDisable(GL_DEPTH_TEST);
 
     glm::ivec2 resolution = window->GetResolution();
-    // Sets the screen area where to draw
     glViewport(0, 0, resolution.x, resolution.y);
 }
 
 
 void Tema1::Update(float deltaTimeSeconds)
 {
+    using namespace tema1;
+    std::vector<sprites::SpriteProperties> spriteProps;
+
+    card->update(deltaTimeSeconds);
+    card->getSpriteProperties(spriteProps);
+
+    for (const auto & prop : spriteProps) {
+        RenderMesh2D(prop.mesh, shaders["VertexColor"], prop.modelMatrix);
+    }
 }
 
 

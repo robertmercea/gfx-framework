@@ -1,6 +1,6 @@
 #pragma once
 
-#include "utils/glm_utils.h"
+#include "glm/ext/matrix_float3x3.hpp"
 
 namespace tema1 {
 namespace ui {

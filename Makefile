@@ -801,6 +801,30 @@ src/lab_m1/tema1/entities/card/card.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card.cpp.s
 .PHONY : src/lab_m1/tema1/entities/card/card.cpp.s
 
+src/lab_m1/tema1/entities/card/card_data/card_data.o: src/lab_m1/tema1/entities/card/card_data/card_data.cpp.o
+.PHONY : src/lab_m1/tema1/entities/card/card_data/card_data.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/card/card_data/card_data.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.cpp.o
+.PHONY : src/lab_m1/tema1/entities/card/card_data/card_data.cpp.o
+
+src/lab_m1/tema1/entities/card/card_data/card_data.i: src/lab_m1/tema1/entities/card/card_data/card_data.cpp.i
+.PHONY : src/lab_m1/tema1/entities/card/card_data/card_data.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/card/card_data/card_data.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.cpp.i
+.PHONY : src/lab_m1/tema1/entities/card/card_data/card_data.cpp.i
+
+src/lab_m1/tema1/entities/card/card_data/card_data.s: src/lab_m1/tema1/entities/card/card_data/card_data.cpp.s
+.PHONY : src/lab_m1/tema1/entities/card/card_data/card_data.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/card/card_data/card_data.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.cpp.s
+.PHONY : src/lab_m1/tema1/entities/card/card_data/card_data.cpp.s
+
 src/lab_m1/tema1/entities/card_collection/card_collection.o: src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o
 .PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.o
 
@@ -945,6 +969,30 @@ src/lab_m1/tema1/entities/player/player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.s
 .PHONY : src/lab_m1/tema1/entities/player/player.cpp.s
 
+src/lab_m1/tema1/sprites/card/card_back/card_back.o: src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o
+.PHONY : src/lab_m1/tema1/sprites/card/card_back/card_back.o
+
+# target to build an object file
+src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o
+.PHONY : src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o
+
+src/lab_m1/tema1/sprites/card/card_back/card_back.i: src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.i
+.PHONY : src/lab_m1/tema1/sprites/card/card_back/card_back.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.i
+.PHONY : src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.i
+
+src/lab_m1/tema1/sprites/card/card_back/card_back.s: src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.s
+.PHONY : src/lab_m1/tema1/sprites/card/card_back/card_back.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.s
+.PHONY : src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.s
+
 src/lab_m1/tema1/tema1.o: src/lab_m1/tema1/tema1.cpp.o
 .PHONY : src/lab_m1/tema1/tema1.o
 
@@ -992,6 +1040,30 @@ src/lab_m1/tema1/ui/card/card.s: src/lab_m1/tema1/ui/card/card.cpp.s
 src/lab_m1/tema1/ui/card/card.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.s
 .PHONY : src/lab_m1/tema1/ui/card/card.cpp.s
+
+src/lab_m1/tema1/ui/properties/transformable.o: src/lab_m1/tema1/ui/properties/transformable.cpp.o
+.PHONY : src/lab_m1/tema1/ui/properties/transformable.o
+
+# target to build an object file
+src/lab_m1/tema1/ui/properties/transformable.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o
+.PHONY : src/lab_m1/tema1/ui/properties/transformable.cpp.o
+
+src/lab_m1/tema1/ui/properties/transformable.i: src/lab_m1/tema1/ui/properties/transformable.cpp.i
+.PHONY : src/lab_m1/tema1/ui/properties/transformable.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/ui/properties/transformable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.i
+.PHONY : src/lab_m1/tema1/ui/properties/transformable.cpp.i
+
+src/lab_m1/tema1/ui/properties/transformable.s: src/lab_m1/tema1/ui/properties/transformable.cpp.s
+.PHONY : src/lab_m1/tema1/ui/properties/transformable.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/ui/properties/transformable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.s
+.PHONY : src/lab_m1/tema1/ui/properties/transformable.cpp.s
 
 src/lab_m1/tema1/ui/shape/shape.o: src/lab_m1/tema1/ui/shape/shape.cpp.o
 .PHONY : src/lab_m1/tema1/ui/shape/shape.o
@@ -1182,6 +1254,9 @@ help:
 	@echo "... src/lab_m1/tema1/entities/card/card.o"
 	@echo "... src/lab_m1/tema1/entities/card/card.i"
 	@echo "... src/lab_m1/tema1/entities/card/card.s"
+	@echo "... src/lab_m1/tema1/entities/card/card_data/card_data.o"
+	@echo "... src/lab_m1/tema1/entities/card/card_data/card_data.i"
+	@echo "... src/lab_m1/tema1/entities/card/card_data/card_data.s"
 	@echo "... src/lab_m1/tema1/entities/card_collection/card_collection.o"
 	@echo "... src/lab_m1/tema1/entities/card_collection/card_collection.i"
 	@echo "... src/lab_m1/tema1/entities/card_collection/card_collection.s"
@@ -1200,12 +1275,18 @@ help:
 	@echo "... src/lab_m1/tema1/entities/player/player.o"
 	@echo "... src/lab_m1/tema1/entities/player/player.i"
 	@echo "... src/lab_m1/tema1/entities/player/player.s"
+	@echo "... src/lab_m1/tema1/sprites/card/card_back/card_back.o"
+	@echo "... src/lab_m1/tema1/sprites/card/card_back/card_back.i"
+	@echo "... src/lab_m1/tema1/sprites/card/card_back/card_back.s"
 	@echo "... src/lab_m1/tema1/tema1.o"
 	@echo "... src/lab_m1/tema1/tema1.i"
 	@echo "... src/lab_m1/tema1/tema1.s"
 	@echo "... src/lab_m1/tema1/ui/card/card.o"
 	@echo "... src/lab_m1/tema1/ui/card/card.i"
 	@echo "... src/lab_m1/tema1/ui/card/card.s"
+	@echo "... src/lab_m1/tema1/ui/properties/transformable.o"
+	@echo "... src/lab_m1/tema1/ui/properties/transformable.i"
+	@echo "... src/lab_m1/tema1/ui/properties/transformable.s"
 	@echo "... src/lab_m1/tema1/ui/shape/shape.o"
 	@echo "... src/lab_m1/tema1/ui/shape/shape.i"
 	@echo "... src/lab_m1/tema1/ui/shape/shape.s"

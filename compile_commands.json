@@ -141,6 +141,11 @@
 },
 {
   "directory": "/home/robert/ACS/EGC/gfx-framework",
+  "command": "/usr/bin/c++ -DDEBUG -DGLM_FORCE_SILENT_WARNINGS -DLIBGFXC_EXPORTS -DSOLVED -DWITH_LAB_M1 -D_CRT_SECURE_NO_WARNINGS -I/home/robert/ACS/EGC/gfx-framework/deps/api -I/home/robert/ACS/EGC/gfx-framework/src -I/home/robert/ACS/EGC/gfx-framework/src/lab_m1 -g -fPIE -Wall -Wextra -pedantic -Wno-error -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-missing-field-initializers -Wno-sign-compare -std=gnu++11 -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card/card_data/card_data.cpp",
+  "file": "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card/card_data/card_data.cpp"
+},
+{
+  "directory": "/home/robert/ACS/EGC/gfx-framework",
   "command": "/usr/bin/c++ -DDEBUG -DGLM_FORCE_SILENT_WARNINGS -DLIBGFXC_EXPORTS -DSOLVED -DWITH_LAB_M1 -D_CRT_SECURE_NO_WARNINGS -I/home/robert/ACS/EGC/gfx-framework/deps/api -I/home/robert/ACS/EGC/gfx-framework/src -I/home/robert/ACS/EGC/gfx-framework/src/lab_m1 -g -fPIE -Wall -Wextra -pedantic -Wno-error -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-missing-field-initializers -Wno-sign-compare -std=gnu++11 -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_collection/card_collection.cpp",
   "file": "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_collection/card_collection.cpp"
 },
@@ -171,6 +176,11 @@
 },
 {
   "directory": "/home/robert/ACS/EGC/gfx-framework",
+  "command": "/usr/bin/c++ -DDEBUG -DGLM_FORCE_SILENT_WARNINGS -DLIBGFXC_EXPORTS -DSOLVED -DWITH_LAB_M1 -D_CRT_SECURE_NO_WARNINGS -I/home/robert/ACS/EGC/gfx-framework/deps/api -I/home/robert/ACS/EGC/gfx-framework/src -I/home/robert/ACS/EGC/gfx-framework/src/lab_m1 -g -fPIE -Wall -Wextra -pedantic -Wno-error -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-missing-field-initializers -Wno-sign-compare -std=gnu++11 -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp",
+  "file": "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp"
+},
+{
+  "directory": "/home/robert/ACS/EGC/gfx-framework",
   "command": "/usr/bin/c++ -DDEBUG -DGLM_FORCE_SILENT_WARNINGS -DLIBGFXC_EXPORTS -DSOLVED -DWITH_LAB_M1 -D_CRT_SECURE_NO_WARNINGS -I/home/robert/ACS/EGC/gfx-framework/deps/api -I/home/robert/ACS/EGC/gfx-framework/src -I/home/robert/ACS/EGC/gfx-framework/src/lab_m1 -g -fPIE -Wall -Wextra -pedantic -Wno-error -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-missing-field-initializers -Wno-sign-compare -std=gnu++11 -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/tema1.cpp",
   "file": "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/tema1.cpp"
 },
@@ -178,6 +188,11 @@
   "directory": "/home/robert/ACS/EGC/gfx-framework",
   "command": "/usr/bin/c++ -DDEBUG -DGLM_FORCE_SILENT_WARNINGS -DLIBGFXC_EXPORTS -DSOLVED -DWITH_LAB_M1 -D_CRT_SECURE_NO_WARNINGS -I/home/robert/ACS/EGC/gfx-framework/deps/api -I/home/robert/ACS/EGC/gfx-framework/src -I/home/robert/ACS/EGC/gfx-framework/src/lab_m1 -g -fPIE -Wall -Wextra -pedantic -Wno-error -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-missing-field-initializers -Wno-sign-compare -std=gnu++11 -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/card/card.cpp",
   "file": "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/card/card.cpp"
+},
+{
+  "directory": "/home/robert/ACS/EGC/gfx-framework",
+  "command": "/usr/bin/c++ -DDEBUG -DGLM_FORCE_SILENT_WARNINGS -DLIBGFXC_EXPORTS -DSOLVED -DWITH_LAB_M1 -D_CRT_SECURE_NO_WARNINGS -I/home/robert/ACS/EGC/gfx-framework/deps/api -I/home/robert/ACS/EGC/gfx-framework/src -I/home/robert/ACS/EGC/gfx-framework/src/lab_m1 -g -fPIE -Wall -Wextra -pedantic -Wno-error -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-missing-field-initializers -Wno-sign-compare -std=gnu++11 -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/properties/transformable.cpp",
+  "file": "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/properties/transformable.cpp"
 },
 {
   "directory": "/home/robert/ACS/EGC/gfx-framework",
