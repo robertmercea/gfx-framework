@@ -559,19 +559,19 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/player/player.cpp -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.s
 
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o: src/lab_m1/tema1/sprites/card/card_back/card_back.cpp
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o: src/lab_m1/tema1/sprites/card/card.cpp
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card.cpp
 
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp > CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.i
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card.cpp > CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.i
 
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.s
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card.cpp -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.s
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o: src/lab_m1/tema1/tema1.cpp
@@ -708,7 +708,7 @@ GFXFramework_OBJECTS = \
 "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o" \
 "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o" \
 "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o" \
-"CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o" \
+"CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o" \
 "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o" \
 "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o" \
 "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o" \
@@ -755,7 +755,7 @@ bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/ef
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o
-bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o
+bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o

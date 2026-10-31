@@ -12723,9 +12723,9 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o: src/lab_m
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o: src/lab_m1/tema1/entities/player/player.cpp \
   /usr/include/stdc-predef.h
 
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o: src/lab_m1/tema1/sprites/card/card_back/card_back.cpp \
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o: src/lab_m1/tema1/sprites/card/card.cpp \
   /usr/include/stdc-predef.h \
-  src/lab_m1/tema1/sprites/card/card_back/card_back.hpp \
+  src/lab_m1/tema1/sprites/card/card.hpp \
   src/core/gpu/mesh.h \
   /usr/include/c++/16/string \
   /usr/include/c++/16/bits/requires_hosted.h \
@@ -13214,6 +13214,8 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cp
   deps/api/assimp/anim.h \
   deps/api/assimp/metadata.h \
   src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
+  src/lab_m1/tema1/ui/card/card.hpp \
+  src/lab_m1/tema1/ui/properties/transformable.hpp \
   /usr/include/c++/16/memory \
   /usr/include/c++/16/bits/stl_raw_storage_iter.h \
   /usr/include/c++/16/bits/align.h \
@@ -13228,6 +13230,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cp
   /usr/include/c++/16/bits/atomic_base.h \
   /usr/include/c++/16/bits/atomic_lockfree_defines.h \
   /usr/include/c++/16/backward/auto_ptr.h \
+  src/lab_m1/tema1/ui/globals/colors.hpp \
   src/lab_m1/tema1/ui/shape/shape.hpp \
   src/lab_m1/tema1/ui/transform/transform.hpp
 
@@ -13754,8 +13757,10 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o: src/lab_m1/tema1/tema1
   /usr/include/c++/16/bits/stream_iterator.h \
   src/core/managers/texture_manager.h \
   src/utils/memory_utils.h \
-  src/lab_m1/tema1/sprites/card/card_back/card_back.hpp \
+  src/lab_m1/tema1/sprites/card/card.hpp \
   src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
+  src/lab_m1/tema1/ui/card/card.hpp \
+  src/lab_m1/tema1/ui/properties/transformable.hpp \
   /usr/include/c++/16/memory \
   /usr/include/c++/16/bits/stl_raw_storage_iter.h \
   /usr/include/c++/16/bits/align.h \
@@ -13767,9 +13772,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o: src/lab_m1/tema1/tema1
   /usr/include/c++/16/bits/shared_ptr_atomic.h \
   /usr/include/c++/16/bits/atomic_base.h \
   /usr/include/c++/16/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/16/backward/auto_ptr.h \
-  src/lab_m1/tema1/ui/card/card.hpp \
-  src/lab_m1/tema1/ui/properties/transformable.hpp
+  /usr/include/c++/16/backward/auto_ptr.h
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o: src/lab_m1/tema1/ui/card/card.cpp \
   /usr/include/stdc-predef.h \
@@ -15939,7 +15942,7 @@ src/lab_m1/lab_list.h:
 
 src/lab_m1/tema1/tema1.cpp:
 
-src/lab_m1/tema1/sprites/card/card_back/card_back.hpp:
+src/lab_m1/tema1/sprites/card/card.cpp:
 
 src/lab_m1/tema1/entities/player/player.cpp:
 
@@ -16171,8 +16174,6 @@ src/lab_m1/tema1/ui/shape/shape.hpp:
 
 /usr/include/c++/16/x86_64-redhat-linux/bits/ctype_inline.h:
 
-src/lab_m1/tema1/sprites/card/card_back/card_back.cpp:
-
 /usr/include/c++/16/x86_64-redhat-linux/bits/ctype_base.h:
 
 /usr/include/bits/wctype-wchar.h:
@@ -16238,6 +16239,8 @@ src/core/gpu/vertex_bone_data.h:
 deps/api/glm/mat3x4.hpp:
 
 deps/api/glm/ext/vector_double1_precision.hpp:
+
+src/lab_m1/tema1/sprites/card/card.hpp:
 
 src/lab_m1/tema1/entities/game/game.cpp:
 
@@ -16372,6 +16375,8 @@ deps/api/glm/gtx/quaternion.hpp:
 /usr/include/bits/uintn-identity.h:
 
 deps/api/glm/ext/vector_float2_precision.hpp:
+
+src/lab_m1/tema1/ui/globals/colors.hpp:
 
 /usr/include/c++/16/ctime:
 

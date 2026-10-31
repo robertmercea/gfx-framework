@@ -6,7 +6,7 @@ namespace ui {
 
 Card::Card(CardType type, std::shared_ptr<sprites::Sprite> cardFront,
            std::shared_ptr<sprites::Sprite> cardBack)
-    : type(type), cardFront(cardFront), cardBack(cardBack), frontRender(true) {
+    : frontRender(true), type(type), cardFront(cardFront), cardBack(cardBack) {
   this->defaultScale = glm::vec2(150.0f, 200.0f);
   this->_scale = defaultScale;
 }

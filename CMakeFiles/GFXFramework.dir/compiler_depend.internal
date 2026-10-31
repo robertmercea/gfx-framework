@@ -12758,10 +12758,10 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o
  /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/player/player.cpp
  /usr/include/stdc-predef.h
 
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp.o
- /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card_back/card_back.cpp
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o
+ /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card.cpp
  /usr/include/stdc-predef.h
- /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card_back/card_back.hpp
+ /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card.hpp
  /home/robert/ACS/EGC/gfx-framework/src/core/gpu/mesh.h
  /usr/include/c++/16/string
  /usr/include/c++/16/bits/requires_hosted.h
@@ -13250,6 +13250,8 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cp
  /home/robert/ACS/EGC/gfx-framework/deps/api/assimp/anim.h
  /home/robert/ACS/EGC/gfx-framework/deps/api/assimp/metadata.h
  /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp
+ /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/card/card.hpp
+ /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/properties/transformable.hpp
  /usr/include/c++/16/memory
  /usr/include/c++/16/bits/stl_raw_storage_iter.h
  /usr/include/c++/16/bits/align.h
@@ -13264,6 +13266,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card_back/card_back.cp
  /usr/include/c++/16/bits/atomic_base.h
  /usr/include/c++/16/bits/atomic_lockfree_defines.h
  /usr/include/c++/16/backward/auto_ptr.h
+ /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/globals/colors.hpp
  /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/shape/shape.hpp
  /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/transform/transform.hpp
 
@@ -13791,8 +13794,10 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o
  /usr/include/c++/16/bits/stream_iterator.h
  /home/robert/ACS/EGC/gfx-framework/src/core/managers/texture_manager.h
  /home/robert/ACS/EGC/gfx-framework/src/utils/memory_utils.h
- /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card_back/card_back.hpp
+ /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card.hpp
  /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp
+ /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/card/card.hpp
+ /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/properties/transformable.hpp
  /usr/include/c++/16/memory
  /usr/include/c++/16/bits/stl_raw_storage_iter.h
  /usr/include/c++/16/bits/align.h
@@ -13805,8 +13810,6 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o
  /usr/include/c++/16/bits/atomic_base.h
  /usr/include/c++/16/bits/atomic_lockfree_defines.h
  /usr/include/c++/16/backward/auto_ptr.h
- /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/card/card.hpp
- /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/properties/transformable.hpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o
  /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/card/card.cpp

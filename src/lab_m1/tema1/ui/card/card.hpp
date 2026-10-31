@@ -8,15 +8,16 @@
 namespace tema1 {
 namespace ui {
 
+enum CardType {
+  WIZARD,
+  KNIGHT,
+  MAGE,
+  DWARF,
+  BACK,
+};
+
 class Card : public Transformable {
 public:
-  enum CardType {
-    WIZARD,
-    KNIGHT,
-    MAGE,
-    DWARF,
-  };
-
   static constexpr float MOUSE_ENTER_SCALE_FACTOR = 1.5f;
   static constexpr float MOUSE_LEAVE_SCALE_FACTOR = 0.0f;
 

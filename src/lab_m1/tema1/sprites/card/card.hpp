@@ -2,22 +2,23 @@
 
 #include "core/gpu/mesh.h"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
+#include "tema1/ui/card/card.hpp"
 #include <glm/glm.hpp>
 #include <memory>
 
 namespace tema1 {
 namespace sprites {
 
-class CardBack : public Sprite {
+class Card : public Sprite {
 public:
-  CardBack();
+  Card(tema1::ui::CardType cardType);
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps,
                            const glm::mat3 &modelMatrix);
 
 private:
   std::shared_ptr<Mesh> borderMesh;
   std::shared_ptr<Mesh> innerMesh;
-  std::shared_ptr<Mesh> heartMesh;
+  std::shared_ptr<Mesh> symbolMesh;
 };
 
 } // namespace sprites

@@ -1,5 +1,5 @@
 #include "lab_m1/tema1/tema1.hpp"
-#include "tema1/sprites/card/card_back/card_back.hpp"
+#include "tema1/sprites/card/card.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "tema1/ui/card/card.hpp"
 
@@ -40,15 +40,12 @@ void Tema1::Init()
 
     glm::vec3 corner = glm::vec3(0, 0, 0);
 
-    sprites::CardBack cardBackSprite = sprites::CardBack();
-    auto cardBack = make_shared<sprites::CardBack>(cardBackSprite);
-    auto cardFront = cardBack;
+    auto cardBack = make_shared<sprites::Card>(ui::CardType::DWARF);
+    auto cardFront = make_shared<sprites::Card>(ui::CardType::BACK);
 
-    card = new ui::Card(ui::Card::CardType::KNIGHT, cardFront, cardBack);
-    
+    card = new ui::Card(ui::CardType::MAGE, cardFront, cardBack);
     card->setPosition(glm::vec2(resolution.x / 2.0f, resolution.y / 2.0f));
     card->showFront();
-    card->shake(50000);
 }
 
 
