@@ -10,9 +10,13 @@ Card::Card(globals::CardType cardType, globals::SpriteType spriteType)
     : cardData(cardType), cardUI(cardType, spriteType) {}
 
 void Card::getSpriteProperties(
-    std::vector<sprites::SpriteProperties> &spriteProps) {}
+    std::vector<sprites::SpriteProperties> &spriteProps) {
+    cardUI.getSpriteProperties(spriteProps);
+}
 
-void Card::update(float deltaTime) {}
+void Card::update(float deltaTime) {
+    cardUI.update(deltaTime);
+}
 
 } // namespace entities
 } // namespace tema1
