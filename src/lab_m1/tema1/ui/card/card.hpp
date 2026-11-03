@@ -3,7 +3,6 @@
 #include "tema1/entities/card/card_fwd.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "tema1/ui/properties/transformable.hpp"
-#include "tema1/ui/transform/transform.hpp" // Needed for transform matrices in template
 #include <memory>
 #include <vector>
 
