@@ -6,6 +6,14 @@
 namespace tema1 {
 namespace entities {
 
+enum CardType {
+  WIZARD,
+  KNIGHT,
+  MAGE,
+  DWARF,
+  BACK,
+};
+
 class Card;
 using CardPtr = std::shared_ptr<Card>;
 using CardVector = std::vector<CardPtr>;

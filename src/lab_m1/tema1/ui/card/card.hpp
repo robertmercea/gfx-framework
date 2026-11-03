@@ -1,5 +1,6 @@
 #pragma once
 
+#include "tema1/entities/card/card_fwd.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "tema1/ui/properties/transformable.hpp"
 #include <memory>
@@ -8,13 +9,7 @@
 namespace tema1 {
 namespace ui {
 
-enum CardType {
-  WIZARD,
-  KNIGHT,
-  MAGE,
-  DWARF,
-  BACK,
-};
+using CardType = entities::CardType;
 
 class Card : public Transformable {
 public:

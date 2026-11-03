@@ -1,8 +1,11 @@
 #include "card.hpp"
+#include "tema1/entities/card/card_fwd.hpp"
 #include <cmath>
 
 namespace tema1 {
 namespace ui {
+
+using CardType = entities::CardType;
 
 Card::Card(CardType type, std::shared_ptr<sprites::Sprite> cardFront,
            std::shared_ptr<sprites::Sprite> cardBack)
