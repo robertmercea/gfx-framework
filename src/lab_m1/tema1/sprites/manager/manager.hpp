@@ -1,8 +1,8 @@
 #pragma once
 
+#include "tema1/globals/cards/types/types.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include <memory>
-#include <string>
 #include <unordered_map>
 
 namespace tema1 {
@@ -10,16 +10,18 @@ namespace sprites {
 
 class SpriteManager {
 public:
-  static std::shared_ptr<SpriteManager> getManager();
+  static SpriteManager *getManager();
 
-  std::shared_ptr<Sprite> getSprite(const std::string &key);
-  void addSprite(const std::string &key, std::shared_ptr<Sprite> sprite);
+  std::shared_ptr<Sprite> getSprite(globals::SpriteType key);
+  void addSprite(globals::SpriteType spriteType, std::shared_ptr<Sprite> sprite);
+  void clear();
 
 private:
   SpriteManager() = default;
 
-  static std::shared_ptr<SpriteManager> instance;
-  std::unordered_map<std::string, std::shared_ptr<Sprite>> sprites;
+  static SpriteManager *instance;
+  std::unordered_map<globals::SpriteType, std::shared_ptr<Sprite>> sprites;
+  void init();
 };
 
 } // namespace sprites

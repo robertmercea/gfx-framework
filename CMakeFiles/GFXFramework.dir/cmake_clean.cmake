@@ -71,6 +71,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o.d"
+  "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o"
+  "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o"

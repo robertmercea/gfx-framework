@@ -2,6 +2,7 @@
 
 #include "tema1/entities/card/card_data/card_data.hpp"
 #include "tema1/entities/properties/renderable/renderable.hpp"
+#include "tema1/globals/cards/types/types.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "tema1/ui/card/card.hpp"
 
@@ -10,7 +11,7 @@ namespace entities {
 
 class Card : public entities::Renderable {
 public:
-  Card(globals::CardType cardType);
+  Card(globals::CardType, globals::SpriteType);
 
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps) override;
   void update(float deltaTime) override;

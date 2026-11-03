@@ -1,5 +1,7 @@
 #include "card.hpp"
 #include "tema1/globals/cards/stats/stats.hpp"
+#include "tema1/globals/cards/types/types.hpp"
+#include "tema1/sprites/manager/manager.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "tema1/sprites/shape/heart/heart.hpp"
 #include "tema1/ui/transform/transform.hpp"
@@ -10,12 +12,10 @@
 namespace tema1 {
 namespace ui {
 
-Card::Card(globals::CardType type,
-           std::shared_ptr<sprites::Sprite> cardFront,
-           std::shared_ptr<sprites::Sprite> cardBack)
-    : frontRender(true), type(type), cardFront(cardFront), cardBack(cardBack) {
+Card::Card(globals::CardType cardType, globals::SpriteType spriteType)
+    : frontRender(true), type(cardType), cardFront(fetchSprite(spriteType)), cardBack(fetchSprite(globals::SpriteType::BACK)) {
 
-  this->totalHealth = globals::stats::CARD_PROPERTIES.at(type).health;
+  this->totalHealth = globals::stats::CARD_PROPERTIES.at(cardType).health;
   this->defaultScale = glm::vec2(150.0f, 200.0f);
   this->_scale = defaultScale;
 
@@ -95,6 +95,10 @@ void Card::createHearts(int amount) {
   for (int i = 0; i < amount; i++) {
     healthSprites.push_back(std::make_shared<sprites::Heart>(HEART_RADIUS));
   }
+}
+
+std::shared_ptr<sprites::Sprite> Card::fetchSprite(globals::SpriteType key) {
+  return sprites::SpriteManager::getManager()->getSprite(key);
 }
 
 } // namespace ui

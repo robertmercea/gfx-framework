@@ -14,8 +14,7 @@ public:
   static constexpr float MOUSE_ENTER_SCALE_FACTOR = 1.5f;
   static constexpr float MOUSE_LEAVE_SCALE_FACTOR = 0.0f;
 
-  Card(globals::CardType type, std::shared_ptr<sprites::Sprite> cardFront,
-       std::shared_ptr<sprites::Sprite> cardBack);
+  Card(globals::CardType, globals::SpriteType);
 
   void showFront();
   void showBack();
@@ -38,6 +37,7 @@ private:
   std::shared_ptr<sprites::Sprite> cardFront, cardBack;
   std::vector<std::shared_ptr<sprites::Sprite>> healthSprites, manaCostSprites, attackSprites;
 
+  std::shared_ptr<sprites::Sprite> fetchSprite(globals::SpriteType key);
   void createHearts(int amount);
   void createManaCost(int amount);
   void renderHearts(std::vector<sprites::SpriteProperties> &spriteProps, const glm::mat3 &baseMatrix);

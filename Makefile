@@ -993,6 +993,30 @@ src/lab_m1/tema1/sprites/card/card.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.s
 .PHONY : src/lab_m1/tema1/sprites/card/card.cpp.s
 
+src/lab_m1/tema1/sprites/manager/manager.o: src/lab_m1/tema1/sprites/manager/manager.cpp.o
+.PHONY : src/lab_m1/tema1/sprites/manager/manager.o
+
+# target to build an object file
+src/lab_m1/tema1/sprites/manager/manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o
+.PHONY : src/lab_m1/tema1/sprites/manager/manager.cpp.o
+
+src/lab_m1/tema1/sprites/manager/manager.i: src/lab_m1/tema1/sprites/manager/manager.cpp.i
+.PHONY : src/lab_m1/tema1/sprites/manager/manager.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/sprites/manager/manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.i
+.PHONY : src/lab_m1/tema1/sprites/manager/manager.cpp.i
+
+src/lab_m1/tema1/sprites/manager/manager.s: src/lab_m1/tema1/sprites/manager/manager.cpp.s
+.PHONY : src/lab_m1/tema1/sprites/manager/manager.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/sprites/manager/manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.s
+.PHONY : src/lab_m1/tema1/sprites/manager/manager.cpp.s
+
 src/lab_m1/tema1/sprites/properties/sprite/sprite.o: src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o
 .PHONY : src/lab_m1/tema1/sprites/properties/sprite/sprite.o
 
@@ -1326,6 +1350,9 @@ help:
 	@echo "... src/lab_m1/tema1/sprites/card/card.o"
 	@echo "... src/lab_m1/tema1/sprites/card/card.i"
 	@echo "... src/lab_m1/tema1/sprites/card/card.s"
+	@echo "... src/lab_m1/tema1/sprites/manager/manager.o"
+	@echo "... src/lab_m1/tema1/sprites/manager/manager.i"
+	@echo "... src/lab_m1/tema1/sprites/manager/manager.s"
 	@echo "... src/lab_m1/tema1/sprites/properties/sprite/sprite.o"
 	@echo "... src/lab_m1/tema1/sprites/properties/sprite/sprite.i"
 	@echo "... src/lab_m1/tema1/sprites/properties/sprite/sprite.s"

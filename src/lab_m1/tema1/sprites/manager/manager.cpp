@@ -1,25 +1,43 @@
 #include "manager.hpp"
+#include "tema1/globals/cards/types/types.hpp"
+#include "tema1/sprites/card/card.hpp"
+#include <memory>
 
 namespace tema1 {
 namespace sprites {
 
-std::shared_ptr<SpriteManager> SpriteManager::instance = nullptr;
+SpriteManager *SpriteManager::instance = nullptr;
 
-std::shared_ptr<SpriteManager> SpriteManager::getManager() {
+SpriteManager *SpriteManager::getManager() {
   if (!instance) {
-    instance = std::shared_ptr<SpriteManager>(new SpriteManager());
+    instance = new SpriteManager();
+    instance->init();
   }
 
   return instance;
 }
 
-std::shared_ptr<Sprite> SpriteManager::getSprite(const std::string &key) {
+std::shared_ptr<Sprite> SpriteManager::getSprite(globals::SpriteType key) {
   return sprites.at(key);
 }
 
-void SpriteManager::addSprite(const std::string &key,
+void SpriteManager::addSprite(globals::SpriteType spriteType,
                               std::shared_ptr<Sprite> sprite) {
-  sprites[key] = sprite;
+  sprites[spriteType] = sprite;
+}
+
+void SpriteManager::init() {
+  using SpriteType = globals::SpriteType;
+
+  sprites[SpriteType::WIZARD] = std::make_shared<sprites::Card>(globals::CardType::WIZARD);
+  sprites[SpriteType::KNIGHT] = std::make_shared<sprites::Card>(globals::CardType::KNIGHT);
+  sprites[SpriteType::MAGE] = std::make_shared<sprites::Card>(globals::CardType::MAGE);
+  sprites[SpriteType::DWARF] = std::make_shared<sprites::Card>(globals::CardType::DWARF);
+  sprites[SpriteType::BACK] = std::make_shared<sprites::Card>(globals::CardType::BACK);
+}
+
+void SpriteManager::clear() {
+  sprites.clear();
 }
 
 } // namespace sprites

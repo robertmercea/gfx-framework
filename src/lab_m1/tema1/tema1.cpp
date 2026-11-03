@@ -1,9 +1,11 @@
 #include "lab_m1/tema1/tema1.hpp"
-#include "tema1/sprites/card/card.hpp"
+#include "tema1/globals/cards/types/types.hpp"
+#include "tema1/sprites/manager/manager.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "tema1/ui/card/card.hpp"
 
 #include <vector>
+#include <iostream>
 
 using namespace std;
 using namespace m1;
@@ -20,12 +22,12 @@ Tema1::Tema1()
 }
 
 
+tema1::ui::Card *card;
 Tema1::~Tema1()
 {
 }
 
 
-tema1::ui::Card *card;
 void Tema1::Init()
 {
     using namespace tema1;
@@ -40,12 +42,9 @@ void Tema1::Init()
 
     glm::vec3 corner = glm::vec3(0, 0, 0);
 
-    auto cardBack = make_shared<sprites::Card>(globals::CardType::BACK);
-    auto cardFront = make_shared<sprites::Card>(globals::CardType::DWARF);
-
-    card = new ui::Card(globals::CardType::MAGE, cardFront, cardBack);
+    card = new ui::Card(globals::CardType::WIZARD, globals::SpriteType::WIZARD);
     card->setPosition(glm::vec2(resolution.x / 2.0f, resolution.y / 2.0f));
-    card->showFront();
+    card->showBack();
 }
 
 
