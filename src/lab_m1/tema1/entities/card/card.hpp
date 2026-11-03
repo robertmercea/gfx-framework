@@ -1,6 +1,5 @@
 #pragma once
 
-// WARNING: including card_fwd.hpp might be useful in the future
 #include "tema1/entities/card/card_data/card_data.hpp"
 #include "tema1/entities/properties/renderable/renderable.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
@@ -11,6 +10,8 @@ namespace entities {
 
 class Card : public entities::Renderable {
 public:
+  Card(globals::CardType cardType);
+
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps) override;
   void update(float deltaTime) override;
 private:

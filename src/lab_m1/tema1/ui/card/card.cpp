@@ -1,5 +1,5 @@
 #include "card.hpp"
-#include "tema1/entities/card/card_fwd.hpp"
+#include "tema1/globals/cards/stats/stats.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "tema1/sprites/shape/heart/heart.hpp"
 #include "tema1/ui/transform/transform.hpp"
@@ -10,17 +10,16 @@
 namespace tema1 {
 namespace ui {
 
-using CardType = entities::CardType;
-
-Card::Card(CardType type, int health, int manaCost, int attack,
+Card::Card(globals::CardType type,
            std::shared_ptr<sprites::Sprite> cardFront,
            std::shared_ptr<sprites::Sprite> cardBack)
     : frontRender(true), type(type), cardFront(cardFront), cardBack(cardBack) {
-  this->totalHealth = health;
+
+  this->totalHealth = globals::stats::CARD_PROPERTIES.at(type).health;
   this->defaultScale = glm::vec2(150.0f, 200.0f);
   this->_scale = defaultScale;
 
-  createHearts(health);
+  createHearts(this->totalHealth);
 }
 
 void Card::showFront() { frontRender = true; }

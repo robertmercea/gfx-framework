@@ -1,8 +1,8 @@
 #pragma once
 
 #include "core/gpu/mesh.h"
+#include "tema1/globals/cards/types/types.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
-#include "tema1/ui/card/card.hpp"
 #include <glm/glm.hpp>
 #include <memory>
 
@@ -11,7 +11,7 @@ namespace sprites {
 
 class Card : public Sprite {
 public:
-  Card(tema1::ui::CardType cardType);
+  Card(globals::CardType cardType);
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps,
                            const glm::mat3 &modelMatrix);
 

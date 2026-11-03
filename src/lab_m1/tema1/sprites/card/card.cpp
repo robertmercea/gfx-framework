@@ -1,5 +1,5 @@
 #include "tema1/sprites/card/card.hpp"
-#include "tema1/ui/card/card.hpp"
+#include "tema1/globals/cards/types/types.hpp"
 #include "tema1/ui/globals/colors.hpp"
 #include "tema1/ui/shape/shape.hpp"
 #include "tema1/ui/transform/transform.hpp"
@@ -7,8 +7,9 @@
 namespace tema1 {
 namespace sprites {
 
-Card::Card(ui::CardType cardType) {
+Card::Card(globals::CardType cardType) {
     using namespace ui;
+    using CardType = globals::CardType;
     borderMesh = std::shared_ptr<Mesh>(
         ui::shape::createSquare("border", 1.0f, colors::WHITE));
 
