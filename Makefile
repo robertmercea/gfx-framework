@@ -993,6 +993,54 @@ src/lab_m1/tema1/sprites/card/card.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.s
 .PHONY : src/lab_m1/tema1/sprites/card/card.cpp.s
 
+src/lab_m1/tema1/sprites/properties/sprite/sprite.o: src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o
+.PHONY : src/lab_m1/tema1/sprites/properties/sprite/sprite.o
+
+# target to build an object file
+src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o
+.PHONY : src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o
+
+src/lab_m1/tema1/sprites/properties/sprite/sprite.i: src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.i
+.PHONY : src/lab_m1/tema1/sprites/properties/sprite/sprite.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.i
+.PHONY : src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.i
+
+src/lab_m1/tema1/sprites/properties/sprite/sprite.s: src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.s
+.PHONY : src/lab_m1/tema1/sprites/properties/sprite/sprite.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.s
+.PHONY : src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.s
+
+src/lab_m1/tema1/sprites/shape/heart/heart.o: src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o
+.PHONY : src/lab_m1/tema1/sprites/shape/heart/heart.o
+
+# target to build an object file
+src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o
+.PHONY : src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o
+
+src/lab_m1/tema1/sprites/shape/heart/heart.i: src/lab_m1/tema1/sprites/shape/heart/heart.cpp.i
+.PHONY : src/lab_m1/tema1/sprites/shape/heart/heart.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/sprites/shape/heart/heart.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.i
+.PHONY : src/lab_m1/tema1/sprites/shape/heart/heart.cpp.i
+
+src/lab_m1/tema1/sprites/shape/heart/heart.s: src/lab_m1/tema1/sprites/shape/heart/heart.cpp.s
+.PHONY : src/lab_m1/tema1/sprites/shape/heart/heart.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/sprites/shape/heart/heart.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.s
+.PHONY : src/lab_m1/tema1/sprites/shape/heart/heart.cpp.s
+
 src/lab_m1/tema1/tema1.o: src/lab_m1/tema1/tema1.cpp.o
 .PHONY : src/lab_m1/tema1/tema1.o
 
@@ -1278,6 +1326,12 @@ help:
 	@echo "... src/lab_m1/tema1/sprites/card/card.o"
 	@echo "... src/lab_m1/tema1/sprites/card/card.i"
 	@echo "... src/lab_m1/tema1/sprites/card/card.s"
+	@echo "... src/lab_m1/tema1/sprites/properties/sprite/sprite.o"
+	@echo "... src/lab_m1/tema1/sprites/properties/sprite/sprite.i"
+	@echo "... src/lab_m1/tema1/sprites/properties/sprite/sprite.s"
+	@echo "... src/lab_m1/tema1/sprites/shape/heart/heart.o"
+	@echo "... src/lab_m1/tema1/sprites/shape/heart/heart.i"
+	@echo "... src/lab_m1/tema1/sprites/shape/heart/heart.s"
 	@echo "... src/lab_m1/tema1/tema1.o"
 	@echo "... src/lab_m1/tema1/tema1.i"
 	@echo "... src/lab_m1/tema1/tema1.s"

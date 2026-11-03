@@ -20,7 +20,7 @@ Card::Card(ui::CardType cardType) {
         innerColor = colors::ORANGE;
         symbolColor = colors::RED;
         symbolMesh = std::shared_ptr<Mesh>(
-            ui::shape::createHeart("heart", 0.03f, symbolColor));
+            ui::shape::createHeart("heart", 0.35f, symbolColor));
         break;
     case CardType::KNIGHT:
         innerColor = colors::RED;
@@ -49,6 +49,8 @@ Card::Card(ui::CardType cardType) {
 
     innerMesh = std::shared_ptr<Mesh>(
         ui::shape::createSquare("inner", 1.0f, innerColor));
+
+    dimensions.x = dimensions.y = 1.0f;
 }
 
 void Card::getSpriteProperties(std::vector<sprites::SpriteProperties>& spriteProps, const glm::mat3& modelMatrix) {

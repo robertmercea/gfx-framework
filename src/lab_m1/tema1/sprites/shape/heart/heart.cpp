@@ -1,19 +1,19 @@
 #include "tema1/sprites/shape/heart/heart.hpp"
 #include "tema1/ui/globals/colors.hpp"
 #include "tema1/ui/shape/shape.hpp"
+#include <iostream>
 
 namespace tema1 {
 namespace sprites {
 
-Heart::Heart() {
+Heart::Heart(float radius) {
   heartMesh = std::shared_ptr<Mesh>(
-      ui::shape::createHeart("heart", DEFAULT_HEART_RADIUS, ui::colors::RED));
+      ui::shape::createHeart("heart", radius, ui::colors::RED));
+  dimensions.x = radius * 1.00f;
+  dimensions.y = radius * 0.9375f;
 }
 
-Heart::Heart(float radius) {
-heartMesh = std::shared_ptr<Mesh>(
-      ui::shape::createHeart("heart", radius, ui::colors::RED));
-}
+Heart::Heart() : Heart(DEFAULT_HEART_RADIUS) {}
 
 void Heart::getSpriteProperties(std::vector<SpriteProperties> &spriteProps,
                                 const glm::mat3 &modelMatrix) {
@@ -23,7 +23,7 @@ void Heart::getSpriteProperties(std::vector<SpriteProperties> &spriteProps,
     props.mesh = heartMesh.get();
     spriteProps.push_back(props);
   } else {
-    printf("no heart mesh\n");
+    std::cerr << "Missing heart mesh\n";
   }
 }
 

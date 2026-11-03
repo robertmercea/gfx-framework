@@ -56,11 +56,11 @@ Mesh *createHeart(const std::string name, float scale, const glm::vec3 color) {
   using namespace std;
 
   const int NUM_VERTICES = 1 << 6;
-  const float SCALING_CONSTANT_X = 16.f;
-  const float SCALING_CONSTANT_Y = 13.f;
   vector<VertexFormat> vertices;
   vector<unsigned int> indices;
   double deltaTheta = 2 * M_PI / NUM_VERTICES;
+
+  const double NORMALIZATION_FACTOR = 1.0 / 32.0;
 
   // origin
   vertices.push_back(
@@ -68,15 +68,19 @@ Mesh *createHeart(const std::string name, float scale, const glm::vec3 color) {
 
   for (int i = 0; i < NUM_VERTICES; i++) {
     double theta = i * deltaTheta;
-    double x = SCALING_CONSTANT_X * pow(sin(theta), 3);
-    double y = SCALING_CONSTANT_Y * cos(theta) - 5 * cos(2 * theta) - 2 * cos(3 * theta) - cos(4 * theta);
+    
+    double rawX = 16 * pow(sin(theta), 3);
+    double rawY = 13 * cos(theta) - 5 * cos(2 * theta) - 2 * cos(3 * theta) - cos(4 * theta);
+
+    double x = rawX * NORMALIZATION_FACTOR * scale;
+    double y = rawY * NORMALIZATION_FACTOR * scale;
 
     vertices.push_back(
-        VertexFormat(glm::vec3(scale * x, scale * y, 0),
+        VertexFormat(glm::vec3(x, y, 0),
                      color, VERTEX_NORMAL));
   }
 
-  // actual circle
+  // actual heart triangles
   for (int i = 1; i <= NUM_VERTICES; i++) {
     indices.push_back(0);
     indices.push_back((i % NUM_VERTICES) + 1);

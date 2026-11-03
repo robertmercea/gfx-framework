@@ -17,7 +17,7 @@ public:
   void getSpriteProperties(std::vector<SpriteProperties> &spriteProps,
                            const glm::mat3 &modelMatrix) override;
 private:
-  const float DEFAULT_HEART_RADIUS = 0.2f;
+  static constexpr float DEFAULT_HEART_RADIUS = 0.2f;
   std::shared_ptr<Mesh> heartMesh;
 };
 

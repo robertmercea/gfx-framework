@@ -40,10 +40,10 @@ void Tema1::Init()
 
     glm::vec3 corner = glm::vec3(0, 0, 0);
 
-    auto cardBack = make_shared<sprites::Card>(ui::CardType::DWARF);
-    auto cardFront = make_shared<sprites::Card>(ui::CardType::BACK);
+    auto cardBack = make_shared<sprites::Card>(ui::CardType::BACK);
+    auto cardFront = make_shared<sprites::Card>(ui::CardType::DWARF);
 
-    card = new ui::Card(ui::CardType::MAGE, cardFront, cardBack);
+    card = new ui::Card(ui::CardType::MAGE, 3, 3, 1, cardFront, cardBack);
     card->setPosition(glm::vec2(resolution.x / 2.0f, resolution.y / 2.0f));
     card->showFront();
 }
