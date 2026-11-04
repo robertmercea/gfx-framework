@@ -1,6 +1,7 @@
 #include "lab_m1/tema1/tema1.hpp"
+#include "tema1/entities/card/card.hpp"
+#include "tema1/entities/card_collection/card_collection.hpp"
 #include "tema1/globals/cards/types/types.hpp"
-#include "tema1/sprites/manager/manager.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "tema1/ui/card/card.hpp"
 
@@ -22,7 +23,10 @@ Tema1::Tema1()
 }
 
 
-tema1::ui::Card *card;
+std::shared_ptr<tema1::entities::Card> card1, card2, card3;
+tema1::entities::Card *cardComponent;
+tema1::entities::CardCollection *cardCollection;
+
 Tema1::~Tema1()
 {
 }
@@ -42,9 +46,16 @@ void Tema1::Init()
 
     glm::vec3 corner = glm::vec3(0, 0, 0);
 
-    card = new ui::Card(globals::CardType::WIZARD, globals::SpriteType::WIZARD);
-    card->setPosition(glm::vec2(resolution.x / 2.0f, resolution.y / 2.0f));
-    card->showBack();
+    card1 = std::make_shared<entities::Card>(globals::CardType::WIZARD, globals::SpriteType::WIZARD);
+    card1->cardUI.setPosition(glm::vec2(resolution.x / 2.0f, resolution.y / 2.0f));
+
+    card2 = std::make_shared<entities::Card>(globals::CardType::DWARF, globals::SpriteType::DWARF);
+    card2->cardUI.setPosition(glm::vec2(resolution.x / 2.0f + 300.f, resolution.y / 2.0f));
+
+    cardCollection = new entities::CardCollection();
+    cardCollection->pushCard(card1);
+    cardCollection->pushCard(card2);
+    cardCollection->setRenderMode(entities::RenderMode::ENEMY);
 }
 
 
@@ -64,8 +75,7 @@ void Tema1::Update(float deltaTimeSeconds)
     using namespace tema1;
     std::vector<sprites::SpriteProperties> spriteProps;
 
-    card->update(deltaTimeSeconds);
-    card->getSpriteProperties(spriteProps);
+    cardCollection->getSpriteProperties(spriteProps);
 
     for (const auto & prop : spriteProps) {
         RenderMesh2D(prop.mesh, shaders["VertexColor"], prop.modelMatrix);

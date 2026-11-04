@@ -23,10 +23,10 @@ void CardCollection::getSpriteProperties(std::vector<sprites::SpriteProperties> 
 
 void CardCollection::setRenderMode(RenderMode mode) {
   switch (mode) {
-    case PLAYER:
+    case tema1::entities::RenderMode::PLAYER:
       setCardRenderMode(true);
       break;
-    case ENEMY:
+    case tema1::entities::RenderMode::ENEMY:
       setCardRenderMode(false);
       break;
     default:

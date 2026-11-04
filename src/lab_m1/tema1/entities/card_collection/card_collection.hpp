@@ -4,7 +4,7 @@
 namespace tema1 {
 namespace entities {
 
-enum RenderMode {
+enum class RenderMode {
   PLAYER,
   ENEMY,
 };
