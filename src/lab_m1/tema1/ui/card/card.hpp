@@ -29,6 +29,8 @@ public:
 
 private:
   const float HEART_RADIUS = 0.15f;
+  const float MANA_SIZE = 0.1f;
+  const float SWORD_SIZE = 0.2f;
   int totalHealth;
   bool frontRender;
   float shakeAmount = 0.f;
@@ -39,10 +41,14 @@ private:
   std::vector<std::shared_ptr<sprites::Sprite>> healthSprites, manaCostSprites, attackSprites;
 
   std::shared_ptr<sprites::Sprite> fetchSprite(globals::SpriteType key);
+
   void createHearts(int amount);
   void createManaCost(int amount);
+  void createAttack(int amount);
+
   void renderHearts(std::vector<sprites::SpriteProperties> &spriteProps, const glm::mat3 &baseMatrix);
   void renderManaCost(std::vector<sprites::SpriteProperties> &spriteProps, const glm::mat3 &baseMatrix);
+  void renderAttack(std::vector<sprites::SpriteProperties> &spriteProps, const glm::mat3 &baseMatrix);
 
 };
 
