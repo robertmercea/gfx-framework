@@ -1,4 +1,5 @@
 #include "tema1/entities/card/card_fwd.hpp"
+#include "tema1/sprites/properties/sprite/sprite.hpp"
 
 namespace tema1 {
 namespace entities {
@@ -10,14 +11,14 @@ enum RenderMode {
 
 class CardCollection {
 public:
-  CardPtr drawCard();
-  void orderCards();
-  void render();
+  CardPtr drawTopCard();
+  void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps);
   void setRenderMode(RenderMode mode);
-  void addCard(const CardPtr card);
+  void pushCard(const CardPtr card);
   CardVectorPtr getCards();
 
 private:
+  void setCardRenderMode(bool showFront);
   CardVector cards;
 };
 
