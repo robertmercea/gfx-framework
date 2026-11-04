@@ -7,16 +7,7 @@ namespace tema1 {
 namespace entities {
 
 Card::Card(globals::CardType cardType, globals::SpriteType spriteType)
-    : cardData(cardType), cardUI(cardType, spriteType) {}
-
-void Card::getSpriteProperties(
-    std::vector<sprites::SpriteProperties> &spriteProps) {
-    cardUI.getSpriteProperties(spriteProps);
-}
-
-void Card::update(float deltaTime) {
-    cardUI.update(deltaTime);
-}
+    : cardUI(cardType, spriteType), cardData(cardType)  {}
 
 } // namespace entities
 } // namespace tema1
