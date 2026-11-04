@@ -21,8 +21,7 @@ public:
   void showBack();
   void flip();
   void shake(float amount);
-  void onMouseEnter();
-  void onMouseLeave();
+  void onMouseMove(float mouseX, float mouseY);
   void update(float deltaTime);
 
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps);
@@ -31,11 +30,14 @@ private:
   const float HEART_RADIUS = 0.15f;
   const float MANA_SIZE = 0.1f;
   const float SWORD_SIZE = 0.2f;
+
   int totalHealth;
   bool frontRender;
   float shakeAmount = 0.f;
   float scaleAmount = 0.f;
+
   glm::vec2 defaultScale;
+
   globals::CardType type;
   std::shared_ptr<sprites::Sprite> cardFront, cardBack;
   std::vector<std::shared_ptr<sprites::Sprite>> healthSprites, manaCostSprites, attackSprites;
@@ -50,6 +52,7 @@ private:
   void renderManaCost(std::vector<sprites::SpriteProperties> &spriteProps, const glm::mat3 &baseMatrix);
   void renderAttack(std::vector<sprites::SpriteProperties> &spriteProps, const glm::mat3 &baseMatrix);
 
+  bool contains(float x, float y);
 };
 
 } // namespace ui

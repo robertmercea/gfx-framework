@@ -40,8 +40,14 @@ void Card::showFront() { frontRender = true; }
 void Card::showBack() { frontRender = false; }
 void Card::flip() { frontRender = !frontRender; }
 void Card::shake(float amount) { shakeAmount = amount; }
-void Card::onMouseEnter() { scaleAmount = MOUSE_ENTER_SCALE_FACTOR; }
-void Card::onMouseLeave() { scaleAmount = MOUSE_LEAVE_SCALE_FACTOR; }
+
+void Card::onMouseMove(float mouseX, float mouseY) {
+  if (!contains(mouseX, mouseY)) {
+    return;
+  }
+
+  // TODO: mouseEnter/mouseLeave handlers
+}
 
 void Card::update(float deltaTime) {
   if (std::abs(scaleAmount) > 0) {
@@ -103,22 +109,22 @@ void Card::createAttack(int amount) {
 
 void Card::renderHearts(std::vector<sprites::SpriteProperties> &spriteProps,
                         const glm::mat3 &baseMatrix) {
-  if (healthSprites.empty()) {
-    std::cerr << "Card health sprites are empty!\n";
-    return;
-  }
+  if (healthSprites.empty()) return;
 
   float statWidth = healthSprites[0]->width();
   float statHeight = healthSprites[0]->height();
-
   float spacingMultiplier = 1.25f;
   float stepX = statWidth * spacingMultiplier;
   float stepY = -statHeight * spacingMultiplier;
 
-  float startX = -cardFront->width() / 2.0f;
-  float startY = cardFront->height() / 2.0f;
+  float paddingX = (statWidth / 2.0f) + 0.10f;
+  float paddingY = (statHeight / 2.0f) + 0.10f;
 
-  int maxPerRow = std::max(1, (int)(cardFront->width() / stepX));
+  float startX = -cardFront->width() / 2.0f + paddingX;
+  float startY = cardFront->height() / 2.0f - paddingY;
+
+  float availableWidth = cardFront->width() - (2.0f * paddingX);
+  int maxPerRow = std::max(1, (int)(availableWidth / stepX));
 
   for (size_t i = 0; i < healthSprites.size(); ++i) {
     int column = i % maxPerRow;
@@ -127,46 +133,44 @@ void Card::renderHearts(std::vector<sprites::SpriteProperties> &spriteProps,
     float offsetX = startX + (column * stepX);
     float offsetY = startY + (row * stepY);
 
-    glm::mat3 statMatrix = baseMatrix;
-    statMatrix *= ui::transform::translate(offsetX, offsetY);
-
+    glm::mat3 statMatrix = baseMatrix * ui::transform::translate(offsetX, offsetY);
     healthSprites[i]->getSpriteProperties(spriteProps, statMatrix);
   }
 }
 
-// renders the mana cost horizontally, with negative wrap-around, from under
-// the hearts
 void Card::renderManaCost(std::vector<sprites::SpriteProperties> &spriteProps,
                           const glm::mat3 &baseMatrix) {
-  if (manaCostSprites.empty()) {
-    std::cerr << "Card mana sprites are empty!\n";
-    return;
-  }
+  if (manaCostSprites.empty()) return;
 
+  float statWidth = manaCostSprites[0]->width();
+  float statHeight = manaCostSprites[0]->height();
   float spacingMultiplier = 1.25f;
-  float startX = -cardFront->width() / 2.0f;
-  float startY = cardFront->height() / 2.0f;
+  float stepX = statWidth * spacingMultiplier;
+  float stepY = -statHeight * spacingMultiplier;
 
-  // render after last hearts
+  float paddingX = (statWidth / 2.0f) + 0.10f;
+  float paddingY = (statHeight / 2.0f) + 0.10f;
+
+  float startX = -cardFront->width() / 2.0f + paddingX;
+  float startY = cardFront->height() / 2.0f - paddingY;
+
   if (!healthSprites.empty()) {
     float heartWidth = healthSprites[0]->width();
     float heartHeight = healthSprites[0]->height();
     float heartStepX = heartWidth * spacingMultiplier;
     float heartStepY = -heartHeight * spacingMultiplier;
 
-    int heartMaxPerRow = std::max(1, (int)(cardFront->width() / heartStepX));
+    float hPaddingX = (heartWidth / 2.0f) + 0.05f;
+    float availableWidth = cardFront->width() - (2.0f * hPaddingX);
+
+    int heartMaxPerRow = std::max(1, (int)(availableWidth / heartStepX));
     int heartRows = ((int)healthSprites.size() - 1) / heartMaxPerRow + 1;
 
     startY += heartRows * heartStepY;
   }
 
-  float statWidth = manaCostSprites[0]->width();
-  float statHeight = manaCostSprites[0]->height();
-
-  float stepX = statWidth * spacingMultiplier;
-  float stepY = -statHeight * spacingMultiplier;
-
-  int maxPerRow = std::max(1, (int)(cardFront->width() / stepX));
+  float availableWidth = cardFront->width() - (2.0f * paddingX);
+  int maxPerRow = std::max(1, (int)(availableWidth / stepX));
 
   for (size_t i = 0; i < manaCostSprites.size(); ++i) {
     int column = i % maxPerRow;
@@ -175,33 +179,29 @@ void Card::renderManaCost(std::vector<sprites::SpriteProperties> &spriteProps,
     float offsetX = startX + (column * stepX);
     float offsetY = startY + (row * stepY);
 
-    glm::mat3 statMatrix = baseMatrix;
-    statMatrix *= ui::transform::translate(offsetX, offsetY);
-
+    glm::mat3 statMatrix = baseMatrix * ui::transform::translate(offsetX, offsetY);
     manaCostSprites[i]->getSpriteProperties(spriteProps, statMatrix);
   }
 }
 
-// renders swords horizontally, from the bottom-left corner, with positive
-// wrap-around
 void Card::renderAttack(std::vector<sprites::SpriteProperties> &spriteProps,
                         const glm::mat3 &baseMatrix) {
-  if (attackSprites.empty()) {
-    std::cerr << "Card attack sprites are empty!\n";
-    return;
-  }
+  if (attackSprites.empty()) return;
 
   float statWidth = attackSprites[0]->width();
   float statHeight = attackSprites[0]->height();
-
   float spacingMultiplier = 1.25f;
   float stepX = statWidth * spacingMultiplier;
-  float stepY = statHeight * spacingMultiplier;
+  float stepY = statHeight * spacingMultiplier; // Positive moves upwards
 
-  float startX = -cardFront->width() / 2.0f;
-  float startY = -cardFront->height() / 2.0f;
+  float paddingX = (statWidth / 2.0f) + 0.10f;
+  float paddingY = (statHeight / 2.0f) + 0.10f;
 
-  int maxPerRow = std::max(1, (int)(cardFront->width() / stepX));
+  float startX = -cardFront->width() / 2.0f + paddingX;
+  float startY = -cardFront->height() / 2.0f + paddingY;
+
+  float availableWidth = cardFront->width() - (2.0f * paddingX);
+  int maxPerRow = std::max(1, (int)(availableWidth / stepX));
 
   for (size_t i = 0; i < attackSprites.size(); ++i) {
     int column = i % maxPerRow;
@@ -210,15 +210,24 @@ void Card::renderAttack(std::vector<sprites::SpriteProperties> &spriteProps,
     float offsetX = startX + (column * stepX);
     float offsetY = startY + (row * stepY);
 
-    glm::mat3 statMatrix = baseMatrix;
-    statMatrix *= ui::transform::translate(offsetX, offsetY);
-
+    glm::mat3 statMatrix = baseMatrix * ui::transform::translate(offsetX, offsetY);
     attackSprites[i]->getSpriteProperties(spriteProps, statMatrix);
   }
 }
 
 std::shared_ptr<sprites::Sprite> Card::fetchSprite(globals::SpriteType key) {
   return sprites::SpriteManager::getManager()->getSprite(key);
+}
+
+bool Card::contains(float x, float y) {
+  const float x0 = _position.x;
+  const float y0 = _position.y;
+  const float w = cardFront->width() * std::abs(_scale.x);
+  const float h = cardFront->height() * std::abs(_scale.y);
+
+  return
+    x0 - w / 2. <= x && x <= x0 + w / 2. &&
+    y0 - h / 2. <= y && y <= y0 + h / 2.;
 }
 
 } // namespace ui
