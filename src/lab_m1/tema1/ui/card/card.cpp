@@ -13,7 +13,8 @@ namespace tema1 {
 namespace ui {
 
 Card::Card(globals::CardType cardType, globals::SpriteType spriteType)
-    : frontRender(true), type(cardType), cardFront(fetchSprite(spriteType)), cardBack(fetchSprite(globals::SpriteType::BACK)) {
+    : frontRender(true), type(cardType), cardFront(fetchSprite(spriteType)),
+      cardBack(fetchSprite(globals::SpriteType::BACK)) {
 
   this->totalHealth = globals::stats::CARD_PROPERTIES.at(cardType).health;
   this->defaultScale = glm::vec2(150.0f, 200.0f);
@@ -22,6 +23,13 @@ Card::Card(globals::CardType cardType, globals::SpriteType spriteType)
   createHearts(this->totalHealth);
 }
 
+void Card::showFront(bool show) {
+  if (show) {
+    showFront();
+  } else {
+    showBack();
+  }
+}
 void Card::showFront() { frontRender = true; }
 void Card::showBack() { frontRender = false; }
 void Card::flip() { frontRender = !frontRender; }

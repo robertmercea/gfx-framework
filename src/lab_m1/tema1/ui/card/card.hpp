@@ -16,6 +16,7 @@ public:
 
   Card(globals::CardType, globals::SpriteType);
 
+  void showFront(bool show);
   void showFront();
   void showBack();
   void flip();
@@ -42,6 +43,7 @@ private:
   void createManaCost(int amount);
   void renderHearts(std::vector<sprites::SpriteProperties> &spriteProps, const glm::mat3 &baseMatrix);
   void renderManaCost(std::vector<sprites::SpriteProperties> &spriteProps, const glm::mat3 &baseMatrix);
+
 };
 
 } // namespace ui
