@@ -11,7 +11,7 @@ Mesh *createSquare(const std::string name, float length, const glm::vec3 color);
 Mesh *createCircle(const std::string name, float radius, const glm::vec3 color);
 Mesh *createTriangle(const std::string name, float length, const glm::vec3 color);
 
-Mesh *createSword();
+Mesh *createSword(const std::string name, float scale, const glm::vec3 color);
 Mesh *createHeart(const std::string name, float radius, const glm::vec3 color);
 Mesh *createStar();
 Mesh *createSpell();

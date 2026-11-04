@@ -50,7 +50,51 @@ Mesh *createTriangle(const std::string name, float length, const glm::vec3 color
   return createNgon(name, 3, M_PI / 2, length, color);
 }
 
-Mesh *createSword();
+Mesh *createSword(const std::string name, float scale, const glm::vec3 color) {
+  using namespace std;
+
+  const int NUM_VERTICES = 1 << 6;
+  vector<VertexFormat> vertices;
+  vector<unsigned int> indices;
+  double deltaTheta = 2 * M_PI / NUM_VERTICES;
+
+  const double a = 2.0;
+  const double b = 0.6;
+  const double c = 1.35;
+  const double n = 1.0;
+  const double m = 6.0;
+
+  const double NORMALIZATION_FACTOR = 1.0 / 5.26;
+
+  // origin
+  vertices.push_back(
+      VertexFormat(glm::vec3(0, 0, 0), color, VERTEX_NORMAL));
+
+  for (int i = 0; i < NUM_VERTICES; i++) {
+    double theta = i * deltaTheta;
+
+    double r = a + b * (sin(n * theta) / (c + cos(m * theta)));
+    double rawX = r * cos(theta);
+    double rawY = r * sin(theta);
+
+    double x = rawX * NORMALIZATION_FACTOR * scale;
+    double y = rawY * NORMALIZATION_FACTOR * scale;
+
+    vertices.push_back(
+        VertexFormat(glm::vec3(x, y, 0), color, VERTEX_NORMAL));
+  }
+
+  for (int i = 1; i <= NUM_VERTICES; i++) {
+    indices.push_back(0);
+    indices.push_back(i);
+    indices.push_back((i % NUM_VERTICES) + 1);
+  }
+
+  Mesh *mesh = new Mesh(name);
+  mesh->InitFromData(vertices, indices);
+
+  return mesh;
+}
 
 Mesh *createHeart(const std::string name, float scale, const glm::vec3 color) {
   using namespace std;
