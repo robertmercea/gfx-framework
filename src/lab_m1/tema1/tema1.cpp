@@ -1,5 +1,6 @@
 #include "lab_m1/tema1/tema1.hpp"
 #include "tema1/entities/card/card.hpp"
+#include "tema1/entities/card/card_fwd.hpp"
 #include "tema1/entities/card_collection/card_collection.hpp"
 #include "tema1/globals/cards/types/types.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
@@ -104,7 +105,6 @@ void Tema1::OnKeyPress(int key, int mods)
     // Add key press event
 }
 
-
 void Tema1::OnKeyRelease(int key, int mods)
 {
     // Add key release event
@@ -113,7 +113,22 @@ void Tema1::OnKeyRelease(int key, int mods)
 
 void Tema1::OnMouseMove(int mouseX, int mouseY, int deltaX, int deltaY)
 {
-    // Add mouse move event
+    tema1::entities::CardVectorPtr cards = cardCollection->getCards();
+
+    glm::ivec2 scaledRes = window->GetResolution(false);
+    glm::ivec2 unscaledRes = window->GetResolution(true);
+
+    // transform mouse coords from mouse origin to mesh origin
+    float scaleX = (float)scaledRes.x / (float)unscaledRes.x;
+    float scaleY = (float)scaledRes.y / (float)unscaledRes.y;
+
+    float mouseWorldX = (float)mouseX * scaleX;
+    float mouseWorldY = (float)scaledRes.y - ((float)mouseY * scaleY);
+
+    // trigger mouse events for all elems
+    for (const auto &card : *cards) {
+        card->cardUI.onMouseMove(mouseWorldX, mouseWorldY);
+    }
 }
 
 
