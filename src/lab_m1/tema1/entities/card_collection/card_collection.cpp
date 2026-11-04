@@ -9,6 +9,8 @@ namespace entities {
 CardPtr CardCollection::drawTopCard() {
   CardPtr card = cards.back();
   cards.pop_back();
+
+  return card;
 }
 
 void CardCollection::pushCard(const CardPtr card) {

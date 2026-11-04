@@ -55,7 +55,7 @@ void Tema1::Init()
     cardCollection = new entities::CardCollection();
     cardCollection->pushCard(card1);
     cardCollection->pushCard(card2);
-    cardCollection->setRenderMode(entities::RenderMode::ENEMY);
+    cardCollection->setRenderMode(entities::RenderMode::PLAYER);
 }
 
 
