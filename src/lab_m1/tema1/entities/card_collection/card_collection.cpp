@@ -1,5 +1,6 @@
 #include "card_collection.hpp"
 #include "tema1/entities/card/card.hpp"
+#include "tema1/globals/player/player.hpp"
 #include <iostream>
 #include <memory>
 
@@ -23,12 +24,12 @@ void CardCollection::getSpriteProperties(std::vector<sprites::SpriteProperties> 
   }
 }
 
-void CardCollection::setRenderMode(RenderMode mode) {
+void CardCollection::setRenderMode(globals::player::PlayerType mode) {
   switch (mode) {
-    case tema1::entities::RenderMode::PLAYER:
+    case globals::player::PlayerType::HUMAN:
       setCardRenderMode(true);
       break;
-    case tema1::entities::RenderMode::ENEMY:
+    case globals::player::PlayerType::AI:
       setCardRenderMode(false);
       break;
     default:
