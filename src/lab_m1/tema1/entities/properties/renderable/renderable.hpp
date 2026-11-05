@@ -9,7 +9,6 @@ namespace entities {
 class Renderable {
 protected:
   virtual void getSpriteProperties(std::vector<tema1::sprites::SpriteProperties> &spriteProps) = 0;
-  virtual void update(float deltaTime) = 0;
 };
 
 }
