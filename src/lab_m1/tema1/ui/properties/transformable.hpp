@@ -20,9 +20,9 @@ public:
   const glm::vec2 &getScale() const;
   float getRotation() const;
 
-  void setPosition(const glm::vec2 &position);
-  void setScale(const glm::vec2 &scale);
-  void setRotation(float radians);
+  virtual void setPosition(const glm::vec2 &position);
+  virtual void setScale(const glm::vec2 &scale);
+  virtual void setRotation(float radians);
 
   void scale(float amount);
   void scale(float scaleX, float scaleY);
