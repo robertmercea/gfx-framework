@@ -21,10 +21,15 @@ public:
   void showBack();
   void flip();
   void shake(float amount);
-  void onMouseMove(float mouseX, float mouseY);
-  void update(float deltaTime);
 
+  void onMouseMove(float mouseX, float mouseY);
+  void onMouseBtnPress(float mouseX, float mouseY);
+  void onMouseBtnRelease(float mouseX, float mouseY);
+
+  void update(float deltaTime);
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps);
+
+  void setInitialPosition(const glm::vec2 &position);
 
 private:
   const float HEART_RADIUS = 0.15f;
@@ -35,8 +40,10 @@ private:
   bool frontRender;
   float shakeAmount = 0.f;
   float scaleAmount = 0.f;
+  bool isSelected = false;
 
   glm::vec2 defaultScale;
+  glm::vec2 defaultPosition;
 
   globals::CardType type;
   std::shared_ptr<sprites::Sprite> cardFront, cardBack;

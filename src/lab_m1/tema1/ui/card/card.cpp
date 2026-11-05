@@ -22,6 +22,7 @@ Card::Card(globals::CardType cardType, globals::SpriteType spriteType)
   const auto &stats = globals::stats::CARD_PROPERTIES.at(cardType);
   this->totalHealth = stats.health;
   this->defaultScale = glm::vec2(150.0f, 200.0f);
+  this->defaultPosition = {_position.x, _position.y};
   this->_scale = defaultScale;
 
   createHearts(stats.health);
@@ -46,7 +47,9 @@ void Card::onMouseMove(float mouseX, float mouseY) {
     return;
   }
 
-  // TODO: mouseEnter/mouseLeave handlers
+  if (isSelected) {
+    setPosition({mouseX, mouseY});
+  }
 }
 
 void Card::update(float deltaTime) {
@@ -217,6 +220,24 @@ void Card::renderAttack(std::vector<sprites::SpriteProperties> &spriteProps,
 
 std::shared_ptr<sprites::Sprite> Card::fetchSprite(globals::SpriteType key) {
   return sprites::SpriteManager::getManager()->getSprite(key);
+}
+
+void Card::onMouseBtnPress(float mouseX, float mouseY) {
+  if (!contains(mouseX, mouseY)) return;
+
+  isSelected = true;
+}
+
+void Card::onMouseBtnRelease(float mouseX, float mouseY) {
+  if (!contains(mouseX, mouseY)) return;
+
+  isSelected = false;
+  setPosition(defaultPosition);
+}
+
+void Card::setInitialPosition(const glm::vec2 &position) {
+  _position.x = defaultPosition.x = position.x;
+  _position.y = defaultPosition.y = position.y;
 }
 
 bool Card::contains(float x, float y) {
