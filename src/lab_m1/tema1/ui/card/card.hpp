@@ -31,6 +31,7 @@ public:
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps);
 
   void setInitialPosition(const glm::vec2 &position);
+  bool contains(float x, float y);
 
 private:
   const float HEART_RADIUS = 0.15f;
@@ -51,8 +52,6 @@ private:
   globals::CardType type;
   std::shared_ptr<sprites::Sprite> cardFront, cardBack, heartSprite, manaCostSprite, attackSprite;
 
-  std::shared_ptr<sprites::Sprite> fetchSprite(globals::SpriteType key);
-
   void createHearts(int amount);
   void createManaCost(int amount);
   void createAttack(int amount);
@@ -60,8 +59,6 @@ private:
   void renderHearts(std::vector<sprites::SpriteProperties> &spriteProps, const glm::mat3 &baseMatrix);
   void renderManaCost(std::vector<sprites::SpriteProperties> &spriteProps, const glm::mat3 &baseMatrix);
   void renderAttack(std::vector<sprites::SpriteProperties> &spriteProps, const glm::mat3 &baseMatrix);
-
-  bool contains(float x, float y);
 };
 
 } // namespace ui

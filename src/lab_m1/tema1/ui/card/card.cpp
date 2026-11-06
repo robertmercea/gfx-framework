@@ -4,8 +4,8 @@
 #include "tema1/globals/sprites/types/types.hpp"
 #include "tema1/sprites/manager/manager.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
-#include "tema1/ui/transform/transform.hpp"
 #include "tema1/ui/globals/colors.hpp"
+#include "tema1/ui/transform/transform.hpp"
 #include <cmath>
 #include <iostream>
 #include <memory>
@@ -15,8 +15,7 @@ namespace tema1 {
 namespace ui {
 
 Card::Card(globals::CardType cardType, globals::SpriteType spriteType)
-    : frontRender(true), type(cardType), cardFront(fetchSprite(spriteType)),
-      cardBack(fetchSprite(globals::SpriteType::BACK)) {
+    : frontRender(true), type(cardType) {
 
   const auto spriteMgr = sprites::SpriteManager::getManager();
   const auto &stats = globals::stats::CARD_PROPERTIES.at(cardType);
@@ -29,6 +28,8 @@ Card::Card(globals::CardType cardType, globals::SpriteType spriteType)
   attack = stats.attack;
   manaCost = stats.manaCost;
 
+  cardFront = spriteMgr->getSprite(spriteType);
+  cardBack = spriteMgr->getSprite(globals::SpriteType::BACK);
   heartSprite = spriteMgr->getSprite(globals::SpriteType::HEART);
   attackSprite = spriteMgr->getSprite(globals::SpriteType::SWORD);
   manaCostSprite = spriteMgr->getSprite(globals::SpriteType::MANA);
@@ -115,7 +116,8 @@ void Card::renderHearts(std::vector<sprites::SpriteProperties> &spriteProps,
     float offsetX = startX + (column * stepX);
     float offsetY = startY + (row * stepY);
 
-    glm::mat3 statMatrix = baseMatrix * ui::transform::translate(offsetX, offsetY);
+    glm::mat3 statMatrix =
+        baseMatrix * ui::transform::translate(offsetX, offsetY);
     heartSprite->getSpriteProperties(spriteProps, statMatrix, ui::colors::RED);
   }
 }
@@ -159,14 +161,17 @@ void Card::renderManaCost(std::vector<sprites::SpriteProperties> &spriteProps,
     float offsetX = startX + (column * stepX);
     float offsetY = startY + (row * stepY);
 
-    glm::mat3 statMatrix = baseMatrix * ui::transform::translate(offsetX, offsetY);
-    manaCostSprite->getSpriteProperties(spriteProps, statMatrix, ui::colors::BLUE);
+    glm::mat3 statMatrix =
+        baseMatrix * ui::transform::translate(offsetX, offsetY);
+    manaCostSprite->getSpriteProperties(spriteProps, statMatrix,
+                                        ui::colors::BLUE);
   }
 }
 
 void Card::renderAttack(std::vector<sprites::SpriteProperties> &spriteProps,
                         const glm::mat3 &baseMatrix) {
-  if (attack == 0) return;
+  if (attack == 0)
+    return;
 
   float statWidth = attackSprite->width();
   float statHeight = attackSprite->height();
@@ -190,23 +195,23 @@ void Card::renderAttack(std::vector<sprites::SpriteProperties> &spriteProps,
     float offsetX = startX + (column * stepX);
     float offsetY = startY + (row * stepY);
 
-    glm::mat3 statMatrix = baseMatrix * ui::transform::translate(offsetX, offsetY);
-    attackSprite->getSpriteProperties(spriteProps, statMatrix, ui::colors::GRAY);
+    glm::mat3 statMatrix =
+        baseMatrix * ui::transform::translate(offsetX, offsetY);
+    attackSprite->getSpriteProperties(spriteProps, statMatrix,
+                                      ui::colors::GRAY);
   }
 }
 
-std::shared_ptr<sprites::Sprite> Card::fetchSprite(globals::SpriteType key) {
-  return sprites::SpriteManager::getManager()->getSprite(key);
-}
-
 void Card::onMouseBtnPress(float mouseX, float mouseY) {
-  if (!contains(mouseX, mouseY)) return;
+  if (!contains(mouseX, mouseY))
+    return;
 
   isSelected = true;
 }
 
 void Card::onMouseBtnRelease(float mouseX, float mouseY) {
-  if (!contains(mouseX, mouseY)) return;
+  if (!contains(mouseX, mouseY))
+    return;
 
   isSelected = false;
   setPosition(defaultPosition);
@@ -223,9 +228,8 @@ bool Card::contains(float x, float y) {
   const float w = cardFront->width() * std::abs(_scale.x);
   const float h = cardFront->height() * std::abs(_scale.y);
 
-  return
-    x0 - w / 2. <= x && x <= x0 + w / 2. &&
-    y0 - h / 2. <= y && y <= y0 + h / 2.;
+  return x0 - w / 2. <= x && x <= x0 + w / 2. && y0 - h / 2. <= y &&
+         y <= y0 + h / 2.;
 }
 
 } // namespace ui
