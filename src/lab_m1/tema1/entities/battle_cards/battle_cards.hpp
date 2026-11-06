@@ -26,14 +26,13 @@ public:
   void getSpriteProperties(std::vector<tema1::sprites::SpriteProperties> &spriteProps) override;
 
 private:
-  const float CARD_AREA_WIDTH = 500.0f;
-  const float CARD_AREA_HEIGHT = 300.0f;
+  const float CARD_AREA_WIDTH = 800.0f;
+  const float CARD_AREA_HEIGHT = 200.0f;
   const float CARD_AREA_BORDER_THICKNESS = 5.0f;
   const glm::vec3 CARD_AREA_AI_BG_COLOR = ui::colors::PURPLE;
   const glm::vec3 CARD_AREA_HUMAN_BG_COLOR = ui::colors::CYAN;
 
   std::unordered_map<globals::player::PlayerType, CardVector> playerCards;
-  // std::unordered_map<PlayerType, ui::CardArea> cardAreas;
 };
 
 } // namespace entities
