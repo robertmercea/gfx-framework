@@ -1,8 +1,10 @@
 #include "lab_m1/tema1/tema1.hpp"
+#include "tema1/entities/battle_cards/battle_cards.hpp"
 #include "tema1/entities/card/card.hpp"
 #include "tema1/entities/card/card_fwd.hpp"
 #include "tema1/entities/card_collection/card_collection.hpp"
 #include "tema1/globals/cards/types/types.hpp"
+#include "tema1/globals/player/player.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "tema1/ui/card/card.hpp"
 
@@ -24,9 +26,7 @@ Tema1::Tema1()
 }
 
 
-std::shared_ptr<tema1::entities::Card> card1, card2, card3;
-tema1::entities::Card *cardComponent;
-tema1::entities::CardCollection *cardCollection;
+tema1::entities::BattleCards *battlecards;
 
 Tema1::~Tema1()
 {
@@ -45,18 +45,42 @@ void Tema1::Init()
     camera->Update();
     GetCameraInput()->SetActive(false);
 
-    glm::vec3 corner = glm::vec3(0, 0, 0);
+    float centerX = resolution.x / 2.0f;
+    float centerY = resolution.y / 2.0f;
+    float yOffset = 250.0f;
+    float xOffset = 160.0f;
 
-    card1 = std::make_shared<entities::Card>(globals::CardType::WIZARD, globals::SpriteType::WIZARD);
-    card1->cardUI.setPosition(glm::vec2(resolution.x / 2.0f, resolution.y / 2.0f));
+    battlecards = new entities::BattleCards();
 
-    card2 = std::make_shared<entities::Card>(globals::CardType::DWARF, globals::SpriteType::DWARF);
-    card2->cardUI.setPosition(glm::vec2(resolution.x / 2.0f + 300.f, resolution.y / 2.0f));
+    // Set the positions for the two card areas.
+    battlecards->cardAreas[globals::player::PlayerType::HUMAN].setPosition(glm::vec2(centerX, centerY - yOffset));
+    battlecards->cardAreas[globals::player::PlayerType::AI].setPosition(glm::vec2(centerX, centerY + yOffset));
 
-    cardCollection = new entities::CardCollection();
-    cardCollection->pushCard(card1);
-    cardCollection->pushCard(card2);
-    cardCollection->setRenderMode(entities::RenderMode::PLAYER);
+    // Make three cards for the HUMAN player.
+    auto humanCard1 = std::make_shared<entities::Card>(globals::CardType::WIZARD, globals::SpriteType::WIZARD);
+    humanCard1->cardUI.setInitialPosition(glm::vec2(centerX - xOffset, centerY - yOffset));
+    battlecards->addCard(humanCard1, globals::player::PlayerType::HUMAN);
+
+    auto humanCard2 = std::make_shared<entities::Card>(globals::CardType::KNIGHT, globals::SpriteType::KNIGHT);
+    humanCard2->cardUI.setInitialPosition(glm::vec2(centerX, centerY - yOffset));
+    battlecards->addCard(humanCard2, globals::player::PlayerType::HUMAN);
+
+    auto humanCard3 = std::make_shared<entities::Card>(globals::CardType::MAGE, globals::SpriteType::MAGE);
+    humanCard3->cardUI.setInitialPosition(glm::vec2(centerX + xOffset, centerY - yOffset));
+    battlecards->addCard(humanCard3, globals::player::PlayerType::HUMAN);
+
+    // Make three cards for the AI player.
+    auto aiCard1 = std::make_shared<entities::Card>(globals::CardType::DWARF, globals::SpriteType::DWARF);
+    aiCard1->cardUI.setInitialPosition(glm::vec2(centerX - xOffset, centerY + yOffset));
+    battlecards->addCard(aiCard1, globals::player::PlayerType::AI);
+
+    auto aiCard2 = std::make_shared<entities::Card>(globals::CardType::KNIGHT, globals::SpriteType::KNIGHT);
+    aiCard2->cardUI.setInitialPosition(glm::vec2(centerX, centerY + yOffset));
+    battlecards->addCard(aiCard2, globals::player::PlayerType::AI);
+
+    auto aiCard3 = std::make_shared<entities::Card>(globals::CardType::WIZARD, globals::SpriteType::WIZARD);
+    aiCard3->cardUI.setInitialPosition(glm::vec2(centerX + xOffset, centerY + yOffset));
+    battlecards->addCard(aiCard3, globals::player::PlayerType::AI);
 }
 
 
@@ -76,10 +100,10 @@ void Tema1::Update(float deltaTimeSeconds)
     using namespace tema1;
     std::vector<sprites::SpriteProperties> spriteProps;
 
-    cardCollection->getSpriteProperties(spriteProps);
+    battlecards->getSpriteProperties(spriteProps);
 
-    for (const auto & prop : spriteProps) {
-        RenderMesh2D(prop.mesh, shaders["VertexColor"], prop.modelMatrix);
+    for (const auto &prop : spriteProps) {
+        RenderMesh2D(prop.mesh, prop.modelMatrix, prop.color);
     }
 }
 
@@ -113,34 +137,16 @@ void Tema1::OnKeyRelease(int key, int mods)
 
 void Tema1::OnMouseMove(int mouseX, int mouseY, int deltaX, int deltaY)
 {
-    tema1::entities::CardVectorPtr cards = cardCollection->getCards();
-
-    glm::ivec2 scaledRes = window->GetResolution(false);
-    glm::ivec2 unscaledRes = window->GetResolution(true);
-
-    // transform mouse coords from mouse origin to mesh origin
-    float scaleX = (float)scaledRes.x / (float)unscaledRes.x;
-    float scaleY = (float)scaledRes.y / (float)unscaledRes.y;
-
-    float mouseWorldX = (float)mouseX * scaleX;
-    float mouseWorldY = (float)scaledRes.y - ((float)mouseY * scaleY);
-
-    // trigger mouse events for all elems
-    for (const auto &card : *cards) {
-        card->cardUI.onMouseMove(mouseWorldX, mouseWorldY);
-    }
 }
 
 
 void Tema1::OnMouseBtnPress(int mouseX, int mouseY, int button, int mods)
 {
-    // Add mouse button press event
 }
 
 
 void Tema1::OnMouseBtnRelease(int mouseX, int mouseY, int button, int mods)
 {
-    // Add mouse button release event
 }
 
 
@@ -151,4 +157,20 @@ void Tema1::OnMouseScroll(int mouseX, int mouseY, int offsetX, int offsetY)
 
 void Tema1::OnWindowResize(int width, int height)
 {
+}
+
+glm::ivec2 Tema1::MouseToViewportCoords(int mouseX, int mouseY) {
+    glm::ivec2 scaledRes = window->GetResolution(false);
+    glm::ivec2 unscaledRes = window->GetResolution(true);
+
+    // transform mouse coords from mouse origin to mesh origin
+    float scaleX = (float)scaledRes.x / (float)unscaledRes.x;
+    float scaleY = (float)scaledRes.y / (float)unscaledRes.y;
+
+    float mouseWorldX = (float)mouseX * scaleX;
+    float mouseWorldY = (float)scaledRes.y - ((float)mouseY * scaleY);
+
+    glm::ivec2 worldCoords = {mouseWorldX, mouseWorldY};
+
+    return worldCoords;
 }

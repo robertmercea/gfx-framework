@@ -1,6 +1,6 @@
 #pragma once
 
-#include "tema1/globals/cards/types/types.hpp"
+#include "tema1/globals/sprites/types/types.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include <memory>
 #include <unordered_map>

@@ -1089,6 +1089,30 @@ src/lab_m1/tema1/sprites/shape/mana/mana.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.s
 .PHONY : src/lab_m1/tema1/sprites/shape/mana/mana.cpp.s
 
+src/lab_m1/tema1/sprites/shape/square/square.o: src/lab_m1/tema1/sprites/shape/square/square.cpp.o
+.PHONY : src/lab_m1/tema1/sprites/shape/square/square.o
+
+# target to build an object file
+src/lab_m1/tema1/sprites/shape/square/square.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.o
+.PHONY : src/lab_m1/tema1/sprites/shape/square/square.cpp.o
+
+src/lab_m1/tema1/sprites/shape/square/square.i: src/lab_m1/tema1/sprites/shape/square/square.cpp.i
+.PHONY : src/lab_m1/tema1/sprites/shape/square/square.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/sprites/shape/square/square.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.i
+.PHONY : src/lab_m1/tema1/sprites/shape/square/square.cpp.i
+
+src/lab_m1/tema1/sprites/shape/square/square.s: src/lab_m1/tema1/sprites/shape/square/square.cpp.s
+.PHONY : src/lab_m1/tema1/sprites/shape/square/square.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/sprites/shape/square/square.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.s
+.PHONY : src/lab_m1/tema1/sprites/shape/square/square.cpp.s
+
 src/lab_m1/tema1/sprites/shape/sword/sword.o: src/lab_m1/tema1/sprites/shape/sword/sword.cpp.o
 .PHONY : src/lab_m1/tema1/sprites/shape/sword/sword.o
 
@@ -1160,6 +1184,30 @@ src/lab_m1/tema1/ui/card/card.s: src/lab_m1/tema1/ui/card/card.cpp.s
 src/lab_m1/tema1/ui/card/card.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.s
 .PHONY : src/lab_m1/tema1/ui/card/card.cpp.s
+
+src/lab_m1/tema1/ui/card_area/card_area.o: src/lab_m1/tema1/ui/card_area/card_area.cpp.o
+.PHONY : src/lab_m1/tema1/ui/card_area/card_area.o
+
+# target to build an object file
+src/lab_m1/tema1/ui/card_area/card_area.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.o
+.PHONY : src/lab_m1/tema1/ui/card_area/card_area.cpp.o
+
+src/lab_m1/tema1/ui/card_area/card_area.i: src/lab_m1/tema1/ui/card_area/card_area.cpp.i
+.PHONY : src/lab_m1/tema1/ui/card_area/card_area.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/ui/card_area/card_area.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.i
+.PHONY : src/lab_m1/tema1/ui/card_area/card_area.cpp.i
+
+src/lab_m1/tema1/ui/card_area/card_area.s: src/lab_m1/tema1/ui/card_area/card_area.cpp.s
+.PHONY : src/lab_m1/tema1/ui/card_area/card_area.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/ui/card_area/card_area.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.s
+.PHONY : src/lab_m1/tema1/ui/card_area/card_area.cpp.s
 
 src/lab_m1/tema1/ui/properties/transformable.o: src/lab_m1/tema1/ui/properties/transformable.cpp.o
 .PHONY : src/lab_m1/tema1/ui/properties/transformable.o
@@ -1410,6 +1458,9 @@ help:
 	@echo "... src/lab_m1/tema1/sprites/shape/mana/mana.o"
 	@echo "... src/lab_m1/tema1/sprites/shape/mana/mana.i"
 	@echo "... src/lab_m1/tema1/sprites/shape/mana/mana.s"
+	@echo "... src/lab_m1/tema1/sprites/shape/square/square.o"
+	@echo "... src/lab_m1/tema1/sprites/shape/square/square.i"
+	@echo "... src/lab_m1/tema1/sprites/shape/square/square.s"
 	@echo "... src/lab_m1/tema1/sprites/shape/sword/sword.o"
 	@echo "... src/lab_m1/tema1/sprites/shape/sword/sword.i"
 	@echo "... src/lab_m1/tema1/sprites/shape/sword/sword.s"
@@ -1419,6 +1470,9 @@ help:
 	@echo "... src/lab_m1/tema1/ui/card/card.o"
 	@echo "... src/lab_m1/tema1/ui/card/card.i"
 	@echo "... src/lab_m1/tema1/ui/card/card.s"
+	@echo "... src/lab_m1/tema1/ui/card_area/card_area.o"
+	@echo "... src/lab_m1/tema1/ui/card_area/card_area.i"
+	@echo "... src/lab_m1/tema1/ui/card_area/card_area.s"
 	@echo "... src/lab_m1/tema1/ui/properties/transformable.o"
 	@echo "... src/lab_m1/tema1/ui/properties/transformable.i"
 	@echo "... src/lab_m1/tema1/ui/properties/transformable.s"

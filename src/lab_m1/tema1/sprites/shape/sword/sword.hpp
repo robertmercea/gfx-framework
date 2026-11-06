@@ -15,7 +15,7 @@ public:
   virtual ~Sword() = default;
 
   void getSpriteProperties(std::vector<SpriteProperties> &spriteProps,
-                           const glm::mat3 &modelMatrix) override;
+                           const glm::mat3 &modelMatrix, const glm::vec3 &color) override;
 
 private:
   static constexpr float DEFAULT_SWORD_SCALE = 0.2f;

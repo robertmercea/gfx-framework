@@ -1,5 +1,6 @@
 #pragma once
 
+#include "tema1/globals/sprites/types/types.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "tema1/ui/properties/transformable.hpp"
 #include "tema1/globals/cards/types/types.hpp"
@@ -35,8 +36,10 @@ private:
   const float HEART_RADIUS = 0.15f;
   const float MANA_SIZE = 0.1f;
   const float SWORD_SIZE = 0.2f;
+  const glm::vec2 DEFAULT_SCALE = {40.0f, 50.0f};
 
   int totalHealth;
+  int health, manaCost, attack;
   bool frontRender;
   float shakeAmount = 0.f;
   float scaleAmount = 0.f;
@@ -46,8 +49,7 @@ private:
   glm::vec2 defaultPosition;
 
   globals::CardType type;
-  std::shared_ptr<sprites::Sprite> cardFront, cardBack;
-  std::vector<std::shared_ptr<sprites::Sprite>> healthSprites, manaCostSprites, attackSprites;
+  std::shared_ptr<sprites::Sprite> cardFront, cardBack, heartSprite, manaCostSprite, attackSprite;
 
   std::shared_ptr<sprites::Sprite> fetchSprite(globals::SpriteType key);
 

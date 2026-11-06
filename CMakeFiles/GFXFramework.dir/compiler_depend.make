@@ -12190,7 +12190,529 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/lab9/lab9.cpp.o: src/lab_m1/lab9/lab9.cpp
   /usr/include/c++/16/iostream
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.o: src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp \
-  /usr/include/stdc-predef.h
+  /usr/include/stdc-predef.h \
+  src/lab_m1/tema1/entities/battle_cards/battle_cards.hpp \
+  src/lab_m1/tema1/entities/card/card_fwd.hpp \
+  /usr/include/c++/16/memory \
+  /usr/include/c++/16/bits/memoryfwd.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/c++config.h \
+  /usr/include/bits/wordsize.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/os_defines.h \
+  /usr/include/features.h \
+  /usr/include/features-time64.h \
+  /usr/include/bits/timesize.h \
+  /usr/include/sys/cdefs.h \
+  /usr/include/bits/long-double.h \
+  /usr/include/gnu/stubs.h \
+  /usr/include/gnu/stubs-64.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/cpu_defines.h \
+  /usr/include/c++/16/bits/version.h \
+  /usr/include/c++/16/bits/allocator.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/c++allocator.h \
+  /usr/include/c++/16/bits/new_allocator.h \
+  /usr/include/c++/16/new \
+  /usr/include/c++/16/bits/exception.h \
+  /usr/include/c++/16/bits/new_except.h \
+  /usr/include/c++/16/bits/exception_defines.h \
+  /usr/include/c++/16/bits/new_throw.h \
+  /usr/include/c++/16/bits/move.h \
+  /usr/include/c++/16/type_traits \
+  /usr/include/c++/16/bits/stl_tempbuf.h \
+  /usr/include/c++/16/bits/stl_construct.h \
+  /usr/include/c++/16/bits/stl_iterator_base_types.h \
+  /usr/include/c++/16/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/16/bits/concept_check.h \
+  /usr/include/c++/16/debug/assertions.h \
+  /usr/include/c++/16/bits/stl_pair.h \
+  /usr/include/c++/16/bits/utility.h \
+  /usr/include/c++/16/ext/numeric_traits.h \
+  /usr/include/c++/16/bits/cpp_type_traits.h \
+  /usr/include/c++/16/ext/type_traits.h \
+  /usr/include/c++/16/bits/stl_uninitialized.h \
+  /usr/include/c++/16/bits/ptr_traits.h \
+  /usr/include/c++/16/bits/stl_algobase.h \
+  /usr/include/c++/16/bits/stl_iterator.h \
+  /usr/include/c++/16/debug/debug.h \
+  /usr/include/c++/16/bits/predefined_ops.h \
+  /usr/include/c++/16/bits/stl_function.h \
+  /usr/include/c++/16/backward/binders.h \
+  /usr/include/c++/16/ext/alloc_traits.h \
+  /usr/include/c++/16/bits/alloc_traits.h \
+  /usr/include/c++/16/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/16/bits/align.h \
+  /usr/include/c++/16/bit \
+  /usr/include/c++/16/bits/uses_allocator.h \
+  /usr/include/c++/16/bits/unique_ptr.h \
+  /usr/include/c++/16/tuple \
+  /usr/include/c++/16/bits/invoke.h \
+  /usr/include/c++/16/bits/functional_hash.h \
+  /usr/include/c++/16/bits/hash_bytes.h \
+  /usr/include/c++/16/bits/shared_ptr.h \
+  /usr/include/c++/16/iosfwd \
+  /usr/include/c++/16/bits/requires_hosted.h \
+  /usr/include/c++/16/bits/stringfwd.h \
+  /usr/include/c++/16/bits/postypes.h \
+  /usr/include/c++/16/cwchar \
+  /usr/include/wchar.h \
+  /usr/include/bits/libc-header-start.h \
+  /usr/include/bits/floatn.h \
+  /usr/include/bits/floatn-common.h \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/stddef.h \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/stdarg.h \
+  /usr/include/bits/wchar.h \
+  /usr/include/bits/types/wint_t.h \
+  /usr/include/bits/types/mbstate_t.h \
+  /usr/include/bits/types/__mbstate_t.h \
+  /usr/include/bits/types/__FILE.h \
+  /usr/include/bits/types/FILE.h \
+  /usr/include/bits/types/locale_t.h \
+  /usr/include/bits/types/__locale_t.h \
+  /usr/include/c++/16/bits/shared_ptr_base.h \
+  /usr/include/c++/16/typeinfo \
+  /usr/include/c++/16/bits/allocated_ptr.h \
+  /usr/include/c++/16/bits/refwrap.h \
+  /usr/include/c++/16/ext/aligned_buffer.h \
+  /usr/include/c++/16/ext/atomicity.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/gthr.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/gthr-default.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/bits/types.h \
+  /usr/include/bits/typesizes.h \
+  /usr/include/bits/time64.h \
+  /usr/include/bits/types/time_t.h \
+  /usr/include/bits/types/struct_timespec.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/endianness.h \
+  /usr/include/bits/sched.h \
+  /usr/include/linux/sched/types.h \
+  /usr/include/linux/types.h \
+  /usr/include/asm/types.h \
+  /usr/include/asm-generic/types.h \
+  /usr/include/asm-generic/int-ll64.h \
+  /usr/include/asm/bitsperlong.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/asm/posix_types.h \
+  /usr/include/asm/posix_types_64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/bits/types/struct_sched_param.h \
+  /usr/include/bits/cpu-set.h \
+  /usr/include/time.h \
+  /usr/include/bits/time.h \
+  /usr/include/bits/timex.h \
+  /usr/include/bits/types/struct_timeval.h \
+  /usr/include/bits/types/clock_t.h \
+  /usr/include/bits/types/struct_tm.h \
+  /usr/include/bits/types/clockid_t.h \
+  /usr/include/bits/types/timer_t.h \
+  /usr/include/bits/types/struct_itimerspec.h \
+  /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/thread-shared-types.h \
+  /usr/include/bits/pthreadtypes-arch.h \
+  /usr/include/bits/atomic_wide_counter.h \
+  /usr/include/bits/struct_mutex.h \
+  /usr/include/bits/struct_rwlock.h \
+  /usr/include/bits/setjmp.h \
+  /usr/include/bits/types/__sigset_t.h \
+  /usr/include/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/bits/pthread_stack_min-dynamic.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/atomic_word.h \
+  /usr/include/sys/single_threaded.h \
+  /usr/include/c++/16/ext/concurrence.h \
+  /usr/include/c++/16/exception \
+  /usr/include/c++/16/bits/exception_ptr.h \
+  /usr/include/c++/16/bits/cxxabi_init_exception.h \
+  /usr/include/c++/16/bits/nested_exception.h \
+  /usr/include/c++/16/bits/shared_ptr_atomic.h \
+  /usr/include/c++/16/bits/atomic_base.h \
+  /usr/include/c++/16/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/16/backward/auto_ptr.h \
+  /usr/include/c++/16/vector \
+  /usr/include/c++/16/bits/stl_vector.h \
+  /usr/include/c++/16/bits/stdexcept_throw.h \
+  /usr/include/c++/16/bits/stdexcept_throwfwd.h \
+  /usr/include/c++/16/initializer_list \
+  /usr/include/c++/16/bits/stl_bvector.h \
+  /usr/include/c++/16/bits/range_access.h \
+  /usr/include/c++/16/bits/erase_if.h \
+  /usr/include/c++/16/bits/vector.tcc \
+  src/lab_m1/tema1/entities/properties/renderable/renderable.hpp \
+  src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
+  src/core/gpu/mesh.h \
+  /usr/include/c++/16/string \
+  /usr/include/c++/16/bits/char_traits.h \
+  /usr/include/c++/16/bits/localefwd.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/c++locale.h \
+  /usr/include/c++/16/clocale \
+  /usr/include/locale.h \
+  /usr/include/bits/locale.h \
+  /usr/include/c++/16/cctype \
+  /usr/include/ctype.h \
+  /usr/include/c++/16/bits/ostream_insert.h \
+  /usr/include/c++/16/bits/cxxabi_forced.h \
+  /usr/include/c++/16/bits/basic_string.h \
+  /usr/include/c++/16/ext/string_conversions.h \
+  /usr/include/c++/16/cstdlib \
+  /usr/include/stdlib.h \
+  /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h \
+  /usr/include/sys/types.h \
+  /usr/include/bits/stdint-intn.h \
+  /usr/include/endian.h \
+  /usr/include/bits/byteswap.h \
+  /usr/include/bits/uintn-identity.h \
+  /usr/include/sys/select.h \
+  /usr/include/bits/select.h \
+  /usr/include/bits/types/sigset_t.h \
+  /usr/include/alloca.h \
+  /usr/include/bits/stdlib-float.h \
+  /usr/include/c++/16/bits/std_abs.h \
+  /usr/include/c++/16/cstdio \
+  /usr/include/stdio.h \
+  /usr/include/bits/types/__fpos_t.h \
+  /usr/include/bits/types/__fpos64_t.h \
+  /usr/include/bits/types/struct_FILE.h \
+  /usr/include/bits/types/cookie_io_functions_t.h \
+  /usr/include/bits/stdio_lim.h \
+  /usr/include/c++/16/cerrno \
+  /usr/include/errno.h \
+  /usr/include/bits/errno.h \
+  /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/bits/types/error_t.h \
+  /usr/include/c++/16/bits/charconv.h \
+  /usr/include/c++/16/bits/basic_string.tcc \
+  /usr/include/c++/16/map \
+  /usr/include/c++/16/bits/stl_tree.h \
+  /usr/include/c++/16/bits/stl_map.h \
+  /usr/include/c++/16/bits/stl_multimap.h \
+  src/core/gpu/vertex_format.h \
+  src/utils/glm_utils.h \
+  /usr/include/c++/16/ostream \
+  /usr/include/c++/16/bits/ostream.h \
+  /usr/include/c++/16/ios \
+  /usr/include/c++/16/bits/ios_base.h \
+  /usr/include/c++/16/bits/locale_classes.h \
+  /usr/include/c++/16/bits/functexcept.h \
+  /usr/include/c++/16/bits/locale_classes.tcc \
+  /usr/include/c++/16/system_error \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/error_constants.h \
+  /usr/include/c++/16/stdexcept \
+  /usr/include/c++/16/bits/stdexcept_except.h \
+  /usr/include/c++/16/streambuf \
+  /usr/include/c++/16/bits/streambuf.tcc \
+  /usr/include/c++/16/bits/basic_ios.h \
+  /usr/include/c++/16/bits/locale_facets.h \
+  /usr/include/c++/16/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/bits/wctype-wchar.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/ctype_base.h \
+  /usr/include/c++/16/bits/streambuf_iterator.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/ctype_inline.h \
+  /usr/include/c++/16/bits/locale_facets.tcc \
+  /usr/include/c++/16/bits/basic_ios.tcc \
+  /usr/include/c++/16/bits/ostream_print.h \
+  /usr/include/c++/16/bits/ostream.tcc \
+  src/utils/math_utils.h \
+  /usr/include/c++/16/math.h \
+  /usr/include/c++/16/cmath \
+  /usr/include/math.h \
+  /usr/include/bits/math-vector.h \
+  /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/flt-eval-method.h \
+  /usr/include/bits/fp-logb.h \
+  /usr/include/bits/fp-fast.h \
+  /usr/include/bits/mathcalls-macros.h \
+  /usr/include/bits/mathcalls-helper-functions.h \
+  /usr/include/bits/mathcalls.h \
+  /usr/include/bits/mathcalls-narrow.h \
+  /usr/include/bits/iscanonical.h \
+  deps/api/glm/glm.hpp \
+  deps/api/glm/detail/_fixes.hpp \
+  deps/api/glm/detail/setup.hpp \
+  /usr/include/c++/16/cassert \
+  /usr/include/assert.h \
+  /usr/include/c++/16/cstddef \
+  deps/api/glm/simd/platform.h \
+  /usr/include/c++/16/cstdint \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdint-least.h \
+  /usr/include/c++/16/climits \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/limits.h \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/xopen_lim.h \
+  /usr/include/bits/uio_lim.h \
+  /usr/include/c++/16/cfloat \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/float.h \
+  /usr/include/c++/16/limits \
+  deps/api/glm/fwd.hpp \
+  deps/api/glm/detail/qualifier.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/vec2.hpp \
+  deps/api/glm/ext/vector_bool2.hpp \
+  deps/api/glm/detail/type_vec2.hpp \
+  deps/api/glm/detail/type_vec2.inl \
+  deps/api/glm/detail/compute_vector_relational.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/vector_bool2_precision.hpp \
+  deps/api/glm/ext/vector_float2.hpp \
+  deps/api/glm/ext/vector_float2_precision.hpp \
+  deps/api/glm/ext/vector_double2.hpp \
+  deps/api/glm/ext/vector_double2_precision.hpp \
+  deps/api/glm/ext/vector_int2.hpp \
+  deps/api/glm/ext/vector_int2_sized.hpp \
+  deps/api/glm/ext/scalar_int_sized.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/vector_uint2.hpp \
+  deps/api/glm/ext/vector_uint2_sized.hpp \
+  deps/api/glm/ext/scalar_uint_sized.hpp \
+  deps/api/glm/vec3.hpp \
+  deps/api/glm/ext/vector_bool3.hpp \
+  deps/api/glm/detail/type_vec3.hpp \
+  deps/api/glm/detail/type_vec3.inl \
+  deps/api/glm/ext/vector_bool3_precision.hpp \
+  deps/api/glm/ext/vector_float3.hpp \
+  deps/api/glm/ext/vector_float3_precision.hpp \
+  deps/api/glm/ext/vector_double3.hpp \
+  deps/api/glm/ext/vector_double3_precision.hpp \
+  deps/api/glm/ext/vector_int3.hpp \
+  deps/api/glm/ext/vector_int3_sized.hpp \
+  deps/api/glm/ext/vector_uint3.hpp \
+  deps/api/glm/ext/vector_uint3_sized.hpp \
+  deps/api/glm/vec4.hpp \
+  deps/api/glm/ext/vector_bool4.hpp \
+  deps/api/glm/detail/type_vec4.hpp \
+  deps/api/glm/detail/type_vec4.inl \
+  deps/api/glm/ext/vector_bool4_precision.hpp \
+  deps/api/glm/ext/vector_float4.hpp \
+  deps/api/glm/ext/vector_float4_precision.hpp \
+  deps/api/glm/ext/vector_double4.hpp \
+  deps/api/glm/ext/vector_double4_precision.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/vector_int4.hpp \
+  deps/api/glm/ext/vector_int4_sized.hpp \
+  deps/api/glm/ext/vector_uint4.hpp \
+  deps/api/glm/ext/vector_uint4_sized.hpp \
+  deps/api/glm/mat2x2.hpp \
+  deps/api/glm/ext/matrix_double2x2.hpp \
+  deps/api/glm/detail/type_mat2x2.hpp \
+  deps/api/glm/detail/type_mat2x2.inl \
+  deps/api/glm/matrix.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/mat2x3.hpp \
+  deps/api/glm/ext/matrix_double2x3.hpp \
+  deps/api/glm/detail/type_mat2x3.hpp \
+  deps/api/glm/detail/type_mat2x3.inl \
+  deps/api/glm/ext/matrix_double2x3_precision.hpp \
+  deps/api/glm/ext/matrix_float2x3.hpp \
+  deps/api/glm/ext/matrix_float2x3_precision.hpp \
+  deps/api/glm/mat2x4.hpp \
+  deps/api/glm/ext/matrix_double2x4.hpp \
+  deps/api/glm/detail/type_mat2x4.hpp \
+  deps/api/glm/detail/type_mat2x4.inl \
+  deps/api/glm/ext/matrix_double2x4_precision.hpp \
+  deps/api/glm/ext/matrix_float2x4.hpp \
+  deps/api/glm/ext/matrix_float2x4_precision.hpp \
+  deps/api/glm/mat3x2.hpp \
+  deps/api/glm/ext/matrix_double3x2.hpp \
+  deps/api/glm/detail/type_mat3x2.hpp \
+  deps/api/glm/detail/type_mat3x2.inl \
+  deps/api/glm/ext/matrix_double3x2_precision.hpp \
+  deps/api/glm/ext/matrix_float3x2.hpp \
+  deps/api/glm/ext/matrix_float3x2_precision.hpp \
+  deps/api/glm/mat3x3.hpp \
+  deps/api/glm/ext/matrix_double3x3.hpp \
+  deps/api/glm/detail/type_mat3x3.hpp \
+  deps/api/glm/detail/type_mat3x3.inl \
+  deps/api/glm/ext/matrix_double3x3_precision.hpp \
+  deps/api/glm/ext/matrix_float3x3.hpp \
+  deps/api/glm/ext/matrix_float3x3_precision.hpp \
+  deps/api/glm/mat3x4.hpp \
+  deps/api/glm/ext/matrix_double3x4.hpp \
+  deps/api/glm/detail/type_mat3x4.hpp \
+  deps/api/glm/detail/type_mat3x4.inl \
+  deps/api/glm/ext/matrix_double3x4_precision.hpp \
+  deps/api/glm/ext/matrix_float3x4.hpp \
+  deps/api/glm/ext/matrix_float3x4_precision.hpp \
+  deps/api/glm/mat4x2.hpp \
+  deps/api/glm/ext/matrix_double4x2.hpp \
+  deps/api/glm/detail/type_mat4x2.hpp \
+  deps/api/glm/detail/type_mat4x2.inl \
+  deps/api/glm/ext/matrix_double4x2_precision.hpp \
+  deps/api/glm/ext/matrix_float4x2.hpp \
+  deps/api/glm/ext/matrix_float4x2_precision.hpp \
+  deps/api/glm/mat4x3.hpp \
+  deps/api/glm/ext/matrix_double4x3.hpp \
+  deps/api/glm/detail/type_mat4x3.hpp \
+  deps/api/glm/detail/type_mat4x3.inl \
+  deps/api/glm/ext/matrix_double4x3_precision.hpp \
+  deps/api/glm/ext/matrix_float4x3.hpp \
+  deps/api/glm/ext/matrix_float4x3_precision.hpp \
+  deps/api/glm/mat4x4.hpp \
+  deps/api/glm/ext/matrix_double4x4.hpp \
+  deps/api/glm/detail/type_mat4x4.hpp \
+  deps/api/glm/detail/type_mat4x4.inl \
+  deps/api/glm/ext/matrix_double4x4_precision.hpp \
+  deps/api/glm/ext/matrix_float4x4.hpp \
+  deps/api/glm/ext/matrix_float4x4_precision.hpp \
+  deps/api/glm/detail/func_matrix.inl \
+  deps/api/glm/geometric.hpp \
+  deps/api/glm/detail/func_geometric.inl \
+  deps/api/glm/exponential.hpp \
+  deps/api/glm/detail/type_vec1.hpp \
+  deps/api/glm/detail/type_vec1.inl \
+  deps/api/glm/detail/func_exponential.inl \
+  deps/api/glm/vector_relational.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/detail/func_vector_relational.inl \
+  deps/api/glm/detail/_vectorize.hpp \
+  deps/api/glm/common.hpp \
+  deps/api/glm/detail/_fixes.hpp \
+  deps/api/glm/detail/func_common.inl \
+  deps/api/glm/detail/compute_common.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/matrix_double2x2_precision.hpp \
+  deps/api/glm/ext/matrix_float2x2.hpp \
+  deps/api/glm/ext/matrix_float2x2_precision.hpp \
+  deps/api/glm/trigonometric.hpp \
+  deps/api/glm/detail/func_trigonometric.inl \
+  deps/api/glm/packing.hpp \
+  deps/api/glm/detail/func_packing.inl \
+  deps/api/glm/detail/type_half.hpp \
+  deps/api/glm/detail/type_half.inl \
+  deps/api/glm/integer.hpp \
+  deps/api/glm/detail/func_integer.inl \
+  deps/api/glm/gtc/type_ptr.hpp \
+  deps/api/glm/gtc/quaternion.hpp \
+  deps/api/glm/gtc/constants.hpp \
+  deps/api/glm/ext/scalar_constants.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/scalar_constants.inl \
+  deps/api/glm/gtc/constants.inl \
+  deps/api/glm/gtc/matrix_transform.hpp \
+  deps/api/glm/ext/matrix_projection.hpp \
+  deps/api/glm/ext/matrix_projection.inl \
+  deps/api/glm/ext/matrix_clip_space.hpp \
+  deps/api/glm/ext/matrix_clip_space.inl \
+  deps/api/glm/ext/matrix_transform.hpp \
+  deps/api/glm/ext/matrix_transform.inl \
+  deps/api/glm/gtc/matrix_transform.inl \
+  deps/api/glm/ext/vector_relational.hpp \
+  deps/api/glm/ext/vector_relational.inl \
+  deps/api/glm/detail/type_float.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/quaternion_common.hpp \
+  deps/api/glm/ext/quaternion_geometric.hpp \
+  deps/api/glm/ext/quaternion_geometric.inl \
+  deps/api/glm/ext/quaternion_common.inl \
+  deps/api/glm/ext/quaternion_float.hpp \
+  deps/api/glm/detail/type_quat.hpp \
+  deps/api/glm/ext/quaternion_relational.hpp \
+  deps/api/glm/ext/quaternion_relational.inl \
+  deps/api/glm/detail/type_quat.inl \
+  deps/api/glm/ext/quaternion_float_precision.hpp \
+  deps/api/glm/ext/quaternion_double.hpp \
+  deps/api/glm/ext/quaternion_double_precision.hpp \
+  deps/api/glm/ext/quaternion_trigonometric.hpp \
+  deps/api/glm/ext/quaternion_trigonometric.inl \
+  deps/api/glm/ext/quaternion_transform.hpp \
+  deps/api/glm/ext/quaternion_transform.inl \
+  deps/api/glm/gtc/quaternion.inl \
+  deps/api/glm/gtc/epsilon.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/gtc/epsilon.inl \
+  deps/api/glm/gtc/vec1.hpp \
+  deps/api/glm/ext/vector_bool1.hpp \
+  deps/api/glm/ext/vector_bool1_precision.hpp \
+  deps/api/glm/ext/vector_float1.hpp \
+  deps/api/glm/ext/vector_float1_precision.hpp \
+  deps/api/glm/ext/vector_double1.hpp \
+  deps/api/glm/ext/vector_double1_precision.hpp \
+  deps/api/glm/ext/vector_int1.hpp \
+  deps/api/glm/ext/vector_int1_sized.hpp \
+  deps/api/glm/ext/vector_uint1.hpp \
+  deps/api/glm/ext/vector_uint1_sized.hpp \
+  /usr/include/c++/16/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  deps/api/glm/gtc/type_ptr.inl \
+  deps/api/glm/gtx/quaternion.hpp \
+  deps/api/glm/ext/quaternion_exponential.hpp \
+  deps/api/glm/ext/quaternion_exponential.inl \
+  deps/api/glm/gtx/norm.hpp \
+  deps/api/glm/gtx/component_wise.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/gtx/component_wise.inl \
+  deps/api/glm/gtx/norm.inl \
+  deps/api/glm/gtx/quaternion.inl \
+  src/core/gpu/texture2D.h \
+  src/utils/gl_utils.h \
+  deps/api/GL/glew.h \
+  /usr/include/GL/glu.h \
+  /usr/include/GL/gl.h \
+  src/core/gpu/gpu_buffers.h \
+  src/core/gpu/vertex_bone_data.h \
+  deps/api/assimp/scene.h \
+  deps/api/assimp/types.h \
+  deps/api/assimp/defs.h \
+  deps/api/assimp/config.h \
+  deps/api/assimp/vector2.h \
+  deps/api/assimp/vector3.h \
+  deps/api/assimp/color4.h \
+  deps/api/assimp/matrix3x3.h \
+  deps/api/assimp/matrix4x4.h \
+  deps/api/assimp/quaternion.h \
+  deps/api/assimp/vector2.inl \
+  deps/api/assimp/vector3.inl \
+  deps/api/assimp/color4.inl \
+  deps/api/assimp/matrix3x3.inl \
+  /usr/include/c++/16/algorithm \
+  /usr/include/c++/16/bits/stl_algo.h \
+  /usr/include/c++/16/bits/algorithmfwd.h \
+  /usr/include/c++/16/bits/stl_heap.h \
+  /usr/include/c++/16/bits/uniform_int_dist.h \
+  deps/api/assimp/matrix4x4.inl \
+  deps/api/assimp/MathFunctions.h \
+  deps/api/assimp/quaternion.inl \
+  deps/api/assimp/texture.h \
+  deps/api/assimp/Compiler/pushpack1.h \
+  deps/api/assimp/Compiler/poppack1.h \
+  deps/api/assimp/mesh.h \
+  deps/api/assimp/aabb.h \
+  deps/api/assimp/light.h \
+  deps/api/assimp/camera.h \
+  deps/api/assimp/material.h \
+  deps/api/assimp/material.inl \
+  deps/api/assimp/anim.h \
+  deps/api/assimp/metadata.h \
+  src/lab_m1/tema1/globals/player/player.hpp \
+  src/lab_m1/tema1/ui/card_area/card_area.hpp \
+  src/lab_m1/tema1/sprites/shape/square/square.hpp \
+  src/lab_m1/tema1/ui/properties/transformable.hpp \
+  src/lab_m1/tema1/ui/globals/colors.hpp \
+  /usr/include/c++/16/unordered_map \
+  /usr/include/c++/16/bits/unordered_map.h \
+  /usr/include/c++/16/bits/hashtable.h \
+  /usr/include/c++/16/bits/hashtable_policy.h \
+  /usr/include/c++/16/bits/enable_special_members.h \
+  src/lab_m1/tema1/entities/card/card.hpp \
+  src/lab_m1/tema1/entities/card/card_data/card_data.hpp \
+  src/lab_m1/tema1/globals/cards/stats/stats.hpp \
+  src/lab_m1/tema1/globals/cards/types/types.hpp \
+  src/lab_m1/tema1/entities/effect/effect_fwd.hpp \
+  src/lab_m1/tema1/globals/sprites/types/types.hpp \
+  src/lab_m1/tema1/ui/card/card.hpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card.cpp.o: src/lab_m1/tema1/entities/card/card.cpp \
   /usr/include/stdc-predef.h \
@@ -12345,6 +12867,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card.cpp.o: src/lab_m
   /usr/include/c++/16/bits/atomic_base.h \
   /usr/include/c++/16/bits/atomic_lockfree_defines.h \
   /usr/include/c++/16/backward/auto_ptr.h \
+  src/lab_m1/tema1/globals/sprites/types/types.hpp \
   src/lab_m1/tema1/ui/card/card.hpp \
   src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
   src/core/gpu/mesh.h \
@@ -13368,6 +13891,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_colle
   deps/api/assimp/material.inl \
   deps/api/assimp/anim.h \
   deps/api/assimp/metadata.h \
+  src/lab_m1/tema1/globals/player/player.hpp \
   src/lab_m1/tema1/entities/card/card.hpp \
   src/lab_m1/tema1/entities/card/card_data/card_data.hpp \
   src/lab_m1/tema1/globals/cards/stats/stats.hpp \
@@ -13378,6 +13902,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_colle
   /usr/include/c++/16/bits/hashtable_policy.h \
   /usr/include/c++/16/bits/enable_special_members.h \
   src/lab_m1/tema1/entities/effect/effect_fwd.hpp \
+  src/lab_m1/tema1/globals/sprites/types/types.hpp \
   src/lab_m1/tema1/ui/card/card.hpp \
   src/lab_m1/tema1/ui/properties/transformable.hpp \
   /usr/include/c++/16/iostream \
@@ -13912,7 +14437,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o: src/lab_m1
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o: src/lab_m1/tema1/sprites/manager/manager.cpp \
   /usr/include/stdc-predef.h \
   src/lab_m1/tema1/sprites/manager/manager.hpp \
-  src/lab_m1/tema1/globals/cards/types/types.hpp \
+  src/lab_m1/tema1/globals/sprites/types/types.hpp \
   src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
   src/core/gpu/mesh.h \
   /usr/include/c++/16/string \
@@ -14420,7 +14945,12 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o: src/
   /usr/include/c++/16/bits/hashtable.h \
   /usr/include/c++/16/bits/hashtable_policy.h \
   /usr/include/c++/16/bits/enable_special_members.h \
-  src/lab_m1/tema1/sprites/card/card.hpp
+  src/lab_m1/tema1/globals/cards/types/types.hpp \
+  src/lab_m1/tema1/sprites/card/card.hpp \
+  src/lab_m1/tema1/sprites/shape/heart/heart.hpp \
+  src/lab_m1/tema1/sprites/shape/mana/mana.hpp \
+  src/lab_m1/tema1/sprites/shape/square/square.hpp \
+  src/lab_m1/tema1/sprites/shape/sword/sword.hpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o: src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp \
   /usr/include/stdc-predef.h \
@@ -14916,7 +15446,6 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o: src/lab_m1/tema1/sprites/shape/heart/heart.cpp \
   /usr/include/stdc-predef.h \
   src/lab_m1/tema1/sprites/shape/heart/heart.hpp \
-  src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
   src/core/gpu/mesh.h \
   /usr/include/c++/16/string \
   /usr/include/c++/16/bits/requires_hosted.h \
@@ -15404,6 +15933,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o: sr
   deps/api/assimp/material.inl \
   deps/api/assimp/anim.h \
   deps/api/assimp/metadata.h \
+  src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
   /usr/include/c++/16/memory \
   /usr/include/c++/16/bits/stl_raw_storage_iter.h \
   /usr/include/c++/16/bits/align.h \
@@ -15427,7 +15957,6 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o: sr
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.o: src/lab_m1/tema1/sprites/shape/mana/mana.cpp \
   /usr/include/stdc-predef.h \
   src/lab_m1/tema1/sprites/shape/mana/mana.hpp \
-  src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
   src/core/gpu/mesh.h \
   /usr/include/c++/16/string \
   /usr/include/c++/16/bits/requires_hosted.h \
@@ -15915,6 +16444,518 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.o: src/
   deps/api/assimp/material.inl \
   deps/api/assimp/anim.h \
   deps/api/assimp/metadata.h \
+  src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
+  /usr/include/c++/16/memory \
+  /usr/include/c++/16/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/16/bits/align.h \
+  /usr/include/c++/16/bit \
+  /usr/include/c++/16/bits/unique_ptr.h \
+  /usr/include/c++/16/bits/shared_ptr.h \
+  /usr/include/c++/16/bits/shared_ptr_base.h \
+  /usr/include/c++/16/bits/allocated_ptr.h \
+  /usr/include/c++/16/bits/refwrap.h \
+  /usr/include/c++/16/ext/concurrence.h \
+  /usr/include/c++/16/bits/shared_ptr_atomic.h \
+  /usr/include/c++/16/bits/atomic_base.h \
+  /usr/include/c++/16/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/16/backward/auto_ptr.h \
+  src/lab_m1/tema1/ui/globals/colors.hpp \
+  src/lab_m1/tema1/ui/shape/shape.hpp \
+  /usr/include/c++/16/iostream \
+  /usr/include/c++/16/istream \
+  /usr/include/c++/16/bits/istream.tcc
+
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.o: src/lab_m1/tema1/sprites/shape/square/square.cpp \
+  /usr/include/stdc-predef.h \
+  src/lab_m1/tema1/sprites/shape/square/square.hpp \
+  src/core/gpu/mesh.h \
+  /usr/include/c++/16/string \
+  /usr/include/c++/16/bits/requires_hosted.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/c++config.h \
+  /usr/include/bits/wordsize.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/os_defines.h \
+  /usr/include/features.h \
+  /usr/include/features-time64.h \
+  /usr/include/bits/timesize.h \
+  /usr/include/sys/cdefs.h \
+  /usr/include/bits/long-double.h \
+  /usr/include/gnu/stubs.h \
+  /usr/include/gnu/stubs-64.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/cpu_defines.h \
+  /usr/include/c++/16/bits/stringfwd.h \
+  /usr/include/c++/16/bits/memoryfwd.h \
+  /usr/include/c++/16/bits/version.h \
+  /usr/include/c++/16/bits/char_traits.h \
+  /usr/include/c++/16/bits/postypes.h \
+  /usr/include/c++/16/cwchar \
+  /usr/include/wchar.h \
+  /usr/include/bits/libc-header-start.h \
+  /usr/include/bits/floatn.h \
+  /usr/include/bits/floatn-common.h \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/stddef.h \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/stdarg.h \
+  /usr/include/bits/wchar.h \
+  /usr/include/bits/types/wint_t.h \
+  /usr/include/bits/types/mbstate_t.h \
+  /usr/include/bits/types/__mbstate_t.h \
+  /usr/include/bits/types/__FILE.h \
+  /usr/include/bits/types/FILE.h \
+  /usr/include/bits/types/locale_t.h \
+  /usr/include/bits/types/__locale_t.h \
+  /usr/include/c++/16/type_traits \
+  /usr/include/c++/16/bits/allocator.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/c++allocator.h \
+  /usr/include/c++/16/bits/new_allocator.h \
+  /usr/include/c++/16/new \
+  /usr/include/c++/16/bits/exception.h \
+  /usr/include/c++/16/bits/new_except.h \
+  /usr/include/c++/16/bits/exception_defines.h \
+  /usr/include/c++/16/bits/new_throw.h \
+  /usr/include/c++/16/bits/move.h \
+  /usr/include/c++/16/bits/cpp_type_traits.h \
+  /usr/include/c++/16/bits/localefwd.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/c++locale.h \
+  /usr/include/c++/16/clocale \
+  /usr/include/locale.h \
+  /usr/include/bits/locale.h \
+  /usr/include/c++/16/iosfwd \
+  /usr/include/c++/16/cctype \
+  /usr/include/ctype.h \
+  /usr/include/bits/types.h \
+  /usr/include/bits/typesizes.h \
+  /usr/include/bits/time64.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/endianness.h \
+  /usr/include/c++/16/bits/ostream_insert.h \
+  /usr/include/c++/16/bits/cxxabi_forced.h \
+  /usr/include/c++/16/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/16/bits/concept_check.h \
+  /usr/include/c++/16/debug/assertions.h \
+  /usr/include/c++/16/bits/stl_iterator_base_types.h \
+  /usr/include/c++/16/bits/stl_iterator.h \
+  /usr/include/c++/16/ext/type_traits.h \
+  /usr/include/c++/16/bits/ptr_traits.h \
+  /usr/include/c++/16/bits/stl_function.h \
+  /usr/include/c++/16/backward/binders.h \
+  /usr/include/c++/16/ext/numeric_traits.h \
+  /usr/include/c++/16/bits/stdexcept_throw.h \
+  /usr/include/c++/16/bits/stdexcept_throwfwd.h \
+  /usr/include/c++/16/bits/stl_algobase.h \
+  /usr/include/c++/16/bits/stl_pair.h \
+  /usr/include/c++/16/bits/utility.h \
+  /usr/include/c++/16/debug/debug.h \
+  /usr/include/c++/16/bits/predefined_ops.h \
+  /usr/include/c++/16/bits/range_access.h \
+  /usr/include/c++/16/initializer_list \
+  /usr/include/c++/16/bits/erase_if.h \
+  /usr/include/c++/16/bits/basic_string.h \
+  /usr/include/c++/16/ext/alloc_traits.h \
+  /usr/include/c++/16/bits/alloc_traits.h \
+  /usr/include/c++/16/bits/stl_construct.h \
+  /usr/include/c++/16/ext/string_conversions.h \
+  /usr/include/c++/16/cstdlib \
+  /usr/include/stdlib.h \
+  /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h \
+  /usr/include/sys/types.h \
+  /usr/include/bits/types/clock_t.h \
+  /usr/include/bits/types/clockid_t.h \
+  /usr/include/bits/types/time_t.h \
+  /usr/include/bits/types/timer_t.h \
+  /usr/include/bits/stdint-intn.h \
+  /usr/include/endian.h \
+  /usr/include/bits/byteswap.h \
+  /usr/include/bits/uintn-identity.h \
+  /usr/include/sys/select.h \
+  /usr/include/bits/select.h \
+  /usr/include/bits/types/sigset_t.h \
+  /usr/include/bits/types/__sigset_t.h \
+  /usr/include/bits/types/struct_timeval.h \
+  /usr/include/bits/types/struct_timespec.h \
+  /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/thread-shared-types.h \
+  /usr/include/bits/pthreadtypes-arch.h \
+  /usr/include/bits/atomic_wide_counter.h \
+  /usr/include/bits/struct_mutex.h \
+  /usr/include/bits/struct_rwlock.h \
+  /usr/include/alloca.h \
+  /usr/include/bits/stdlib-float.h \
+  /usr/include/c++/16/bits/std_abs.h \
+  /usr/include/c++/16/cstdio \
+  /usr/include/stdio.h \
+  /usr/include/bits/types/__fpos_t.h \
+  /usr/include/bits/types/__fpos64_t.h \
+  /usr/include/bits/types/struct_FILE.h \
+  /usr/include/bits/types/cookie_io_functions_t.h \
+  /usr/include/bits/stdio_lim.h \
+  /usr/include/c++/16/cerrno \
+  /usr/include/errno.h \
+  /usr/include/bits/errno.h \
+  /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/bits/types/error_t.h \
+  /usr/include/c++/16/bits/charconv.h \
+  /usr/include/c++/16/bits/functional_hash.h \
+  /usr/include/c++/16/bits/hash_bytes.h \
+  /usr/include/c++/16/bits/basic_string.tcc \
+  /usr/include/c++/16/vector \
+  /usr/include/c++/16/bits/stl_uninitialized.h \
+  /usr/include/c++/16/bits/stl_vector.h \
+  /usr/include/c++/16/bits/stl_bvector.h \
+  /usr/include/c++/16/bits/vector.tcc \
+  /usr/include/c++/16/map \
+  /usr/include/c++/16/bits/stl_tree.h \
+  /usr/include/c++/16/ext/aligned_buffer.h \
+  /usr/include/c++/16/bits/stl_map.h \
+  /usr/include/c++/16/tuple \
+  /usr/include/c++/16/bits/uses_allocator.h \
+  /usr/include/c++/16/bits/invoke.h \
+  /usr/include/c++/16/bits/stl_multimap.h \
+  src/core/gpu/vertex_format.h \
+  src/utils/glm_utils.h \
+  /usr/include/c++/16/ostream \
+  /usr/include/c++/16/bits/ostream.h \
+  /usr/include/c++/16/ios \
+  /usr/include/c++/16/exception \
+  /usr/include/c++/16/bits/exception_ptr.h \
+  /usr/include/c++/16/bits/cxxabi_init_exception.h \
+  /usr/include/c++/16/typeinfo \
+  /usr/include/c++/16/bits/nested_exception.h \
+  /usr/include/c++/16/bits/ios_base.h \
+  /usr/include/c++/16/ext/atomicity.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/gthr.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/gthr-default.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/bits/sched.h \
+  /usr/include/linux/sched/types.h \
+  /usr/include/linux/types.h \
+  /usr/include/asm/types.h \
+  /usr/include/asm-generic/types.h \
+  /usr/include/asm-generic/int-ll64.h \
+  /usr/include/asm/bitsperlong.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/asm/posix_types.h \
+  /usr/include/asm/posix_types_64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/bits/types/struct_sched_param.h \
+  /usr/include/bits/cpu-set.h \
+  /usr/include/time.h \
+  /usr/include/bits/time.h \
+  /usr/include/bits/timex.h \
+  /usr/include/bits/types/struct_tm.h \
+  /usr/include/bits/types/struct_itimerspec.h \
+  /usr/include/bits/setjmp.h \
+  /usr/include/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/bits/pthread_stack_min-dynamic.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/atomic_word.h \
+  /usr/include/sys/single_threaded.h \
+  /usr/include/c++/16/bits/locale_classes.h \
+  /usr/include/c++/16/bits/functexcept.h \
+  /usr/include/c++/16/bits/locale_classes.tcc \
+  /usr/include/c++/16/system_error \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/error_constants.h \
+  /usr/include/c++/16/stdexcept \
+  /usr/include/c++/16/bits/stdexcept_except.h \
+  /usr/include/c++/16/streambuf \
+  /usr/include/c++/16/bits/streambuf.tcc \
+  /usr/include/c++/16/bits/basic_ios.h \
+  /usr/include/c++/16/bits/locale_facets.h \
+  /usr/include/c++/16/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/bits/wctype-wchar.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/ctype_base.h \
+  /usr/include/c++/16/bits/streambuf_iterator.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/ctype_inline.h \
+  /usr/include/c++/16/bits/locale_facets.tcc \
+  /usr/include/c++/16/bits/basic_ios.tcc \
+  /usr/include/c++/16/bits/ostream_print.h \
+  /usr/include/c++/16/bits/ostream.tcc \
+  src/utils/math_utils.h \
+  /usr/include/c++/16/math.h \
+  /usr/include/c++/16/cmath \
+  /usr/include/math.h \
+  /usr/include/bits/math-vector.h \
+  /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/flt-eval-method.h \
+  /usr/include/bits/fp-logb.h \
+  /usr/include/bits/fp-fast.h \
+  /usr/include/bits/mathcalls-macros.h \
+  /usr/include/bits/mathcalls-helper-functions.h \
+  /usr/include/bits/mathcalls.h \
+  /usr/include/bits/mathcalls-narrow.h \
+  /usr/include/bits/iscanonical.h \
+  deps/api/glm/glm.hpp \
+  deps/api/glm/detail/_fixes.hpp \
+  deps/api/glm/detail/setup.hpp \
+  /usr/include/c++/16/cassert \
+  /usr/include/assert.h \
+  /usr/include/c++/16/cstddef \
+  deps/api/glm/simd/platform.h \
+  /usr/include/c++/16/cstdint \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdint-least.h \
+  /usr/include/c++/16/climits \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/limits.h \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/xopen_lim.h \
+  /usr/include/bits/uio_lim.h \
+  /usr/include/c++/16/cfloat \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/float.h \
+  /usr/include/c++/16/limits \
+  deps/api/glm/fwd.hpp \
+  deps/api/glm/detail/qualifier.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/vec2.hpp \
+  deps/api/glm/ext/vector_bool2.hpp \
+  deps/api/glm/detail/type_vec2.hpp \
+  deps/api/glm/detail/type_vec2.inl \
+  deps/api/glm/detail/compute_vector_relational.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/vector_bool2_precision.hpp \
+  deps/api/glm/ext/vector_float2.hpp \
+  deps/api/glm/ext/vector_float2_precision.hpp \
+  deps/api/glm/ext/vector_double2.hpp \
+  deps/api/glm/ext/vector_double2_precision.hpp \
+  deps/api/glm/ext/vector_int2.hpp \
+  deps/api/glm/ext/vector_int2_sized.hpp \
+  deps/api/glm/ext/scalar_int_sized.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/vector_uint2.hpp \
+  deps/api/glm/ext/vector_uint2_sized.hpp \
+  deps/api/glm/ext/scalar_uint_sized.hpp \
+  deps/api/glm/vec3.hpp \
+  deps/api/glm/ext/vector_bool3.hpp \
+  deps/api/glm/detail/type_vec3.hpp \
+  deps/api/glm/detail/type_vec3.inl \
+  deps/api/glm/ext/vector_bool3_precision.hpp \
+  deps/api/glm/ext/vector_float3.hpp \
+  deps/api/glm/ext/vector_float3_precision.hpp \
+  deps/api/glm/ext/vector_double3.hpp \
+  deps/api/glm/ext/vector_double3_precision.hpp \
+  deps/api/glm/ext/vector_int3.hpp \
+  deps/api/glm/ext/vector_int3_sized.hpp \
+  deps/api/glm/ext/vector_uint3.hpp \
+  deps/api/glm/ext/vector_uint3_sized.hpp \
+  deps/api/glm/vec4.hpp \
+  deps/api/glm/ext/vector_bool4.hpp \
+  deps/api/glm/detail/type_vec4.hpp \
+  deps/api/glm/detail/type_vec4.inl \
+  deps/api/glm/ext/vector_bool4_precision.hpp \
+  deps/api/glm/ext/vector_float4.hpp \
+  deps/api/glm/ext/vector_float4_precision.hpp \
+  deps/api/glm/ext/vector_double4.hpp \
+  deps/api/glm/ext/vector_double4_precision.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/vector_int4.hpp \
+  deps/api/glm/ext/vector_int4_sized.hpp \
+  deps/api/glm/ext/vector_uint4.hpp \
+  deps/api/glm/ext/vector_uint4_sized.hpp \
+  deps/api/glm/mat2x2.hpp \
+  deps/api/glm/ext/matrix_double2x2.hpp \
+  deps/api/glm/detail/type_mat2x2.hpp \
+  deps/api/glm/detail/type_mat2x2.inl \
+  deps/api/glm/matrix.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/mat2x3.hpp \
+  deps/api/glm/ext/matrix_double2x3.hpp \
+  deps/api/glm/detail/type_mat2x3.hpp \
+  deps/api/glm/detail/type_mat2x3.inl \
+  deps/api/glm/ext/matrix_double2x3_precision.hpp \
+  deps/api/glm/ext/matrix_float2x3.hpp \
+  deps/api/glm/ext/matrix_float2x3_precision.hpp \
+  deps/api/glm/mat2x4.hpp \
+  deps/api/glm/ext/matrix_double2x4.hpp \
+  deps/api/glm/detail/type_mat2x4.hpp \
+  deps/api/glm/detail/type_mat2x4.inl \
+  deps/api/glm/ext/matrix_double2x4_precision.hpp \
+  deps/api/glm/ext/matrix_float2x4.hpp \
+  deps/api/glm/ext/matrix_float2x4_precision.hpp \
+  deps/api/glm/mat3x2.hpp \
+  deps/api/glm/ext/matrix_double3x2.hpp \
+  deps/api/glm/detail/type_mat3x2.hpp \
+  deps/api/glm/detail/type_mat3x2.inl \
+  deps/api/glm/ext/matrix_double3x2_precision.hpp \
+  deps/api/glm/ext/matrix_float3x2.hpp \
+  deps/api/glm/ext/matrix_float3x2_precision.hpp \
+  deps/api/glm/mat3x3.hpp \
+  deps/api/glm/ext/matrix_double3x3.hpp \
+  deps/api/glm/detail/type_mat3x3.hpp \
+  deps/api/glm/detail/type_mat3x3.inl \
+  deps/api/glm/ext/matrix_double3x3_precision.hpp \
+  deps/api/glm/ext/matrix_float3x3.hpp \
+  deps/api/glm/ext/matrix_float3x3_precision.hpp \
+  deps/api/glm/mat3x4.hpp \
+  deps/api/glm/ext/matrix_double3x4.hpp \
+  deps/api/glm/detail/type_mat3x4.hpp \
+  deps/api/glm/detail/type_mat3x4.inl \
+  deps/api/glm/ext/matrix_double3x4_precision.hpp \
+  deps/api/glm/ext/matrix_float3x4.hpp \
+  deps/api/glm/ext/matrix_float3x4_precision.hpp \
+  deps/api/glm/mat4x2.hpp \
+  deps/api/glm/ext/matrix_double4x2.hpp \
+  deps/api/glm/detail/type_mat4x2.hpp \
+  deps/api/glm/detail/type_mat4x2.inl \
+  deps/api/glm/ext/matrix_double4x2_precision.hpp \
+  deps/api/glm/ext/matrix_float4x2.hpp \
+  deps/api/glm/ext/matrix_float4x2_precision.hpp \
+  deps/api/glm/mat4x3.hpp \
+  deps/api/glm/ext/matrix_double4x3.hpp \
+  deps/api/glm/detail/type_mat4x3.hpp \
+  deps/api/glm/detail/type_mat4x3.inl \
+  deps/api/glm/ext/matrix_double4x3_precision.hpp \
+  deps/api/glm/ext/matrix_float4x3.hpp \
+  deps/api/glm/ext/matrix_float4x3_precision.hpp \
+  deps/api/glm/mat4x4.hpp \
+  deps/api/glm/ext/matrix_double4x4.hpp \
+  deps/api/glm/detail/type_mat4x4.hpp \
+  deps/api/glm/detail/type_mat4x4.inl \
+  deps/api/glm/ext/matrix_double4x4_precision.hpp \
+  deps/api/glm/ext/matrix_float4x4.hpp \
+  deps/api/glm/ext/matrix_float4x4_precision.hpp \
+  deps/api/glm/detail/func_matrix.inl \
+  deps/api/glm/geometric.hpp \
+  deps/api/glm/detail/func_geometric.inl \
+  deps/api/glm/exponential.hpp \
+  deps/api/glm/detail/type_vec1.hpp \
+  deps/api/glm/detail/type_vec1.inl \
+  deps/api/glm/detail/func_exponential.inl \
+  deps/api/glm/vector_relational.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/detail/func_vector_relational.inl \
+  deps/api/glm/detail/_vectorize.hpp \
+  deps/api/glm/common.hpp \
+  deps/api/glm/detail/_fixes.hpp \
+  deps/api/glm/detail/func_common.inl \
+  deps/api/glm/detail/compute_common.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/matrix_double2x2_precision.hpp \
+  deps/api/glm/ext/matrix_float2x2.hpp \
+  deps/api/glm/ext/matrix_float2x2_precision.hpp \
+  deps/api/glm/trigonometric.hpp \
+  deps/api/glm/detail/func_trigonometric.inl \
+  deps/api/glm/packing.hpp \
+  deps/api/glm/detail/func_packing.inl \
+  deps/api/glm/detail/type_half.hpp \
+  deps/api/glm/detail/type_half.inl \
+  deps/api/glm/integer.hpp \
+  deps/api/glm/detail/func_integer.inl \
+  deps/api/glm/gtc/type_ptr.hpp \
+  deps/api/glm/gtc/quaternion.hpp \
+  deps/api/glm/gtc/constants.hpp \
+  deps/api/glm/ext/scalar_constants.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/scalar_constants.inl \
+  deps/api/glm/gtc/constants.inl \
+  deps/api/glm/gtc/matrix_transform.hpp \
+  deps/api/glm/ext/matrix_projection.hpp \
+  deps/api/glm/ext/matrix_projection.inl \
+  deps/api/glm/ext/matrix_clip_space.hpp \
+  deps/api/glm/ext/matrix_clip_space.inl \
+  deps/api/glm/ext/matrix_transform.hpp \
+  deps/api/glm/ext/matrix_transform.inl \
+  deps/api/glm/gtc/matrix_transform.inl \
+  deps/api/glm/ext/vector_relational.hpp \
+  deps/api/glm/ext/vector_relational.inl \
+  deps/api/glm/detail/type_float.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/quaternion_common.hpp \
+  deps/api/glm/ext/quaternion_geometric.hpp \
+  deps/api/glm/ext/quaternion_geometric.inl \
+  deps/api/glm/ext/quaternion_common.inl \
+  deps/api/glm/ext/quaternion_float.hpp \
+  deps/api/glm/detail/type_quat.hpp \
+  deps/api/glm/ext/quaternion_relational.hpp \
+  deps/api/glm/ext/quaternion_relational.inl \
+  deps/api/glm/detail/type_quat.inl \
+  deps/api/glm/ext/quaternion_float_precision.hpp \
+  deps/api/glm/ext/quaternion_double.hpp \
+  deps/api/glm/ext/quaternion_double_precision.hpp \
+  deps/api/glm/ext/quaternion_trigonometric.hpp \
+  deps/api/glm/ext/quaternion_trigonometric.inl \
+  deps/api/glm/ext/quaternion_transform.hpp \
+  deps/api/glm/ext/quaternion_transform.inl \
+  deps/api/glm/gtc/quaternion.inl \
+  deps/api/glm/gtc/epsilon.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/gtc/epsilon.inl \
+  deps/api/glm/gtc/vec1.hpp \
+  deps/api/glm/ext/vector_bool1.hpp \
+  deps/api/glm/ext/vector_bool1_precision.hpp \
+  deps/api/glm/ext/vector_float1.hpp \
+  deps/api/glm/ext/vector_float1_precision.hpp \
+  deps/api/glm/ext/vector_double1.hpp \
+  deps/api/glm/ext/vector_double1_precision.hpp \
+  deps/api/glm/ext/vector_int1.hpp \
+  deps/api/glm/ext/vector_int1_sized.hpp \
+  deps/api/glm/ext/vector_uint1.hpp \
+  deps/api/glm/ext/vector_uint1_sized.hpp \
+  /usr/include/c++/16/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  deps/api/glm/gtc/type_ptr.inl \
+  deps/api/glm/gtx/quaternion.hpp \
+  deps/api/glm/ext/quaternion_exponential.hpp \
+  deps/api/glm/ext/quaternion_exponential.inl \
+  deps/api/glm/gtx/norm.hpp \
+  deps/api/glm/gtx/component_wise.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/gtx/component_wise.inl \
+  deps/api/glm/gtx/norm.inl \
+  deps/api/glm/gtx/quaternion.inl \
+  src/core/gpu/texture2D.h \
+  src/utils/gl_utils.h \
+  deps/api/GL/glew.h \
+  /usr/include/GL/glu.h \
+  /usr/include/GL/gl.h \
+  src/core/gpu/gpu_buffers.h \
+  src/core/gpu/vertex_bone_data.h \
+  deps/api/assimp/scene.h \
+  deps/api/assimp/types.h \
+  deps/api/assimp/defs.h \
+  deps/api/assimp/config.h \
+  deps/api/assimp/vector2.h \
+  deps/api/assimp/vector3.h \
+  deps/api/assimp/color4.h \
+  deps/api/assimp/matrix3x3.h \
+  deps/api/assimp/matrix4x4.h \
+  deps/api/assimp/quaternion.h \
+  deps/api/assimp/vector2.inl \
+  deps/api/assimp/vector3.inl \
+  deps/api/assimp/color4.inl \
+  deps/api/assimp/matrix3x3.inl \
+  /usr/include/c++/16/algorithm \
+  /usr/include/c++/16/bits/stl_algo.h \
+  /usr/include/c++/16/bits/algorithmfwd.h \
+  /usr/include/c++/16/bits/stl_heap.h \
+  /usr/include/c++/16/bits/uniform_int_dist.h \
+  /usr/include/c++/16/bits/stl_tempbuf.h \
+  deps/api/assimp/matrix4x4.inl \
+  deps/api/assimp/MathFunctions.h \
+  deps/api/assimp/quaternion.inl \
+  deps/api/assimp/texture.h \
+  deps/api/assimp/Compiler/pushpack1.h \
+  deps/api/assimp/Compiler/poppack1.h \
+  deps/api/assimp/mesh.h \
+  deps/api/assimp/aabb.h \
+  deps/api/assimp/light.h \
+  deps/api/assimp/camera.h \
+  deps/api/assimp/material.h \
+  deps/api/assimp/material.inl \
+  deps/api/assimp/anim.h \
+  deps/api/assimp/metadata.h \
+  src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
   /usr/include/c++/16/memory \
   /usr/include/c++/16/bits/stl_raw_storage_iter.h \
   /usr/include/c++/16/bits/align.h \
@@ -16969,11 +18010,8 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o: src/lab_m1/tema1/tema1
   /usr/include/c++/16/bits/stream_iterator.h \
   src/core/managers/texture_manager.h \
   src/utils/memory_utils.h \
-  src/lab_m1/tema1/entities/card/card.hpp \
-  src/lab_m1/tema1/entities/card/card_data/card_data.hpp \
-  src/lab_m1/tema1/globals/cards/stats/stats.hpp \
-  src/lab_m1/tema1/globals/cards/types/types.hpp \
-  src/lab_m1/tema1/entities/effect/effect_fwd.hpp \
+  src/lab_m1/tema1/entities/battle_cards/battle_cards.hpp \
+  src/lab_m1/tema1/entities/card/card_fwd.hpp \
   /usr/include/c++/16/memory \
   /usr/include/c++/16/bits/stl_raw_storage_iter.h \
   /usr/include/c++/16/bits/align.h \
@@ -16986,16 +18024,27 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o: src/lab_m1/tema1/tema1
   /usr/include/c++/16/bits/atomic_base.h \
   /usr/include/c++/16/bits/atomic_lockfree_defines.h \
   /usr/include/c++/16/backward/auto_ptr.h \
-  src/lab_m1/tema1/ui/card/card.hpp \
+  src/lab_m1/tema1/entities/properties/renderable/renderable.hpp \
   src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
+  src/lab_m1/tema1/globals/player/player.hpp \
+  src/lab_m1/tema1/ui/card_area/card_area.hpp \
+  src/lab_m1/tema1/sprites/shape/square/square.hpp \
   src/lab_m1/tema1/ui/properties/transformable.hpp \
+  src/lab_m1/tema1/ui/globals/colors.hpp \
+  src/lab_m1/tema1/entities/card/card.hpp \
+  src/lab_m1/tema1/entities/card/card_data/card_data.hpp \
+  src/lab_m1/tema1/globals/cards/stats/stats.hpp \
+  src/lab_m1/tema1/globals/cards/types/types.hpp \
+  src/lab_m1/tema1/entities/effect/effect_fwd.hpp \
+  src/lab_m1/tema1/globals/sprites/types/types.hpp \
+  src/lab_m1/tema1/ui/card/card.hpp \
   src/lab_m1/tema1/entities/card_collection/card_collection.hpp \
-  src/lab_m1/tema1/entities/card/card_fwd.hpp \
   /usr/include/c++/16/iostream
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o: src/lab_m1/tema1/ui/card/card.cpp \
   /usr/include/stdc-predef.h \
   src/lab_m1/tema1/ui/card/card.hpp \
+  src/lab_m1/tema1/globals/sprites/types/types.hpp \
   src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
   src/core/gpu/mesh.h \
   /usr/include/c++/16/string \
@@ -17507,13 +18556,528 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o: src/lab_m1/tema
   /usr/include/c++/16/bits/hashtable_policy.h \
   /usr/include/c++/16/bits/enable_special_members.h \
   src/lab_m1/tema1/sprites/manager/manager.hpp \
-  src/lab_m1/tema1/sprites/shape/heart/heart.hpp \
-  src/lab_m1/tema1/sprites/shape/mana/mana.hpp \
-  src/lab_m1/tema1/sprites/shape/sword/sword.hpp \
   src/lab_m1/tema1/ui/transform/transform.hpp \
+  src/lab_m1/tema1/ui/globals/colors.hpp \
   /usr/include/c++/16/iostream \
   /usr/include/c++/16/istream \
   /usr/include/c++/16/bits/istream.tcc
+
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.o: src/lab_m1/tema1/ui/card_area/card_area.cpp \
+  /usr/include/stdc-predef.h \
+  src/lab_m1/tema1/ui/card_area/card_area.hpp \
+  src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp \
+  src/core/gpu/mesh.h \
+  /usr/include/c++/16/string \
+  /usr/include/c++/16/bits/requires_hosted.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/c++config.h \
+  /usr/include/bits/wordsize.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/os_defines.h \
+  /usr/include/features.h \
+  /usr/include/features-time64.h \
+  /usr/include/bits/timesize.h \
+  /usr/include/sys/cdefs.h \
+  /usr/include/bits/long-double.h \
+  /usr/include/gnu/stubs.h \
+  /usr/include/gnu/stubs-64.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/cpu_defines.h \
+  /usr/include/c++/16/bits/stringfwd.h \
+  /usr/include/c++/16/bits/memoryfwd.h \
+  /usr/include/c++/16/bits/version.h \
+  /usr/include/c++/16/bits/char_traits.h \
+  /usr/include/c++/16/bits/postypes.h \
+  /usr/include/c++/16/cwchar \
+  /usr/include/wchar.h \
+  /usr/include/bits/libc-header-start.h \
+  /usr/include/bits/floatn.h \
+  /usr/include/bits/floatn-common.h \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/stddef.h \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/stdarg.h \
+  /usr/include/bits/wchar.h \
+  /usr/include/bits/types/wint_t.h \
+  /usr/include/bits/types/mbstate_t.h \
+  /usr/include/bits/types/__mbstate_t.h \
+  /usr/include/bits/types/__FILE.h \
+  /usr/include/bits/types/FILE.h \
+  /usr/include/bits/types/locale_t.h \
+  /usr/include/bits/types/__locale_t.h \
+  /usr/include/c++/16/type_traits \
+  /usr/include/c++/16/bits/allocator.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/c++allocator.h \
+  /usr/include/c++/16/bits/new_allocator.h \
+  /usr/include/c++/16/new \
+  /usr/include/c++/16/bits/exception.h \
+  /usr/include/c++/16/bits/new_except.h \
+  /usr/include/c++/16/bits/exception_defines.h \
+  /usr/include/c++/16/bits/new_throw.h \
+  /usr/include/c++/16/bits/move.h \
+  /usr/include/c++/16/bits/cpp_type_traits.h \
+  /usr/include/c++/16/bits/localefwd.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/c++locale.h \
+  /usr/include/c++/16/clocale \
+  /usr/include/locale.h \
+  /usr/include/bits/locale.h \
+  /usr/include/c++/16/iosfwd \
+  /usr/include/c++/16/cctype \
+  /usr/include/ctype.h \
+  /usr/include/bits/types.h \
+  /usr/include/bits/typesizes.h \
+  /usr/include/bits/time64.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/endianness.h \
+  /usr/include/c++/16/bits/ostream_insert.h \
+  /usr/include/c++/16/bits/cxxabi_forced.h \
+  /usr/include/c++/16/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/16/bits/concept_check.h \
+  /usr/include/c++/16/debug/assertions.h \
+  /usr/include/c++/16/bits/stl_iterator_base_types.h \
+  /usr/include/c++/16/bits/stl_iterator.h \
+  /usr/include/c++/16/ext/type_traits.h \
+  /usr/include/c++/16/bits/ptr_traits.h \
+  /usr/include/c++/16/bits/stl_function.h \
+  /usr/include/c++/16/backward/binders.h \
+  /usr/include/c++/16/ext/numeric_traits.h \
+  /usr/include/c++/16/bits/stdexcept_throw.h \
+  /usr/include/c++/16/bits/stdexcept_throwfwd.h \
+  /usr/include/c++/16/bits/stl_algobase.h \
+  /usr/include/c++/16/bits/stl_pair.h \
+  /usr/include/c++/16/bits/utility.h \
+  /usr/include/c++/16/debug/debug.h \
+  /usr/include/c++/16/bits/predefined_ops.h \
+  /usr/include/c++/16/bits/range_access.h \
+  /usr/include/c++/16/initializer_list \
+  /usr/include/c++/16/bits/erase_if.h \
+  /usr/include/c++/16/bits/basic_string.h \
+  /usr/include/c++/16/ext/alloc_traits.h \
+  /usr/include/c++/16/bits/alloc_traits.h \
+  /usr/include/c++/16/bits/stl_construct.h \
+  /usr/include/c++/16/ext/string_conversions.h \
+  /usr/include/c++/16/cstdlib \
+  /usr/include/stdlib.h \
+  /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h \
+  /usr/include/sys/types.h \
+  /usr/include/bits/types/clock_t.h \
+  /usr/include/bits/types/clockid_t.h \
+  /usr/include/bits/types/time_t.h \
+  /usr/include/bits/types/timer_t.h \
+  /usr/include/bits/stdint-intn.h \
+  /usr/include/endian.h \
+  /usr/include/bits/byteswap.h \
+  /usr/include/bits/uintn-identity.h \
+  /usr/include/sys/select.h \
+  /usr/include/bits/select.h \
+  /usr/include/bits/types/sigset_t.h \
+  /usr/include/bits/types/__sigset_t.h \
+  /usr/include/bits/types/struct_timeval.h \
+  /usr/include/bits/types/struct_timespec.h \
+  /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/thread-shared-types.h \
+  /usr/include/bits/pthreadtypes-arch.h \
+  /usr/include/bits/atomic_wide_counter.h \
+  /usr/include/bits/struct_mutex.h \
+  /usr/include/bits/struct_rwlock.h \
+  /usr/include/alloca.h \
+  /usr/include/bits/stdlib-float.h \
+  /usr/include/c++/16/bits/std_abs.h \
+  /usr/include/c++/16/cstdio \
+  /usr/include/stdio.h \
+  /usr/include/bits/types/__fpos_t.h \
+  /usr/include/bits/types/__fpos64_t.h \
+  /usr/include/bits/types/struct_FILE.h \
+  /usr/include/bits/types/cookie_io_functions_t.h \
+  /usr/include/bits/stdio_lim.h \
+  /usr/include/c++/16/cerrno \
+  /usr/include/errno.h \
+  /usr/include/bits/errno.h \
+  /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/bits/types/error_t.h \
+  /usr/include/c++/16/bits/charconv.h \
+  /usr/include/c++/16/bits/functional_hash.h \
+  /usr/include/c++/16/bits/hash_bytes.h \
+  /usr/include/c++/16/bits/basic_string.tcc \
+  /usr/include/c++/16/vector \
+  /usr/include/c++/16/bits/stl_uninitialized.h \
+  /usr/include/c++/16/bits/stl_vector.h \
+  /usr/include/c++/16/bits/stl_bvector.h \
+  /usr/include/c++/16/bits/vector.tcc \
+  /usr/include/c++/16/map \
+  /usr/include/c++/16/bits/stl_tree.h \
+  /usr/include/c++/16/ext/aligned_buffer.h \
+  /usr/include/c++/16/bits/stl_map.h \
+  /usr/include/c++/16/tuple \
+  /usr/include/c++/16/bits/uses_allocator.h \
+  /usr/include/c++/16/bits/invoke.h \
+  /usr/include/c++/16/bits/stl_multimap.h \
+  src/core/gpu/vertex_format.h \
+  src/utils/glm_utils.h \
+  /usr/include/c++/16/ostream \
+  /usr/include/c++/16/bits/ostream.h \
+  /usr/include/c++/16/ios \
+  /usr/include/c++/16/exception \
+  /usr/include/c++/16/bits/exception_ptr.h \
+  /usr/include/c++/16/bits/cxxabi_init_exception.h \
+  /usr/include/c++/16/typeinfo \
+  /usr/include/c++/16/bits/nested_exception.h \
+  /usr/include/c++/16/bits/ios_base.h \
+  /usr/include/c++/16/ext/atomicity.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/gthr.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/gthr-default.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/bits/sched.h \
+  /usr/include/linux/sched/types.h \
+  /usr/include/linux/types.h \
+  /usr/include/asm/types.h \
+  /usr/include/asm-generic/types.h \
+  /usr/include/asm-generic/int-ll64.h \
+  /usr/include/asm/bitsperlong.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/asm/posix_types.h \
+  /usr/include/asm/posix_types_64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/bits/types/struct_sched_param.h \
+  /usr/include/bits/cpu-set.h \
+  /usr/include/time.h \
+  /usr/include/bits/time.h \
+  /usr/include/bits/timex.h \
+  /usr/include/bits/types/struct_tm.h \
+  /usr/include/bits/types/struct_itimerspec.h \
+  /usr/include/bits/setjmp.h \
+  /usr/include/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/bits/pthread_stack_min-dynamic.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/atomic_word.h \
+  /usr/include/sys/single_threaded.h \
+  /usr/include/c++/16/bits/locale_classes.h \
+  /usr/include/c++/16/bits/functexcept.h \
+  /usr/include/c++/16/bits/locale_classes.tcc \
+  /usr/include/c++/16/system_error \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/error_constants.h \
+  /usr/include/c++/16/stdexcept \
+  /usr/include/c++/16/bits/stdexcept_except.h \
+  /usr/include/c++/16/streambuf \
+  /usr/include/c++/16/bits/streambuf.tcc \
+  /usr/include/c++/16/bits/basic_ios.h \
+  /usr/include/c++/16/bits/locale_facets.h \
+  /usr/include/c++/16/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/bits/wctype-wchar.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/ctype_base.h \
+  /usr/include/c++/16/bits/streambuf_iterator.h \
+  /usr/include/c++/16/x86_64-redhat-linux/bits/ctype_inline.h \
+  /usr/include/c++/16/bits/locale_facets.tcc \
+  /usr/include/c++/16/bits/basic_ios.tcc \
+  /usr/include/c++/16/bits/ostream_print.h \
+  /usr/include/c++/16/bits/ostream.tcc \
+  src/utils/math_utils.h \
+  /usr/include/c++/16/math.h \
+  /usr/include/c++/16/cmath \
+  /usr/include/math.h \
+  /usr/include/bits/math-vector.h \
+  /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/flt-eval-method.h \
+  /usr/include/bits/fp-logb.h \
+  /usr/include/bits/fp-fast.h \
+  /usr/include/bits/mathcalls-macros.h \
+  /usr/include/bits/mathcalls-helper-functions.h \
+  /usr/include/bits/mathcalls.h \
+  /usr/include/bits/mathcalls-narrow.h \
+  /usr/include/bits/iscanonical.h \
+  deps/api/glm/glm.hpp \
+  deps/api/glm/detail/_fixes.hpp \
+  deps/api/glm/detail/setup.hpp \
+  /usr/include/c++/16/cassert \
+  /usr/include/assert.h \
+  /usr/include/c++/16/cstddef \
+  deps/api/glm/simd/platform.h \
+  /usr/include/c++/16/cstdint \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/bits/stdint-uintn.h \
+  /usr/include/bits/stdint-least.h \
+  /usr/include/c++/16/climits \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/limits.h \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h \
+  /usr/include/bits/xopen_lim.h \
+  /usr/include/bits/uio_lim.h \
+  /usr/include/c++/16/cfloat \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/float.h \
+  /usr/include/c++/16/limits \
+  deps/api/glm/fwd.hpp \
+  deps/api/glm/detail/qualifier.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/vec2.hpp \
+  deps/api/glm/ext/vector_bool2.hpp \
+  deps/api/glm/detail/type_vec2.hpp \
+  deps/api/glm/detail/type_vec2.inl \
+  deps/api/glm/detail/compute_vector_relational.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/vector_bool2_precision.hpp \
+  deps/api/glm/ext/vector_float2.hpp \
+  deps/api/glm/ext/vector_float2_precision.hpp \
+  deps/api/glm/ext/vector_double2.hpp \
+  deps/api/glm/ext/vector_double2_precision.hpp \
+  deps/api/glm/ext/vector_int2.hpp \
+  deps/api/glm/ext/vector_int2_sized.hpp \
+  deps/api/glm/ext/scalar_int_sized.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/vector_uint2.hpp \
+  deps/api/glm/ext/vector_uint2_sized.hpp \
+  deps/api/glm/ext/scalar_uint_sized.hpp \
+  deps/api/glm/vec3.hpp \
+  deps/api/glm/ext/vector_bool3.hpp \
+  deps/api/glm/detail/type_vec3.hpp \
+  deps/api/glm/detail/type_vec3.inl \
+  deps/api/glm/ext/vector_bool3_precision.hpp \
+  deps/api/glm/ext/vector_float3.hpp \
+  deps/api/glm/ext/vector_float3_precision.hpp \
+  deps/api/glm/ext/vector_double3.hpp \
+  deps/api/glm/ext/vector_double3_precision.hpp \
+  deps/api/glm/ext/vector_int3.hpp \
+  deps/api/glm/ext/vector_int3_sized.hpp \
+  deps/api/glm/ext/vector_uint3.hpp \
+  deps/api/glm/ext/vector_uint3_sized.hpp \
+  deps/api/glm/vec4.hpp \
+  deps/api/glm/ext/vector_bool4.hpp \
+  deps/api/glm/detail/type_vec4.hpp \
+  deps/api/glm/detail/type_vec4.inl \
+  deps/api/glm/ext/vector_bool4_precision.hpp \
+  deps/api/glm/ext/vector_float4.hpp \
+  deps/api/glm/ext/vector_float4_precision.hpp \
+  deps/api/glm/ext/vector_double4.hpp \
+  deps/api/glm/ext/vector_double4_precision.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/vector_int4.hpp \
+  deps/api/glm/ext/vector_int4_sized.hpp \
+  deps/api/glm/ext/vector_uint4.hpp \
+  deps/api/glm/ext/vector_uint4_sized.hpp \
+  deps/api/glm/mat2x2.hpp \
+  deps/api/glm/ext/matrix_double2x2.hpp \
+  deps/api/glm/detail/type_mat2x2.hpp \
+  deps/api/glm/detail/type_mat2x2.inl \
+  deps/api/glm/matrix.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/mat2x3.hpp \
+  deps/api/glm/ext/matrix_double2x3.hpp \
+  deps/api/glm/detail/type_mat2x3.hpp \
+  deps/api/glm/detail/type_mat2x3.inl \
+  deps/api/glm/ext/matrix_double2x3_precision.hpp \
+  deps/api/glm/ext/matrix_float2x3.hpp \
+  deps/api/glm/ext/matrix_float2x3_precision.hpp \
+  deps/api/glm/mat2x4.hpp \
+  deps/api/glm/ext/matrix_double2x4.hpp \
+  deps/api/glm/detail/type_mat2x4.hpp \
+  deps/api/glm/detail/type_mat2x4.inl \
+  deps/api/glm/ext/matrix_double2x4_precision.hpp \
+  deps/api/glm/ext/matrix_float2x4.hpp \
+  deps/api/glm/ext/matrix_float2x4_precision.hpp \
+  deps/api/glm/mat3x2.hpp \
+  deps/api/glm/ext/matrix_double3x2.hpp \
+  deps/api/glm/detail/type_mat3x2.hpp \
+  deps/api/glm/detail/type_mat3x2.inl \
+  deps/api/glm/ext/matrix_double3x2_precision.hpp \
+  deps/api/glm/ext/matrix_float3x2.hpp \
+  deps/api/glm/ext/matrix_float3x2_precision.hpp \
+  deps/api/glm/mat3x3.hpp \
+  deps/api/glm/ext/matrix_double3x3.hpp \
+  deps/api/glm/detail/type_mat3x3.hpp \
+  deps/api/glm/detail/type_mat3x3.inl \
+  deps/api/glm/ext/matrix_double3x3_precision.hpp \
+  deps/api/glm/ext/matrix_float3x3.hpp \
+  deps/api/glm/ext/matrix_float3x3_precision.hpp \
+  deps/api/glm/mat3x4.hpp \
+  deps/api/glm/ext/matrix_double3x4.hpp \
+  deps/api/glm/detail/type_mat3x4.hpp \
+  deps/api/glm/detail/type_mat3x4.inl \
+  deps/api/glm/ext/matrix_double3x4_precision.hpp \
+  deps/api/glm/ext/matrix_float3x4.hpp \
+  deps/api/glm/ext/matrix_float3x4_precision.hpp \
+  deps/api/glm/mat4x2.hpp \
+  deps/api/glm/ext/matrix_double4x2.hpp \
+  deps/api/glm/detail/type_mat4x2.hpp \
+  deps/api/glm/detail/type_mat4x2.inl \
+  deps/api/glm/ext/matrix_double4x2_precision.hpp \
+  deps/api/glm/ext/matrix_float4x2.hpp \
+  deps/api/glm/ext/matrix_float4x2_precision.hpp \
+  deps/api/glm/mat4x3.hpp \
+  deps/api/glm/ext/matrix_double4x3.hpp \
+  deps/api/glm/detail/type_mat4x3.hpp \
+  deps/api/glm/detail/type_mat4x3.inl \
+  deps/api/glm/ext/matrix_double4x3_precision.hpp \
+  deps/api/glm/ext/matrix_float4x3.hpp \
+  deps/api/glm/ext/matrix_float4x3_precision.hpp \
+  deps/api/glm/mat4x4.hpp \
+  deps/api/glm/ext/matrix_double4x4.hpp \
+  deps/api/glm/detail/type_mat4x4.hpp \
+  deps/api/glm/detail/type_mat4x4.inl \
+  deps/api/glm/ext/matrix_double4x4_precision.hpp \
+  deps/api/glm/ext/matrix_float4x4.hpp \
+  deps/api/glm/ext/matrix_float4x4_precision.hpp \
+  deps/api/glm/detail/func_matrix.inl \
+  deps/api/glm/geometric.hpp \
+  deps/api/glm/detail/func_geometric.inl \
+  deps/api/glm/exponential.hpp \
+  deps/api/glm/detail/type_vec1.hpp \
+  deps/api/glm/detail/type_vec1.inl \
+  deps/api/glm/detail/func_exponential.inl \
+  deps/api/glm/vector_relational.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/detail/func_vector_relational.inl \
+  deps/api/glm/detail/_vectorize.hpp \
+  deps/api/glm/common.hpp \
+  deps/api/glm/detail/_fixes.hpp \
+  deps/api/glm/detail/func_common.inl \
+  deps/api/glm/detail/compute_common.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/matrix_double2x2_precision.hpp \
+  deps/api/glm/ext/matrix_float2x2.hpp \
+  deps/api/glm/ext/matrix_float2x2_precision.hpp \
+  deps/api/glm/trigonometric.hpp \
+  deps/api/glm/detail/func_trigonometric.inl \
+  deps/api/glm/packing.hpp \
+  deps/api/glm/detail/func_packing.inl \
+  deps/api/glm/detail/type_half.hpp \
+  deps/api/glm/detail/type_half.inl \
+  deps/api/glm/integer.hpp \
+  deps/api/glm/detail/func_integer.inl \
+  deps/api/glm/gtc/type_ptr.hpp \
+  deps/api/glm/gtc/quaternion.hpp \
+  deps/api/glm/gtc/constants.hpp \
+  deps/api/glm/ext/scalar_constants.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/scalar_constants.inl \
+  deps/api/glm/gtc/constants.inl \
+  deps/api/glm/gtc/matrix_transform.hpp \
+  deps/api/glm/ext/matrix_projection.hpp \
+  deps/api/glm/ext/matrix_projection.inl \
+  deps/api/glm/ext/matrix_clip_space.hpp \
+  deps/api/glm/ext/matrix_clip_space.inl \
+  deps/api/glm/ext/matrix_transform.hpp \
+  deps/api/glm/ext/matrix_transform.inl \
+  deps/api/glm/gtc/matrix_transform.inl \
+  deps/api/glm/ext/vector_relational.hpp \
+  deps/api/glm/ext/vector_relational.inl \
+  deps/api/glm/detail/type_float.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/ext/quaternion_common.hpp \
+  deps/api/glm/ext/quaternion_geometric.hpp \
+  deps/api/glm/ext/quaternion_geometric.inl \
+  deps/api/glm/ext/quaternion_common.inl \
+  deps/api/glm/ext/quaternion_float.hpp \
+  deps/api/glm/detail/type_quat.hpp \
+  deps/api/glm/ext/quaternion_relational.hpp \
+  deps/api/glm/ext/quaternion_relational.inl \
+  deps/api/glm/detail/type_quat.inl \
+  deps/api/glm/ext/quaternion_float_precision.hpp \
+  deps/api/glm/ext/quaternion_double.hpp \
+  deps/api/glm/ext/quaternion_double_precision.hpp \
+  deps/api/glm/ext/quaternion_trigonometric.hpp \
+  deps/api/glm/ext/quaternion_trigonometric.inl \
+  deps/api/glm/ext/quaternion_transform.hpp \
+  deps/api/glm/ext/quaternion_transform.inl \
+  deps/api/glm/gtc/quaternion.inl \
+  deps/api/glm/gtc/epsilon.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/gtc/epsilon.inl \
+  deps/api/glm/gtc/vec1.hpp \
+  deps/api/glm/ext/vector_bool1.hpp \
+  deps/api/glm/ext/vector_bool1_precision.hpp \
+  deps/api/glm/ext/vector_float1.hpp \
+  deps/api/glm/ext/vector_float1_precision.hpp \
+  deps/api/glm/ext/vector_double1.hpp \
+  deps/api/glm/ext/vector_double1_precision.hpp \
+  deps/api/glm/ext/vector_int1.hpp \
+  deps/api/glm/ext/vector_int1_sized.hpp \
+  deps/api/glm/ext/vector_uint1.hpp \
+  deps/api/glm/ext/vector_uint1_sized.hpp \
+  /usr/include/c++/16/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  deps/api/glm/gtc/type_ptr.inl \
+  deps/api/glm/gtx/quaternion.hpp \
+  deps/api/glm/ext/quaternion_exponential.hpp \
+  deps/api/glm/ext/quaternion_exponential.inl \
+  deps/api/glm/gtx/norm.hpp \
+  deps/api/glm/gtx/component_wise.hpp \
+  deps/api/glm/detail/setup.hpp \
+  deps/api/glm/gtx/component_wise.inl \
+  deps/api/glm/gtx/norm.inl \
+  deps/api/glm/gtx/quaternion.inl \
+  src/core/gpu/texture2D.h \
+  src/utils/gl_utils.h \
+  deps/api/GL/glew.h \
+  /usr/include/GL/glu.h \
+  /usr/include/GL/gl.h \
+  src/core/gpu/gpu_buffers.h \
+  src/core/gpu/vertex_bone_data.h \
+  deps/api/assimp/scene.h \
+  deps/api/assimp/types.h \
+  deps/api/assimp/defs.h \
+  deps/api/assimp/config.h \
+  deps/api/assimp/vector2.h \
+  deps/api/assimp/vector3.h \
+  deps/api/assimp/color4.h \
+  deps/api/assimp/matrix3x3.h \
+  deps/api/assimp/matrix4x4.h \
+  deps/api/assimp/quaternion.h \
+  deps/api/assimp/vector2.inl \
+  deps/api/assimp/vector3.inl \
+  deps/api/assimp/color4.inl \
+  deps/api/assimp/matrix3x3.inl \
+  /usr/include/c++/16/algorithm \
+  /usr/include/c++/16/bits/stl_algo.h \
+  /usr/include/c++/16/bits/algorithmfwd.h \
+  /usr/include/c++/16/bits/stl_heap.h \
+  /usr/include/c++/16/bits/uniform_int_dist.h \
+  /usr/include/c++/16/bits/stl_tempbuf.h \
+  deps/api/assimp/matrix4x4.inl \
+  deps/api/assimp/MathFunctions.h \
+  deps/api/assimp/quaternion.inl \
+  deps/api/assimp/texture.h \
+  deps/api/assimp/Compiler/pushpack1.h \
+  deps/api/assimp/Compiler/poppack1.h \
+  deps/api/assimp/mesh.h \
+  deps/api/assimp/aabb.h \
+  deps/api/assimp/light.h \
+  deps/api/assimp/camera.h \
+  deps/api/assimp/material.h \
+  deps/api/assimp/material.inl \
+  deps/api/assimp/anim.h \
+  deps/api/assimp/metadata.h \
+  src/lab_m1/tema1/sprites/shape/square/square.hpp \
+  /usr/include/c++/16/memory \
+  /usr/include/c++/16/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/16/bits/align.h \
+  /usr/include/c++/16/bit \
+  /usr/include/c++/16/bits/unique_ptr.h \
+  /usr/include/c++/16/bits/shared_ptr.h \
+  /usr/include/c++/16/bits/shared_ptr_base.h \
+  /usr/include/c++/16/bits/allocated_ptr.h \
+  /usr/include/c++/16/bits/refwrap.h \
+  /usr/include/c++/16/ext/concurrence.h \
+  /usr/include/c++/16/bits/shared_ptr_atomic.h \
+  /usr/include/c++/16/bits/atomic_base.h \
+  /usr/include/c++/16/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/16/backward/auto_ptr.h \
+  src/lab_m1/tema1/ui/properties/transformable.hpp \
+  src/lab_m1/tema1/globals/sprites/types/types.hpp \
+  src/lab_m1/tema1/sprites/manager/manager.hpp \
+  /usr/include/c++/16/unordered_map \
+  /usr/include/c++/16/bits/unordered_map.h \
+  /usr/include/c++/16/bits/hashtable.h \
+  /usr/include/c++/16/bits/hashtable_policy.h \
+  /usr/include/c++/16/bits/enable_special_members.h \
+  src/lab_m1/tema1/ui/transform/transform.hpp \
+  src/lab_m1/tema1/ui/globals/colors.hpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o: src/lab_m1/tema1/ui/properties/transformable.cpp \
   /usr/include/stdc-predef.h \
@@ -19178,13 +20742,13 @@ src/lab_m1/tema1/tema1.cpp:
 
 src/lab_m1/tema1/sprites/shape/sword/sword.cpp:
 
-src/lab_m1/tema1/sprites/shape/mana/mana.hpp:
-
 src/lab_m1/tema1/sprites/shape/mana/mana.cpp:
+
+src/lab_m1/tema1/sprites/shape/heart/heart.cpp:
 
 src/lab_m1/tema1/sprites/shape/sword/sword.hpp:
 
-src/lab_m1/tema1/sprites/shape/heart/heart.cpp:
+src/lab_m1/tema1/sprites/shape/mana/mana.hpp:
 
 src/lab_m1/tema1/sprites/card/card.cpp:
 
@@ -19192,7 +20756,11 @@ src/lab_m1/tema1/entities/player/player.cpp:
 
 src/lab_m1/tema1/entities/card_view/card_view.cpp:
 
-src/lab_m1/tema1/entities/card/card_fwd.hpp:
+src/lab_m1/tema1/entities/effect/effect_fwd.hpp:
+
+src/lab_m1/tema1/entities/card/card.hpp:
+
+src/lab_m1/tema1/globals/player/player.hpp:
 
 /usr/include/c++/16/bits/atomic_lockfree_defines.h:
 
@@ -19206,9 +20774,7 @@ src/lab_m1/tema1/entities/card/card_fwd.hpp:
 
 /usr/include/c++/16/memory:
 
-src/lab_m1/tema1/entities/effect/effect_fwd.hpp:
-
-src/lab_m1/tema1/entities/card/card.hpp:
+src/lab_m1/tema1/entities/card/card_fwd.hpp:
 
 /usr/include/c++/16/bits/shared_ptr_atomic.h:
 
@@ -19275,6 +20841,8 @@ src/core/gpu/frame_buffer.cpp:
 deps/api/freetype/fterrdef.h:
 
 deps/api/freetype/ftmoderr.h:
+
+src/lab_m1/tema1/entities/properties/renderable/renderable.hpp:
 
 deps/api/freetype/fterrors.h:
 
@@ -19514,6 +21082,8 @@ deps/api/glm/ext/matrix_float2x4_precision.hpp:
 
 /usr/include/bits/types/__FILE.h:
 
+src/lab_m1/tema1/ui/card_area/card_area.cpp:
+
 deps/api/glm/ext/matrix_float2x3_precision.hpp:
 
 /usr/include/c++/16/ext/type_traits.h:
@@ -19690,9 +21260,13 @@ deps/api/glm/ext/matrix_float3x3_precision.hpp:
 
 /usr/include/bits/types/__locale_t.h:
 
+src/lab_m1/tema1/globals/sprites/types/types.hpp:
+
 /usr/include/c++/16/tuple:
 
 deps/api/glm/geometric.hpp:
+
+src/lab_m1/tema1/ui/card_area/card_area.hpp:
 
 deps/api/glm/ext/vector_float3.hpp:
 
@@ -19703,6 +21277,8 @@ deps/api/glm/ext/matrix_double3x3.hpp:
 deps/api/glm/ext/vector_int2_sized.hpp:
 
 /usr/include/bits/types.h:
+
+src/lab_m1/tema1/sprites/shape/square/square.hpp:
 
 /usr/include/c++/16/x86_64-redhat-linux/bits/c++allocator.h:
 
@@ -20030,6 +21606,8 @@ src/lab_m1/tema1/sprites/properties/sprite/sprite.hpp:
 
 /usr/include/limits.h:
 
+src/lab_m1/tema1/sprites/shape/square/square.cpp:
+
 src/core/gpu/frame_buffer.h:
 
 /usr/include/c++/16/x86_64-redhat-linux/bits/os_defines.h:
@@ -20209,6 +21787,8 @@ deps/api/glm/ext/quaternion_transform.inl:
 deps/api/glm/ext/matrix_double3x2_precision.hpp:
 
 deps/api/glm/gtc/quaternion.inl:
+
+src/lab_m1/tema1/entities/battle_cards/battle_cards.hpp:
 
 /usr/include/bits/types/struct_itimerspec.h:
 

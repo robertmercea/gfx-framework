@@ -18,8 +18,8 @@ Card::Card(globals::CardType cardType)
   borderMesh = std::shared_ptr<Mesh>(
       ui::shape::createSquare("border", 1.0f, colors::WHITE));
 
-  glm::vec3 innerColor = colors::GREEN;
-  glm::vec3 symbolColor = colors::RED;
+  innerColor = colors::GREEN;
+  symbolColor = colors::RED;
 
   switch (cardType) {
   case CardType::DWARF:
@@ -29,8 +29,8 @@ Card::Card(globals::CardType cardType)
         ui::shape::createHeart("heart", 0.35f, symbolColor));
     break;
   case CardType::KNIGHT:
-    innerColor = colors::RED;
-    symbolColor = colors::BLUE;
+    innerColor = colors::BLACK;
+    symbolColor = colors::GOLD;
     symbolMesh = std::shared_ptr<Mesh>(
         ui::shape::createCircle("circle", 0.35f, symbolColor));
     break;
@@ -59,19 +59,21 @@ Card::Card(globals::CardType cardType)
 
 void Card::getSpriteProperties(
     std::vector<sprites::SpriteProperties> &spriteProps,
-    const glm::mat3 &modelMatrix) {
-  if (borderMesh)
-    spriteProps.push_back({borderMesh.get(), modelMatrix, 0});
+    const glm::mat3 &modelMatrix,
+    const glm::vec3 &borderColor) {
+
+  if (borderMesh) {
+    spriteProps.push_back({borderMesh.get(), modelMatrix, 0, borderColor});
+  }
 
   if (innerMesh) {
     glm::mat3 innerMatrix = modelMatrix * ui::transform::scale(0.9f, 0.9f);
-    spriteProps.push_back({innerMesh.get(), innerMatrix, 1});
+    spriteProps.push_back({innerMesh.get(), innerMatrix, 1, this->innerColor});
   }
 
   if (symbolMesh) {
-    glm::mat3 symbolMatrix =
-        modelMatrix * ui::transform::translate(0.0f, 0.00f);
-    spriteProps.push_back({symbolMesh.get(), symbolMatrix, 2});
+    glm::mat3 symbolMatrix = modelMatrix * ui::transform::translate(0.0f, 0.0f);
+    spriteProps.push_back({symbolMesh.get(), symbolMatrix, 2, this->symbolColor});
   }
 }
 

@@ -14,12 +14,9 @@ Sword::Sword(float scale) : Sprite(scale * 0.93f, scale * 1.00f) {
 Sword::Sword() : Sword(DEFAULT_SWORD_SCALE) {}
 
 void Sword::getSpriteProperties(std::vector<SpriteProperties> &spriteProps,
-                                const glm::mat3 &modelMatrix) {
+                                const glm::mat3 &modelMatrix, const glm::vec3 &color) {
   if (swordMesh) {
-    SpriteProperties props{};
-    props.modelMatrix = modelMatrix;
-    props.mesh = swordMesh.get();
-    spriteProps.push_back(props);
+    spriteProps.push_back({swordMesh.get(), modelMatrix, 0, color});
   } else {
     std::cerr << "Missing sword mesh\n";
   }

@@ -16,12 +16,10 @@ Mana::Mana(float length)
 Mana::Mana() : Mana(DEFAULT_MANA_LENGTH) {}
 
 void Mana::getSpriteProperties(std::vector<SpriteProperties> &spriteProps,
-                               const glm::mat3 &modelMatrix) {
+                               const glm::mat3 &modelMatrix,
+                               const glm::vec3 &color) {
   if (manaMesh) {
-    SpriteProperties props{};
-    props.modelMatrix = modelMatrix;
-    props.mesh = manaMesh.get();
-    spriteProps.push_back(props);
+    spriteProps.push_back({manaMesh.get(), modelMatrix, 0, color});
   } else {
     std::cerr << "Missing mana mesh\n";
   }

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "core/gpu/mesh.h"
+#include "tema1/sprites/properties/sprite/sprite.hpp"
 #include <memory>
 #include <vector>
 
@@ -15,7 +15,8 @@ public:
   virtual ~Mana() = default;
 
   void getSpriteProperties(std::vector<SpriteProperties> &spriteProps,
-                           const glm::mat3 &modelMatrix) override;
+                           const glm::mat3 &modelMatrix,
+                           const glm::vec3 &color) override;
 
 private:
   static constexpr float DEFAULT_MANA_LENGTH = 0.15f;

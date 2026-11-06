@@ -1,6 +1,10 @@
 #include "manager.hpp"
 #include "tema1/globals/cards/types/types.hpp"
 #include "tema1/sprites/card/card.hpp"
+#include "tema1/sprites/shape/heart/heart.hpp"
+#include "tema1/sprites/shape/mana/mana.hpp"
+#include "tema1/sprites/shape/square/square.hpp"
+#include "tema1/sprites/shape/sword/sword.hpp"
 #include <memory>
 
 namespace tema1 {
@@ -26,6 +30,18 @@ void SpriteManager::addSprite(globals::SpriteType spriteType,
   sprites[spriteType] = sprite;
 }
 
+enum class SpriteType {
+  WIZARD,
+  KNIGHT,
+  MAGE,
+  DWARF,
+  BACK,
+  HEART,
+  MANA,
+  SWORD,
+  SQUARE,
+};
+
 void SpriteManager::init() {
   using SpriteType = globals::SpriteType;
 
@@ -34,6 +50,11 @@ void SpriteManager::init() {
   sprites[SpriteType::MAGE] = std::make_shared<sprites::Card>(globals::CardType::MAGE);
   sprites[SpriteType::DWARF] = std::make_shared<sprites::Card>(globals::CardType::DWARF);
   sprites[SpriteType::BACK] = std::make_shared<sprites::Card>(globals::CardType::BACK);
+
+  sprites[SpriteType::HEART] = std::make_shared<sprites::Heart>();
+  sprites[SpriteType::MANA] = std::make_shared<sprites::Mana>();
+  sprites[SpriteType::SWORD] = std::make_shared<sprites::Sword>();
+  sprites[SpriteType::SQUARE] = std::make_shared<sprites::Square>();
 }
 
 void SpriteManager::clear() {

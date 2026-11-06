@@ -16,12 +16,9 @@ Heart::Heart(float radius) {
 Heart::Heart() : Heart(DEFAULT_HEART_RADIUS) {}
 
 void Heart::getSpriteProperties(std::vector<SpriteProperties> &spriteProps,
-                                const glm::mat3 &modelMatrix) {
+                                const glm::mat3 &modelMatrix, const glm::vec3 &color) {
   if (heartMesh) {
-    SpriteProperties props{};
-    props.modelMatrix = modelMatrix;
-    props.mesh = heartMesh.get();
-    spriteProps.push_back(props);
+    spriteProps.push_back({heartMesh.get(), modelMatrix, 0, color});
   } else {
     std::cerr << "Missing heart mesh\n";
   }
