@@ -475,38 +475,24 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card/card_data/card_data.cpp -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.cpp.s
 
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o: src/lab_m1/tema1/entities/card_collection/card_collection.cpp
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_collection/card_collection.cpp
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o: src/lab_m1/tema1/entities/card_deck/card_deck.cpp
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_deck/card_deck.cpp
 
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_collection/card_collection.cpp > CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.i
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_deck/card_deck.cpp > CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.i
 
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_collection/card_collection.cpp -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.s
-
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o: src/lab_m1/tema1/entities/card_view/card_view.cpp
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_view/card_view.cpp
-
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_view/card_view.cpp > CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.i
-
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_view/card_view.cpp -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.s
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_deck/card_deck.cpp -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o: src/lab_m1/tema1/entities/effect/effect.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/effect/effect.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.i: cmake_force
@@ -520,7 +506,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.s: cmake
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o: src/lab_m1/tema1/entities/game/game.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/game/game.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.i: cmake_force
@@ -534,7 +520,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.s: cmake_for
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o: src/lab_m1/tema1/entities/hero/hero.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/hero/hero.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.i: cmake_force
@@ -548,7 +534,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.s: cmake_for
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o: src/lab_m1/tema1/entities/player/player.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/player/player.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.i: cmake_force
@@ -562,7 +548,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.s: cmake
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o: src/lab_m1/tema1/sprites/card/card.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/card/card.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.i: cmake_force
@@ -576,7 +562,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/card/card.cpp.s: cmake_forc
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o: src/lab_m1/tema1/sprites/manager/manager.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/manager/manager.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.i: cmake_force
@@ -590,7 +576,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/manager/manager.cpp.s: cmak
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o: src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cpp.i: cmake_force
@@ -604,7 +590,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/properties/sprite/sprite.cp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o: src/lab_m1/tema1/sprites/shape/heart/heart.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/shape/heart/heart.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.i: cmake_force
@@ -618,7 +604,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/heart/heart.cpp.s: cm
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.o: src/lab_m1/tema1/sprites/shape/mana/mana.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/shape/mana/mana.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.i: cmake_force
@@ -632,7 +618,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/mana/mana.cpp.s: cmak
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.o: src/lab_m1/tema1/sprites/shape/square/square.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/shape/square/square.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.i: cmake_force
@@ -646,7 +632,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/square/square.cpp.s: 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/sword/sword.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/sword/sword.cpp.o: src/lab_m1/tema1/sprites/shape/sword/sword.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/sword/sword.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/sword/sword.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/sword/sword.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/sword/sword.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/sword/sword.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/sword/sword.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/shape/sword/sword.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/sword/sword.cpp.i: cmake_force
@@ -660,7 +646,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/sword/sword.cpp.s: cm
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o: src/lab_m1/tema1/tema1.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/tema1.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.i: cmake_force
@@ -674,7 +660,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.s: cmake_force
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o: src/lab_m1/tema1/ui/card/card.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/card/card.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.i: cmake_force
@@ -688,7 +674,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.s: cmake_force
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.o: src/lab_m1/tema1/ui/card_area/card_area.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/card_area/card_area.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.i: cmake_force
@@ -702,7 +688,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.s: cmake
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o: src/lab_m1/tema1/ui/properties/transformable.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/properties/transformable.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.i: cmake_force
@@ -716,7 +702,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.s: 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o: src/lab_m1/tema1/ui/shape/shape.cpp
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o -MF CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/shape/shape.cpp
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.i: cmake_force
@@ -730,7 +716,7 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.s: cmake_force
 CMakeFiles/GFXFramework.dir/src/main.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/GFXFramework.dir/src/main.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/GFXFramework.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/GFXFramework.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/main.cpp.o -MF CMakeFiles/GFXFramework.dir/src/main.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/main.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/main.cpp
 
 CMakeFiles/GFXFramework.dir/src/main.cpp.i: cmake_force
@@ -744,7 +730,7 @@ CMakeFiles/GFXFramework.dir/src/main.cpp.s: cmake_force
 CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o: src/utils/gl_utils.cpp
 CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o -MF CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/utils/gl_utils.cpp
 
 CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.i: cmake_force
@@ -758,7 +744,7 @@ CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.s: cmake_force
 CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.o: CMakeFiles/GFXFramework.dir/flags.make
 CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.o: src/utils/text_utils.cpp
 CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.o: CMakeFiles/GFXFramework.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.o -MF CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.o.d -o CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/utils/text_utils.cpp
 
 CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.i: cmake_force
@@ -800,8 +786,7 @@ GFXFramework_OBJECTS = \
 "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.o" \
 "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card.cpp.o" \
 "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.cpp.o" \
-"CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o" \
-"CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o" \
+"CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o" \
 "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o" \
 "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o" \
 "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o" \
@@ -854,8 +839,7 @@ bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/lab9/lab9.cpp.o
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/battle_cards/battle_cards.cpp.o
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card.cpp.o
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.cpp.o
-bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o
-bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o
+bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o
@@ -881,7 +865,7 @@ bin/Debug/GFXFramework: /usr/lib64/libGLX.so
 bin/Debug/GFXFramework: /usr/lib64/libGLU.so
 bin/Debug/GFXFramework: deps/prebuilt/GFXComponents/x86_64/GFXComponents.so
 bin/Debug/GFXFramework: CMakeFiles/GFXFramework.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Linking CXX executable bin/Debug/GFXFramework"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/robert/ACS/EGC/gfx-framework/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Linking CXX executable bin/Debug/GFXFramework"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/GFXFramework.dir/link.txt --verbose=$(VERBOSE)
 	rm -rf /home/robert/ACS/EGC/gfx-framework/bin/Debug/src
 	ln -s /home/robert/ACS/EGC/gfx-framework/src /home/robert/ACS/EGC/gfx-framework/bin/Debug/src

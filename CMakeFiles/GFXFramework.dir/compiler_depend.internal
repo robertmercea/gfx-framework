@@ -13414,10 +13414,10 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.c
  /usr/include/c++/16/bits/atomic_lockfree_defines.h
  /usr/include/c++/16/backward/auto_ptr.h
 
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o
- /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_collection/card_collection.cpp
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o
+ /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_deck/card_deck.cpp
  /usr/include/stdc-predef.h
- /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_collection/card_collection.hpp
+ /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_deck/card_deck.hpp
  /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card/card_fwd.hpp
  /usr/include/c++/16/memory
  /usr/include/c++/16/bits/memoryfwd.h
@@ -13938,10 +13938,6 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_colle
  /usr/include/c++/16/iostream
  /usr/include/c++/16/istream
  /usr/include/c++/16/bits/istream.tcc
-
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o
- /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/card_view/card_view.cpp
- /usr/include/stdc-predef.h
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o
  /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/effect/effect.cpp

@@ -1,4 +1,4 @@
-#include "card_collection.hpp"
+#include "card_deck.hpp"
 #include "tema1/entities/card/card.hpp"
 #include "tema1/globals/player/player.hpp"
 #include <iostream>
@@ -7,24 +7,24 @@
 namespace tema1 {
 namespace entities {
 
-CardPtr CardCollection::drawTopCard() {
+CardPtr CardDeck::drawTopCard() {
   CardPtr card = cards.back();
   cards.pop_back();
 
   return card;
 }
 
-void CardCollection::pushCard(const CardPtr card) {
+void CardDeck::pushCard(const CardPtr card) {
   cards.push_back(card);
 }
 
-void CardCollection::getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps) {
+void CardDeck::getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps) {
   for (const auto &cardPtr : cards) {
     cardPtr->cardUI.getSpriteProperties(spriteProps);
   }
 }
 
-void CardCollection::setRenderMode(globals::player::PlayerType mode) {
+void CardDeck::setRenderMode(globals::player::PlayerType mode) {
   switch (mode) {
     case globals::player::PlayerType::HUMAN:
       setCardRenderMode(true);
@@ -33,18 +33,18 @@ void CardCollection::setRenderMode(globals::player::PlayerType mode) {
       setCardRenderMode(false);
       break;
     default:
-      std::cerr << "[CardCollection] Unknown render mode\n";
+      std::cerr << "[CardDeck] Unknown render mode\n";
       break;
   }
 }
 
-void CardCollection::setCardRenderMode(bool showFront) {
+void CardDeck::setCardRenderMode(bool showFront) {
   for (const auto &cardPtr : cards) {
     cardPtr->cardUI.showFront(showFront);
   }
 }
 
-CardVectorPtr CardCollection::getCards() {
+CardVectorPtr CardDeck::getCards() {
   return std::make_shared<CardVector>(cards);
 }
 

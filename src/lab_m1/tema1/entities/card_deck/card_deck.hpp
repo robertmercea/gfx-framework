@@ -5,7 +5,7 @@
 namespace tema1 {
 namespace entities {
 
-class CardCollection {
+class CardDeck {
 public:
   CardPtr drawTopCard();
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps);

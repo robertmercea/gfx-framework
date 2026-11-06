@@ -825,53 +825,29 @@ src/lab_m1/tema1/entities/card/card_data/card_data.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.cpp.s
 .PHONY : src/lab_m1/tema1/entities/card/card_data/card_data.cpp.s
 
-src/lab_m1/tema1/entities/card_collection/card_collection.o: src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o
-.PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.o
+src/lab_m1/tema1/entities/card_deck/card_deck.o: src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o
+.PHONY : src/lab_m1/tema1/entities/card_deck/card_deck.o
 
 # target to build an object file
-src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o
-.PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o
+src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o
+.PHONY : src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o
 
-src/lab_m1/tema1/entities/card_collection/card_collection.i: src/lab_m1/tema1/entities/card_collection/card_collection.cpp.i
-.PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.i
-
-# target to preprocess a source file
-src/lab_m1/tema1/entities/card_collection/card_collection.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.i
-.PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.cpp.i
-
-src/lab_m1/tema1/entities/card_collection/card_collection.s: src/lab_m1/tema1/entities/card_collection/card_collection.cpp.s
-.PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.s
-
-# target to generate assembly for a file
-src/lab_m1/tema1/entities/card_collection/card_collection.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.s
-.PHONY : src/lab_m1/tema1/entities/card_collection/card_collection.cpp.s
-
-src/lab_m1/tema1/entities/card_view/card_view.o: src/lab_m1/tema1/entities/card_view/card_view.cpp.o
-.PHONY : src/lab_m1/tema1/entities/card_view/card_view.o
-
-# target to build an object file
-src/lab_m1/tema1/entities/card_view/card_view.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o
-.PHONY : src/lab_m1/tema1/entities/card_view/card_view.cpp.o
-
-src/lab_m1/tema1/entities/card_view/card_view.i: src/lab_m1/tema1/entities/card_view/card_view.cpp.i
-.PHONY : src/lab_m1/tema1/entities/card_view/card_view.i
+src/lab_m1/tema1/entities/card_deck/card_deck.i: src/lab_m1/tema1/entities/card_deck/card_deck.cpp.i
+.PHONY : src/lab_m1/tema1/entities/card_deck/card_deck.i
 
 # target to preprocess a source file
-src/lab_m1/tema1/entities/card_view/card_view.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.i
-.PHONY : src/lab_m1/tema1/entities/card_view/card_view.cpp.i
+src/lab_m1/tema1/entities/card_deck/card_deck.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.i
+.PHONY : src/lab_m1/tema1/entities/card_deck/card_deck.cpp.i
 
-src/lab_m1/tema1/entities/card_view/card_view.s: src/lab_m1/tema1/entities/card_view/card_view.cpp.s
-.PHONY : src/lab_m1/tema1/entities/card_view/card_view.s
+src/lab_m1/tema1/entities/card_deck/card_deck.s: src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s
+.PHONY : src/lab_m1/tema1/entities/card_deck/card_deck.s
 
 # target to generate assembly for a file
-src/lab_m1/tema1/entities/card_view/card_view.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.s
-.PHONY : src/lab_m1/tema1/entities/card_view/card_view.cpp.s
+src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s
+.PHONY : src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s
 
 src/lab_m1/tema1/entities/effect/effect.o: src/lab_m1/tema1/entities/effect/effect.cpp.o
 .PHONY : src/lab_m1/tema1/entities/effect/effect.o
@@ -1425,12 +1401,9 @@ help:
 	@echo "... src/lab_m1/tema1/entities/card/card_data/card_data.o"
 	@echo "... src/lab_m1/tema1/entities/card/card_data/card_data.i"
 	@echo "... src/lab_m1/tema1/entities/card/card_data/card_data.s"
-	@echo "... src/lab_m1/tema1/entities/card_collection/card_collection.o"
-	@echo "... src/lab_m1/tema1/entities/card_collection/card_collection.i"
-	@echo "... src/lab_m1/tema1/entities/card_collection/card_collection.s"
-	@echo "... src/lab_m1/tema1/entities/card_view/card_view.o"
-	@echo "... src/lab_m1/tema1/entities/card_view/card_view.i"
-	@echo "... src/lab_m1/tema1/entities/card_view/card_view.s"
+	@echo "... src/lab_m1/tema1/entities/card_deck/card_deck.o"
+	@echo "... src/lab_m1/tema1/entities/card_deck/card_deck.i"
+	@echo "... src/lab_m1/tema1/entities/card_deck/card_deck.s"
 	@echo "... src/lab_m1/tema1/entities/effect/effect.o"
 	@echo "... src/lab_m1/tema1/entities/effect/effect.i"
 	@echo "... src/lab_m1/tema1/entities/effect/effect.s"

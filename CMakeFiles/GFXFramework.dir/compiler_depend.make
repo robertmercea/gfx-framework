@@ -13385,9 +13385,9 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.c
   /usr/include/c++/16/bits/atomic_lockfree_defines.h \
   /usr/include/c++/16/backward/auto_ptr.h
 
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_collection.cpp.o: src/lab_m1/tema1/entities/card_collection/card_collection.cpp \
+CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o: src/lab_m1/tema1/entities/card_deck/card_deck.cpp \
   /usr/include/stdc-predef.h \
-  src/lab_m1/tema1/entities/card_collection/card_collection.hpp \
+  src/lab_m1/tema1/entities/card_deck/card_deck.hpp \
   src/lab_m1/tema1/entities/card/card_fwd.hpp \
   /usr/include/c++/16/memory \
   /usr/include/c++/16/bits/memoryfwd.h \
@@ -13908,9 +13908,6 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_collection/card_colle
   /usr/include/c++/16/iostream \
   /usr/include/c++/16/istream \
   /usr/include/c++/16/bits/istream.tcc
-
-CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_view/card_view.cpp.o: src/lab_m1/tema1/entities/card_view/card_view.cpp \
-  /usr/include/stdc-predef.h
 
 CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o: src/lab_m1/tema1/entities/effect/effect.cpp \
   /usr/include/stdc-predef.h
@@ -20754,7 +20751,7 @@ src/lab_m1/tema1/sprites/card/card.cpp:
 
 src/lab_m1/tema1/entities/player/player.cpp:
 
-src/lab_m1/tema1/entities/card_view/card_view.cpp:
+src/lab_m1/tema1/entities/card_deck/card_deck.cpp:
 
 src/lab_m1/tema1/entities/effect/effect_fwd.hpp:
 
@@ -21254,8 +21251,6 @@ deps/api/freetype/config/public-macros.h:
 
 /usr/include/bits/types/__mbstate_t.h:
 
-src/lab_m1/tema1/entities/card_collection/card_collection.cpp:
-
 deps/api/glm/ext/matrix_float3x3_precision.hpp:
 
 /usr/include/bits/types/__locale_t.h:
@@ -21385,6 +21380,8 @@ deps/api/glm/glm.hpp:
 /usr/include/bits/libm-simd-decl-stubs.h:
 
 deps/api/glm/ext/quaternion_geometric.hpp:
+
+src/lab_m1/tema1/entities/card_deck/card_deck.hpp:
 
 /usr/include/c++/16/bits/sstream.tcc:
 
