@@ -1,6 +1,7 @@
 #pragma once
 
 #include "tema1/entities/card/card_fwd.hpp"
+#include "tema1/entities/player/player.hpp"
 #include "tema1/entities/properties/renderable/renderable.hpp"
 #include "tema1/globals/player/player.hpp"
 #include "tema1/ui/card_area/card_area.hpp"
@@ -20,9 +21,9 @@ public:
 
   BattleCards();
 
-  // TODO: add onCardDestroy() handler
   void addCard(const CardPtr card, PlayerType owner);
-  void useCard(const CardPtr card, PlayerType owner);
+  void removeCard(const CardPtr card, PlayerType owner);
+  void useCard(const CardPtr card, const CardPtr target, PlayerType owner);
   void getSpriteProperties(std::vector<tema1::sprites::SpriteProperties> &spriteProps) override;
 
 private:
@@ -33,6 +34,7 @@ private:
   const glm::vec3 CARD_AREA_HUMAN_BG_COLOR = ui::colors::CYAN;
 
   std::unordered_map<globals::player::PlayerType, CardVector> playerCards;
+  std::unordered_map<globals::player::PlayerType, Hero> heroes;
 };
 
 } // namespace entities

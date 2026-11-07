@@ -27,7 +27,7 @@ void BattleCards::addCard(const CardPtr card, PlayerType owner) {
   playerCards[owner].push_back(card);
 }
 
-void BattleCards::useCard(const CardPtr card, PlayerType owner) {}
+void BattleCards::useCard(const CardPtr card, const CardPtr target, PlayerType owner) {}
 
 void BattleCards::getSpriteProperties(
     std::vector<tema1::sprites::SpriteProperties> &spriteProps) {
