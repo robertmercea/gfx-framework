@@ -30,8 +30,8 @@ void Game::init(const glm::vec2 &resolution) {
   endTurnBtn.setColor(ui::colors::ORANGE);
 
   battlecards = BattleCards();
-  battlecards.cardAreas[PlayerType::HUMAN].setPosition(glm::vec2(windowResolution.x / 2.0f, windowResolution.y / 2.0f - 160.0f));
-  battlecards.cardAreas[PlayerType::AI].setPosition(glm::vec2(windowResolution.x / 2.0f, windowResolution.y / 2.0f + 160.0f));
+  battlecards.cardAreas[PlayerType::HUMAN].setPosition(glm::vec2(windowResolution.x / 2.0f, windowResolution.y / 2.0f - BATTLECARDS_Y_OFFSET));
+  battlecards.cardAreas[PlayerType::AI].setPosition(glm::vec2(windowResolution.x / 2.0f, windowResolution.y / 2.0f + BATTLECARDS_Y_OFFSET));
 
   for (auto p : {PlayerType::HUMAN, PlayerType::AI}) {
     decks[p] = CardDeck();
@@ -51,9 +51,13 @@ void Game::init(const glm::vec2 &resolution) {
       playerHands[p].pushCard(decks[p].drawTopCard());
     }
   }
-  
-  playerHands[PlayerType::HUMAN].arrangeCards(glm::vec2(windowResolution.x / 2.0f, 150.0f), 800.0f);
-  playerHands[PlayerType::AI].arrangeCards(glm::vec2(windowResolution.x / 2.0f, windowResolution.y - 150.0f), 800.0f);
+  playerHands[PlayerType::HUMAN].setCenter(glm::vec2(windowResolution.x / 2.0f, HUMAN_HAND_Y_OFFSET));
+  playerHands[PlayerType::HUMAN].setMaxWidth(HAND_MAX_WIDTH);
+  playerHands[PlayerType::HUMAN].arrangeCards();
+
+  playerHands[PlayerType::AI].setCenter(glm::vec2(windowResolution.x / 2.0f, windowResolution.y - AI_HAND_Y_OFFSET));
+  playerHands[PlayerType::AI].setMaxWidth(HAND_MAX_WIDTH);
+  playerHands[PlayerType::AI].arrangeCards();
 
   currentPlayer = PlayerType::HUMAN;
   state = GameState::TURN_START;
@@ -82,10 +86,7 @@ void Game::update(float dt) {
     std::cout << "[State] CARD_DRAW\n";
     if (!decks[currentPlayer].getCards().empty()) { 
       playerHands[currentPlayer].pushCard(decks[currentPlayer].drawTopCard());
-      glm::vec2 center = (currentPlayer == PlayerType::HUMAN) ? 
-          glm::vec2(windowResolution.x / 2.0f, 150.0f) : 
-          glm::vec2(windowResolution.x / 2.0f, windowResolution.y - 150.0f);
-      playerHands[currentPlayer].arrangeCards(center, 800.0f);
+      playerHands[currentPlayer].arrangeCards();
       std::cout << "[Event] Player " << (int)currentPlayer << " drew a card.\n";
     }
     
@@ -127,8 +128,7 @@ void Game::aiTurn() {
   
   if (!decks[PlayerType::AI].getCards().empty()) {
     playerHands[PlayerType::AI].pushCard(decks[PlayerType::AI].drawTopCard());
-    // TODO: move this to a bloody separate UI element already
-    playerHands[PlayerType::AI].arrangeCards(glm::vec2(windowResolution.x / 2.0f, windowResolution.y - 150.0f), 800.0f);
+    playerHands[PlayerType::AI].arrangeCards();
     std::cout << "[AI] AI drew a card.\n";
   }
 
@@ -140,7 +140,7 @@ void Game::aiTurn() {
       (*it)->playedThisTurn = true;
       battlecards.addCard(*it, PlayerType::AI);
       playerHands[PlayerType::AI].removeCard(*it);
-      playerHands[PlayerType::AI].arrangeCards(glm::vec2(windowResolution.x / 2.0f, windowResolution.y - 150.0f), 800.0f);
+      playerHands[PlayerType::AI].arrangeCards();
       std::cout << "[AI] AI played a card to the battleground. Remaining Mana: " << players[PlayerType::AI].mana << "\n";
       break; 
     }
@@ -266,7 +266,7 @@ void Game::onMouseBtnRelease(float x, float y) {
       draggedCard->playedThisTurn = true;
       battlecards.addCard(draggedCard, PlayerType::HUMAN);
       playerHands[PlayerType::HUMAN].removeCard(draggedCard);
-      playerHands[PlayerType::HUMAN].arrangeCards(glm::vec2(windowResolution.x / 2.0f, 150.0f), 800.0f);
+      playerHands[PlayerType::HUMAN].arrangeCards();
       
       std::cout << "[Action] Card successfully played. Remaining Mana: " << players[PlayerType::HUMAN].mana << "\n";
     } else {

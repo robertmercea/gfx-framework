@@ -30,7 +30,23 @@ void PlayerHand::removeCard(const CardPtr card) {
   cards.erase(std::remove(cards.begin(), cards.end(), card), cards.end());
 }
 
-void PlayerHand::arrangeCards(const glm::vec2 &center, float maxWidth) {
+void PlayerHand::setCenter(glm::vec2 center) {
+  this->center = center;
+}
+
+glm::vec2 PlayerHand::getCenter() const {
+  return this->center;
+}
+
+float PlayerHand::getMaxWidth() const {
+  return this->maxWidth;
+}
+
+void PlayerHand::setMaxWidth(float maxWidth) {
+  this->maxWidth = maxWidth;
+}
+
+void PlayerHand::arrangeCards() {
   if (cards.empty()) return;
 
   float padding = 10.0f;

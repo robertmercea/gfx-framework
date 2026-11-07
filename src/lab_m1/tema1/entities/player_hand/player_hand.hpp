@@ -16,9 +16,16 @@ public:
   void removeCard(const CardPtr card);
   void arrangeCards();
   const CardVector& getCards() const;
-  void arrangeCards(const glm::vec2 &center, float maxWidth);
+
+  float getMaxWidth() const;
+  void setMaxWidth(float);
+
+  void setCenter(glm::vec2);
+  glm::vec2 getCenter() const;
 
 private:
+  glm::vec2 center;
+  float maxWidth;
   CardVector cards;
   ui::CardArea cardArea;
 };
