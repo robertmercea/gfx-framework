@@ -7,7 +7,7 @@ namespace tema1 {
 namespace entities {
 
 Card::Card(globals::CardType cardType, globals::SpriteType spriteType)
-    : cardUI(cardType, spriteType), cardData(cardType)  {}
+    : cardData(cardType), cardUI(cardType, spriteType)  {}
 
 } // namespace entities
 } // namespace tema1

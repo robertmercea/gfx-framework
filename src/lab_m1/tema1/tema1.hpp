@@ -1,6 +1,7 @@
 #pragma once
 
 #include "components/simple_scene.h"
+#include "tema1/entities/game/game.hpp"
 
 
 namespace m1
@@ -29,6 +30,7 @@ namespace m1
 
         glm::ivec2 MouseToViewportCoords(int mouseX, int mouseY);
 
-     protected:
+     protected:// Add to includes:
+        tema1::entities::Game game;
     };
 }   // namespace m1

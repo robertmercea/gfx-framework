@@ -27,7 +27,8 @@ void BattleCards::addCard(const CardPtr card, PlayerType owner) {
   playerCards[owner].push_back(card);
 }
 
-void BattleCards::useCard(const CardPtr card, const CardPtr target, PlayerType owner) {}
+void BattleCards::useCard(const CardPtr card, const CardPtr target,
+                          PlayerType owner) {}
 
 void BattleCards::getSpriteProperties(
     std::vector<tema1::sprites::SpriteProperties> &spriteProps) {
@@ -86,5 +87,15 @@ void BattleCards::getSpriteProperties(
     }
   }
 }
+
+void BattleCards::removeCard(const CardPtr card, PlayerType owner) {
+  auto &vec = playerCards[owner];
+  vec.erase(std::remove(vec.begin(), vec.end(), card), vec.end());
+}
+
+const CardVector &BattleCards::getPlayerCards(PlayerType owner) const {
+  return playerCards.at(owner);
+}
+
 } // namespace entities
 } // namespace tema1

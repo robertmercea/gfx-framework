@@ -76,19 +76,19 @@ void Card::update(float deltaTime) {
 
 void Card::getSpriteProperties(
     std::vector<sprites::SpriteProperties> &spriteProps) {
+
   glm::mat3 baseMatrix = getModelMatrix();
 
   if (frontRender) {
-    if (cardFront) {
-      cardFront->getSpriteProperties(spriteProps, baseMatrix, glm::vec3(1.0f));
-    }
+    if (cardFront)
+      cardFront->getSpriteProperties(spriteProps, baseMatrix, borderColor);
+
     renderHearts(spriteProps, baseMatrix);
     renderManaCost(spriteProps, baseMatrix);
     renderAttack(spriteProps, baseMatrix);
   } else {
-    if (cardBack) {
-      cardBack->getSpriteProperties(spriteProps, baseMatrix, glm::vec3(1.0f));
-    }
+    if (cardBack)
+      cardBack->getSpriteProperties(spriteProps, baseMatrix, borderColor);
   }
 }
 

@@ -44,36 +44,7 @@ void Tema1::Init()
     camera->Update();
     GetCameraInput()->SetActive(false);
 
-    float centerX = resolution.x / 2.0f;
-    float centerY = resolution.y / 2.0f;
-    float yOffset = 250.0f;
-    float xOffset = 160.0f;
-
-    battlecards = new entities::BattleCards();
-
-    // Set the positions for the two card areas.
-    battlecards->cardAreas[globals::player::PlayerType::HUMAN].setPosition(glm::vec2(centerX, centerY - yOffset));
-    battlecards->cardAreas[globals::player::PlayerType::AI].setPosition(glm::vec2(centerX, centerY + yOffset));
-
-    // Make 15 cards for the HUMAN player.
-    for (int i = 0; i < 15; ++i) {
-        // Cycle through WIZARD (0), KNIGHT (1), MAGE (2), and DWARF (3).
-        auto cardType = static_cast<globals::CardType>(i % 4);
-        auto spriteType = static_cast<globals::SpriteType>(i % 4);
-        
-        auto humanCard = std::make_shared<entities::Card>(cardType, spriteType);
-        battlecards->addCard(humanCard, globals::player::PlayerType::HUMAN);
-    }
-
-    // Make 15 cards for the AI player.
-    for (int i = 0; i < 15; ++i) {
-        // Add an offset so the AI gets a different sequence of cards.
-        auto cardType = static_cast<globals::CardType>((i + 2) % 4);
-        auto spriteType = static_cast<globals::SpriteType>((i + 2) % 4);
-        
-        auto aiCard = std::make_shared<entities::Card>(cardType, spriteType);
-        battlecards->addCard(aiCard, globals::player::PlayerType::AI);
-    }
+    game.init(glm::vec2(resolution.x, resolution.y));
 }
 
 
@@ -90,14 +61,14 @@ void Tema1::FrameStart()
 
 void Tema1::Update(float deltaTimeSeconds)
 {
-    using namespace tema1;
-    std::vector<sprites::SpriteProperties> spriteProps;
+  game.update(deltaTimeSeconds);
 
-    battlecards->getSpriteProperties(spriteProps);
+  std::vector<tema1::sprites::SpriteProperties> spriteProps;
+  game.getSpriteProperties(spriteProps);
 
-    for (const auto &prop : spriteProps) {
-        RenderMesh2D(prop.mesh, prop.modelMatrix, prop.color);
-    }
+  for (const auto &prop : spriteProps) {
+    RenderMesh2D(prop.mesh, prop.modelMatrix, prop.color);
+  }
 }
 
 
@@ -130,16 +101,20 @@ void Tema1::OnKeyRelease(int key, int mods)
 
 void Tema1::OnMouseMove(int mouseX, int mouseY, int deltaX, int deltaY)
 {
+  glm::ivec2 worldPos = MouseToViewportCoords(mouseX, mouseY);
+  game.onMouseMove(worldPos.x, worldPos.y);
 }
-
 
 void Tema1::OnMouseBtnPress(int mouseX, int mouseY, int button, int mods)
 {
+    glm::ivec2 worldPos = MouseToViewportCoords(mouseX, mouseY);
+    game.onMouseBtnPress(worldPos.x, worldPos.y);
 }
-
 
 void Tema1::OnMouseBtnRelease(int mouseX, int mouseY, int button, int mods)
 {
+    glm::ivec2 worldPos = MouseToViewportCoords(mouseX, mouseY);
+    game.onMouseBtnRelease(worldPos.x, worldPos.y);
 }
 
 

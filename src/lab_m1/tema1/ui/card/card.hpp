@@ -2,6 +2,7 @@
 
 #include "tema1/globals/sprites/types/types.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
+#include "tema1/ui/globals/colors.hpp"
 #include "tema1/ui/properties/transformable.hpp"
 #include "tema1/globals/cards/types/types.hpp"
 #include <memory>
@@ -29,14 +30,16 @@ public:
 
   void update(float deltaTime);
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps);
+  void setBorderColor(const glm::vec3 &color) { borderColor = color; }
+  void setHealth(int newHealth) { health = newHealth; }
 
   void setInitialPosition(const glm::vec2 &position);
   bool contains(float x, float y);
 
 private:
-  const float HEART_RADIUS = 0.15f;
-  const float MANA_SIZE = 0.1f;
-  const float SWORD_SIZE = 0.2f;
+  static constexpr const float HEART_RADIUS = 0.15f;
+  static constexpr const float MANA_SIZE = 0.1f;
+  static constexpr const float SWORD_SIZE = 0.2f;
   const glm::vec2 DEFAULT_SCALE = {40.0f, 50.0f};
 
   int totalHealth;
@@ -48,6 +51,7 @@ private:
 
   glm::vec2 defaultScale;
   glm::vec2 defaultPosition;
+  glm::vec3 borderColor = ui::colors::WHITE;
 
   globals::CardType type;
   std::shared_ptr<sprites::Sprite> cardFront, cardBack, heartSprite, manaCostSprite, attackSprite;

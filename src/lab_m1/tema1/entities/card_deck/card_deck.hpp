@@ -11,7 +11,7 @@ public:
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps);
   void setRenderMode(globals::player::PlayerType mode);
   void pushCard(const CardPtr card);
-  CardVectorPtr getCards();
+  const CardVector& getCards() const;
 
 private:
   void setCardRenderMode(bool showFront);

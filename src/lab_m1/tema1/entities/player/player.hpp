@@ -1,24 +1,16 @@
 #pragma once
 
-#include "tema1/entities/card/card.hpp"
-#include "tema1/entities/hero/hero.hpp"
+#include "tema1/ui/player/player.hpp"
 
 namespace tema1 {
 namespace entities {
 
 class Player {
 public:
-  // TODO: figure out what to put as params for draw/playCard functions
-  void drawCard();
-  void playCard();
-  void endTurn();
-
-private:
-  int mana;
-
-  Hero hero;
+  int mana = 0;
+  int health = 30;
+  ui::Player playerUI;
 };
 
 } // namespace entities
 } // namespace tema1
-

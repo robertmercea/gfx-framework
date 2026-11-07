@@ -945,6 +945,30 @@ src/lab_m1/tema1/entities/player/player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player/player.cpp.s
 .PHONY : src/lab_m1/tema1/entities/player/player.cpp.s
 
+src/lab_m1/tema1/entities/player_hand/player_hand.o: src/lab_m1/tema1/entities/player_hand/player_hand.cpp.o
+.PHONY : src/lab_m1/tema1/entities/player_hand/player_hand.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/player_hand/player_hand.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player_hand/player_hand.cpp.o
+.PHONY : src/lab_m1/tema1/entities/player_hand/player_hand.cpp.o
+
+src/lab_m1/tema1/entities/player_hand/player_hand.i: src/lab_m1/tema1/entities/player_hand/player_hand.cpp.i
+.PHONY : src/lab_m1/tema1/entities/player_hand/player_hand.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/player_hand/player_hand.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player_hand/player_hand.cpp.i
+.PHONY : src/lab_m1/tema1/entities/player_hand/player_hand.cpp.i
+
+src/lab_m1/tema1/entities/player_hand/player_hand.s: src/lab_m1/tema1/entities/player_hand/player_hand.cpp.s
+.PHONY : src/lab_m1/tema1/entities/player_hand/player_hand.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/player_hand/player_hand.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player_hand/player_hand.cpp.s
+.PHONY : src/lab_m1/tema1/entities/player_hand/player_hand.cpp.s
+
 src/lab_m1/tema1/sprites/card/card.o: src/lab_m1/tema1/sprites/card/card.cpp.o
 .PHONY : src/lab_m1/tema1/sprites/card/card.o
 
@@ -1137,6 +1161,30 @@ src/lab_m1/tema1/tema1.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.s
 .PHONY : src/lab_m1/tema1/tema1.cpp.s
 
+src/lab_m1/tema1/ui/button/button.o: src/lab_m1/tema1/ui/button/button.cpp.o
+.PHONY : src/lab_m1/tema1/ui/button/button.o
+
+# target to build an object file
+src/lab_m1/tema1/ui/button/button.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/button/button.cpp.o
+.PHONY : src/lab_m1/tema1/ui/button/button.cpp.o
+
+src/lab_m1/tema1/ui/button/button.i: src/lab_m1/tema1/ui/button/button.cpp.i
+.PHONY : src/lab_m1/tema1/ui/button/button.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/ui/button/button.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/button/button.cpp.i
+.PHONY : src/lab_m1/tema1/ui/button/button.cpp.i
+
+src/lab_m1/tema1/ui/button/button.s: src/lab_m1/tema1/ui/button/button.cpp.s
+.PHONY : src/lab_m1/tema1/ui/button/button.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/ui/button/button.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/button/button.cpp.s
+.PHONY : src/lab_m1/tema1/ui/button/button.cpp.s
+
 src/lab_m1/tema1/ui/card/card.o: src/lab_m1/tema1/ui/card/card.cpp.o
 .PHONY : src/lab_m1/tema1/ui/card/card.o
 
@@ -1184,6 +1232,30 @@ src/lab_m1/tema1/ui/card_area/card_area.s: src/lab_m1/tema1/ui/card_area/card_ar
 src/lab_m1/tema1/ui/card_area/card_area.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.s
 .PHONY : src/lab_m1/tema1/ui/card_area/card_area.cpp.s
+
+src/lab_m1/tema1/ui/player/player.o: src/lab_m1/tema1/ui/player/player.cpp.o
+.PHONY : src/lab_m1/tema1/ui/player/player.o
+
+# target to build an object file
+src/lab_m1/tema1/ui/player/player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/player/player.cpp.o
+.PHONY : src/lab_m1/tema1/ui/player/player.cpp.o
+
+src/lab_m1/tema1/ui/player/player.i: src/lab_m1/tema1/ui/player/player.cpp.i
+.PHONY : src/lab_m1/tema1/ui/player/player.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/ui/player/player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/player/player.cpp.i
+.PHONY : src/lab_m1/tema1/ui/player/player.cpp.i
+
+src/lab_m1/tema1/ui/player/player.s: src/lab_m1/tema1/ui/player/player.cpp.s
+.PHONY : src/lab_m1/tema1/ui/player/player.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/ui/player/player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/player/player.cpp.s
+.PHONY : src/lab_m1/tema1/ui/player/player.cpp.s
 
 src/lab_m1/tema1/ui/properties/transformable.o: src/lab_m1/tema1/ui/properties/transformable.cpp.o
 .PHONY : src/lab_m1/tema1/ui/properties/transformable.o
@@ -1416,6 +1488,9 @@ help:
 	@echo "... src/lab_m1/tema1/entities/player/player.o"
 	@echo "... src/lab_m1/tema1/entities/player/player.i"
 	@echo "... src/lab_m1/tema1/entities/player/player.s"
+	@echo "... src/lab_m1/tema1/entities/player_hand/player_hand.o"
+	@echo "... src/lab_m1/tema1/entities/player_hand/player_hand.i"
+	@echo "... src/lab_m1/tema1/entities/player_hand/player_hand.s"
 	@echo "... src/lab_m1/tema1/sprites/card/card.o"
 	@echo "... src/lab_m1/tema1/sprites/card/card.i"
 	@echo "... src/lab_m1/tema1/sprites/card/card.s"
@@ -1440,12 +1515,18 @@ help:
 	@echo "... src/lab_m1/tema1/tema1.o"
 	@echo "... src/lab_m1/tema1/tema1.i"
 	@echo "... src/lab_m1/tema1/tema1.s"
+	@echo "... src/lab_m1/tema1/ui/button/button.o"
+	@echo "... src/lab_m1/tema1/ui/button/button.i"
+	@echo "... src/lab_m1/tema1/ui/button/button.s"
 	@echo "... src/lab_m1/tema1/ui/card/card.o"
 	@echo "... src/lab_m1/tema1/ui/card/card.i"
 	@echo "... src/lab_m1/tema1/ui/card/card.s"
 	@echo "... src/lab_m1/tema1/ui/card_area/card_area.o"
 	@echo "... src/lab_m1/tema1/ui/card_area/card_area.i"
 	@echo "... src/lab_m1/tema1/ui/card_area/card_area.s"
+	@echo "... src/lab_m1/tema1/ui/player/player.o"
+	@echo "... src/lab_m1/tema1/ui/player/player.i"
+	@echo "... src/lab_m1/tema1/ui/player/player.s"
 	@echo "... src/lab_m1/tema1/ui/properties/transformable.o"
 	@echo "... src/lab_m1/tema1/ui/properties/transformable.i"
 	@echo "... src/lab_m1/tema1/ui/properties/transformable.s"

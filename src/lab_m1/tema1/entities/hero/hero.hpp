@@ -1,3 +1,4 @@
+#pragma once
 
 namespace tema1 {
 namespace entities {

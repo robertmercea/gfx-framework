@@ -44,8 +44,8 @@ void CardDeck::setCardRenderMode(bool showFront) {
   }
 }
 
-CardVectorPtr CardDeck::getCards() {
-  return std::make_shared<CardVector>(cards);
+const CardVector& CardDeck::getCards() const {
+  return cards;
 }
 
 } // namespace entities

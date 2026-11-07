@@ -2,11 +2,13 @@
 
 #include "tema1/entities/battle_cards/battle_cards.hpp"
 #include "tema1/entities/card/card_fwd.hpp"
-#include "tema1/globals/player/player.hpp"
+#include "tema1/entities/card_deck/card_deck.hpp"
 #include "tema1/entities/player/player.hpp"
 #include "tema1/entities/player_hand/player_hand.hpp"
-#include "tema1/entities/card_deck/card_deck.hpp"
+#include "tema1/globals/player/player.hpp"
+#include "tema1/ui/button/button.hpp"
 #include <unordered_map>
+#include <vector>
 
 namespace tema1 {
 namespace entities {
@@ -25,35 +27,40 @@ enum class GameState {
 
 class Game {
 public:
-  void init();
-  void update(float);
-  void onMouseMove(float, float);
-  void onMouseBtnPress(float, float);
-  void onMouseBtnRelease(float, float);
+  void init(const glm::vec2 &resolution);
+  void update(float deltaTime);
+  void onMouseMove(float mouseX, float mouseY);
+  void onMouseBtnPress(float mouseX, float mouseY);
+  void onMouseBtnRelease(float mouseX, float mouseY);
+  void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps);
+
 private:
-  // game state machine
   GameState state;
   globals::player::PlayerType currentPlayer;
+  glm::vec2 windowResolution;
 
-  // game logic
   int currentMana;
   const int MAX_MANA = 10;
 
-  // card ui management
-  CardPtr draggedCard;
-  CardPtr attackingCard, defendingCard;
-  // all cards currently in the game
-  CardVector gameCards;
+  float timer;
+  const float TIMER_INIT_VALUE = 60.0f;
+  const int GAME_START_DECK_AMOUNT = 25;
+  const int GAME_START_PLAYER_HAND_AMOUNT = 5;
 
-  // game entities
-  std::unordered_map<globals::player::PlayerType, BattleCards> battlecards;
+  CardPtr draggedCard;
+  CardPtr attackingCard;
+  CardPtr defendingCard;
+
+  BattleCards battlecards;
   std::unordered_map<globals::player::PlayerType, Player> players;
   std::unordered_map<globals::player::PlayerType, PlayerHand> playerHands;
-  std::unordered_map<globals::player::PlayerType, CardVector> playerCards;
-  // TODO: add "end turn" button
-  // TODO: add timer
+  std::unordered_map<globals::player::PlayerType, CardDeck> decks;
+
+  ui::Button endTurnBtn;
+
+  void updateCardColors();
+  void aiTurn();
 };
 
 } // namespace entities
 } // namespace tema1
-

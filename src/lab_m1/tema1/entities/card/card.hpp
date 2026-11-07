@@ -9,11 +9,17 @@ namespace entities {
 
 class Card {
 public:
+  CardData cardData;
   ui::Card cardUI;
   Card(globals::CardType, globals::SpriteType);
+  bool hasAttackedThisTurn = false;
+  bool playedThisTurn = false;
+
+  bool getAttackability() const;
+  void setAttackability(bool);
+
 
 private:
-  CardData cardData;
 };
 
 } // namespace entities
