@@ -15,9 +15,6 @@ public:
   bool hasAttackedThisTurn = false;
   bool playedThisTurn = false;
 
-  bool getAttackability() const;
-  void setAttackability(bool);
-
 
 private:
 };
