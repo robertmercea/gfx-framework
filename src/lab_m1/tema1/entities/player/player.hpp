@@ -1,7 +1,6 @@
 #pragma once
 
 #include "tema1/entities/card/card.hpp"
-#include "tema1/entities/card_view/card_view.hpp"
 #include "tema1/entities/hero/hero.hpp"
 
 namespace tema1 {
@@ -18,7 +17,6 @@ private:
   int mana;
 
   Hero hero;
-  CardView cardView;
 };
 
 } // namespace entities
