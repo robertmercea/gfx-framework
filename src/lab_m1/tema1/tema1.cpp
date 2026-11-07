@@ -2,7 +2,6 @@
 #include "tema1/entities/battle_cards/battle_cards.hpp"
 #include "tema1/entities/card/card.hpp"
 #include "tema1/entities/card/card_fwd.hpp"
-#include "tema1/entities/card_collection/card_collection.hpp"
 #include "tema1/globals/cards/types/types.hpp"
 #include "tema1/globals/player/player.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
@@ -56,31 +55,25 @@ void Tema1::Init()
     battlecards->cardAreas[globals::player::PlayerType::HUMAN].setPosition(glm::vec2(centerX, centerY - yOffset));
     battlecards->cardAreas[globals::player::PlayerType::AI].setPosition(glm::vec2(centerX, centerY + yOffset));
 
-    // Make three cards for the HUMAN player.
-    auto humanCard1 = std::make_shared<entities::Card>(globals::CardType::WIZARD, globals::SpriteType::WIZARD);
-    humanCard1->cardUI.setInitialPosition(glm::vec2(centerX - xOffset, centerY - yOffset));
-    battlecards->addCard(humanCard1, globals::player::PlayerType::HUMAN);
+    // Make 15 cards for the HUMAN player.
+    for (int i = 0; i < 15; ++i) {
+        // Cycle through WIZARD (0), KNIGHT (1), MAGE (2), and DWARF (3).
+        auto cardType = static_cast<globals::CardType>(i % 4);
+        auto spriteType = static_cast<globals::SpriteType>(i % 4);
+        
+        auto humanCard = std::make_shared<entities::Card>(cardType, spriteType);
+        battlecards->addCard(humanCard, globals::player::PlayerType::HUMAN);
+    }
 
-    auto humanCard2 = std::make_shared<entities::Card>(globals::CardType::KNIGHT, globals::SpriteType::KNIGHT);
-    humanCard2->cardUI.setInitialPosition(glm::vec2(centerX, centerY - yOffset));
-    battlecards->addCard(humanCard2, globals::player::PlayerType::HUMAN);
-
-    auto humanCard3 = std::make_shared<entities::Card>(globals::CardType::MAGE, globals::SpriteType::MAGE);
-    humanCard3->cardUI.setInitialPosition(glm::vec2(centerX + xOffset, centerY - yOffset));
-    battlecards->addCard(humanCard3, globals::player::PlayerType::HUMAN);
-
-    // Make three cards for the AI player.
-    auto aiCard1 = std::make_shared<entities::Card>(globals::CardType::DWARF, globals::SpriteType::DWARF);
-    aiCard1->cardUI.setInitialPosition(glm::vec2(centerX - xOffset, centerY + yOffset));
-    battlecards->addCard(aiCard1, globals::player::PlayerType::AI);
-
-    auto aiCard2 = std::make_shared<entities::Card>(globals::CardType::KNIGHT, globals::SpriteType::KNIGHT);
-    aiCard2->cardUI.setInitialPosition(glm::vec2(centerX, centerY + yOffset));
-    battlecards->addCard(aiCard2, globals::player::PlayerType::AI);
-
-    auto aiCard3 = std::make_shared<entities::Card>(globals::CardType::WIZARD, globals::SpriteType::WIZARD);
-    aiCard3->cardUI.setInitialPosition(glm::vec2(centerX + xOffset, centerY + yOffset));
-    battlecards->addCard(aiCard3, globals::player::PlayerType::AI);
+    // Make 15 cards for the AI player.
+    for (int i = 0; i < 15; ++i) {
+        // Add an offset so the AI gets a different sequence of cards.
+        auto cardType = static_cast<globals::CardType>((i + 2) % 4);
+        auto spriteType = static_cast<globals::SpriteType>((i + 2) % 4);
+        
+        auto aiCard = std::make_shared<entities::Card>(cardType, spriteType);
+        battlecards->addCard(aiCard, globals::player::PlayerType::AI);
+    }
 }
 
 
