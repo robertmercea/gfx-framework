@@ -1,5 +1,6 @@
 #include "game.hpp"
 #include "tema1/entities/card/card.hpp"
+#include "tema1/entities/player/player.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -37,6 +38,7 @@ void Game::init(const glm::vec2 &resolution) {
     decks[p].setRenderMode(p);
     for (int i = 0; i < GAME_START_DECK_AMOUNT; ++i) {
       auto cardType = static_cast<globals::CardType>(rand() % 4);
+      // TODO: instantiate solely based on cardType
       auto spriteType = static_cast<globals::SpriteType>(static_cast<int>(cardType));
       decks[p].pushCard(std::make_shared<Card>(cardType, spriteType));
     }
@@ -44,6 +46,7 @@ void Game::init(const glm::vec2 &resolution) {
 
   for (auto p : {PlayerType::HUMAN, PlayerType::AI}) {
     playerHands[p] = PlayerHand();
+    // TODO: increase GAME_START_DECK_AMOUNT such that it has GAME_START_PLAYER_HAND_AMOUNT extra cards
     for (int i = 0; i < GAME_START_PLAYER_HAND_AMOUNT; ++i) {
       playerHands[p].pushCard(decks[p].drawTopCard());
     }
@@ -100,6 +103,7 @@ void Game::update(float dt) {
     if (timer <= 0.0f) {
       std::cout << "[Event] Turn timer expired! Cancelling active actions.\n";
       if (draggedCard) {
+        // TODO: fix this bloody mess (send it back to its default pos)
         draggedCard->cardUI.onMouseBtnRelease(0, 0);
         draggedCard = nullptr;
         std::cout << "[Action] Dragged card snapped back due to timeout.\n";
@@ -123,6 +127,7 @@ void Game::aiTurn() {
   
   if (!decks[PlayerType::AI].getCards().empty()) {
     playerHands[PlayerType::AI].pushCard(decks[PlayerType::AI].drawTopCard());
+    // TODO: move this to a bloody separate UI element already
     playerHands[PlayerType::AI].arrangeCards(glm::vec2(windowResolution.x / 2.0f, windowResolution.y - 150.0f), 800.0f);
     std::cout << "[AI] AI drew a card.\n";
   }
@@ -149,24 +154,12 @@ void Game::aiTurn() {
     if (!attacker->playedThisTurn && !attacker->hasAttackedThisTurn) {
       if (!huField.empty()) {
         auto defender = huField[rand() % huField.size()];
-        attacker->cardData.stats.health -= defender->cardData.stats.attack;
-        defender->cardData.stats.health -= attacker->cardData.stats.attack;
-        attacker->hasAttackedThisTurn = true;
+        cardAttack(defender, attacker, PlayerType::HUMAN, PlayerType::AI);
         
         std::cout << "[AI] AI attacked a player card! AI Card HP: " << attacker->cardData.stats.health 
                   << " | Player Card HP: " << defender->cardData.stats.health << "\n";
-        
-        attacker->cardUI.setHealth(attacker->cardData.stats.health);
-        defender->cardUI.setHealth(defender->cardData.stats.health);
-        
-        if (attacker->cardData.stats.health <= 0) {
-          battlecards.removeCard(attacker, PlayerType::AI);
-          std::cout << "[Event] AI card destroyed in combat.\n";
-        }
-        if (defender->cardData.stats.health <= 0) {
-          battlecards.removeCard(defender, PlayerType::HUMAN);
-          std::cout << "[Event] Player card destroyed in combat.\n";
-        }
+
+        cardCleanup();
       }
     }
   }
@@ -235,29 +228,17 @@ void Game::onMouseBtnPress(float x, float y) {
     for (auto &c : battlecards.getPlayerCards(PlayerType::AI)) {
       if (c->cardUI.contains(x, y)) {
         defendingCard = c;
-        attackingCard->cardData.stats.health -= defendingCard->cardData.stats.attack;
-        defendingCard->cardData.stats.health -= attackingCard->cardData.stats.attack;
-        attackingCard->hasAttackedThisTurn = true;
+        cardAttack(defendingCard, attackingCard, PlayerType::AI, PlayerType::HUMAN);
         
         std::cout << "[Combat] Player attacked AI card! Player Card HP: " << attackingCard->cardData.stats.health 
                   << " | AI Card HP: " << defendingCard->cardData.stats.health << "\n";
-        
-        attackingCard->cardUI.setHealth(attackingCard->cardData.stats.health);
-        defendingCard->cardUI.setHealth(defendingCard->cardData.stats.health);
-        
-        if (attackingCard->cardData.stats.health <= 0) {
-          battlecards.removeCard(attackingCard, PlayerType::HUMAN);
-          std::cout << "[Event] Player card destroyed in combat.\n";
-        }
-        if (defendingCard->cardData.stats.health <= 0) {
-          battlecards.removeCard(defendingCard, PlayerType::AI);
-          std::cout << "[Event] AI card destroyed in combat.\n";
-        }
         
         attackingCard = nullptr;
         defendingCard = nullptr;
         state = GameState::PLAYER_ATTACK;
         std::cout << "[State] CARD_USE -> PLAYER_ATTACK. Combat resolved.\n";
+
+        cardCleanup();
         return;
       }
     }
@@ -305,6 +286,37 @@ void Game::getSpriteProperties(std::vector<sprites::SpriteProperties> &spritePro
   players[PlayerType::HUMAN].playerUI.getSpriteProperties(spriteProps, players[PlayerType::HUMAN].health);
   players[PlayerType::AI].playerUI.getSpriteProperties(spriteProps, players[PlayerType::AI].health);
   endTurnBtn.getSpriteProperties(spriteProps);
+}
+
+void Game::cardAttack(const CardPtr def, const CardPtr atk, const PlayerType &defP, const PlayerType &atkP) {
+  const auto damageDealt = atk->cardData.stats.attack;
+  const auto resistance = def->cardData.stats.attack;
+
+  atk->hasAttackedThisTurn = true;
+
+  def->cardData.stats.health -= damageDealt;
+  atk->cardData.stats.health -= resistance;
+
+  atk->cardUI.setHealth(atk->cardData.stats.health);
+  def->cardUI.setHealth(def->cardData.stats.health);
+
+  if (atk->cardData.stats.health <= 0) {
+    cleanupPool.push_back({atkP, atk});
+  }
+
+  if (def->cardData.stats.health <= 0) {
+    cleanupPool.push_back({defP, def});
+  }
+}
+
+void Game::cardCleanup() {
+  for (const auto &it : cleanupPool) {
+    const auto &player = std::get<0>(it);
+    const auto &cardptr = std::get<1>(it);
+
+    std::cout << "[Cleanup] Removed card from game!\n";
+    battlecards.removeCard(cardptr, player);
+  }
 }
 
 } // namespace entities

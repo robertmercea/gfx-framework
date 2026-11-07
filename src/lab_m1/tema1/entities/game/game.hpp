@@ -7,6 +7,7 @@
 #include "tema1/entities/player_hand/player_hand.hpp"
 #include "tema1/globals/player/player.hpp"
 #include "tema1/ui/button/button.hpp"
+#include <tuple>
 #include <unordered_map>
 #include <vector>
 
@@ -27,12 +28,17 @@ enum class GameState {
 
 class Game {
 public:
+  using PlayerType = globals::player::PlayerType;
+
   void init(const glm::vec2 &resolution);
   void update(float deltaTime);
   void onMouseMove(float mouseX, float mouseY);
   void onMouseBtnPress(float mouseX, float mouseY);
   void onMouseBtnRelease(float mouseX, float mouseY);
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps);
+  void cardAttack(const CardPtr def, const CardPtr atk, const PlayerType &defP, const PlayerType &atkP);
+  void cardCleanup();
+  // TODO: split the damned state machine into multiple smaller functions
 
 private:
   GameState state;
@@ -50,6 +56,8 @@ private:
   CardPtr draggedCard;
   CardPtr attackingCard;
   CardPtr defendingCard;
+
+  std::vector<std::tuple<PlayerType, CardPtr>> cleanupPool;
 
   BattleCards battlecards;
   std::unordered_map<globals::player::PlayerType, Player> players;
