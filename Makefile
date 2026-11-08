@@ -1305,6 +1305,30 @@ src/lab_m1/tema1/ui/shape/shape.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.s
 .PHONY : src/lab_m1/tema1/ui/shape/shape.cpp.s
 
+src/lab_m1/tema1/ui/timer/timer.o: src/lab_m1/tema1/ui/timer/timer.cpp.o
+.PHONY : src/lab_m1/tema1/ui/timer/timer.o
+
+# target to build an object file
+src/lab_m1/tema1/ui/timer/timer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/timer/timer.cpp.o
+.PHONY : src/lab_m1/tema1/ui/timer/timer.cpp.o
+
+src/lab_m1/tema1/ui/timer/timer.i: src/lab_m1/tema1/ui/timer/timer.cpp.i
+.PHONY : src/lab_m1/tema1/ui/timer/timer.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/ui/timer/timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/timer/timer.cpp.i
+.PHONY : src/lab_m1/tema1/ui/timer/timer.cpp.i
+
+src/lab_m1/tema1/ui/timer/timer.s: src/lab_m1/tema1/ui/timer/timer.cpp.s
+.PHONY : src/lab_m1/tema1/ui/timer/timer.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/ui/timer/timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/timer/timer.cpp.s
+.PHONY : src/lab_m1/tema1/ui/timer/timer.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -1533,6 +1557,9 @@ help:
 	@echo "... src/lab_m1/tema1/ui/shape/shape.o"
 	@echo "... src/lab_m1/tema1/ui/shape/shape.i"
 	@echo "... src/lab_m1/tema1/ui/shape/shape.s"
+	@echo "... src/lab_m1/tema1/ui/timer/timer.o"
+	@echo "... src/lab_m1/tema1/ui/timer/timer.i"
+	@echo "... src/lab_m1/tema1/ui/timer/timer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -7,6 +7,7 @@
 #include "tema1/entities/player_hand/player_hand.hpp"
 #include "tema1/globals/player/player.hpp"
 #include "tema1/ui/button/button.hpp"
+#include "tema1/ui/timer/timer.hpp"
 #include <tuple>
 #include <unordered_map>
 #include <vector>
@@ -53,7 +54,6 @@ private:
   int currentMana;
   const int MAX_MANA = 10;
 
-  float timer;
   const float TIMER_INIT_VALUE = 60.0f;
   const int GAME_START_DECK_AMOUNT = 25;
   const int GAME_START_PLAYER_HAND_AMOUNT = 5;
@@ -70,6 +70,7 @@ private:
   std::unordered_map<globals::player::PlayerType, CardDeck> decks;
 
   ui::Button endTurnBtn;
+  ui::Timer timer;
 
   void updateCardColors();
   void aiTurn();

@@ -1,7 +1,9 @@
 #include "game.hpp"
+#include "glm/ext/vector_float2.hpp"
 #include "tema1/entities/card/card.hpp"
 #include "tema1/entities/player/player.hpp"
 #include "tema1/ui/globals/colors.hpp"
+#include "tema1/ui/timer/timer.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -17,7 +19,10 @@ void Game::init(const glm::vec2 &resolution) {
   windowResolution = resolution;
   state = GameState::GAME_INIT;
   currentMana = 10;
-  timer = TIMER_INIT_VALUE;
+  timer = ui::Timer(TIMER_INIT_VALUE);
+  timer.setPosition(glm::vec2(windowResolution.x - 100.0f, windowResolution.y / 2.0f + 100.0f));
+  timer.scale(glm::vec2(50.0f, 50.0f));
+
   srand(time(NULL));
 
   players[PlayerType::HUMAN] = Player();
@@ -98,15 +103,15 @@ void Game::update(float dt) {
     if (currentPlayer == PlayerType::HUMAN) {
       state = GameState::PLAYER_ATTACK;
       std::cout << "[State] CARD_DRAW -> PLAYER_ATTACK\n";
-      timer = TIMER_INIT_VALUE;
+      timer.reset();
     } else {
       state = GameState::PLAYER_DEFEND;
       std::cout << "[State] CARD_DRAW -> PLAYER_DEFEND\n";
     }
   } 
   else if (state == GameState::PLAYER_ATTACK || state == GameState::CARD_DRAG || state == GameState::CARD_USE) {
-    timer -= dt;
-    if (timer <= 0.0f) {
+    timer.passTime(dt);
+    if (timer.isTimeout()) {
       std::cout << "[Event] Turn timer expired! Cancelling active actions.\n";
       if (draggedCard) {
         // TODO: fix this bloody mess (send it back to its default pos)
@@ -317,6 +322,7 @@ void Game::getSpriteProperties(std::vector<sprites::SpriteProperties> &spritePro
   players[PlayerType::HUMAN].playerUI.getSpriteProperties(spriteProps, players[PlayerType::HUMAN].mana);
   players[PlayerType::AI].playerUI.getSpriteProperties(spriteProps, players[PlayerType::AI].mana);
   endTurnBtn.getSpriteProperties(spriteProps);
+  timer.getSpriteProperties(spriteProps);
 }
 
 void Game::cardAttack(const CardPtr def, const CardPtr atk, const PlayerType &defP, const PlayerType &atkP) {

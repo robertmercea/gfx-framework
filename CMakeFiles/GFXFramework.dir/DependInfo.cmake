@@ -57,6 +57,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/player/player.cpp" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/player/player.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/player/player.cpp.o.d"
   "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/properties/transformable.cpp" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o.d"
   "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/shape/shape.cpp" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o.d"
+  "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/timer/timer.cpp" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/timer/timer.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/timer/timer.cpp.o.d"
   "/home/robert/ACS/EGC/gfx-framework/src/main.cpp" "CMakeFiles/GFXFramework.dir/src/main.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/main.cpp.o.d"
   "/home/robert/ACS/EGC/gfx-framework/src/utils/gl_utils.cpp" "CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o.d"
   "/home/robert/ACS/EGC/gfx-framework/src/utils/text_utils.cpp" "CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.o" "gcc" "CMakeFiles/GFXFramework.dir/src/utils/text_utils.cpp.o.d"

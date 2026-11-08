@@ -97,6 +97,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/shape/shape.cpp.o.d"
+  "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/timer/timer.cpp.o"
+  "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/timer/timer.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/main.cpp.o"
   "CMakeFiles/GFXFramework.dir/src/main.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/utils/gl_utils.cpp.o"
