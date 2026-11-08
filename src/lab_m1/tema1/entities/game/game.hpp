@@ -73,6 +73,7 @@ private:
 
   void updateCardColors();
   void aiTurn();
+  GameState checkEndGame();
 };
 
 } // namespace entities

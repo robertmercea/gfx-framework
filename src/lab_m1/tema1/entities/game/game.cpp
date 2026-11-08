@@ -124,6 +124,8 @@ void Game::update(float dt) {
 }
 
 void Game::aiTurn() {
+  if (state == GameState::GAME_END) return;
+
   std::cout << "[AI] AI Turn Started.\n";
   currentPlayer = PlayerType::AI;
   
@@ -160,11 +162,13 @@ void Game::aiTurn() {
         cardAttack(defender, attacker, PlayerType::HUMAN, PlayerType::AI);
         std::cout << "[AI] AI attacked a player card!\n";
         cardCleanup();
+        if (checkEndGame() == GameState::GAME_END) return;
       } else {
         // Attack the human hero directly
         auto humanHero = battlecards.getHero(PlayerType::HUMAN);
         cardAttack(humanHero, attacker, PlayerType::HUMAN, PlayerType::AI);
         std::cout << "[AI] AI attacked the human hero!\n";
+        if (checkEndGame() == GameState::GAME_END) return;
       }
       
     }
@@ -245,6 +249,7 @@ void Game::onMouseBtnPress(float x, float y) {
         std::cout << "[State] CARD_USE -> PLAYER_ATTACK. Combat resolved.\n";
 
         cardCleanup();
+        (void) checkEndGame();
         return;
       }
     }
@@ -260,6 +265,8 @@ void Game::onMouseBtnPress(float x, float y) {
       defendingCard = nullptr;
       state = GameState::PLAYER_ATTACK;
       std::cout << "[State] CARD_USE -> PLAYER_ATTACK. Combat resolved.\n";
+
+      (void) checkEndGame();
       return;
     }
     
@@ -311,32 +318,41 @@ void Game::getSpriteProperties(std::vector<sprites::SpriteProperties> &spritePro
 void Game::cardAttack(const CardPtr def, const CardPtr atk, const PlayerType &defP, const PlayerType &atkP) {
   const auto damageDealt = atk->cardData.stats.attack;
   const auto resistance = def->cardData.stats.attack;
+  const auto humanHero = battlecards.getHero(PlayerType::HUMAN);
+  const auto aiHero = battlecards.getHero(PlayerType::AI);
 
   atk->hasAttackedThisTurn = true;
 
-  def->cardData.stats.health -= damageDealt;
-  atk->cardData.stats.health -= resistance;
+  def->cardData.stats.health = std::max(0, def->cardData.stats.health - damageDealt);
+  atk->cardData.stats.health = std::max(0, atk->cardData.stats.health - resistance);
 
   atk->cardUI.setHealth(atk->cardData.stats.health);
   def->cardUI.setHealth(def->cardData.stats.health);
 
-  if (atk->cardData.stats.health <= 0) {
-    if (atk == battlecards.getHero(atkP)) {
-      state = GameState::GAME_END;
-      std::cout << "GAME OVER! Player " << (int)defP << " wins!\n";
-    } else {
-      cleanupPool.push_back({atkP, atk});
-    }
+  if (atk->cardData.stats.health <= 0 && atk != humanHero && atk != aiHero) {
+    cleanupPool.push_back({atkP, atk});
   }
 
-  if (def->cardData.stats.health <= 0) {
-    if (def == battlecards.getHero(defP)) {
-      state = GameState::GAME_END;
-      std::cout << "GAME OVER! Player " << (int)atkP << " wins!\n";
-    } else {
-      cleanupPool.push_back({defP, def});
-    }
+  if (def->cardData.stats.health <= 0 && def != humanHero && def != aiHero) {
+    cleanupPool.push_back({defP, def});
   }
+}
+
+GameState Game::checkEndGame() {
+  auto humanHero = battlecards.getHero(PlayerType::HUMAN);
+  auto aiHero = battlecards.getHero(PlayerType::AI);
+
+  if (humanHero->cardData.stats.health <= 0) {
+    std::cout << "[State] You lost!\n";
+    state = GameState::GAME_END;
+  }
+
+  if (aiHero->cardData.stats.health <= 0) {
+    std::cout << "[State] You won!\n";
+    state = GameState::GAME_END;
+  }
+  
+  return state;
 }
 
 void Game::cardCleanup() {
@@ -347,6 +363,8 @@ void Game::cardCleanup() {
     std::cout << "[Cleanup] Removed card from game!\n";
     battlecards.removeCard(cardptr, player);
   }
+
+  cleanupPool.clear();
 }
 
 } // namespace entities
