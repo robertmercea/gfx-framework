@@ -23,9 +23,6 @@ void Game::init(const glm::vec2 &resolution) {
   players[PlayerType::HUMAN] = Player();
   players[PlayerType::AI] = Player();
   
-  players[PlayerType::HUMAN].playerUI.setPosition(glm::vec2(windowResolution.x / 2.0f, 50.0f));
-  players[PlayerType::AI].playerUI.setPosition(glm::vec2(windowResolution.x / 2.0f, windowResolution.y - 50.0f));
-
   endTurnBtn.setSize(120.0f, 50.0f);
   endTurnBtn.setPosition(glm::vec2(windowResolution.x - 100.0f, windowResolution.y / 2.0f));
   endTurnBtn.setColor(ui::colors::ORANGE);
@@ -59,6 +56,13 @@ void Game::init(const glm::vec2 &resolution) {
   playerHands[PlayerType::AI].setCenter(glm::vec2(windowResolution.x / 2.0f, windowResolution.y - AI_HAND_Y_OFFSET));
   playerHands[PlayerType::AI].setMaxWidth(HAND_MAX_WIDTH);
   playerHands[PlayerType::AI].arrangeCards();
+
+  players[PlayerType::HUMAN].playerUI.setPosition(glm::vec2(windowResolution.x / 2.0f, 100.0f));
+  players[PlayerType::HUMAN].playerUI.setScale(glm::vec2(75.0f, 75.0f));
+
+  players[PlayerType::AI].playerUI.setPosition(glm::vec2(windowResolution.x / 2.0f, windowResolution.y - 100.0f));
+  players[PlayerType::AI].playerUI.setScale(glm::vec2(75.0f, 75.0f));
+
 
   currentPlayer = PlayerType::HUMAN;
   state = GameState::TURN_START;
@@ -310,8 +314,8 @@ void Game::getSpriteProperties(std::vector<sprites::SpriteProperties> &spritePro
   battlecards.getSpriteProperties(spriteProps);
   playerHands[PlayerType::HUMAN].getSpriteProperties(spriteProps);
   playerHands[PlayerType::AI].getSpriteProperties(spriteProps);
-  players[PlayerType::HUMAN].playerUI.getSpriteProperties(spriteProps, players[PlayerType::HUMAN].health);
-  players[PlayerType::AI].playerUI.getSpriteProperties(spriteProps, players[PlayerType::AI].health);
+  players[PlayerType::HUMAN].playerUI.getSpriteProperties(spriteProps, players[PlayerType::HUMAN].mana);
+  players[PlayerType::AI].playerUI.getSpriteProperties(spriteProps, players[PlayerType::AI].mana);
   endTurnBtn.getSpriteProperties(spriteProps);
 }
 

@@ -16,12 +16,15 @@ Player::Player() {
 void Player::getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps, int mana) {
   if (!manaSprite || mana <= 0) return;
 
+  float currentScaleX = std::max(1.0f, std::abs(getScale().x));
+
   float statWidth = manaSprite->width();
   float statHeight = manaSprite->height();
   float spacingMultiplier = 1.25f;
   float stepX = statWidth * spacingMultiplier;
   float stepY = -statHeight * spacingMultiplier;
-  float availableWidth = 400.0f;
+  
+  float availableWidth = 400.0f / currentScaleX;
 
   int maxPerRow = std::max(1, static_cast<int>(availableWidth / stepX));
 
@@ -39,7 +42,7 @@ void Player::getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteP
     float offsetY = startY + (static_cast<float>(row) * stepY);
 
     glm::mat3 statMatrix = baseMatrix * ui::transform::translate(offsetX, offsetY);
-    manaSprite->getSpriteProperties(spriteProps, statMatrix, ui::colors::RED);
+    manaSprite->getSpriteProperties(spriteProps, statMatrix, ui::colors::BLUE);
   }
 }
 
