@@ -12,7 +12,6 @@ using HeroPtr = std::shared_ptr<Hero>;
 
 class Hero : public Card {
 public:
-  CardData cardData;
   Hero();
 };
 
