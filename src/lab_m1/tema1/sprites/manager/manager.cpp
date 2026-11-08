@@ -36,6 +36,8 @@ enum class SpriteType {
   MAGE,
   DWARF,
   BACK,
+  HERO,
+
   HEART,
   MANA,
   SWORD,
@@ -50,6 +52,7 @@ void SpriteManager::init() {
   sprites[SpriteType::MAGE] = std::make_shared<sprites::Card>(globals::CardType::MAGE);
   sprites[SpriteType::DWARF] = std::make_shared<sprites::Card>(globals::CardType::DWARF);
   sprites[SpriteType::BACK] = std::make_shared<sprites::Card>(globals::CardType::BACK);
+  sprites[SpriteType::HERO] = std::make_shared<sprites::Card>(globals::CardType::HERO);
 
   sprites[SpriteType::HEART] = std::make_shared<sprites::Heart>();
   sprites[SpriteType::MANA] = std::make_shared<sprites::Mana>();

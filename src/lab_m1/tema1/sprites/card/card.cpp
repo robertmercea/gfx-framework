@@ -51,6 +51,13 @@ Card::Card(globals::CardType cardType)
     symbolColor = colors::GRAY;
     symbolMesh = std::shared_ptr<Mesh>(
         ui::shape::createTriangle("triangle", 0.35f, symbolColor));
+    break;
+  case CardType::HERO:
+    innerColor = colors::DARK_GRAY;
+    symbolColor = colors::MAGENTA;
+    symbolMesh = std::shared_ptr<Mesh>(
+        ui::shape::createNgon("pentagon", 5, 0, 0.35f, symbolColor));
+    break;
   }
 
   innerMesh =
