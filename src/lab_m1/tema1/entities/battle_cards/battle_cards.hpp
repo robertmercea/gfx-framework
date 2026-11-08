@@ -27,16 +27,17 @@ public:
   void useCard(const CardPtr card, const CardPtr target, PlayerType owner);
   void getSpriteProperties(std::vector<tema1::sprites::SpriteProperties> &spriteProps) override;
   const CardVector& getPlayerCards(PlayerType owner) const;
+  HeroPtr getHero(PlayerType owner);
 
 private:
   static constexpr float CARD_AREA_WIDTH = 800.0f;
-  static constexpr float CARD_AREA_HEIGHT = 200.0f;
+  static constexpr float CARD_AREA_HEIGHT = 100.0f;
   static constexpr float CARD_AREA_BORDER_THICKNESS = 5.0f;
   glm::vec3 CARD_AREA_AI_BG_COLOR = ui::colors::PURPLE;
   glm::vec3 CARD_AREA_HUMAN_BG_COLOR = ui::colors::CYAN;
 
   std::unordered_map<globals::player::PlayerType, CardVector> playerCards;
-  std::unordered_map<globals::player::PlayerType, Hero> heroes;
+  std::unordered_map<globals::player::PlayerType, HeroPtr> heroes;
 };
 
 } // namespace entities

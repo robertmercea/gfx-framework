@@ -1,6 +1,7 @@
 #include "game.hpp"
 #include "tema1/entities/card/card.hpp"
 #include "tema1/entities/player/player.hpp"
+#include "tema1/ui/globals/colors.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -152,15 +153,20 @@ void Game::aiTurn() {
   if (!aiField.empty()) {
     auto attacker = aiField[rand() % aiField.size()];
     if (!attacker->playedThisTurn && !attacker->hasAttackedThisTurn) {
+      
       if (!huField.empty()) {
+        // Attack a random card
         auto defender = huField[rand() % huField.size()];
         cardAttack(defender, attacker, PlayerType::HUMAN, PlayerType::AI);
-        
-        std::cout << "[AI] AI attacked a player card! AI Card HP: " << attacker->cardData.stats.health 
-                  << " | Player Card HP: " << defender->cardData.stats.health << "\n";
-
+        std::cout << "[AI] AI attacked a player card!\n";
         cardCleanup();
+      } else {
+        // Attack the human hero directly
+        auto humanHero = battlecards.getHero(PlayerType::HUMAN);
+        cardAttack(humanHero, attacker, PlayerType::HUMAN, PlayerType::AI);
+        std::cout << "[AI] AI attacked the human hero!\n";
       }
+      
     }
   }
 
@@ -242,6 +248,20 @@ void Game::onMouseBtnPress(float x, float y) {
         return;
       }
     }
+
+    auto aiHero = battlecards.getHero(PlayerType::AI);
+
+    if (aiHero->cardUI.contains(x, y)) {
+      defendingCard = aiHero;
+      cardAttack(defendingCard, attackingCard, PlayerType::AI, PlayerType::HUMAN);
+      std::cout << "[Combat] Player hero attacked AI hero!\n";
+      
+      attackingCard = nullptr;
+      defendingCard = nullptr;
+      state = GameState::PLAYER_ATTACK;
+      std::cout << "[State] CARD_USE -> PLAYER_ATTACK. Combat resolved.\n";
+      return;
+    }
     
     for (auto &c : battlecards.getPlayerCards(PlayerType::HUMAN)) {
       if (c->cardUI.contains(x, y) && !c->hasAttackedThisTurn && !c->playedThisTurn) {
@@ -301,11 +321,21 @@ void Game::cardAttack(const CardPtr def, const CardPtr atk, const PlayerType &de
   def->cardUI.setHealth(def->cardData.stats.health);
 
   if (atk->cardData.stats.health <= 0) {
-    cleanupPool.push_back({atkP, atk});
+    if (atk == battlecards.getHero(atkP)) {
+      state = GameState::GAME_END;
+      std::cout << "GAME OVER! Player " << (int)defP << " wins!\n";
+    } else {
+      cleanupPool.push_back({atkP, atk});
+    }
   }
 
   if (def->cardData.stats.health <= 0) {
-    cleanupPool.push_back({defP, def});
+    if (def == battlecards.getHero(defP)) {
+      state = GameState::GAME_END;
+      std::cout << "GAME OVER! Player " << (int)atkP << " wins!\n";
+    } else {
+      cleanupPool.push_back({defP, def});
+    }
   }
 }
 

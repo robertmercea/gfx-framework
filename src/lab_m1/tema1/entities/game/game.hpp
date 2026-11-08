@@ -44,7 +44,7 @@ private:
   static constexpr float HUMAN_HAND_Y_OFFSET = 50.0f;
   static constexpr float AI_HAND_Y_OFFSET = 50.0f;
   static constexpr float HAND_MAX_WIDTH = 800.0f;
-  static constexpr float BATTLECARDS_Y_OFFSET = 150.0f;
+  static constexpr float BATTLECARDS_Y_OFFSET = 75.0f;
 
   GameState state;
   globals::player::PlayerType currentPlayer;
