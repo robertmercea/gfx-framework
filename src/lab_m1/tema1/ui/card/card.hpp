@@ -15,6 +15,7 @@ class Card : public Transformable {
 public:
   static constexpr float MOUSE_ENTER_SCALE_FACTOR = 1.5f;
   static constexpr float MOUSE_LEAVE_SCALE_FACTOR = 0.0f;
+  const glm::vec2 DEFAULT_SCALE = {40.0f, 50.0f};
 
   Card(globals::CardType, globals::SpriteType);
 
@@ -23,6 +24,10 @@ public:
   void showBack();
   void flip();
   void shake(float amount);
+  void unselect();
+  void onHoverEnter();
+  void onHoverLeave();
+  void prepareToAttack();
 
   void onMouseMove(float mouseX, float mouseY);
   void onMouseBtnPress(float mouseX, float mouseY);
@@ -40,7 +45,8 @@ private:
   static constexpr const float HEART_RADIUS = 0.15f;
   static constexpr const float MANA_SIZE = 0.1f;
   static constexpr const float SWORD_SIZE = 0.2f;
-  const glm::vec2 DEFAULT_SCALE = {40.0f, 50.0f};
+  static constexpr const float SELECTED_SCALING = 1.5f;
+  static constexpr const float PREPARED_SCALING = 0.25f;
 
   int totalHealth;
   int health, manaCost, attack;

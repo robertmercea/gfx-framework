@@ -66,7 +66,7 @@ void BattleCards::getSpriteProperties(
 
     float padding = 20.0f;
     // may be an issue later on, but oh well
-    float spacing = cards[0]->cardUI.getScale().x;
+    float spacing = cards[0]->cardUI.DEFAULT_SCALE.x;
 
     float startX = areaX - (areaW / 2.0f);
     float startY = areaY + (areaH / 2.0f);
@@ -74,8 +74,8 @@ void BattleCards::getSpriteProperties(
     for (size_t i = 0; i < cards.size(); ++i) {
       ui::Card &cardUI = cards[i]->cardUI;
 
-      float cardW = std::abs(cardUI.getScale().x);
-      float cardH = std::abs(cardUI.getScale().y);
+      float cardW = std::abs(cardUI.DEFAULT_SCALE.x);
+      float cardH = std::abs(cardUI.DEFAULT_SCALE.y);
 
       float stepX = cardW + spacing;
       float stepY = cardH + spacing;

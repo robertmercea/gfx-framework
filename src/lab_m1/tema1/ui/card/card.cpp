@@ -59,9 +59,8 @@ void Card::onMouseMove(float mouseX, float mouseY) {
 
 void Card::update(float deltaTime) {
   if (std::abs(scaleAmount) > 0) {
-    scaleAmount = std::max(0.f, scaleAmount - deltaTime);
-    _scale.x = defaultScale.x * sin(scaleAmount * 5.0f) * 0.1f;
-    _scale.y = defaultScale.y * sin(scaleAmount * 5.0f) * 0.1f;
+    _scale.x = defaultScale.x * scaleAmount;
+    _scale.y = defaultScale.y * scaleAmount;
   } else {
     _scale = defaultScale;
   }
@@ -72,6 +71,22 @@ void Card::update(float deltaTime) {
   } else {
     _rotation = 0.f;
   }
+}
+
+void Card::onHoverEnter() {
+  scaleAmount = SELECTED_SCALING;
+}
+
+void Card::onHoverLeave() {
+  scaleAmount = 0.0f;
+}
+
+void Card::unselect() {
+  scaleAmount = 0.0f;
+}
+
+void Card::prepareToAttack() {
+  scaleAmount = SELECTED_SCALING + PREPARED_SCALING;
 }
 
 void Card::getSpriteProperties(

@@ -66,6 +66,7 @@ private:
   CardPtr draggedCard;
   CardPtr attackingCard;
   CardPtr defendingCard;
+  CardPtr hoveredCard;
 
   std::vector<std::tuple<PlayerType, CardPtr>> cleanupPool;
 
