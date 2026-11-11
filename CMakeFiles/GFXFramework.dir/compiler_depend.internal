@@ -17009,7 +17009,11 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o
  /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/ui/timer/timer.hpp
  /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/effects/tank/tank.hpp
  /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/properties/effect/effect.hpp
+ /usr/include/c++/16/chrono
+ /usr/include/c++/16/bits/chrono.h
+ /usr/include/c++/16/ratio
  /usr/include/c++/16/ctime
+ /usr/include/c++/16/bits/parse_numbers.h
  /usr/include/c++/16/iostream
  /usr/include/c++/16/istream
  /usr/include/c++/16/bits/istream.tcc

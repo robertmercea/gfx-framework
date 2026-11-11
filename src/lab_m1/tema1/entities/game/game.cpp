@@ -2,12 +2,14 @@
 #include "glm/ext/vector_float2.hpp"
 #include "tema1/entities/battle_cards/battle_cards.hpp"
 #include "tema1/entities/card/card.hpp"
+#include "tema1/entities/card/card_fwd.hpp"
 #include "tema1/entities/effects/tank/tank.hpp"
 #include "tema1/entities/player/player.hpp"
 #include "tema1/globals/cards/types/types.hpp"
 #include "tema1/ui/globals/colors.hpp"
 #include "tema1/ui/timer/timer.hpp"
-#include "tema1/entities/properties/effect/effect.hpp"
+#include "tema1/ui/card/card.hpp"
+#include <chrono>
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -45,7 +47,6 @@ void Game::init(const glm::vec2 &resolution) {
     decks[p].setRenderMode(p);
     for (int i = 0; i < GAME_START_DECK_AMOUNT; ++i) {
       auto cardType = static_cast<globals::CardType>(rand() % globals::NUM_PLAYABLE_CARDS);
-      // TODO: instantiate solely based on cardType
       auto spriteType = static_cast<globals::SpriteType>(static_cast<int>(cardType));
       decks[p].pushCard(std::make_shared<Card>(cardType, spriteType));
     }
@@ -53,7 +54,6 @@ void Game::init(const glm::vec2 &resolution) {
 
   for (auto p : {PlayerType::HUMAN, PlayerType::AI}) {
     playerHands[p] = PlayerHand();
-    // TODO: increase GAME_START_DECK_AMOUNT such that it has GAME_START_PLAYER_HAND_AMOUNT extra cards
     for (int i = 0; i < GAME_START_PLAYER_HAND_AMOUNT; ++i) {
       playerHands[p].pushCard(decks[p].drawTopCard());
     }
@@ -72,7 +72,6 @@ void Game::init(const glm::vec2 &resolution) {
   players[PlayerType::AI].playerUI.setPosition(glm::vec2(windowResolution.x / 2.0f, windowResolution.y - 100.0f));
   players[PlayerType::AI].playerUI.setScale(glm::vec2(75.0f, 75.0f));
 
-
   currentPlayer = PlayerType::HUMAN;
   state = GameState::TURN_START;
   std::cout << "[State] GAME_INIT -> TURN_START\n";
@@ -81,7 +80,15 @@ void Game::init(const glm::vec2 &resolution) {
 void Game::update(float dt) {
   if (state == GameState::GAME_END) return;
 
-  if (state == GameState::TURN_START) {
+  if (state == GameState::ANIMATION) {
+    animationTimer -= dt;
+    if (animationTimer <= 0.0f) {
+      cardCleanup();
+      if (checkEndGame() != GameState::GAME_END) {
+        state = postAnimationState;
+      }
+    }
+  } else if (state == GameState::TURN_START) {
     currentMana = std::min(MAX_MANA, currentMana + 1);
     players[PlayerType::HUMAN].mana = currentMana;
     players[PlayerType::AI].mana = currentMana;
@@ -118,7 +125,6 @@ void Game::update(float dt) {
     if (timer.isTimeout()) {
       std::cout << "[Event] Turn timer expired! Cancelling active actions.\n";
       if (draggedCard) {
-        // TODO: fix this bloody mess (send it back to its default pos)
         draggedCard->cardUI.onMouseBtnRelease(0, 0);
         draggedCard = nullptr;
         std::cout << "[Action] Dragged card snapped back due to timeout.\n";
@@ -135,7 +141,7 @@ void Game::update(float dt) {
     aiTurn();
   }
 
-  // irrespective of game state, play card animations
+  // Play card animations regardless of game state
   for (auto p : {PlayerType::HUMAN, PlayerType::AI}) {
     for (auto &c : battlecards.getPlayerCards(p)) {
       c->cardUI.update(dt);
@@ -184,9 +190,8 @@ void Game::aiTurn() {
   auto aiField = battlecards.getPlayerCards(PlayerType::AI);
   auto huField = battlecards.getPlayerCards(PlayerType::HUMAN);
   
-if (!aiField.empty()) {
+  if (!aiField.empty()) {
     int attemptCounter = 0;
-
     auto attacker = aiField[rand() % aiField.size()];
 
     while (attemptCounter < 10 && (attacker->playedThisTurn || attacker->hasAttackedThisTurn)) {
@@ -195,28 +200,40 @@ if (!aiField.empty()) {
     }
 
     if (!attacker->playedThisTurn && !attacker->hasAttackedThisTurn) {
-      
       auto &humanTanks = battlecards.tanks[PlayerType::HUMAN];
 
       if (!humanTanks.empty()) {
         auto defender = humanTanks[rand() % humanTanks.size()];
         cardAttack(defender, attacker, PlayerType::HUMAN, PlayerType::AI);
         std::cout << "[AI] AI attacked a player Tank card!\n";
-        cardCleanup();
-        if (checkEndGame() == GameState::GAME_END) return;
+        
+        currentPlayer = PlayerType::HUMAN;
+        state = GameState::ANIMATION;
+        postAnimationState = GameState::TURN_START;
+        animationTimer = ANIMATION_DURATION / 1000.0f;
+        return;
       }
       else if (!huField.empty()) {
         auto defender = huField[rand() % huField.size()];
         cardAttack(defender, attacker, PlayerType::HUMAN, PlayerType::AI);
         std::cout << "[AI] AI attacked a player card!\n";
-        cardCleanup();
-        if (checkEndGame() == GameState::GAME_END) return;
+        
+        currentPlayer = PlayerType::HUMAN;
+        state = GameState::ANIMATION;
+        postAnimationState = GameState::TURN_START;
+        animationTimer = ANIMATION_DURATION / 1000.0f;
+        return;
       } 
       else {
         auto humanHero = battlecards.getHero(PlayerType::HUMAN);
         cardAttack(humanHero, attacker, PlayerType::HUMAN, PlayerType::AI);
         std::cout << "[AI] AI attacked the human hero!\n";
-        if (checkEndGame() == GameState::GAME_END) return;
+        
+        currentPlayer = PlayerType::HUMAN;
+        state = GameState::ANIMATION;
+        postAnimationState = GameState::TURN_START;
+        animationTimer = ANIMATION_DURATION / 1000.0f;
+        return;
       }
     }
   }
@@ -257,7 +274,7 @@ void Game::onMouseMove(float x, float y) {
   if (state == GameState::PLAYER_ATTACK) {
     bool foundHover = false;
     
-    // check cards in hand for hover
+    // Check cards in hand for hover
     for (auto &c : playerHands[PlayerType::HUMAN].getCards()) {
       if (c->cardUI.contains(x, y)) {
         if (hoveredCard != c) {
@@ -270,6 +287,7 @@ void Game::onMouseMove(float x, float y) {
       }
     }
 
+    // Check cards on battleground for hover
     for (auto &c : battlecards.getPlayerCards(PlayerType::HUMAN)) {
       if (c->cardUI.contains(x, y)) {
         if (hoveredCard != c) {
@@ -282,7 +300,7 @@ void Game::onMouseMove(float x, float y) {
       }
     }
 
-    // if the mouse is not on any card, remove the hover effect
+    // Remove the hover effect if the mouse is not on any card
     if (!foundHover && hoveredCard) {
       hoveredCard->cardUI.onHoverLeave();
       hoveredCard = nullptr;
@@ -303,7 +321,7 @@ void Game::onMouseBtnPress(float x, float y) {
         draggedCard = c;
         if (hoveredCard == c) {
             hoveredCard->cardUI.unselect();
-           hoveredCard = nullptr; // Clear hover state when picked up
+            hoveredCard = nullptr;
         }
         state = GameState::CARD_DRAG;
         std::cout << "[State] PLAYER_ATTACK -> CARD_DRAG. Picked up card from hand.\n";
@@ -315,7 +333,7 @@ void Game::onMouseBtnPress(float x, float y) {
     for (auto &c : battlecards.getPlayerCards(PlayerType::HUMAN)) {
       if (c->cardUI.contains(x, y) && !c->hasAttackedThisTurn && !c->playedThisTurn) {
         attackingCard = c;
-        attackingCard->cardUI.prepareToAttack(); // Trigger attack animation
+        attackingCard->cardUI.prepareToAttack();
         state = GameState::CARD_USE;
         std::cout << "[State] PLAYER_ATTACK -> CARD_USE. Selected attacker on battleground.\n";
         return;
@@ -330,7 +348,7 @@ void Game::onMouseBtnPress(float x, float y) {
         bool isTank = dynamic_cast<TankEffect*>(defendingCard->cardData.effect.get()) != nullptr;
         if (!battlecards.tanks[PlayerType::AI].empty() && !isTank) {
           std::cout << "[Combat] You must attack a Tank card!\n";
-          if (attackingCard) attackingCard->cardUI.unselect(); // Reset attacker
+          if (attackingCard) attackingCard->cardUI.unselect();
           attackingCard = nullptr;
           defendingCard = nullptr;
           state = GameState::PLAYER_ATTACK;
@@ -339,13 +357,13 @@ void Game::onMouseBtnPress(float x, float y) {
 
         cardAttack(defendingCard, attackingCard, PlayerType::AI, PlayerType::HUMAN);
         
-        if (attackingCard) attackingCard->cardUI.unselect(); // Reset attacker after combat
+        if (attackingCard) attackingCard->cardUI.unselect();
         attackingCard = nullptr;
         defendingCard = nullptr;
-        state = GameState::PLAYER_ATTACK;
-
-        cardCleanup();
-        (void) checkEndGame();
+        
+        state = GameState::ANIMATION;
+        postAnimationState = GameState::PLAYER_ATTACK;
+        animationTimer = ANIMATION_DURATION / 1000.0f;
         return;
       }
     }
@@ -355,7 +373,7 @@ void Game::onMouseBtnPress(float x, float y) {
     if (aiHero->cardUI.contains(x, y)) {
       if (!battlecards.tanks[PlayerType::AI].empty()) {
         std::cout << "[Combat] You must attack a Tank card first!\n";
-        if (attackingCard) attackingCard->cardUI.unselect(); // Reset attacker
+        if (attackingCard) attackingCard->cardUI.unselect();
         attackingCard = nullptr;
         defendingCard = nullptr;
         state = GameState::PLAYER_ATTACK;
@@ -365,27 +383,26 @@ void Game::onMouseBtnPress(float x, float y) {
       defendingCard = aiHero;
       cardAttack(defendingCard, attackingCard, PlayerType::AI, PlayerType::HUMAN);
       
-      if (attackingCard) attackingCard->cardUI.unselect(); // Reset attacker after combat
+      if (attackingCard) attackingCard->cardUI.unselect();
       attackingCard = nullptr;
       defendingCard = nullptr;
-      state = GameState::PLAYER_ATTACK;
-
-      (void) checkEndGame();
+      
+      state = GameState::ANIMATION;
+      postAnimationState = GameState::PLAYER_ATTACK;
+      animationTimer = ANIMATION_DURATION / 1000.0f;
       return;
     }
     
-    // Switch attackers
     for (auto &c : battlecards.getPlayerCards(PlayerType::HUMAN)) {
       if (c->cardUI.contains(x, y) && !c->hasAttackedThisTurn && !c->playedThisTurn) {
-        if (attackingCard) attackingCard->cardUI.unselect(); // Unselect old attacker
+        if (attackingCard) attackingCard->cardUI.unselect();
         attackingCard = c;
-        attackingCard->cardUI.prepareToAttack(); // Select new attacker
+        attackingCard->cardUI.prepareToAttack();
         std::cout << "[Action] Switched selected attacker.\n";
         return;
       }
     }
     
-    // Cancel attack (clicking empty space)
     if (attackingCard) attackingCard->cardUI.unselect();
     attackingCard = nullptr;
     state = GameState::PLAYER_ATTACK;
@@ -445,11 +462,13 @@ void Game::cardAttack(const CardPtr def, const CardPtr atk, const PlayerType &de
 
   if (atk->cardData.stats.health <= 0 && atk != humanHero && atk != aiHero) {
     atk->cardData.effect->onDestroy(atk, *this);
+    atk->cardUI.destroy();
     cleanupPool.push_back({atkP, atk});
   }
 
   if (def->cardData.stats.health <= 0 && def != humanHero && def != aiHero) {
     def->cardData.effect->onDestroy(def, *this);
+    def->cardUI.destroy();
     cleanupPool.push_back({defP, def});
   }
 

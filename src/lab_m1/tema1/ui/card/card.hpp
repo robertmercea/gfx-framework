@@ -16,6 +16,7 @@ public:
   static constexpr float MOUSE_ENTER_SCALE_FACTOR = 1.5f;
   static constexpr float MOUSE_LEAVE_SCALE_FACTOR = 0.0f;
   const glm::vec2 DEFAULT_SCALE = {40.0f, 50.0f};
+  static constexpr int DESTROY_ANIMATION_DURATION = 1000; // ms
 
   Card(globals::CardType, globals::SpriteType);
 
@@ -37,6 +38,7 @@ public:
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps);
   void setBorderColor(const glm::vec3 &color) { borderColor = color; }
   void setHealth(int newHealth) { health = newHealth; }
+  void destroy();
 
   void setInitialPosition(const glm::vec2 &position);
   bool contains(float x, float y);
@@ -47,12 +49,14 @@ private:
   static constexpr const float SWORD_SIZE = 0.2f;
   static constexpr const float SELECTED_SCALING = 1.5f;
   static constexpr const float PREPARED_SCALING = 0.25f;
+  static constexpr const float DESTROY_OFFSET = 20.0f;
 
   int totalHealth;
   int health, manaCost, attack;
   bool frontRender;
   float shakeAmount = 0.f;
   float scaleAmount = 0.f;
+  float destroyAnimationOffset = 0.0f;
   bool isSelected = false;
 
   glm::vec2 defaultScale;

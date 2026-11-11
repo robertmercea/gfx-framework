@@ -71,6 +71,12 @@ void Card::update(float deltaTime) {
   } else {
     _rotation = 0.f;
   }
+
+  if (destroyAnimationOffset > 0) {
+    destroyAnimationOffset -= deltaTime;
+  } else {
+    destroyAnimationOffset = 0;
+  }
 }
 
 void Card::onHoverEnter() {
@@ -85,6 +91,10 @@ void Card::unselect() {
   scaleAmount = 0.0f;
 }
 
+void Card::destroy() {
+  destroyAnimationOffset = DESTROY_ANIMATION_DURATION;
+}
+
 void Card::prepareToAttack() {
   scaleAmount = SELECTED_SCALING + PREPARED_SCALING;
 }
@@ -92,7 +102,9 @@ void Card::prepareToAttack() {
 void Card::getSpriteProperties(
     std::vector<sprites::SpriteProperties> &spriteProps) {
 
+  _position.x += sin(destroyAnimationOffset * 50.0f) * DESTROY_OFFSET;
   glm::mat3 baseMatrix = getModelMatrix();
+  _position.x -= sin(destroyAnimationOffset * 50.0f) * DESTROY_OFFSET;
 
   if (frontRender) {
     if (cardFront)

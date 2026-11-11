@@ -21,6 +21,7 @@ enum class GameState {
   CARD_DRAW,
   CARD_DRAG,
   CARD_USE,
+  ANIMATION,
   PLAYER_ATTACK,
   PLAYER_DEFEND,
   TURN_END,
@@ -51,10 +52,13 @@ private:
   static constexpr float AI_HAND_Y_OFFSET = 50.0f;
   static constexpr float HAND_MAX_WIDTH = 800.0f;
   static constexpr float BATTLECARDS_Y_OFFSET = 75.0f;
+  static constexpr int ANIMATION_DURATION = 2000; // ms
 
   GameState state;
   globals::player::PlayerType currentPlayer;
   glm::vec2 windowResolution;
+  GameState postAnimationState;
+  float animationTimer;
 
   int currentMana;
   const int MAX_MANA = 10;

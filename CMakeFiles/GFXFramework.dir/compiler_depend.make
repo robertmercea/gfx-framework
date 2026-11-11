@@ -16974,7 +16974,11 @@ CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o: src/lab_m
   src/lab_m1/tema1/ui/timer/timer.hpp \
   src/lab_m1/tema1/entities/effects/tank/tank.hpp \
   src/lab_m1/tema1/entities/properties/effect/effect.hpp \
+  /usr/include/c++/16/chrono \
+  /usr/include/c++/16/bits/chrono.h \
+  /usr/include/c++/16/ratio \
   /usr/include/c++/16/ctime \
+  /usr/include/c++/16/bits/parse_numbers.h \
   /usr/include/c++/16/iostream \
   /usr/include/c++/16/istream \
   /usr/include/c++/16/bits/istream.tcc
@@ -27935,6 +27939,8 @@ src/lab_m1/lab8/lab8.cpp:
 src/components/camera.h:
 
 deps/api/glm/trigonometric.hpp:
+
+/usr/include/c++/16/chrono:
 
 deps/api/glm/detail/func_trigonometric.inl:
 
