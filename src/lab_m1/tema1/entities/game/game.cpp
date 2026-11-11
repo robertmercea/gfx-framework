@@ -180,27 +180,18 @@ void Game::aiTurn() {
   auto aiField = battlecards.getPlayerCards(PlayerType::AI);
   auto huField = battlecards.getPlayerCards(PlayerType::HUMAN);
   
-  if (!aiField.empty()) {
+if (!aiField.empty()) {
     auto attacker = aiField[rand() % aiField.size()];
     if (!attacker->playedThisTurn && !attacker->hasAttackedThisTurn) {
       
-      bool humanHasTank = battlecards.tanksPresent[PlayerType::HUMAN] > 0;
+      auto &humanTanks = battlecards.tanks[PlayerType::HUMAN];
 
-      if (humanHasTank) {
-        std::vector<CardPtr> tankCards;
-        for (auto &c : huField) {
-          if (dynamic_cast<TankEffect*>(c->cardData.effect.get()) != nullptr) {
-            tankCards.push_back(c);
-          }
-        }
-        
-        if (!tankCards.empty()) {
-          auto defender = tankCards[rand() % tankCards.size()];
-          cardAttack(defender, attacker, PlayerType::HUMAN, PlayerType::AI);
-          std::cout << "[AI] AI attacked a player Tank card!\n";
-          cardCleanup();
-          if (checkEndGame() == GameState::GAME_END) return;
-        }
+      if (!humanTanks.empty()) {
+        auto defender = humanTanks[rand() % humanTanks.size()];
+        cardAttack(defender, attacker, PlayerType::HUMAN, PlayerType::AI);
+        std::cout << "[AI] AI attacked a player Tank card!\n";
+        cardCleanup();
+        if (checkEndGame() == GameState::GAME_END) return;
       }
       else if (!huField.empty()) {
         auto defender = huField[rand() % huField.size()];
@@ -215,7 +206,6 @@ void Game::aiTurn() {
         std::cout << "[AI] AI attacked the human hero!\n";
         if (checkEndGame() == GameState::GAME_END) return;
       }
-      
     }
   }
 
@@ -285,7 +275,8 @@ void Game::onMouseBtnPress(float x, float y) {
         defendingCard = c;
 
         bool isTank = dynamic_cast<TankEffect*>(defendingCard->cardData.effect.get()) != nullptr;
-        if (battlecards.tanksPresent[PlayerType::AI] > 0 && !isTank) {
+        // Check if the tanks vector is not empty
+        if (!battlecards.tanks[PlayerType::AI].empty() && !isTank) {
           std::cout << "[Combat] You must attack a Tank card!\n";
           attackingCard = nullptr;
           defendingCard = nullptr;
@@ -312,7 +303,8 @@ void Game::onMouseBtnPress(float x, float y) {
     auto aiHero = battlecards.getHero(PlayerType::AI);
 
     if (aiHero->cardUI.contains(x, y)) {
-      if (battlecards.tanksPresent[PlayerType::AI] > 0) {
+      // Check if the tanks vector is not empty
+      if (!battlecards.tanks[PlayerType::AI].empty()) {
         std::cout << "[Combat] You must attack a Tank card first!\n";
         attackingCard = nullptr;
         defendingCard = nullptr;

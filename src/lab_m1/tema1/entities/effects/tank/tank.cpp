@@ -8,13 +8,14 @@ void TankEffect::onAttack(CardPtr def, CardPtr atk, Game &game) {}
 void TankEffect::onPlay(CardPtr card, Game &game) {
   auto &battleCards = game.getBattleCards();
   const auto owner = game.getCardOwner(card);
-  battleCards.tanksPresent[owner]++;
+  battleCards.tanks[owner].push_back(card);
 }
 
 void TankEffect::onDestroy(CardPtr card, Game &game) {
   auto &battleCards = game.getBattleCards();
   const auto owner = game.getCardOwner(card);
-  battleCards.tanksPresent[owner]--;
+  auto &tankList = battleCards.tanks[owner];
+  tankList.erase(std::remove(tankList.begin(), tankList.end(), card), tankList.end());
 }
 
 } // namespace entities

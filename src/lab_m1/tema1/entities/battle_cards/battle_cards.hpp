@@ -20,7 +20,7 @@ class BattleCards : public Renderable {
 public:
   using PlayerType = globals::player::PlayerType;
   std::unordered_map<globals::player::PlayerType, ui::CardArea> cardAreas;
-  std::unordered_map<globals::player::PlayerType, int> tanksPresent;
+  std::unordered_map<globals::player::PlayerType, CardVector> tanks;
 
   BattleCards();
 
