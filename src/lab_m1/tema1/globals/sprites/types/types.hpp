@@ -8,6 +8,7 @@ enum class SpriteType {
   KNIGHT,
   MAGE,
   DWARF,
+  MINION,
   BACK,
   HERO,
 

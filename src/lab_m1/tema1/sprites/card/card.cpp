@@ -46,6 +46,12 @@ Card::Card(globals::CardType cardType)
     symbolMesh = std::shared_ptr<Mesh>(
         ui::shape::createTriangle("triangle", 0.35f, symbolColor));
     break;
+  case CardType::MINION:
+    innerColor = colors::GOLD;
+    symbolColor = colors::BLACK;
+    symbolMesh = std::shared_ptr<Mesh>(
+        ui::shape::createTriangle("triangle", 0.35f, symbolColor));
+    break;
   case CardType::BACK:
     innerColor = colors::GRAY;
     symbolColor = colors::GRAY;

@@ -151,8 +151,13 @@
 },
 {
   "directory": "/home/robert/ACS/EGC/gfx-framework",
-  "command": "/usr/bin/c++ -DDEBUG -DGLM_FORCE_SILENT_WARNINGS -DLIBGFXC_EXPORTS -DSOLVED -DWITH_LAB_M1 -D_CRT_SECURE_NO_WARNINGS -I/home/robert/ACS/EGC/gfx-framework/deps/api -I/home/robert/ACS/EGC/gfx-framework/src -I/home/robert/ACS/EGC/gfx-framework/src/lab_m1 -g -fPIE -Wall -Wextra -pedantic -Wno-error -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-missing-field-initializers -Wno-sign-compare -std=gnu++11 -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/effect/effect.cpp",
-  "file": "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/effect/effect.cpp"
+  "command": "/usr/bin/c++ -DDEBUG -DGLM_FORCE_SILENT_WARNINGS -DLIBGFXC_EXPORTS -DSOLVED -DWITH_LAB_M1 -D_CRT_SECURE_NO_WARNINGS -I/home/robert/ACS/EGC/gfx-framework/deps/api -I/home/robert/ACS/EGC/gfx-framework/src -I/home/robert/ACS/EGC/gfx-framework/src/lab_m1 -g -fPIE -Wall -Wextra -pedantic -Wno-error -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-missing-field-initializers -Wno-sign-compare -std=gnu++11 -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp",
+  "file": "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp"
+},
+{
+  "directory": "/home/robert/ACS/EGC/gfx-framework",
+  "command": "/usr/bin/c++ -DDEBUG -DGLM_FORCE_SILENT_WARNINGS -DLIBGFXC_EXPORTS -DSOLVED -DWITH_LAB_M1 -D_CRT_SECURE_NO_WARNINGS -I/home/robert/ACS/EGC/gfx-framework/deps/api -I/home/robert/ACS/EGC/gfx-framework/src -I/home/robert/ACS/EGC/gfx-framework/src/lab_m1 -g -fPIE -Wall -Wextra -pedantic -Wno-error -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-missing-field-initializers -Wno-sign-compare -std=gnu++11 -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/none/none.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/effects/none/none.cpp",
+  "file": "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/effects/none/none.cpp"
 },
 {
   "directory": "/home/robert/ACS/EGC/gfx-framework",
@@ -173,6 +178,11 @@
   "directory": "/home/robert/ACS/EGC/gfx-framework",
   "command": "/usr/bin/c++ -DDEBUG -DGLM_FORCE_SILENT_WARNINGS -DLIBGFXC_EXPORTS -DSOLVED -DWITH_LAB_M1 -D_CRT_SECURE_NO_WARNINGS -I/home/robert/ACS/EGC/gfx-framework/deps/api -I/home/robert/ACS/EGC/gfx-framework/src -I/home/robert/ACS/EGC/gfx-framework/src/lab_m1 -g -fPIE -Wall -Wextra -pedantic -Wno-error -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-missing-field-initializers -Wno-sign-compare -std=gnu++11 -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player_hand/player_hand.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/player_hand/player_hand.cpp",
   "file": "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/entities/player_hand/player_hand.cpp"
+},
+{
+  "directory": "/home/robert/ACS/EGC/gfx-framework",
+  "command": "/usr/bin/c++ -DDEBUG -DGLM_FORCE_SILENT_WARNINGS -DLIBGFXC_EXPORTS -DSOLVED -DWITH_LAB_M1 -D_CRT_SECURE_NO_WARNINGS -I/home/robert/ACS/EGC/gfx-framework/deps/api -I/home/robert/ACS/EGC/gfx-framework/src -I/home/robert/ACS/EGC/gfx-framework/src/lab_m1 -g -fPIE -Wall -Wextra -pedantic -Wno-error -Wno-unused-parameter -Wno-unused-variable -Wno-unused-but-set-variable -Wno-missing-field-initializers -Wno-sign-compare -std=gnu++11 -o CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/arrow/arrow.cpp.o -c /home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/arrow/arrow.cpp",
+  "file": "/home/robert/ACS/EGC/gfx-framework/src/lab_m1/tema1/sprites/arrow/arrow.cpp"
 },
 {
   "directory": "/home/robert/ACS/EGC/gfx-framework",

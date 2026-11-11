@@ -111,7 +111,7 @@ const CardVector &BattleCards::getPlayerCards(PlayerType owner) const {
   return playerCards.at(owner);
 }
 
-HeroPtr BattleCards::getHero(PlayerType owner) {
+HeroPtr BattleCards::getHero(PlayerType owner) const {
   return heroes.at(owner);
 }
 

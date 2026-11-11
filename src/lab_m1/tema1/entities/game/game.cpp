@@ -1,9 +1,11 @@
 #include "game.hpp"
 #include "glm/ext/vector_float2.hpp"
+#include "tema1/entities/battle_cards/battle_cards.hpp"
 #include "tema1/entities/card/card.hpp"
 #include "tema1/entities/player/player.hpp"
 #include "tema1/ui/globals/colors.hpp"
 #include "tema1/ui/timer/timer.hpp"
+#include "tema1/entities/properties/effect/effect.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
@@ -40,7 +42,7 @@ void Game::init(const glm::vec2 &resolution) {
     decks[p] = CardDeck();
     decks[p].setRenderMode(p);
     for (int i = 0; i < GAME_START_DECK_AMOUNT; ++i) {
-      auto cardType = static_cast<globals::CardType>(rand() % 4);
+      auto cardType = static_cast<globals::CardType>(rand() % 5);
       // TODO: instantiate solely based on cardType
       auto spriteType = static_cast<globals::SpriteType>(static_cast<int>(cardType));
       decks[p].pushCard(std::make_shared<Card>(cardType, spriteType));
@@ -151,6 +153,9 @@ void Game::aiTurn() {
       players[PlayerType::AI].mana -= (*it)->cardData.stats.manaCost;
       (*it)->playedThisTurn = true;
       battlecards.addCard(*it, PlayerType::AI);
+
+      (*it)->cardData.effect->onPlay(*it, *this);
+      
       playerHands[PlayerType::AI].removeCard(*it);
       playerHands[PlayerType::AI].arrangeCards();
       std::cout << "[AI] AI played a card to the battleground. Remaining Mana: " << players[PlayerType::AI].mana << "\n";
@@ -303,6 +308,8 @@ void Game::onMouseBtnRelease(float x, float y) {
       battlecards.addCard(draggedCard, PlayerType::HUMAN);
       playerHands[PlayerType::HUMAN].removeCard(draggedCard);
       playerHands[PlayerType::HUMAN].arrangeCards();
+
+      draggedCard->cardData.effect->onPlay(draggedCard, *this);
       
       std::cout << "[Action] Card successfully played. Remaining Mana: " << players[PlayerType::HUMAN].mana << "\n";
     } else {
@@ -332,6 +339,7 @@ void Game::cardAttack(const CardPtr def, const CardPtr atk, const PlayerType &de
   const auto aiHero = battlecards.getHero(PlayerType::AI);
 
   atk->hasAttackedThisTurn = true;
+  atk->cardData.effect->onAttack(def, atk, *this);
 
   def->cardData.stats.health = std::max(0, def->cardData.stats.health - damageDealt);
   atk->cardData.stats.health = std::max(0, atk->cardData.stats.health - resistance);
@@ -340,10 +348,12 @@ void Game::cardAttack(const CardPtr def, const CardPtr atk, const PlayerType &de
   def->cardUI.setHealth(def->cardData.stats.health);
 
   if (atk->cardData.stats.health <= 0 && atk != humanHero && atk != aiHero) {
+    atk->cardData.effect->onDestroy(atk, *this);
     cleanupPool.push_back({atkP, atk});
   }
 
   if (def->cardData.stats.health <= 0 && def != humanHero && def != aiHero) {
+    def->cardData.effect->onDestroy(def, *this);
     cleanupPool.push_back({defP, def});
   }
 }
@@ -375,6 +385,22 @@ void Game::cardCleanup() {
   }
 
   cleanupPool.clear();
+}
+
+BattleCards &Game::getBattleCards() {
+  return battlecards;
+}
+
+PlayerType Game::getCurrentPlayer() {
+  return currentPlayer;
+}
+
+PlayerType Game::getEnemyPlayer() {
+  return currentPlayer == PlayerType::HUMAN ? PlayerType::AI : PlayerType::HUMAN;
+}
+
+void Game::switchPlayer() {
+  currentPlayer = getEnemyPlayer();
 }
 
 } // namespace entities

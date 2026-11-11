@@ -849,29 +849,53 @@ src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s
 .PHONY : src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s
 
-src/lab_m1/tema1/entities/effect/effect.o: src/lab_m1/tema1/entities/effect/effect.cpp.o
-.PHONY : src/lab_m1/tema1/entities/effect/effect.o
+src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.o: src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.o
+.PHONY : src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.o
 
 # target to build an object file
-src/lab_m1/tema1/entities/effect/effect.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.o
-.PHONY : src/lab_m1/tema1/entities/effect/effect.cpp.o
+src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.o
+.PHONY : src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.o
 
-src/lab_m1/tema1/entities/effect/effect.i: src/lab_m1/tema1/entities/effect/effect.cpp.i
-.PHONY : src/lab_m1/tema1/entities/effect/effect.i
+src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.i: src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.i
+.PHONY : src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.i
 
 # target to preprocess a source file
-src/lab_m1/tema1/entities/effect/effect.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.i
-.PHONY : src/lab_m1/tema1/entities/effect/effect.cpp.i
+src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.i
+.PHONY : src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.i
 
-src/lab_m1/tema1/entities/effect/effect.s: src/lab_m1/tema1/entities/effect/effect.cpp.s
-.PHONY : src/lab_m1/tema1/entities/effect/effect.s
+src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.s: src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.s
+.PHONY : src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.s
 
 # target to generate assembly for a file
-src/lab_m1/tema1/entities/effect/effect.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effect/effect.cpp.s
-.PHONY : src/lab_m1/tema1/entities/effect/effect.cpp.s
+src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.s
+.PHONY : src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.s
+
+src/lab_m1/tema1/entities/effects/none/none.o: src/lab_m1/tema1/entities/effects/none/none.cpp.o
+.PHONY : src/lab_m1/tema1/entities/effects/none/none.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/effects/none/none.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/none/none.cpp.o
+.PHONY : src/lab_m1/tema1/entities/effects/none/none.cpp.o
+
+src/lab_m1/tema1/entities/effects/none/none.i: src/lab_m1/tema1/entities/effects/none/none.cpp.i
+.PHONY : src/lab_m1/tema1/entities/effects/none/none.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/effects/none/none.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/none/none.cpp.i
+.PHONY : src/lab_m1/tema1/entities/effects/none/none.cpp.i
+
+src/lab_m1/tema1/entities/effects/none/none.s: src/lab_m1/tema1/entities/effects/none/none.cpp.s
+.PHONY : src/lab_m1/tema1/entities/effects/none/none.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/effects/none/none.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/none/none.cpp.s
+.PHONY : src/lab_m1/tema1/entities/effects/none/none.cpp.s
 
 src/lab_m1/tema1/entities/game/game.o: src/lab_m1/tema1/entities/game/game.cpp.o
 .PHONY : src/lab_m1/tema1/entities/game/game.o
@@ -968,6 +992,30 @@ src/lab_m1/tema1/entities/player_hand/player_hand.s: src/lab_m1/tema1/entities/p
 src/lab_m1/tema1/entities/player_hand/player_hand.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/player_hand/player_hand.cpp.s
 .PHONY : src/lab_m1/tema1/entities/player_hand/player_hand.cpp.s
+
+src/lab_m1/tema1/sprites/arrow/arrow.o: src/lab_m1/tema1/sprites/arrow/arrow.cpp.o
+.PHONY : src/lab_m1/tema1/sprites/arrow/arrow.o
+
+# target to build an object file
+src/lab_m1/tema1/sprites/arrow/arrow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/arrow/arrow.cpp.o
+.PHONY : src/lab_m1/tema1/sprites/arrow/arrow.cpp.o
+
+src/lab_m1/tema1/sprites/arrow/arrow.i: src/lab_m1/tema1/sprites/arrow/arrow.cpp.i
+.PHONY : src/lab_m1/tema1/sprites/arrow/arrow.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/sprites/arrow/arrow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/arrow/arrow.cpp.i
+.PHONY : src/lab_m1/tema1/sprites/arrow/arrow.cpp.i
+
+src/lab_m1/tema1/sprites/arrow/arrow.s: src/lab_m1/tema1/sprites/arrow/arrow.cpp.s
+.PHONY : src/lab_m1/tema1/sprites/arrow/arrow.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/sprites/arrow/arrow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/arrow/arrow.cpp.s
+.PHONY : src/lab_m1/tema1/sprites/arrow/arrow.cpp.s
 
 src/lab_m1/tema1/sprites/card/card.o: src/lab_m1/tema1/sprites/card/card.cpp.o
 .PHONY : src/lab_m1/tema1/sprites/card/card.o
@@ -1500,9 +1548,12 @@ help:
 	@echo "... src/lab_m1/tema1/entities/card_deck/card_deck.o"
 	@echo "... src/lab_m1/tema1/entities/card_deck/card_deck.i"
 	@echo "... src/lab_m1/tema1/entities/card_deck/card_deck.s"
-	@echo "... src/lab_m1/tema1/entities/effect/effect.o"
-	@echo "... src/lab_m1/tema1/entities/effect/effect.i"
-	@echo "... src/lab_m1/tema1/entities/effect/effect.s"
+	@echo "... src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.o"
+	@echo "... src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.i"
+	@echo "... src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.s"
+	@echo "... src/lab_m1/tema1/entities/effects/none/none.o"
+	@echo "... src/lab_m1/tema1/entities/effects/none/none.i"
+	@echo "... src/lab_m1/tema1/entities/effects/none/none.s"
 	@echo "... src/lab_m1/tema1/entities/game/game.o"
 	@echo "... src/lab_m1/tema1/entities/game/game.i"
 	@echo "... src/lab_m1/tema1/entities/game/game.s"
@@ -1515,6 +1566,9 @@ help:
 	@echo "... src/lab_m1/tema1/entities/player_hand/player_hand.o"
 	@echo "... src/lab_m1/tema1/entities/player_hand/player_hand.i"
 	@echo "... src/lab_m1/tema1/entities/player_hand/player_hand.s"
+	@echo "... src/lab_m1/tema1/sprites/arrow/arrow.o"
+	@echo "... src/lab_m1/tema1/sprites/arrow/arrow.i"
+	@echo "... src/lab_m1/tema1/sprites/arrow/arrow.s"
 	@echo "... src/lab_m1/tema1/sprites/card/card.o"
 	@echo "... src/lab_m1/tema1/sprites/card/card.i"
 	@echo "... src/lab_m1/tema1/sprites/card/card.s"

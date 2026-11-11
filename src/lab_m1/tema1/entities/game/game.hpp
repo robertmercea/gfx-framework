@@ -39,6 +39,10 @@ public:
   void getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps);
   void cardAttack(const CardPtr def, const CardPtr atk, const PlayerType &defP, const PlayerType &atkP);
   void cardCleanup();
+  BattleCards &getBattleCards();
+  PlayerType getCurrentPlayer();
+  PlayerType getEnemyPlayer();
+  void switchPlayer();
   // TODO: split the damned state machine into multiple smaller functions
 
 private:

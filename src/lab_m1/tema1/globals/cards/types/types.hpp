@@ -9,6 +9,7 @@ enum class CardType {
   KNIGHT,
   MAGE,
   DWARF,
+  MINION,
   HERO,
   BACK,
 };

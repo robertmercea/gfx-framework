@@ -1,7 +1,7 @@
 #pragma once
 
 #include "tema1/globals/cards/stats/stats.hpp"
-#include "tema1/entities/effect/effect_fwd.hpp"
+#include "tema1/entities/properties/effect/effect_fwd.hpp"
 #include "tema1/globals/cards/types/types.hpp"
 
 namespace tema1 {
