@@ -849,6 +849,30 @@ src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s
 .PHONY : src/lab_m1/tema1/entities/card_deck/card_deck.cpp.s
 
+src/lab_m1/tema1/entities/effects/charge/charge.o: src/lab_m1/tema1/entities/effects/charge/charge.cpp.o
+.PHONY : src/lab_m1/tema1/entities/effects/charge/charge.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/effects/charge/charge.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/charge/charge.cpp.o
+.PHONY : src/lab_m1/tema1/entities/effects/charge/charge.cpp.o
+
+src/lab_m1/tema1/entities/effects/charge/charge.i: src/lab_m1/tema1/entities/effects/charge/charge.cpp.i
+.PHONY : src/lab_m1/tema1/entities/effects/charge/charge.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/effects/charge/charge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/charge/charge.cpp.i
+.PHONY : src/lab_m1/tema1/entities/effects/charge/charge.cpp.i
+
+src/lab_m1/tema1/entities/effects/charge/charge.s: src/lab_m1/tema1/entities/effects/charge/charge.cpp.s
+.PHONY : src/lab_m1/tema1/entities/effects/charge/charge.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/effects/charge/charge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/charge/charge.cpp.s
+.PHONY : src/lab_m1/tema1/entities/effects/charge/charge.cpp.s
+
 src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.o: src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.o
 .PHONY : src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.o
 
@@ -1548,6 +1572,9 @@ help:
 	@echo "... src/lab_m1/tema1/entities/card_deck/card_deck.o"
 	@echo "... src/lab_m1/tema1/entities/card_deck/card_deck.i"
 	@echo "... src/lab_m1/tema1/entities/card_deck/card_deck.s"
+	@echo "... src/lab_m1/tema1/entities/effects/charge/charge.o"
+	@echo "... src/lab_m1/tema1/entities/effects/charge/charge.i"
+	@echo "... src/lab_m1/tema1/entities/effects/charge/charge.s"
 	@echo "... src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.o"
 	@echo "... src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.i"
 	@echo "... src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.s"

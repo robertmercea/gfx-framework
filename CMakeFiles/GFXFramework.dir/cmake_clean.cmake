@@ -59,6 +59,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card/card_data/card_data.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/card_deck/card_deck.cpp.o.d"
+  "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/charge/charge.cpp.o"
+  "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/charge/charge.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.o"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/none/none.cpp.o"

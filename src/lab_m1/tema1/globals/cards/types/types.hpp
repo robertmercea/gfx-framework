@@ -10,9 +10,12 @@ enum class CardType {
   MAGE,
   DWARF,
   MINION,
+  LEEROY_JENKINS,
   HERO,
   BACK,
 };
+
+const unsigned int NUM_PLAYABLE_CARDS = 6;
 
 } // namespace globals
 } // namespace tema1

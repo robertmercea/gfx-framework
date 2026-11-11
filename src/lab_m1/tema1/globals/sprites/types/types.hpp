@@ -9,6 +9,7 @@ enum class SpriteType {
   MAGE,
   DWARF,
   MINION,
+  LEEROY_JENKINS,
   BACK,
   HERO,
 

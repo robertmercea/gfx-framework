@@ -3,6 +3,7 @@
 #include "tema1/entities/battle_cards/battle_cards.hpp"
 #include "tema1/entities/card/card.hpp"
 #include "tema1/entities/player/player.hpp"
+#include "tema1/globals/cards/types/types.hpp"
 #include "tema1/ui/globals/colors.hpp"
 #include "tema1/ui/timer/timer.hpp"
 #include "tema1/entities/properties/effect/effect.hpp"
@@ -42,7 +43,7 @@ void Game::init(const glm::vec2 &resolution) {
     decks[p] = CardDeck();
     decks[p].setRenderMode(p);
     for (int i = 0; i < GAME_START_DECK_AMOUNT; ++i) {
-      auto cardType = static_cast<globals::CardType>(rand() % 5);
+      auto cardType = static_cast<globals::CardType>(rand() % globals::NUM_PLAYABLE_CARDS);
       // TODO: instantiate solely based on cardType
       auto spriteType = static_cast<globals::SpriteType>(static_cast<int>(cardType));
       decks[p].pushCard(std::make_shared<Card>(cardType, spriteType));
