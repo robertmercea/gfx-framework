@@ -2,6 +2,7 @@
 #include "glm/ext/vector_float2.hpp"
 #include "tema1/entities/battle_cards/battle_cards.hpp"
 #include "tema1/entities/card/card.hpp"
+#include "tema1/entities/effects/tank/tank.hpp"
 #include "tema1/entities/player/player.hpp"
 #include "tema1/globals/cards/types/types.hpp"
 #include "tema1/ui/globals/colors.hpp"
@@ -183,15 +184,32 @@ void Game::aiTurn() {
     auto attacker = aiField[rand() % aiField.size()];
     if (!attacker->playedThisTurn && !attacker->hasAttackedThisTurn) {
       
-      if (!huField.empty()) {
-        // Attack a random card
+      bool humanHasTank = battlecards.tanksPresent[PlayerType::HUMAN] > 0;
+
+      if (humanHasTank) {
+        std::vector<CardPtr> tankCards;
+        for (auto &c : huField) {
+          if (dynamic_cast<TankEffect*>(c->cardData.effect.get()) != nullptr) {
+            tankCards.push_back(c);
+          }
+        }
+        
+        if (!tankCards.empty()) {
+          auto defender = tankCards[rand() % tankCards.size()];
+          cardAttack(defender, attacker, PlayerType::HUMAN, PlayerType::AI);
+          std::cout << "[AI] AI attacked a player Tank card!\n";
+          cardCleanup();
+          if (checkEndGame() == GameState::GAME_END) return;
+        }
+      }
+      else if (!huField.empty()) {
         auto defender = huField[rand() % huField.size()];
         cardAttack(defender, attacker, PlayerType::HUMAN, PlayerType::AI);
         std::cout << "[AI] AI attacked a player card!\n";
         cardCleanup();
         if (checkEndGame() == GameState::GAME_END) return;
-      } else {
-        // Attack the human hero directly
+      } 
+      else {
         auto humanHero = battlecards.getHero(PlayerType::HUMAN);
         cardAttack(humanHero, attacker, PlayerType::HUMAN, PlayerType::AI);
         std::cout << "[AI] AI attacked the human hero!\n";
@@ -265,6 +283,16 @@ void Game::onMouseBtnPress(float x, float y) {
     for (auto &c : battlecards.getPlayerCards(PlayerType::AI)) {
       if (c->cardUI.contains(x, y)) {
         defendingCard = c;
+
+        bool isTank = dynamic_cast<TankEffect*>(defendingCard->cardData.effect.get()) != nullptr;
+        if (battlecards.tanksPresent[PlayerType::AI] > 0 && !isTank) {
+          std::cout << "[Combat] You must attack a Tank card!\n";
+          attackingCard = nullptr;
+          defendingCard = nullptr;
+          state = GameState::PLAYER_ATTACK;
+          return;
+        }
+
         cardAttack(defendingCard, attackingCard, PlayerType::AI, PlayerType::HUMAN);
         
         std::cout << "[Combat] Player attacked AI card! Player Card HP: " << attackingCard->cardData.stats.health 
@@ -284,6 +312,14 @@ void Game::onMouseBtnPress(float x, float y) {
     auto aiHero = battlecards.getHero(PlayerType::AI);
 
     if (aiHero->cardUI.contains(x, y)) {
+      if (battlecards.tanksPresent[PlayerType::AI] > 0) {
+        std::cout << "[Combat] You must attack a Tank card first!\n";
+        attackingCard = nullptr;
+        defendingCard = nullptr;
+        state = GameState::PLAYER_ATTACK;
+        return;
+      }
+
       defendingCard = aiHero;
       cardAttack(defendingCard, attackingCard, PlayerType::AI, PlayerType::HUMAN);
       std::cout << "[Combat] Player hero attacked AI hero!\n";
@@ -418,6 +454,24 @@ PlayerType Game::getEnemyPlayer() {
 
 void Game::switchPlayer() {
   currentPlayer = getEnemyPlayer();
+}
+
+PlayerType Game::getCardOwner(const CardPtr card) {
+  for (const auto& c : battlecards.getPlayerCards(PlayerType::HUMAN)) {
+    if (c == card) return PlayerType::HUMAN;
+  }
+  for (const auto& c : battlecards.getPlayerCards(PlayerType::AI)) {
+    if (c == card) return PlayerType::AI;
+  }
+
+  if (battlecards.getHero(PlayerType::HUMAN) == card) return PlayerType::HUMAN;
+  if (battlecards.getHero(PlayerType::AI) == card) return PlayerType::AI;
+
+  for (const auto& c : playerHands[PlayerType::HUMAN].getCards()) {
+    if (c == card) return PlayerType::HUMAN;
+  }
+  
+  return PlayerType::AI;
 }
 
 } // namespace entities

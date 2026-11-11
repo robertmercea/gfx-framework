@@ -58,6 +58,12 @@ Card::Card(globals::CardType cardType)
     symbolMesh = std::shared_ptr<Mesh>(
         ui::shape::createNgon("hexagon", 6, 0, 0.35f, symbolColor));
     break;
+  case CardType::VOIDWALKER:
+    innerColor = colors::BLACK;
+    symbolColor = colors::WHITE;
+    symbolMesh = std::shared_ptr<Mesh>(
+        ui::shape::createSquare("square", 0.35f, symbolColor));
+    break;
   case CardType::BACK:
     innerColor = colors::GRAY;
     symbolColor = colors::GRAY;

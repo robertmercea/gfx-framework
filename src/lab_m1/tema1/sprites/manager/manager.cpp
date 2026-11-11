@@ -39,6 +39,7 @@ void SpriteManager::init() {
   sprites[SpriteType::DWARF] = std::make_shared<sprites::Card>(globals::CardType::DWARF);
   sprites[SpriteType::MINION] = std::make_shared<sprites::Card>(globals::CardType::MINION);
   sprites[SpriteType::LEEROY_JENKINS] = std::make_shared<sprites::Card>(globals::CardType::LEEROY_JENKINS);
+  sprites[SpriteType::VOIDWALKER] = std::make_shared<sprites::Card>(globals::CardType::VOIDWALKER);
   sprites[SpriteType::BACK] = std::make_shared<sprites::Card>(globals::CardType::BACK);
   sprites[SpriteType::HERO] = std::make_shared<sprites::Card>(globals::CardType::HERO);
 

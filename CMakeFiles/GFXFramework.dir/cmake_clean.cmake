@@ -65,6 +65,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/lifesteal/lifesteal.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/none/none.cpp.o"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/none/none.cpp.o.d"
+  "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/tank/tank.cpp.o"
+  "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/tank/tank.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/game/game.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/hero/hero.cpp.o"

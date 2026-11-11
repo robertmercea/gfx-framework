@@ -20,6 +20,7 @@ class BattleCards : public Renderable {
 public:
   using PlayerType = globals::player::PlayerType;
   std::unordered_map<globals::player::PlayerType, ui::CardArea> cardAreas;
+  std::unordered_map<globals::player::PlayerType, int> tanksPresent;
 
   BattleCards();
 
@@ -37,7 +38,6 @@ private:
   glm::vec3 CARD_AREA_AI_BG_COLOR = ui::colors::PURPLE;
   glm::vec3 CARD_AREA_HUMAN_BG_COLOR = ui::colors::CYAN;
 
-  std::unordered_map<globals::player::PlayerType, int> tanksPresent;
   std::unordered_map<globals::player::PlayerType, CardVector> playerCards;
   std::unordered_map<globals::player::PlayerType, HeroPtr> heroes;
 };

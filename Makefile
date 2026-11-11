@@ -921,6 +921,30 @@ src/lab_m1/tema1/entities/effects/none/none.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/none/none.cpp.s
 .PHONY : src/lab_m1/tema1/entities/effects/none/none.cpp.s
 
+src/lab_m1/tema1/entities/effects/tank/tank.o: src/lab_m1/tema1/entities/effects/tank/tank.cpp.o
+.PHONY : src/lab_m1/tema1/entities/effects/tank/tank.o
+
+# target to build an object file
+src/lab_m1/tema1/entities/effects/tank/tank.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/tank/tank.cpp.o
+.PHONY : src/lab_m1/tema1/entities/effects/tank/tank.cpp.o
+
+src/lab_m1/tema1/entities/effects/tank/tank.i: src/lab_m1/tema1/entities/effects/tank/tank.cpp.i
+.PHONY : src/lab_m1/tema1/entities/effects/tank/tank.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/entities/effects/tank/tank.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/tank/tank.cpp.i
+.PHONY : src/lab_m1/tema1/entities/effects/tank/tank.cpp.i
+
+src/lab_m1/tema1/entities/effects/tank/tank.s: src/lab_m1/tema1/entities/effects/tank/tank.cpp.s
+.PHONY : src/lab_m1/tema1/entities/effects/tank/tank.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/entities/effects/tank/tank.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/entities/effects/tank/tank.cpp.s
+.PHONY : src/lab_m1/tema1/entities/effects/tank/tank.cpp.s
+
 src/lab_m1/tema1/entities/game/game.o: src/lab_m1/tema1/entities/game/game.cpp.o
 .PHONY : src/lab_m1/tema1/entities/game/game.o
 
@@ -1581,6 +1605,9 @@ help:
 	@echo "... src/lab_m1/tema1/entities/effects/none/none.o"
 	@echo "... src/lab_m1/tema1/entities/effects/none/none.i"
 	@echo "... src/lab_m1/tema1/entities/effects/none/none.s"
+	@echo "... src/lab_m1/tema1/entities/effects/tank/tank.o"
+	@echo "... src/lab_m1/tema1/entities/effects/tank/tank.i"
+	@echo "... src/lab_m1/tema1/entities/effects/tank/tank.s"
 	@echo "... src/lab_m1/tema1/entities/game/game.o"
 	@echo "... src/lab_m1/tema1/entities/game/game.i"
 	@echo "... src/lab_m1/tema1/entities/game/game.s"

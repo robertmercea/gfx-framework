@@ -20,6 +20,7 @@ const CardStats MAGE = {2, 2, 2};
 const CardStats HERO = {0, 10, 0};
 const CardStats MINION = {3, 3, 2};
 const CardStats LEEROY_JENKINS = {5, 6, 2};
+const CardStats VOIDWALKER = {1, 1, 3};
 
 const std::unordered_map<globals::CardType, CardStats> CARD_PROPERTIES = {
     {CardType::WIZARD, WIZARD},
@@ -29,6 +30,7 @@ const std::unordered_map<globals::CardType, CardStats> CARD_PROPERTIES = {
     {CardType::HERO, HERO},
     {CardType::MINION, MINION},
     {CardType::LEEROY_JENKINS, LEEROY_JENKINS},
+    {CardType::VOIDWALKER, VOIDWALKER},
 };
 
 } // namespace stats

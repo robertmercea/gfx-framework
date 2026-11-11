@@ -43,6 +43,7 @@ public:
   PlayerType getCurrentPlayer();
   PlayerType getEnemyPlayer();
   void switchPlayer();
+  PlayerType getCardOwner(const CardPtr card);
   // TODO: split the damned state machine into multiple smaller functions
 
 private:
