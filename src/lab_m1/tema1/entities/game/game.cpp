@@ -133,6 +133,18 @@ void Game::update(float dt) {
   else if (state == GameState::PLAYER_DEFEND) {
     aiTurn();
   }
+
+  // irrespective of game state, play card animations
+  for (auto p : {PlayerType::HUMAN, PlayerType::AI}) {
+    for (auto &c : battlecards.getPlayerCards(p)) {
+      c->cardUI.update(dt);
+    }
+  }
+
+  for (auto p : {PlayerType::HUMAN, PlayerType::AI}) {
+    auto hero = battlecards.getHero(p);
+    hero->cardUI.update(dt);
+  }
 }
 
 void Game::aiTurn() {
@@ -356,6 +368,10 @@ void Game::cardAttack(const CardPtr def, const CardPtr atk, const PlayerType &de
   if (def->cardData.stats.health <= 0 && def != humanHero && def != aiHero) {
     def->cardData.effect->onDestroy(def, *this);
     cleanupPool.push_back({defP, def});
+  }
+
+  if (def->cardData.stats.health > 0) {
+    def->cardUI.shake(2);
   }
 }
 
