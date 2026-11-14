@@ -4,8 +4,11 @@
 #include "tema1/entities/card/card_fwd.hpp"
 #include "tema1/globals/cards/types/types.hpp"
 #include "tema1/globals/player/player.hpp"
+#include "tema1/sprites/arrow/arrow.hpp"
 #include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "tema1/ui/card/card.hpp"
+#include "tema1/ui/globals/colors.hpp"
+#include "tema1/ui/transform/transform.hpp"
 
 #include <vector>
 #include <iostream>
@@ -25,7 +28,6 @@ Tema1::Tema1()
 }
 
 
-tema1::entities::BattleCards *battlecards;
 
 Tema1::~Tema1()
 {

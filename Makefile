@@ -1257,6 +1257,30 @@ src/lab_m1/tema1/tema1.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.s
 .PHONY : src/lab_m1/tema1/tema1.cpp.s
 
+src/lab_m1/tema1/ui/arrow/arrow.o: src/lab_m1/tema1/ui/arrow/arrow.cpp.o
+.PHONY : src/lab_m1/tema1/ui/arrow/arrow.o
+
+# target to build an object file
+src/lab_m1/tema1/ui/arrow/arrow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/arrow/arrow.cpp.o
+.PHONY : src/lab_m1/tema1/ui/arrow/arrow.cpp.o
+
+src/lab_m1/tema1/ui/arrow/arrow.i: src/lab_m1/tema1/ui/arrow/arrow.cpp.i
+.PHONY : src/lab_m1/tema1/ui/arrow/arrow.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/ui/arrow/arrow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/arrow/arrow.cpp.i
+.PHONY : src/lab_m1/tema1/ui/arrow/arrow.cpp.i
+
+src/lab_m1/tema1/ui/arrow/arrow.s: src/lab_m1/tema1/ui/arrow/arrow.cpp.s
+.PHONY : src/lab_m1/tema1/ui/arrow/arrow.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/ui/arrow/arrow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/arrow/arrow.cpp.s
+.PHONY : src/lab_m1/tema1/ui/arrow/arrow.cpp.s
+
 src/lab_m1/tema1/ui/button/button.o: src/lab_m1/tema1/ui/button/button.cpp.o
 .PHONY : src/lab_m1/tema1/ui/button/button.o
 
@@ -1647,6 +1671,9 @@ help:
 	@echo "... src/lab_m1/tema1/tema1.o"
 	@echo "... src/lab_m1/tema1/tema1.i"
 	@echo "... src/lab_m1/tema1/tema1.s"
+	@echo "... src/lab_m1/tema1/ui/arrow/arrow.o"
+	@echo "... src/lab_m1/tema1/ui/arrow/arrow.i"
+	@echo "... src/lab_m1/tema1/ui/arrow/arrow.s"
 	@echo "... src/lab_m1/tema1/ui/button/button.o"
 	@echo "... src/lab_m1/tema1/ui/button/button.i"
 	@echo "... src/lab_m1/tema1/ui/button/button.s"

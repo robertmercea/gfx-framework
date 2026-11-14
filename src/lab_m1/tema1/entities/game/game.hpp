@@ -6,6 +6,7 @@
 #include "tema1/entities/player/player.hpp"
 #include "tema1/entities/player_hand/player_hand.hpp"
 #include "tema1/globals/player/player.hpp"
+#include "tema1/ui/arrow/arrow.hpp"
 #include "tema1/ui/button/button.hpp"
 #include "tema1/ui/timer/timer.hpp"
 #include <tuple>
@@ -81,6 +82,9 @@ private:
 
   ui::Button endTurnBtn;
   ui::Timer timer;
+
+  ui::Arrow attackArrow;
+  bool showAttackArrow;
 
   void updateCardColors();
   void aiTurn();

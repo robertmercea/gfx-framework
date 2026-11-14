@@ -18,6 +18,7 @@ enum class SpriteType {
   MANA,
   SWORD,
   SQUARE,
+  ARROW,
 };
 
 } // namespace globals

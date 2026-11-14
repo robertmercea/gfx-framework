@@ -1,6 +1,8 @@
 #include "manager.hpp"
 #include "tema1/globals/cards/types/types.hpp"
+#include "tema1/sprites/arrow/arrow.hpp"
 #include "tema1/sprites/card/card.hpp"
+#include "tema1/sprites/properties/sprite/sprite.hpp"
 #include "tema1/sprites/shape/heart/heart.hpp"
 #include "tema1/sprites/shape/mana/mana.hpp"
 #include "tema1/sprites/shape/square/square.hpp"
@@ -47,6 +49,7 @@ void SpriteManager::init() {
   sprites[SpriteType::MANA] = std::make_shared<sprites::Mana>();
   sprites[SpriteType::SWORD] = std::make_shared<sprites::Sword>();
   sprites[SpriteType::SQUARE] = std::make_shared<sprites::Square>();
+  sprites[SpriteType::ARROW] = std::make_shared<sprites::Arrow>();
 }
 
 void SpriteManager::clear() {

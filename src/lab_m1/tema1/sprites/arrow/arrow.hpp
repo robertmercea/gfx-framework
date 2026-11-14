@@ -9,15 +9,15 @@ namespace sprites {
 
 class Arrow : public Sprite {
 public:
+  static constexpr float BODY_WIDTH = 1.0f;
+  static constexpr float BODY_HEIGHT = 10.0f;
+  static constexpr float HEAD_WIDTH = 3. * BODY_WIDTH;
   Arrow();
   void getSpriteProperties(std::vector<SpriteProperties> &spriteProps,
                            const glm::mat3 &modelMatrix,
                            const glm::vec3 &color) override;
 
 private:
-  static constexpr float BODY_WIDTH = 1.0f;
-  static constexpr float BODY_HEIGHT = 10.0f;
-  static constexpr float HEAD_WIDTH = 3. * BODY_WIDTH;
   std::shared_ptr<Mesh> arrowBody, arrowHead;
 };
 

@@ -6,6 +6,7 @@
 #include "tema1/entities/effects/tank/tank.hpp"
 #include "tema1/entities/player/player.hpp"
 #include "tema1/globals/cards/types/types.hpp"
+#include "tema1/ui/arrow/arrow.hpp"
 #include "tema1/ui/globals/colors.hpp"
 #include "tema1/ui/timer/timer.hpp"
 #include "tema1/ui/card/card.hpp"
@@ -74,6 +75,7 @@ void Game::init(const glm::vec2 &resolution) {
 
   currentPlayer = PlayerType::HUMAN;
   state = GameState::TURN_START;
+  showAttackArrow = false;
   std::cout << "[State] GAME_INIT -> TURN_START\n";
 }
 
@@ -83,6 +85,7 @@ void Game::update(float dt) {
   if (state == GameState::ANIMATION) {
     animationTimer -= dt;
     if (animationTimer <= 0.0f) {
+      showAttackArrow = false;
       cardCleanup();
       if (checkEndGame() != GameState::GAME_END) {
         state = postAnimationState;
@@ -443,6 +446,10 @@ void Game::getSpriteProperties(std::vector<sprites::SpriteProperties> &spritePro
   players[PlayerType::AI].playerUI.getSpriteProperties(spriteProps, players[PlayerType::AI].mana);
   endTurnBtn.getSpriteProperties(spriteProps);
   timer.getSpriteProperties(spriteProps);
+
+  if (state == GameState::ANIMATION && showAttackArrow) {
+    attackArrow.getSpriteProperties(spriteProps);
+  }
 }
 
 void Game::cardAttack(const CardPtr def, const CardPtr atk, const PlayerType &defP, const PlayerType &atkP) {
@@ -450,6 +457,9 @@ void Game::cardAttack(const CardPtr def, const CardPtr atk, const PlayerType &de
   const auto resistance = def->cardData.stats.attack;
   const auto humanHero = battlecards.getHero(PlayerType::HUMAN);
   const auto aiHero = battlecards.getHero(PlayerType::AI);
+
+  attackArrow.setStartEnd(atk->cardUI.getPosition(), def->cardUI.getPosition());
+  showAttackArrow = true;
 
   atk->hasAttackedThisTurn = true;
   atk->cardData.effect->onAttack(def, atk, *this);

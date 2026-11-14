@@ -93,6 +93,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/sprites/shape/sword/sword.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/tema1.cpp.o.d"
+  "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/arrow/arrow.cpp.o"
+  "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/arrow/arrow.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/button/button.cpp.o"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/button/button.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o"
