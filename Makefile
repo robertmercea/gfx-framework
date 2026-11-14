@@ -1353,6 +1353,30 @@ src/lab_m1/tema1/ui/card_area/card_area.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.s
 .PHONY : src/lab_m1/tema1/ui/card_area/card_area.cpp.s
 
+src/lab_m1/tema1/ui/deck/deck.o: src/lab_m1/tema1/ui/deck/deck.cpp.o
+.PHONY : src/lab_m1/tema1/ui/deck/deck.o
+
+# target to build an object file
+src/lab_m1/tema1/ui/deck/deck.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/deck/deck.cpp.o
+.PHONY : src/lab_m1/tema1/ui/deck/deck.cpp.o
+
+src/lab_m1/tema1/ui/deck/deck.i: src/lab_m1/tema1/ui/deck/deck.cpp.i
+.PHONY : src/lab_m1/tema1/ui/deck/deck.i
+
+# target to preprocess a source file
+src/lab_m1/tema1/ui/deck/deck.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/deck/deck.cpp.i
+.PHONY : src/lab_m1/tema1/ui/deck/deck.cpp.i
+
+src/lab_m1/tema1/ui/deck/deck.s: src/lab_m1/tema1/ui/deck/deck.cpp.s
+.PHONY : src/lab_m1/tema1/ui/deck/deck.s
+
+# target to generate assembly for a file
+src/lab_m1/tema1/ui/deck/deck.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/GFXFramework.dir/build.make CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/deck/deck.cpp.s
+.PHONY : src/lab_m1/tema1/ui/deck/deck.cpp.s
+
 src/lab_m1/tema1/ui/player/player.o: src/lab_m1/tema1/ui/player/player.cpp.o
 .PHONY : src/lab_m1/tema1/ui/player/player.o
 
@@ -1683,6 +1707,9 @@ help:
 	@echo "... src/lab_m1/tema1/ui/card_area/card_area.o"
 	@echo "... src/lab_m1/tema1/ui/card_area/card_area.i"
 	@echo "... src/lab_m1/tema1/ui/card_area/card_area.s"
+	@echo "... src/lab_m1/tema1/ui/deck/deck.o"
+	@echo "... src/lab_m1/tema1/ui/deck/deck.i"
+	@echo "... src/lab_m1/tema1/ui/deck/deck.s"
 	@echo "... src/lab_m1/tema1/ui/player/player.o"
 	@echo "... src/lab_m1/tema1/ui/player/player.i"
 	@echo "... src/lab_m1/tema1/ui/player/player.s"

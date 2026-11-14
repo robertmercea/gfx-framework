@@ -10,18 +10,18 @@ namespace entities {
 CardPtr CardDeck::drawTopCard() {
   CardPtr card = cards.back();
   cards.pop_back();
+  deckUI.setCardsInDeck(cards);
 
   return card;
 }
 
 void CardDeck::pushCard(const CardPtr card) {
   cards.push_back(card);
+  deckUI.setCardsInDeck(cards);
 }
 
 void CardDeck::getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps) {
-  for (const auto &cardPtr : cards) {
-    cardPtr->cardUI.getSpriteProperties(spriteProps);
-  }
+  deckUI.getSpriteProperties(spriteProps);
 }
 
 void CardDeck::setRenderMode(globals::player::PlayerType mode) {

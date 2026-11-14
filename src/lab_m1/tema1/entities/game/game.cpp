@@ -53,6 +53,15 @@ void Game::init(const glm::vec2 &resolution) {
     }
   }
 
+  decks[PlayerType::HUMAN].deckUI.setScale(glm::vec2(40.0f, 50.0f));
+  decks[PlayerType::HUMAN].deckUI.setPosition(glm::vec2(windowResolution.x / 15.0f, windowResolution.y / 3.0f));
+  decks[PlayerType::HUMAN].setRenderMode(PlayerType::AI);
+  
+  decks[PlayerType::AI].deckUI.setScale(glm::vec2(40.0f, 50.0f));
+  decks[PlayerType::AI].deckUI.setPosition(glm::vec2(windowResolution.x / 15.0f, windowResolution.y * 2.0f / 3.0f));
+  decks[PlayerType::AI].setRenderMode(PlayerType::AI);
+
+
   for (auto p : {PlayerType::HUMAN, PlayerType::AI}) {
     playerHands[p] = PlayerHand();
     for (int i = 0; i < GAME_START_PLAYER_HAND_AMOUNT; ++i) {
@@ -445,6 +454,8 @@ void Game::getSpriteProperties(std::vector<sprites::SpriteProperties> &spritePro
   playerHands[PlayerType::AI].getSpriteProperties(spriteProps);
   players[PlayerType::HUMAN].playerUI.getSpriteProperties(spriteProps, players[PlayerType::HUMAN].mana);
   players[PlayerType::AI].playerUI.getSpriteProperties(spriteProps, players[PlayerType::AI].mana);
+  decks[PlayerType::HUMAN].getSpriteProperties(spriteProps);
+  decks[PlayerType::AI].getSpriteProperties(spriteProps);
   endTurnBtn.getSpriteProperties(spriteProps);
   timer.getSpriteProperties(spriteProps);
 

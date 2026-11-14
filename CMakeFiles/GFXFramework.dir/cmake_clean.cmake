@@ -101,6 +101,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card/card.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.o"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/card_area/card_area.cpp.o.d"
+  "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/deck/deck.cpp.o"
+  "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/deck/deck.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/player/player.cpp.o"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/player/player.cpp.o.d"
   "CMakeFiles/GFXFramework.dir/src/lab_m1/tema1/ui/properties/transformable.cpp.o"
