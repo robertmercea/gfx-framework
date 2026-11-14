@@ -154,7 +154,7 @@ void Game::update(float dt) {
     aiTurn();
   }
 
-  // Play card animations regardless of game state
+  // play card animations regardless of game state
   for (auto p : {PlayerType::HUMAN, PlayerType::AI}) {
     for (auto &c : battlecards.getPlayerCards(p)) {
       c->cardUI.update(dt);
@@ -287,7 +287,7 @@ void Game::onMouseMove(float x, float y) {
   if (state == GameState::PLAYER_ATTACK) {
     bool foundHover = false;
     
-    // Check cards in hand for hover
+    // check cards in hand for hover
     for (auto &c : playerHands[PlayerType::HUMAN].getCards()) {
       if (c->cardUI.contains(x, y)) {
         if (hoveredCard != c) {
@@ -300,7 +300,7 @@ void Game::onMouseMove(float x, float y) {
       }
     }
 
-    // Check cards on battleground for hover
+    // check cards on battleground for hover
     for (auto &c : battlecards.getPlayerCards(PlayerType::HUMAN)) {
       if (c->cardUI.contains(x, y)) {
         if (hoveredCard != c) {
@@ -313,7 +313,6 @@ void Game::onMouseMove(float x, float y) {
       }
     }
 
-    // Remove the hover effect if the mouse is not on any card
     if (!foundHover && hoveredCard) {
       hoveredCard->cardUI.onHoverLeave();
       hoveredCard = nullptr;

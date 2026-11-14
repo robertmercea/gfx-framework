@@ -19,8 +19,8 @@ void Deck::arrangeCards() {
   int size = cardsInDeck.size();
   
   for (int i = 0; i < size; ++i) {
-    // Top card is at the back of the vector (index: size - 1) and gets 0 offset.
-    // Cards below it get progressively larger offsets, capped at MAX_VISIBLE_CARDS.
+    // top card is at the back of the vector (index: size - 1) and gets 0 offset.
+    // cards below it get progressively larger offsets, capped at MAX_VISIBLE_CARDS.
     int offsetMultiplier = std::min(size - 1 - i, MAX_VISIBLE_CARDS - 1);
     
     glm::vec2 cardPos = _position + glm::vec2(OFFSET_X * offsetMultiplier, OFFSET_Y * offsetMultiplier);
@@ -34,10 +34,9 @@ void Deck::getSpriteProperties(std::vector<sprites::SpriteProperties> &spritePro
   int size = cardsInDeck.size();
   if (size == 0) return;
 
-  // Only iterate through the top MAX_VISIBLE_CARDS to save performance
   int startIndex = std::max(0, size - MAX_VISIBLE_CARDS);
   
-  // Draw from bottom to top (painter's algorithm)
+  // draw from bottom to top
   for (int i = startIndex; i < size; ++i) {
     cardsInDeck[i]->cardUI.getSpriteProperties(spriteProps);
   }
