@@ -12,11 +12,13 @@ void PlayerHand::pushCard(const CardPtr card) {
 
 void PlayerHand::getSpriteProperties(std::vector<sprites::SpriteProperties> &spriteProps) {
   for (const auto &cardPtr : cards) {
+    cardPtr->cardUI.showFront(_showCards);
     cardPtr->cardUI.getSpriteProperties(spriteProps);
   }
 }
 
 void PlayerHand::showCards(bool show) {
+  _showCards = show;
   for (const auto &cardPtr : cards) {
     cardPtr->cardUI.showFront(show);
   }

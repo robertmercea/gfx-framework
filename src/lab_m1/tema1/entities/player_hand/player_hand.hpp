@@ -24,6 +24,7 @@ public:
   glm::vec2 getCenter() const;
 
 private:
+  bool _showCards = true;
   glm::vec2 center;
   float maxWidth;
   CardVector cards;

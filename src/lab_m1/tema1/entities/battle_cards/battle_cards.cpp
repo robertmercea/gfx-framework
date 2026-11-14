@@ -74,6 +74,7 @@ void BattleCards::getSpriteProperties(
     for (size_t i = 0; i < cards.size(); ++i) {
       ui::Card &cardUI = cards[i]->cardUI;
 
+      cardUI.showFront(true);
       float cardW = std::abs(cardUI.DEFAULT_SCALE.x);
       float cardH = std::abs(cardUI.DEFAULT_SCALE.y);
 

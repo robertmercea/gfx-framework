@@ -25,7 +25,7 @@ void Game::init(const glm::vec2 &resolution) {
   std::cout << "[Game] Initializing game setup.\n";
   windowResolution = resolution;
   state = GameState::GAME_INIT;
-  currentMana = 10;
+  currentMana = 0;
   timer = ui::Timer(TIMER_INIT_VALUE);
   timer.setPosition(glm::vec2(windowResolution.x - 100.0f, windowResolution.y / 2.0f + 100.0f));
   timer.scale(glm::vec2(50.0f, 50.0f));
@@ -66,6 +66,7 @@ void Game::init(const glm::vec2 &resolution) {
   playerHands[PlayerType::AI].setCenter(glm::vec2(windowResolution.x / 2.0f, windowResolution.y - AI_HAND_Y_OFFSET));
   playerHands[PlayerType::AI].setMaxWidth(HAND_MAX_WIDTH);
   playerHands[PlayerType::AI].arrangeCards();
+  playerHands[PlayerType::AI].showCards(false);
 
   players[PlayerType::HUMAN].playerUI.setPosition(glm::vec2(windowResolution.x / 2.0f, 100.0f));
   players[PlayerType::HUMAN].playerUI.setScale(glm::vec2(75.0f, 75.0f));
