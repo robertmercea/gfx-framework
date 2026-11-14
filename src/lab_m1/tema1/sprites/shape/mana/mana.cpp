@@ -10,7 +10,7 @@ namespace sprites {
 Mana::Mana(float length)
     : Sprite(length * std::sqrt(2.0f), length * std::sqrt(2.0f)) {
   manaMesh = std::shared_ptr<Mesh>(
-      ui::shape::createSquare("mana", length, ui::colors::BLUE));
+      ui::shape::createMana("mana", length, ui::colors::BLUE));
 }
 
 Mana::Mana() : Mana(DEFAULT_MANA_LENGTH) {}

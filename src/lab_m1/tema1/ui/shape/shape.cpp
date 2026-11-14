@@ -137,6 +137,47 @@ Mesh *createHeart(const std::string name, float scale, const glm::vec3 color) {
   return mesh;
 }
 
+Mesh *createMana(const std::string name, float scale, const glm::vec3 color) {
+  using namespace std;
+
+  const int NUM_VERTICES = 1 << 6;
+  vector<VertexFormat> vertices;
+  vector<unsigned int> indices;
+  double deltaTheta = 2 * M_PI / NUM_VERTICES;
+
+  // origin
+  vertices.push_back(
+      VertexFormat(glm::vec3(0, 0, 0), color, VERTEX_NORMAL));
+
+  for (int i = 0; i < NUM_VERTICES; i++) {
+    double theta = i * deltaTheta;
+
+    // base teardrop formula
+    double rawX = sin(theta) * pow(cos(theta / 2.0), 2);
+    double rawY = -cos(theta);
+
+    // bend the top of the teardrop to the right
+    rawX += 0.15 * pow(rawY + 1.0, 2);
+
+    double x = rawX * scale;
+    double y = rawY * scale;
+
+    vertices.push_back(
+        VertexFormat(glm::vec3(x, y, 0), color, VERTEX_NORMAL));
+  }
+
+  for (int i = 1; i <= NUM_VERTICES; i++) {
+    indices.push_back(0);
+    indices.push_back(i);
+    indices.push_back((i % NUM_VERTICES) + 1);
+  }
+
+  Mesh *mesh = new Mesh(name);
+  mesh->InitFromData(vertices, indices);
+
+  return mesh;
+}
+
 Mesh *createStar();
 Mesh *createSpell();
 Mesh *createArrow();
