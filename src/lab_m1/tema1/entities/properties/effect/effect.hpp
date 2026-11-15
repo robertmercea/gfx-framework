@@ -1,4 +1,3 @@
-// effect.hpp
 #pragma once
 
 // WARNING: including effect_fwd.hpp might be useful in the future

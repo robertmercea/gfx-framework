@@ -30,7 +30,7 @@ namespace m1
 
         glm::ivec2 MouseToViewportCoords(int mouseX, int mouseY);
 
-     protected:// Add to includes:
+     protected:
         tema1::entities::Game game;
     };
 }   // namespace m1
