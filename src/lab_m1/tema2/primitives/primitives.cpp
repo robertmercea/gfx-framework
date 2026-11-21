@@ -3,17 +3,68 @@
 #include "core/gpu/vertex_format.h"
 #include "glm/ext/vector_float3.hpp"
 #include "glm/geometric.hpp"
-#include <memory>
 
 namespace tema2 {
 namespace primitives {
 
-Mesh *createSphere(float radius) {}
+Mesh *createSphere(const std::string &name, float radius,
+                   const glm::vec3 &color) {
+
+  const unsigned int NUM_CIRCLES = 2 * (int)radius;
+  const unsigned int CIRCLE_VERTICES = DEFAULT_CIRCLE_RESOLUTION;
+
+  std::vector<VertexFormat> vertices;
+  std::vector<unsigned int> indices;
+
+  const float DELTA_PHI = 2 * M_PI / CIRCLE_VERTICES;
+  const float DELTA_THETA = M_PI / (NUM_CIRCLES - 1);
+
+  float theta = 0;
+  float phi = 0;
+
+  for (int i = 0; i < NUM_CIRCLES; i++) {
+    phi = 0;
+    for (int j = 0; j < CIRCLE_VERTICES; j++) {
+      float vx = radius * sin(theta) * cos(phi);
+      float vy = radius * cos(theta);
+      float vz = radius * sin(theta) * sin(phi);
+      auto normal = glm::normalize(glm::vec3(vx, vy, vz));
+
+      vertices.push_back(VertexFormat(glm::vec3(vx, vy, vz), color, normal));
+      phi += DELTA_PHI;
+    }
+
+    theta += DELTA_THETA;
+  }
+
+  for (int i = 0; i < NUM_CIRCLES - 1; i++) {
+    int currentRing = i * CIRCLE_VERTICES;
+    int nextRing = (i + 1) * CIRCLE_VERTICES;
+
+    for (int j = 0; j < CIRCLE_VERTICES; j++) {
+      int nextj = (j + 1) % CIRCLE_VERTICES;
+
+      indices.push_back(currentRing + j);
+      indices.push_back(currentRing + nextj);
+      indices.push_back(nextRing + j);
+
+      indices.push_back(currentRing + nextj);
+      indices.push_back(nextRing + nextj);
+      indices.push_back(nextRing + j);
+    }
+  }
+
+  Mesh *mesh = new Mesh(name);
+  mesh->InitFromData(vertices, indices);
+
+  return mesh;
+}
+
 Mesh *createCone(const std::string &name, float radius, float height,
                  const glm::vec3 &color) {
 
   const unsigned int NUM_CIRCLES = (int)height;
-  const unsigned int CIRCLE_VERTICES = DEFAULT_CONE_RESOLUTION;
+  const unsigned int CIRCLE_VERTICES = DEFAULT_CIRCLE_RESOLUTION;
   const float TAN_THETA = radius / height;
 
   std::vector<VertexFormat> vertices;
@@ -29,11 +80,10 @@ Mesh *createCone(const std::string &name, float radius, float height,
       float newRadius = radius - vy * TAN_THETA;
       float vx = newRadius * cos(ctheta);
       float vz = newRadius * sin(ctheta);
-      auto normal = glm::normalize(glm::vec3(cos(ctheta), TAN_THETA, sin(ctheta)));
+      auto normal =
+          glm::normalize(glm::vec3(cos(ctheta), TAN_THETA, sin(ctheta)));
 
-      vertices.push_back(VertexFormat(
-          glm::vec3(vx, vy, vz),
-          color, normal));
+      vertices.push_back(VertexFormat(glm::vec3(vx, vy, vz), color, normal));
       ctheta += DELTA_THETA;
     }
   }

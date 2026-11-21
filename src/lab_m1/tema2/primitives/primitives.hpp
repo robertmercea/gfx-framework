@@ -6,9 +6,10 @@ namespace tema2 {
 namespace primitives {
 
 static const auto DEFAULT_VERTEX_COLOR = glm::vec3(0, 0, 0);
-static constexpr unsigned int DEFAULT_CONE_RESOLUTION = 16;
+static constexpr unsigned int DEFAULT_CIRCLE_RESOLUTION = 32;
 
-Mesh *createSphere(float radius);
+Mesh *createSphere(const std::string &name, float radius,
+                   const glm::vec3 &color);
 Mesh *createCone(const std::string &name, float radius, float height,
                  const glm::vec3 &color);
 Mesh *createParallelepiped(const std::string &name, float width, float height,
