@@ -4,6 +4,7 @@
 #include "glm/geometric.hpp"
 
 namespace tema2 {
+namespace properties {
 
 class Collidable {
 protected:
@@ -38,4 +39,5 @@ public:
   }
 };
 
+} // namespace properties
 } // namespace tema2
