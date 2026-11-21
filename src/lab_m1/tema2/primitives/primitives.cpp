@@ -1,12 +1,83 @@
 #include "primitives.hpp"
 #include "core/gpu/mesh.h"
+#include "core/gpu/vertex_format.h"
+#include "glm/ext/vector_float3.hpp"
+#include "glm/geometric.hpp"
 #include <memory>
 
 namespace tema2 {
 namespace primitives {
 
 Mesh *createSphere(float radius) {}
-Mesh *createCone(float radius, float height) {}
+Mesh *createCone(const std::string &name, float radius, float height,
+                 const glm::vec3 &color) {
+
+  const unsigned int NUM_CIRCLES = (int)height;
+  const unsigned int CIRCLE_VERTICES = DEFAULT_CONE_RESOLUTION;
+  const float TAN_THETA = radius / height;
+
+  std::vector<VertexFormat> vertices;
+  float ctheta = 0;
+  const float DELTA_THETA = 2 * M_PI / CIRCLE_VERTICES;
+  const float DELTA_Y = height / NUM_CIRCLES;
+
+  // circles
+  for (int i = 0; i < NUM_CIRCLES; i++) {
+    ctheta = 0;
+    for (int j = 0; j < CIRCLE_VERTICES; j++) {
+      float vy = (i - 1) * DELTA_Y;
+      float newRadius = radius - vy * TAN_THETA;
+      float vx = newRadius * cos(ctheta);
+      float vz = newRadius * sin(ctheta);
+      auto normal = glm::normalize(glm::vec3(cos(ctheta), TAN_THETA, sin(ctheta)));
+
+      vertices.push_back(VertexFormat(
+          glm::vec3(vx, vy, vz),
+          color, normal));
+      ctheta += DELTA_THETA;
+    }
+  }
+
+  // tip
+  const unsigned int TIP_INDEX = static_cast<unsigned int>(vertices.size());
+  vertices.push_back(
+      VertexFormat(glm::vec3(0.0f, height, 0.0f), color, glm::vec3(0, 1, 0)));
+
+  std::vector<unsigned int> indices;
+
+  // connect circles
+  for (unsigned int i = 0; i < NUM_CIRCLES - 1; i++) {
+    unsigned int currRing = i * CIRCLE_VERTICES;
+    unsigned int nextRing = (i + 1) * CIRCLE_VERTICES;
+
+    for (unsigned int j = 0; j < CIRCLE_VERTICES; j++) {
+      unsigned int nextJ = (j + 1) % CIRCLE_VERTICES;
+
+      indices.push_back(currRing + j);
+      indices.push_back(nextRing + j);
+      indices.push_back(currRing + nextJ);
+
+      indices.push_back(currRing + nextJ);
+      indices.push_back(nextRing + j);
+      indices.push_back(nextRing + nextJ);
+    }
+  }
+
+  // connect last (top) circle to tip of cone
+  const unsigned int LAST_RING = (NUM_CIRCLES - 1) * CIRCLE_VERTICES;
+  for (unsigned int j = 0; j < CIRCLE_VERTICES; j++) {
+    unsigned int nextJ = (j + 1) % CIRCLE_VERTICES;
+
+    indices.push_back(LAST_RING + j);
+    indices.push_back(TIP_INDEX);
+    indices.push_back(LAST_RING + nextJ);
+  }
+
+  Mesh *mesh = new Mesh(name);
+  mesh->InitFromData(vertices, indices);
+
+  return mesh;
+}
 
 Mesh *createParallelepiped(const std::string &name, float width, float height,
                            float depth, const glm::vec3 &color) {
