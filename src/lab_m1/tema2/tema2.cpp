@@ -1,4 +1,6 @@
 #include "tema2.hpp"
+#include "glm/ext/vector_float3.hpp"
+#include "tema2/primitives/primitives.hpp"
 
 #include <iostream>
 #include <string>
@@ -30,6 +32,16 @@ void Tema2::Init() {
     mesh->LoadMesh(
         PATH_JOIN(window->props.selfDir, RESOURCE_PATH::MODELS, "primitives"),
         "sphere.obj");
+    meshes[mesh->GetMeshID()] = mesh;
+  }
+
+  {
+    Mesh *mesh = tema2::primitives::createTriangularPrism("tri", 2, 0.1f, glm::vec3(1,0,0));
+    meshes[mesh->GetMeshID()] = mesh;
+  }
+
+  {
+    Mesh *mesh = tema2::primitives::createParallelepiped("para", 5, 3, 2, glm::vec3(1,0,0));
     meshes[mesh->GetMeshID()] = mesh;
   }
 
@@ -69,6 +81,18 @@ void Tema2::Update(float deltaTimeSeconds) {
     glm::mat4 modelMatrix = glm::mat4(1);
     modelMatrix = glm::translate(modelMatrix, glm::vec3(-2, 0.5f, 0));
     RenderMesh(meshes["box"], shaders["Simple"], modelMatrix);
+  }
+
+  {
+    glm::mat4 modelMatrix = glm::mat4(1);
+    modelMatrix = glm::translate(modelMatrix, glm::vec3(-7, 0.5f, 0));
+    RenderMesh(meshes["tri"], shaders["Simple"], modelMatrix);
+  }
+
+  {
+    glm::mat4 modelMatrix = glm::mat4(1);
+    modelMatrix = glm::translate(modelMatrix, glm::vec3(7, 0.5f, 0));
+    RenderMesh(meshes["para"], shaders["Simple"], modelMatrix);
   }
 
   // Render the camera target. This is useful for understanding where

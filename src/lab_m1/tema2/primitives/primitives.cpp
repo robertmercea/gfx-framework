@@ -5,15 +5,87 @@
 namespace tema2 {
 namespace primitives {
 
-static const auto VERTEX_COLOR = glm::vec3(0,0,0);
-
 Mesh *createSphere(float radius) {}
 Mesh *createCone(float radius, float height) {}
-Mesh *createParallelepiped(float width, float height,
-                                           float depth) {}
+
+Mesh *createParallelepiped(const std::string &name, float width, float height,
+                           float depth, const glm::vec3 &color) {
+  const float halfW = width * 0.5f;
+  const float halfH = height * 0.5f;
+  const float halfD = depth * 0.5f;
+
+  // corners
+  glm::vec3 p000(-halfW, -halfH, -halfD);
+  glm::vec3 p001(-halfW, -halfH, halfD);
+  glm::vec3 p010(-halfW, halfH, -halfD);
+  glm::vec3 p011(-halfW, halfH, halfD);
+  glm::vec3 p100(halfW, -halfH, -halfD);
+  glm::vec3 p101(halfW, -halfH, halfD);
+  glm::vec3 p110(halfW, halfH, -halfD);
+  glm::vec3 p111(halfW, halfH, halfD);
+
+  // normals
+  glm::vec3 nFront(0.0f, 0.0f, 1.0f);
+  glm::vec3 nBack(0.0f, 0.0f, -1.0f);
+  glm::vec3 nRight(1.0f, 0.0f, 0.0f);
+  glm::vec3 nLeft(-1.0f, 0.0f, 0.0f);
+  glm::vec3 nTop(0.0f, 1.0f, 0.0f);
+  glm::vec3 nBottom(0.0f, -1.0f, 0.0f);
+
+  std::vector<VertexFormat> vertices = {
+      // front face
+      VertexFormat(p001, color, nFront),
+      VertexFormat(p101, color, nFront),
+      VertexFormat(p111, color, nFront),
+      VertexFormat(p011, color, nFront),
+
+      // back face
+      VertexFormat(p100, color, nBack),
+      VertexFormat(p000, color, nBack),
+      VertexFormat(p010, color, nBack),
+      VertexFormat(p110, color, nBack),
+
+      // right face
+      VertexFormat(p101, color, nRight),
+      VertexFormat(p100, color, nRight),
+      VertexFormat(p110, color, nRight),
+      VertexFormat(p111, color, nRight),
+
+      // left face
+      VertexFormat(p000, color, nLeft),
+      VertexFormat(p001, color, nLeft),
+      VertexFormat(p011, color, nLeft),
+      VertexFormat(p010, color, nLeft),
+
+      // top face
+      VertexFormat(p011, color, nTop),
+      VertexFormat(p111, color, nTop),
+      VertexFormat(p110, color, nTop),
+      VertexFormat(p010, color, nTop),
+
+      // bottom face
+      VertexFormat(p000, color, nBottom),
+      VertexFormat(p100, color, nBottom),
+      VertexFormat(p101, color, nBottom),
+      VertexFormat(p001, color, nBottom),
+  };
+
+  std::vector<unsigned int> indices = {
+      0,  1,  2,  0,  2,  3,  // front
+      4,  5,  6,  4,  6,  7,  // back
+      8,  9,  10, 8,  10, 11, // right
+      12, 13, 14, 12, 14, 15, // left
+      16, 17, 18, 16, 18, 19, // top
+      20, 21, 22, 20, 22, 23  // bottom
+  };
+
+  Mesh *mesh = new Mesh(name);
+  mesh->InitFromData(vertices, indices);
+  return mesh;
+}
 
 Mesh *createTriangularPrism(const std::string &name, float l, float h,
-                            const glm::vec3 &color = glm::vec3(1.0f)) {
+                            const glm::vec3 &color) {
   const float halfH = h * 0.5f;
   const float halfL = l * 0.5f;
   const float sqrt3 = std::sqrt(3.0f);
@@ -68,18 +140,34 @@ Mesh *createTriangularPrism(const std::string &name, float l, float h,
 
   std::vector<unsigned int> indices = {
       // righr triangle
-      0, 1, 2,
+      0,
+      1,
+      2,
       // left triangle
-      3, 4, 5,
+      3,
+      4,
+      5,
       // top rectangle
-      6, 7, 8,
-      6, 8, 9,
+      6,
+      7,
+      8,
+      6,
+      8,
+      9,
       // front-slanted rectangle
-      10, 11, 12,
-      10, 12, 13,
+      10,
+      11,
+      12,
+      10,
+      12,
+      13,
       // back-slanted rectangle
-      14, 15, 16,
-      14, 16, 17,
+      14,
+      15,
+      16,
+      14,
+      16,
+      17,
   };
 
   Mesh *prism = new Mesh(name);
