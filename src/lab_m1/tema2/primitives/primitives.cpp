@@ -8,7 +8,7 @@ namespace tema2 {
 namespace primitives {
 
 Mesh *createSphere(const std::string &name, float radius,
-                   const glm::vec3 &color) {
+                   const glm::vec3 &color, bool hemisphere) {
 
   const unsigned int NUM_CIRCLES = 2 * (int)radius;
   const unsigned int CIRCLE_VERTICES = DEFAULT_CIRCLE_RESOLUTION;
@@ -17,7 +17,7 @@ Mesh *createSphere(const std::string &name, float radius,
   std::vector<unsigned int> indices;
 
   const float DELTA_PHI = 2 * M_PI / CIRCLE_VERTICES;
-  const float DELTA_THETA = M_PI / (NUM_CIRCLES - 1);
+  const float DELTA_THETA = M_PI / (NUM_CIRCLES - 1) / (hemisphere ? 2 : 1);
 
   float theta = 0;
   float phi = 0;
