@@ -81,6 +81,8 @@ void Transformable::translate(const glm::vec3 &offset) {
 }
 
 const glm::mat4 &Transformable::getModelMatrix() {
+  using namespace utils;
+
   if (_dirty) {
     _modelMatrix = glm::mat4(1.0f);
     _modelMatrix *= transform::translate(_position.x, _position.y, _position.z);
