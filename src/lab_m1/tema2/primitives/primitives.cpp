@@ -66,6 +66,8 @@ Mesh *createCone(const std::string &name, float radius, float height,
   const unsigned int NUM_CIRCLES = (int)height;
   const unsigned int CIRCLE_VERTICES = DEFAULT_CIRCLE_RESOLUTION;
   const float TAN_THETA = radius / height;
+  // the cone's center is at h/4 above the base
+  const float Y_CENTER_OFFSET = height / 4;
 
   std::vector<VertexFormat> vertices;
   float ctheta = 0;
@@ -76,7 +78,7 @@ Mesh *createCone(const std::string &name, float radius, float height,
   for (int i = 0; i < NUM_CIRCLES; i++) {
     ctheta = 0;
     for (int j = 0; j < CIRCLE_VERTICES; j++) {
-      float vy = (i - 1) * DELTA_Y;
+      float vy = i * DELTA_Y - Y_CENTER_OFFSET;
       float newRadius = radius - vy * TAN_THETA;
       float vx = newRadius * cos(ctheta);
       float vz = newRadius * sin(ctheta);
