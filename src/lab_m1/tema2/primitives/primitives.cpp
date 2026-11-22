@@ -10,7 +10,7 @@ namespace primitives {
 Mesh *createSphere(const std::string &name, float radius,
                    const glm::vec3 &color, bool hemisphere) {
 
-  const unsigned int NUM_CIRCLES = 2 * (int)radius;
+  const unsigned int NUM_CIRCLES = std::max(16u, 2 * static_cast<unsigned int>(radius));
   const unsigned int CIRCLE_VERTICES = DEFAULT_CIRCLE_RESOLUTION;
 
   std::vector<VertexFormat> vertices;
