@@ -3,8 +3,12 @@
 
 #include "components/simple_scene.h"
 #include "tema2/camera/camera.hpp"
+#include "tema2/entities/spaceship/cockpit/cockpit.hpp"
+#include "tema2/properties/renderable/renderable.hpp"
 
 namespace m1 {
+using namespace tema2;
+
 class Tema2 : public gfxc::SimpleScene {
 public:
   Tema2();
@@ -34,6 +38,8 @@ protected:
   glm::mat4 projectionMatrix;
   bool renderCameraTarget;
 
-  // TODO(student): If you need any other class variables, define them here.
+  entities::Cockpit *cockpit;
+  properties::RenderFunction RenderByName;
+
 };
 } // namespace m1

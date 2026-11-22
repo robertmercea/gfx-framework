@@ -1,5 +1,7 @@
 #include "tema2.hpp"
+#include "glm/ext/matrix_transform.hpp"
 #include "glm/ext/vector_float3.hpp"
+#include "tema2/entities/spaceship/cockpit/cockpit.hpp"
 #include "tema2/primitives/primitives.hpp"
 
 #include <iostream>
@@ -14,39 +16,34 @@ Tema2::Tema2() {}
 Tema2::~Tema2() {}
 
 void Tema2::Init() {
+  RenderByName = [this](const std::string &meshName,
+                        const std::string &shaderName,
+                        const glm::mat4 &modelMatrix) {
+    auto meshIt = meshes.find(meshName);
+    auto shaderIt = shaders.find(shaderName);
+
+    if (meshIt == meshes.end() || shaderIt == shaders.end()) {
+      return;
+    }
+
+    RenderMesh(meshIt->second, shaderIt->second, modelMatrix);
+  };
+
   renderCameraTarget = false;
 
   camera = new tema2::camera::Camera();
   camera->Set(glm::vec3(0, 2, 3.5f), glm::vec3(0, 1, 0), glm::vec3(0, 1, 0));
 
   {
-    Mesh *mesh = new Mesh("box");
-    mesh->LoadMesh(
-        PATH_JOIN(window->props.selfDir, RESOURCE_PATH::MODELS, "primitives"),
-        "box.obj");
+    Mesh *mesh = tema2::primitives::createSphere("cockpit", 1.0f,
+                                                 glm::vec3(1, 0, 0), true);
     meshes[mesh->GetMeshID()] = mesh;
   }
 
-  {
-    Mesh *mesh = new Mesh("sphere");
-    mesh->LoadMesh(
-        PATH_JOIN(window->props.selfDir, RESOURCE_PATH::MODELS, "primitives"),
-        "sphere.obj");
-    meshes[mesh->GetMeshID()] = mesh;
-  }
-
-  {
-    Mesh *mesh = tema2::primitives::createTriangularPrism("tri", 2, 0.1f, glm::vec3(1,0,0));
-    meshes[mesh->GetMeshID()] = mesh;
-  }
-
-  {
-    Mesh *mesh = tema2::primitives::createParallelepiped("para", 5, 3, 2, glm::vec3(1,0,0));
-    meshes[mesh->GetMeshID()] = mesh;
-  }
+  cockpit = new entities::Cockpit("cockpit");
 
   // TODO(student): After you implement the changing of the projection
-  // parameters, remove hardcodings of these parameters
+  // parameters, remove hardcodings of these 3arameters
   projectionMatrix =
       glm::perspective(RADIANS(60), window->props.aspectRatio, 0.01f, 200.0f);
 }
@@ -62,47 +59,7 @@ void Tema2::FrameStart() {
 }
 
 void Tema2::Update(float deltaTimeSeconds) {
-  {
-    glm::mat4 modelMatrix = glm::mat4(1);
-    modelMatrix = glm::translate(modelMatrix, glm::vec3(0, 1, 0));
-    modelMatrix = glm::rotate(modelMatrix, RADIANS(45.0f), glm::vec3(0, 1, 0));
-
-    RenderMesh(meshes["box"], shaders["VertexNormal"], modelMatrix);
-  }
-
-  {
-    glm::mat4 modelMatrix = glm::mat4(1);
-    modelMatrix = glm::translate(modelMatrix, glm::vec3(2, 0.5f, 0));
-    modelMatrix = glm::rotate(modelMatrix, RADIANS(60.0f), glm::vec3(1, 0, 0));
-    RenderMesh(meshes["box"], shaders["VertexNormal"], modelMatrix);
-  }
-
-  {
-    glm::mat4 modelMatrix = glm::mat4(1);
-    modelMatrix = glm::translate(modelMatrix, glm::vec3(-2, 0.5f, 0));
-    RenderMesh(meshes["box"], shaders["Simple"], modelMatrix);
-  }
-
-  {
-    glm::mat4 modelMatrix = glm::mat4(1);
-    modelMatrix = glm::translate(modelMatrix, glm::vec3(-7, 0.5f, 0));
-    RenderMesh(meshes["tri"], shaders["Simple"], modelMatrix);
-  }
-
-  {
-    glm::mat4 modelMatrix = glm::mat4(1);
-    modelMatrix = glm::translate(modelMatrix, glm::vec3(7, 0.5f, 0));
-    RenderMesh(meshes["para"], shaders["Simple"], modelMatrix);
-  }
-
-  // Render the camera target. This is useful for understanding where
-  // the rotation point is, when moving in third-person camera mode.
-  if (renderCameraTarget) {
-    glm::mat4 modelMatrix = glm::mat4(1);
-    modelMatrix = glm::translate(modelMatrix, camera->getTargetPosition());
-    modelMatrix = glm::scale(modelMatrix, glm::vec3(0.1f));
-    RenderMesh(meshes["sphere"], shaders["VertexNormal"], modelMatrix);
-  }
+  cockpit->render(RenderByName);
 }
 
 void Tema2::FrameEnd() {
@@ -132,24 +89,21 @@ void Tema2::RenderMesh(Mesh *mesh, Shader *shader,
  */
 
 void Tema2::OnInputUpdate(float deltaTime, int mods) {
-    camera->onInputUpdate(window, deltaTime, mods);
+  camera->onInputUpdate(window, deltaTime, mods);
 }
 
-void Tema2::OnKeyPress(int key, int mods) {
-}
+void Tema2::OnKeyPress(int key, int mods) {}
 
-void Tema2::OnKeyRelease(int key, int mods) {
-}
+void Tema2::OnKeyRelease(int key, int mods) {}
 
 void Tema2::OnMouseMove(int mouseX, int mouseY, int deltaX, int deltaY) {
-  renderCameraTarget = camera->onMouseMove(window, mouseX, mouseY, deltaX, deltaY);
+  renderCameraTarget =
+      camera->onMouseMove(window, mouseX, mouseY, deltaX, deltaY);
 }
 
-void Tema2::OnMouseBtnPress(int mouseX, int mouseY, int button, int mods) {
-}
+void Tema2::OnMouseBtnPress(int mouseX, int mouseY, int button, int mods) {}
 
-void Tema2::OnMouseBtnRelease(int mouseX, int mouseY, int button, int mods) {
-}
+void Tema2::OnMouseBtnRelease(int mouseX, int mouseY, int button, int mods) {}
 
 void Tema2::OnMouseScroll(int mouseX, int mouseY, int offsetX, int offsetY) {}
 
