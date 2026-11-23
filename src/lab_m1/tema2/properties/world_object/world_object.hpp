@@ -1,14 +1,19 @@
 #pragma once
 
-#include "utils/glm_utils.h"
+#include "glm/ext/matrix_float4x4.hpp"
 #include <functional>
 #include <string>
 #include <vector>
 
 namespace tema2 {
+namespace properties {
 
-using RenderFunction =
-    std::function<void(const std::string &, const std::string &, const glm::mat4 &)>;
+using RenderFunction = std::function<void(
+    const std::string &, const std::string &, const glm::mat4 &)>;
+
+struct RenderContext {
+  glm::mat4 parentMatrix = glm::mat4(1.0f);
+};
 
 class WorldObject {
 protected:
@@ -27,7 +32,8 @@ protected:
   std::vector<WorldObject *> _components;
 
 public:
-  explicit WorldObject(float boundingRadius = 1.0f, bool collisionEnabled = true);
+  explicit WorldObject(float boundingRadius = 1.0f,
+                       bool collisionEnabled = true);
   virtual ~WorldObject() = default;
 
   // --- Transform ---
@@ -52,7 +58,7 @@ public:
   void translate(float translateX, float translateY, float translateZ);
   void translate(const glm::vec3 &offset);
 
-  virtual const glm::mat4 &getModelMatrix() const;
+  const glm::mat4 &getModelMatrix() const;
 
   // --- Collision ---
   virtual const glm::vec3 &getCollisionCenter() const;
@@ -70,7 +76,8 @@ public:
   void addComponent(WorldObject *component);
 
   // --- Rendering ---
-  virtual void render(const RenderFunction &renderFunc) const = 0;
+  virtual void render(const RenderFunction &renderFunc, const RenderContext &ctx) const = 0;
 };
 
+} // namespace properties
 } // namespace tema2

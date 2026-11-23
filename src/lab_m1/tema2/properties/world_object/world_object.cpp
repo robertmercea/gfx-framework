@@ -2,15 +2,12 @@
 #include "tema2/utils/transform/transform.hpp"
 
 namespace tema2 {
+namespace properties {
 
 WorldObject::WorldObject(float boundingRadius, bool collisionEnabled)
-    : _modelMatrix(1.0f),
-      _scale(1.0f, 1.0f, 1.0f),
-      _position(0.0f, 0.0f, 0.0f),
-      _rotation(0.0f, 0.0f, 0.0f),
-      _dirty(true),
-      _boundingRadius(boundingRadius),
-      _collisionEnabled(collisionEnabled) {}
+    : _modelMatrix(1.0f), _scale(1.0f, 1.0f, 1.0f), _position(0.0f, 0.0f, 0.0f),
+      _rotation(0.0f, 0.0f, 0.0f), _dirty(true),
+      _boundingRadius(boundingRadius), _collisionEnabled(collisionEnabled) {}
 
 // --- Transform ---
 
@@ -75,7 +72,8 @@ void WorldObject::rotateZ(float radians) {
   _dirty = true;
 }
 
-void WorldObject::translate(float translateX, float translateY, float translateZ) {
+void WorldObject::translate(float translateX, float translateY,
+                            float translateZ) {
   _position += glm::vec3(translateX, translateY, translateZ);
   _dirty = true;
 }
@@ -88,7 +86,8 @@ void WorldObject::translate(const glm::vec3 &offset) {
 const glm::mat4 &WorldObject::getModelMatrix() const {
   if (_dirty) {
     _modelMatrix = glm::mat4(1.0f);
-    _modelMatrix *= utils::transform::translate(_position.x, _position.y, _position.z);
+    _modelMatrix *=
+        utils::transform::translate(_position.x, _position.y, _position.z);
     _modelMatrix *= utils::transform::rotateOY(_rotation.y);
     _modelMatrix *= utils::transform::rotateOX(_rotation.x);
     _modelMatrix *= utils::transform::rotateOZ(_rotation.z);
@@ -100,9 +99,7 @@ const glm::mat4 &WorldObject::getModelMatrix() const {
 
 // --- Collision ---
 
-const glm::vec3 &WorldObject::getCollisionCenter() const {
-  return _position;
-}
+const glm::vec3 &WorldObject::getCollisionCenter() const { return _position; }
 
 float WorldObject::getBoundingRadius() const { return _boundingRadius; }
 
@@ -136,4 +133,5 @@ void WorldObject::addComponent(WorldObject *component) {
   }
 }
 
+} // namespace properties
 } // namespace tema2
