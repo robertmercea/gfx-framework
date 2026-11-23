@@ -8,11 +8,11 @@
 namespace tema2 {
 namespace entities {
 
-Spaceship::Spaceship() : WorldObject(SHIP_HITBOX_RADIUS, true) {
+Spaceship::Spaceship() : WorldObject(0.0f, true) {
   // body @ origin (0,0,0)
   body = new spaceship::Body(
       "parallelepiped", "VertexColor", glm::vec3(0.75f, 0.75f, 0.82f),
-      SHIP_HITBOX_RADIUS, BODY_WIDTH, BODY_HEIGHT, BODY_DEPTH);
+      BODY_HITBOX_RADIUS, BODY_WIDTH, BODY_HEIGHT, BODY_DEPTH);
   body->setPosition(glm::vec3(0.0f, 0.0f, 0.0f));
 
   cockpit = new spaceship::Cockpit(
@@ -69,6 +69,29 @@ void Spaceship::render(const RenderFunction &renderFunc, const RenderContext &ct
   for (const WorldObject *part : _components) {
     part->render(renderFunc, childCtx);
   }
+}
+
+const glm::vec3 &Spaceship::getCollisionCenter() const {
+  return body->getCollisionCenter();
+}
+
+bool Spaceship::collidesWith(const WorldObject &other) const {
+  if (!_collisionEnabled || !other.isCollisionEnabled()) {
+    return false;
+  }
+
+  for (const WorldObject *part : _components) {
+    if (!part->isCollisionEnabled()) continue;
+
+    for (const WorldObject *otherPart : other.getComponents()) {
+      if (part->collidesWith(*otherPart)) {
+        return true;
+      }
+    }
+
+  }
+
+  return false;
 }
 
 } // namespace entities

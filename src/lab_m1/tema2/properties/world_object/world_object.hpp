@@ -69,7 +69,7 @@ public:
   bool isCollisionEnabled() const;
   void setCollisionEnabled(bool enabled);
 
-  bool collidesWith(const WorldObject &other) const;
+  virtual bool collidesWith(const WorldObject &other) const;
 
   // --- Hierarchy ---
   const std::vector<WorldObject *> &getComponents() const;

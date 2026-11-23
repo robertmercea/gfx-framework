@@ -9,10 +9,8 @@ using namespace properties;
 
 class Spaceship : public WorldObject {
 public:
-  // TODO: fix this
-  static constexpr float SHIP_HITBOX_RADIUS = 2.2f;
-
   // body
+  static constexpr float BODY_HITBOX_RADIUS = 2.2f;
   static constexpr float BODY_WIDTH = 1.0f;
   static constexpr float BODY_HEIGHT = 1.0f;
   static constexpr float BODY_DEPTH = 2.4f;
@@ -47,6 +45,8 @@ public:
   Spaceship &operator=(const Spaceship &) = delete;
 
   void render(const RenderFunction &renderFunc, const RenderContext &ctx) const override;
+  const glm::vec3 &getCollisionCenter() const override;
+  bool collidesWith(const WorldObject &other) const override;
 
 private:
   WorldObject *cockpit;
