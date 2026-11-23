@@ -63,7 +63,7 @@ Mesh *createSphere(const std::string &name, float radius,
 Mesh *createCone(const std::string &name, float radius, float height,
                  const glm::vec3 &color) {
 
-  const unsigned int NUM_CIRCLES = (int)height;
+  const unsigned int NUM_CIRCLES = std::max(12u, (unsigned int)height);
   const unsigned int CIRCLE_VERTICES = DEFAULT_CIRCLE_RESOLUTION;
   const float TAN_THETA = radius / height;
   // the cone's center is at h/4 above the base
