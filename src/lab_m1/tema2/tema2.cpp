@@ -1,8 +1,11 @@
 #include "tema2.hpp"
+#include "glm/ext/matrix_float4x4.hpp"
 #include "glm/ext/matrix_transform.hpp"
 #include "glm/ext/vector_float3.hpp"
 #include "tema2/entities/spaceship/cockpit/cockpit.hpp"
+#include "tema2/entities/spaceship/spaceship.hpp"
 #include "tema2/primitives/primitives.hpp"
+#include "tema2/properties/world_object/world_object.hpp"
 
 #include <iostream>
 #include <string>
@@ -34,13 +37,31 @@ void Tema2::Init() {
   camera = new tema2::camera::Camera();
   camera->Set(glm::vec3(0, 2, 3.5f), glm::vec3(0, 1, 0), glm::vec3(0, 1, 0));
 
-  {
-    Mesh *mesh = tema2::primitives::createSphere("cockpit", 1.0f,
-                                                 glm::vec3(1, 0, 0), true);
-    meshes[mesh->GetMeshID()] = mesh;
-  }
+{
+  Mesh *mesh = primitives::createParallelepiped(
+      "parallelepiped", 1.0f, 1.0f, 1.0f, glm::vec3(0.75f, 0.75f, 0.82f));
+  meshes[mesh->GetMeshID()] = mesh;
+}
 
-  cockpit = new entities::Cockpit("cockpit");
+{
+  Mesh *mesh = primitives::createSphere(
+      "hemisphere", 1.0f, glm::vec3(0.2f, 0.7f, 0.95f), true);
+  meshes[mesh->GetMeshID()] = mesh;
+}
+
+{
+  Mesh *mesh = primitives::createTriangularPrism(
+      "prism", 1.0f, 1.0f, glm::vec3(0.85f, 0.25f, 0.25f));
+  meshes[mesh->GetMeshID()] = mesh;
+}
+
+{
+  Mesh *mesh = primitives::createCone(
+      "cone", 1.0f, 1.0f, glm::vec3(1.0f, 0.55f, 0.1f));
+  meshes[mesh->GetMeshID()] = mesh;
+}
+
+  spaceship = new entities::Spaceship();
 
   // TODO(student): After you implement the changing of the projection
   // parameters, remove hardcodings of these 3arameters
@@ -59,7 +80,10 @@ void Tema2::FrameStart() {
 }
 
 void Tema2::Update(float deltaTimeSeconds) {
-  cockpit->render(RenderByName);
+  properties::RenderContext defaultContext;
+  defaultContext.parentMatrix = glm::mat4(1.0f);
+
+  spaceship->render(RenderByName, defaultContext);
 }
 
 void Tema2::FrameEnd() {

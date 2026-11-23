@@ -3,8 +3,7 @@
 
 #include "components/simple_scene.h"
 #include "tema2/camera/camera.hpp"
-#include "tema2/entities/spaceship/cockpit/cockpit.hpp"
-#include "tema2/properties/renderable/renderable.hpp"
+#include "tema2/entities/spaceship/spaceship.hpp"
 
 namespace m1 {
 using namespace tema2;
@@ -38,7 +37,7 @@ protected:
   glm::mat4 projectionMatrix;
   bool renderCameraTarget;
 
-  entities::Cockpit *cockpit;
+  entities::Spaceship *spaceship;
   properties::RenderFunction RenderByName;
 
 };
