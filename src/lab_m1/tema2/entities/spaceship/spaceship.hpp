@@ -1,5 +1,6 @@
 #pragma once
 
+#include "core/window/window_object.h"
 #include "tema2/properties/world_object/world_object.hpp"
 
 namespace tema2 {
@@ -38,6 +39,11 @@ public:
   static constexpr float THRUSTER_OFFSET_Z =
       BODY_DEPTH * 0.5f + THRUSTER_HEIGHT * 0.75f;
 
+  // movement
+  static constexpr float SPACESHIP_SPEED = 10.0f;
+  static constexpr float ROTATION_SPEED = 0.005f;
+  static constexpr float ROLL_MULTIPLIER = 300.0f;
+
   Spaceship();
   ~Spaceship() override;
 
@@ -47,6 +53,10 @@ public:
   void render(const RenderFunction &renderFunc, const RenderContext &ctx) const override;
   const glm::vec3 &getCollisionCenter() const override;
   bool collidesWith(const WorldObject &other) const override;
+
+  void onInputUpdate(const WindowObject *window, float deltaTime, int mods);
+  void onMouseMove(const WindowObject *window, int mouseX, int mouseY, int deltaX,
+                   int deltaY);
 
 private:
   WorldObject *cockpit;
