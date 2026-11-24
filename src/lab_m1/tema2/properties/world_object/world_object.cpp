@@ -1,4 +1,7 @@
 #include "world_object.hpp"
+#include "glm/ext/quaternion_trigonometric.hpp"
+#include "glm/geometric.hpp"
+#include "glm/gtc/quaternion.hpp"
 #include "tema2/utils/transform/transform.hpp"
 
 namespace tema2 {
@@ -6,16 +9,16 @@ namespace properties {
 
 WorldObject::WorldObject(float boundingRadius, bool collisionEnabled)
     : _modelMatrix(1.0f), _scale(1.0f, 1.0f, 1.0f), _position(0.0f, 0.0f, 0.0f),
-      _rotation(0.0f, 0.0f, 0.0f), _dirty(true),
+      _rotation(1, 0, 0, 0), _dirty(true),
       _boundingRadius(boundingRadius), _collisionEnabled(collisionEnabled) {}
 
 // --- Transform ---
 
-const glm::vec3 &WorldObject::getPosition() const { return _position; }
+const glm::vec3 WorldObject::getPosition() const { return _position; }
 
-const glm::vec3 &WorldObject::getScale() const { return _scale; }
+const glm::vec3 WorldObject::getScale() const { return _scale; }
 
-const glm::vec3 &WorldObject::getRotation() const { return _rotation; }
+const glm::vec3 WorldObject::getRotation() const { return glm::eulerAngles(_rotation); }
 
 void WorldObject::setPosition(const glm::vec3 &position) {
   _position = position;
@@ -28,7 +31,10 @@ void WorldObject::setScale(const glm::vec3 &scale) {
 }
 
 void WorldObject::setRotation(const glm::vec3 &radians) {
-  _rotation = radians;
+  glm::quat qY = glm::angleAxis(radians.y, glm::vec3(0.0f, 1.0f, 0.0f));
+  glm::quat qX = glm::angleAxis(radians.x, glm::vec3(1.0f, 0.0f, 0.0f));
+  glm::quat qZ = glm::angleAxis(radians.z, glm::vec3(0.0f, 0.0f, 1.0f));
+  _rotation = glm::normalize(qY * qX * qZ);
   _dirty = true;
 }
 
@@ -47,30 +53,22 @@ void WorldObject::scale(const glm::vec3 &scale) {
   _dirty = true;
 }
 
-void WorldObject::rotate(float radX, float radY, float radZ) {
-  _rotation += glm::vec3(radX, radY, radZ);
+void WorldObject::rotateLocal(const glm::vec3 &rotation) {
+  glm::quat qPitch = glm::angleAxis(rotation.x, glm::vec3(1.0f, 0.0f, 0.0f));
+  glm::quat qYaw   = glm::angleAxis(rotation.y,   glm::vec3(0.0f, 1.0f, 0.0f));
+  glm::quat qRoll  = glm::angleAxis(rotation.z,  glm::vec3(0.0f, 0.0f, 1.0f));
+  _rotation = glm::normalize(_rotation * qYaw * qPitch * qRoll);
   _dirty = true;
 }
 
-void WorldObject::rotate(const glm::vec3 &radians) {
-  _rotation += radians;
+void WorldObject::rotateGlobal(const glm::vec3 &rotation) {
+  glm::quat qPitch = glm::angleAxis(rotation.x, glm::vec3(1.0f, 0.0f, 0.0f));
+  glm::quat qYaw   = glm::angleAxis(rotation.y,   glm::vec3(0.0f, 1.0f, 0.0f));
+  glm::quat qRoll  = glm::angleAxis(rotation.z,  glm::vec3(0.0f, 0.0f, 1.0f));
+  _rotation = glm::normalize(qYaw * qPitch * qRoll * _rotation);
   _dirty = true;
 }
 
-void WorldObject::rotateX(float radians) {
-  _rotation.x += radians;
-  _dirty = true;
-}
-
-void WorldObject::rotateY(float radians) {
-  _rotation.y += radians;
-  _dirty = true;
-}
-
-void WorldObject::rotateZ(float radians) {
-  _rotation.z += radians;
-  _dirty = true;
-}
 
 void WorldObject::translate(float translateX, float translateY,
                             float translateZ) {
@@ -83,14 +81,24 @@ void WorldObject::translate(const glm::vec3 &offset) {
   _dirty = true;
 }
 
+glm::vec3 WorldObject::getForward() const {
+  return glm::normalize(_rotation * glm::vec3(0.0f, 0.0f, -1.0f));
+}
+
+glm::vec3 WorldObject::getUp() const {
+  return glm::normalize(_rotation * glm::vec3(0.0f, 1.0f, 0.0f));
+}
+
+glm::vec3 WorldObject::getRight() const {
+  return glm::normalize(_rotation * glm::vec3(1.0f, 0.0f, 0.0f));
+}
+
 const glm::mat4 &WorldObject::getModelMatrix() const {
   if (_dirty) {
     _modelMatrix = glm::mat4(1.0f);
     _modelMatrix *=
         utils::transform::translate(_position.x, _position.y, _position.z);
-    _modelMatrix *= utils::transform::rotateOY(_rotation.y);
-    _modelMatrix *= utils::transform::rotateOX(_rotation.x);
-    _modelMatrix *= utils::transform::rotateOZ(_rotation.z);
+    _modelMatrix *= glm::mat4_cast(_rotation);
     _modelMatrix *= utils::transform::scale(_scale.x, _scale.y, _scale.z);
     _dirty = false;
   }
